@@ -136,6 +136,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        // My pinkys are not as fast
+        case HOME_A:
+        case HOME_O:
+        case HOME_SC:
+            return TAPPING_TERM + 50;
+
+        case SYM_ENT: // Very low tapping term so I don't hit enter actidentlly
+            return TAPPING_TERM - 20;
+
+        // The One Shot Shift thumb key is used more frequently.
+        // To avoid accidental shiftings of T or N or I
+        // when rolling over the home row, the tapping term
+        // is increased.
+        case HOME_S:
+        case HOME_E:
+        case HOME_D:
+        case HOME_K:
+            return TAPPING_TERM + 10;
+
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 // ---------------------------------------------------------------------------------------------------------------------------
 
 /**
