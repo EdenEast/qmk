@@ -15,13 +15,27 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-
 #pragma once
 
-
+// Hardware settings
 #define USE_SERIAL
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-//#define EE_HANDS
-// Rows are doubled-up
+
+// Home row mod settings
+#define TAPPING_TERM 250
+
+// Prevent normal rollover from triggering mods
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// This prevents accidental repeats of the tap-hold keys when typing quickly.
+#define TAPPING_FORCE_HOLD
+
+// This prevents short hold periods to be interpreted as individual taps when typing quickly.
+#define PERMISSIVE_HOLD
+
+// The setting below defines how many times you need to tap a TT() to toggle the layer.
+#define TAPPING_TOGGLE 3
+
+// Limits the max. amount of layers to 8 to save firmware memory. Will not sure more then 8.
+#define LAYER_STATE_8BIT
+
