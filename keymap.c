@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                         +---------------+       +---------------+
  *                                         | delete|1sh lsf|       |1sh rsf|   up  |
  *                                         |-------+-------|       |-------+-------|
- *                                         |qrty_tg| media |       | sw_hnd|  down |
+ *                                         |qrty_tg| media |       |sw_hand|  down |
  *                                         +---------------+       +---------------+
  */
 [_COLEMAK_DH] = LAYOUT_5x6(
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_LBRC,KC_RBRC,                                                        KC_LPRN,KC_RPRN,                 \
                                     NAV_TAB,KC_BSPC,                        KC_SPC ,SYM_ENT,                                 \
                                             KC_DEL ,OS_LSFT,        OS_RSFT,KC_UP  ,                                         \
-                                            QRTY_TG,MEDIA  ,        SH_OS  ,KC_DOWN                                          \
+                                            QRTY_TG,SH_OS  ,        MEDIA  ,KC_DOWN                                          \
 ),
 
 [_QWERTY] = LAYOUT_5x6(
