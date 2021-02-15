@@ -7,7 +7,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /**
- * Base (Colemak-DH)
+ * Base (Colemak-DH) https://colemakmods.github.io/mod-dh/keyboards.html#matrix-keyboards
  * +-----------------------------------------------+                       +-----------------------------------------------+
  * |   `   |   1   |   2   |   3   |   4   |   5   |                       |   6   |   7   |   8   |   9   |   0   |   =   |
  * |-------+-------+-------+-------+-------+-------|                       |-------+-------+-------+-------+-------+-------|
@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK_DH] = LAYOUT_5x6(
     KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_EQL , \
     KC_MINS,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B   ,                        KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_UNDS, \
-    KC_ESC ,HOME_A ,HOME_R ,HOME_S ,HOME_T ,KC_D   ,                        KC_M   ,HOME_N ,HOME_E ,HOME_I ,HOME_O ,KC_QUOT, \
+    KC_ESC ,HOME_A ,HOME_R ,HOME_S ,HOME_T ,KC_G   ,                        KC_M   ,HOME_N ,HOME_E ,HOME_I ,HOME_O ,KC_QUOT, \
     KC_COLN,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V   ,                        KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,KC_BSLS, \
                     KC_LBRC,KC_RBRC,                                                        KC_LPRN,KC_RPRN,                 \
                                     NAV_TAB,KC_BSPC,                        KC_SPC ,SYM_ENT,                                 \
