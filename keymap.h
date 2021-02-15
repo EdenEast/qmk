@@ -2,6 +2,10 @@
 
 #include QMK_KEYBOARD_H
 
+// Initialize variables that hold the binary representation
+// of the active modifier state
+uint8_t mod_state;
+
 enum layer_names {
     _COLEMAK_DH,
     _QWERTY,
