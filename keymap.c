@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_LBRC,KC_RBRC,                                                        KC_LPRN,KC_RPRN,                 \
                                     NAV_TAB,KC_BSPC,                        KC_SPC ,SYM_ENT,                                 \
                                             KC_DEL ,OS_LSFT,        OS_RSFT,KC_UP  ,                                         \
-                                            QRTY_TG,SH_OS  ,        MEDIA  ,KC_DOWN                                          \
+                                            _______,SH_OS  ,        MEDIA  ,KC_DOWN                                          \
 ),
 
 [_QWERTY] = LAYOUT_5x6(
@@ -43,6 +43,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,                        KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______, \
     _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G   ,                        KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,_______, \
     _______,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,                        KC_N   ,KC_M   ,_______,_______,_______,_______, \
+                    _______,_______,                                                        _______,_______,                 \
+                                    _______,_______,                        _______,_______,                                 \
+                                            _______,_______,        _______,_______,                                         \
+                                            _______,_______,        _______,_______                                          \
+),
+
+[_DVORAK] = LAYOUT_5x6(
+    _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
+    _______,KC_QUOT,KC_COMM,KC_DOT ,KC_P   ,KC_Y   ,                        KC_F   ,KC_G   ,KC_C   ,KC_R   ,KC_L   ,KC_SLSH, \
+    _______,HOME_DA,HOME_DO,HOME_DE,HOME_DU,KC_I   ,                        KC_D   ,HOME_DH,HOME_DT,HOME_DN,HOME_DS,KC_MINS, \
+    _______,KC_SCLN,KC_Q   ,KC_J   ,KC_K   ,KC_X   ,                        KC_B   ,KC_M   ,KC_W   ,KC_V   ,KC_Z   ,_______, \
                     _______,_______,                                                        _______,_______,                 \
                                     _______,_______,                        _______,_______,                                 \
                                             _______,_______,        _______,_______,                                         \
@@ -99,15 +110,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                         +---------------+       +---------------+
  *                                         |       |       |       |       |       |
  *                                         |-------+-------|       |-------+-------|
- *                                         | adjust| adjust|       |       |       |
+ *                                         |       |       |       |       |       |
  *                                         +---------------+       +---------------+
  */
 [_NAV] = LAYOUT_5x6(
     RESET  ,DEBUG  ,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
     _______,_______,_______,_______,_______,_______,                        _______,KC_PGUP,KC_UP  ,KC_PGDN,_______,_______, \
     _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_HOME,KC_LEFT,KC_DOWN,KC_RGHT,KC_END ,_______, \
-    _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-                    _______,_______,                                                        _______,_______,                 \
+    CLMK_TO,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
+                    QRTY_TO,DVRK_TO,                                                        _______,_______,                 \
                                     _______,_______,                        _______,_______,                                 \
                                             _______,_______,        _______,_______,                                         \
                                             _______,_______,        _______,_______                                          \
@@ -163,10 +174,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // My pinkys are not as fast
+        //
+        // These two cases are covered by HOME_CA as they are all defined to the same thing once macro is expanded
+        // case HOME_QA:
+        // case HOME_DA:
         case HOME_CA:
         case HOME_CO:
-        case HOME_QA:
         case HOME_QC:
+        case HOME_DS:
             return TAPPING_TERM + 50;
 
         case SYM_ENT: // Very low tapping term so I don't hit enter actidentlly
@@ -180,6 +195,8 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case HOME_CE:
         case HOME_QD:
         case HOME_QK:
+        case HOME_DE:
+        case HOME_DT:
             return TAPPING_TERM + 10;
 
         default:
