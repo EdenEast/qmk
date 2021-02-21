@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK_DH] = LAYOUT_5x6(
     KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,KC_EQL , \
     KC_MINS,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B   ,                        KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_UNDS, \
-    KC_ESC ,HOME_A ,HOME_R ,HOME_S ,HOME_T ,KC_G   ,                        KC_M   ,HOME_N ,HOME_E ,HOME_I ,HOME_O ,KC_QUOT, \
+    KC_ESC ,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G   ,                        KC_M   ,HOME_CN,HOME_CE,HOME_CI,HOME_CO,KC_QUOT, \
     KC_COLN,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V   ,                        KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,KC_BSLS, \
                     KC_LBRC,KC_RBRC,                                                        KC_LPRN,KC_RPRN,                 \
                                     NAV_TAB,KC_BSPC,                        KC_SPC ,SYM_ENT,                                 \
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_5x6(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
     _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,                        KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______, \
-    _______,HOME_A ,HOME_SS,HOME_D ,HOME_F ,KC_G   ,                        KC_H   ,HOME_J ,HOME_K ,HOME_L ,HOME_SC,_______, \
+    _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G   ,                        KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,_______, \
     _______,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,                        KC_N   ,KC_M   ,_______,_______,_______,_______, \
                     _______,_______,                                                        _______,_______,                 \
                                     _______,_______,                        _______,_______,                                 \
@@ -163,9 +163,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         // My pinkys are not as fast
-        case HOME_A:
-        case HOME_O:
-        case HOME_SC:
+        case HOME_CA:
+        case HOME_CO:
+        case HOME_QA:
+        case HOME_QC:
             return TAPPING_TERM + 50;
 
         case SYM_ENT: // Very low tapping term so I don't hit enter actidentlly
@@ -175,10 +176,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // To avoid accidental shiftings of T or N or I
         // when rolling over the home row, the tapping term
         // is increased.
-        case HOME_S:
-        case HOME_E:
-        case HOME_D:
-        case HOME_K:
+        case HOME_CS:
+        case HOME_CE:
+        case HOME_QD:
+        case HOME_QK:
             return TAPPING_TERM + 10;
 
         default:
