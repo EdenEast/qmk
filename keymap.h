@@ -12,7 +12,6 @@ enum layer_names {
     _SYM,
     _NAV,
     _MEDIA,
-    _ADJUST,
 };
 
 // Layer keys
