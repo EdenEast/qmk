@@ -13,6 +13,7 @@ enum layer_names {
     _SYM,
     _NAV,
     _MEDIA,
+    _GAMING,
 };
 
 // Layer keys
@@ -24,6 +25,7 @@ enum layer_names {
 #define CLMK_TO TO(_COLEMAK_DH)
 #define QRTY_TO TO(_QWERTY)
 #define DVRK_TO TO(_DVORAK)
+#define GAME_TG TG(_GAMING)
 
 // Left-hand home row mod
 // Colemak-DH
