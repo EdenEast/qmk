@@ -32,10 +32,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_MINS,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B   ,                        KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_UNDS, \
     KC_ESC ,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G   ,                        KC_M   ,HOME_CN,HOME_CE,HOME_CI,HOME_CO,KC_QUOT, \
     KC_COLN,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V   ,                        KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,KC_BSLS, \
-                    KC_LBRC,KC_RBRC,                                                        KC_LPRN,KC_RPRN,                 \
+                    KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     NAV_TAB,KC_BSPC,                        KC_SPC ,SYM_ENT,                                 \
-                                            KC_DEL ,OS_LSFT,        OS_RSFT,KC_UP  ,                                         \
-                                            _______,SH_OS  ,        MEDIA  ,KC_DOWN                                          \
+                                            KC_DEL ,OS_LSFT,        OS_RSFT,_______,                                         \
+                                            _______,SH_OS  ,        MEDIA  ,_______                                          \
 ),
 
 [_QWERTY] = LAYOUT_5x6(
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_NAV] = LAYOUT_5x6(
     RESET  ,DEBUG  ,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
     _______,_______,_______,_______,_______,_______,                        KC_HOME,KC_PGUP,KC_PGDN,KC_END ,_______,_______, \
-    _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______, \
+    _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_END ,_______, \
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
                     QRTY_TO,CLMK_TO,                                                        _______,_______,                 \
                                     _______,_______,                        _______,_______,                                 \
