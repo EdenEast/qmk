@@ -9,21 +9,35 @@ uint8_t mod_state;
 enum layer_names {
     _COLEMAK_DH,
     _QWERTY,
+    _NUM,
     _SYM,
     _NAV,
+    _FN,
     _MEDIA,
-    _GAMING,
+    _MOUSE,
+    _GAME,
 };
 
 // Layer keys
-#define NAV_TAB LT(_NAV, KC_TAB)
-#define SYM_ENT LT(_SYM, KC_ENT)
-#define MEDIA   MO(_MEDIA)
-#define ADJUST  MO(_ADJUST)
-// #define QRTY_TG TG(_QWERTY)
+#define NAV_SPC LT(_NAV,   KC_SPC)
+#define MED_ESC LT(_MEDIA, KC_ESC)
+#define MOU_TAB LT(_MOUSE, KC_TAB)
+#define FN_ENTR LT(_FN,    KC_ENT)
+#define NUM_BSP LT(_NUM,   KC_BSPC)
+#define SYM_DEL LT(_SYM,    KC_DEL)
+
 #define CLMK_TO TO(_COLEMAK_DH)
 #define QRTY_TO TO(_QWERTY)
-#define GAME_TG TG(_GAMING)
+#define GAME_TG TG(_GAME)
+
+// Lock layer useful when eating and trying to navigate with one hand
+#define DF_BASE DF(_COLEMAK_DH)
+#define DF_NUM  DF(_NUM)
+#define DF_SYM  DF(_SYM)
+#define DF_NAV  DF(_NAV)
+#define DF_FN   DF(_FN)
+#define DF_MDIA DF(_MEDIA)
+#define DF_MOUS DF(_MOUSE)
 
 // Left-hand home row mod
 // Colemak-DH
@@ -55,3 +69,9 @@ enum layer_names {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
+// Clipboard
+#define UNDO  C(KC_Z)
+#define REDO  C(KC_Y)
+#define CUT   C(KC_X)
+#define COPY  C(KC_C)
+#define PASTE C(KC_V)

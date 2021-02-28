@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 
 // Home row mod settings
-#define TAPPING_TERM 250
+#define TAPPING_TERM 230
 #define TAPPING_TERM_PER_KEY
 
 // Prevent normal rollover from triggering mods
@@ -38,5 +38,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define TAPPING_TOGGLE 3
 
 // Limits the max. amount of layers to 8 to save firmware memory. Will not sure more then 8.
-#define LAYER_STATE_8BIT
+// #define LAYER_STATE_8BIT
 
