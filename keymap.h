@@ -75,3 +75,6 @@ enum layer_names {
 #define CUT   C(KC_X)
 #define COPY  C(KC_C)
 #define PASTE C(KC_V)
+
+#define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
+
