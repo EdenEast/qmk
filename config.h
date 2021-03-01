@@ -40,3 +40,5 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Limits the max. amount of layers to 8 to save firmware memory. Will not sure more then 8.
 // #define LAYER_STATE_8BIT
 
+// Recommended for heavy chording.
+#define QMK_KEYS_PER_SCAN 4
