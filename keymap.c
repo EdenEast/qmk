@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V   ,                        KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     MED_ESC,NAV_SPC,                        NUM_BSP,SYM_DEL,                                 \
-                                            _______,MOU_TAB,        FN_ENTR,_______,                                         \
+                                            OS_LSFT,MOU_TAB,        FN_ENTR,OS_RSFT,                                         \
                                             GAME_TG,_______,        _______,_______                                          \
 ),
 
