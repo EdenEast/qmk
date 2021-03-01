@@ -22,7 +22,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_LEFT
 
 // Home row mod settings
-#define TAPPING_TERM 230
+#define TAPPING_TERM 210
 #define TAPPING_TERM_PER_KEY
 
 // Prevent normal rollover from triggering mods

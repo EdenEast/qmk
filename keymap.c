@@ -118,15 +118,14 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case HOME_QC:
             return TAPPING_TERM + 50;
 
-        // The One Shot Shift thumb key is used more frequently.
-        // To avoid accidental shiftings of T or N or I
-        // when rolling over the home row, the tapping term
-        // is increased.
-        case HOME_CS:
-        case HOME_CE:
-        case HOME_QD:
-        case HOME_QK:
-            return TAPPING_TERM + 10;
+        // Using the thumb keys to swich layers is the core to thes layout. Making it faster to switch layers
+        case NAV_SPC:
+        case MOU_TAB:
+        case MED_ESC:
+        case NUM_BSP:
+        case SYM_DEL:
+        case FN_ENTR:
+            return TAPPING_TERM - 20;
 
         default:
             return TAPPING_TERM;
