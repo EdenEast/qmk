@@ -1,0 +1,3 @@
+[submodule "external/qmk_firmware"]
+	path = external/qmk_firmware
+	url = https://github.com/qmk/qmk_firmware
