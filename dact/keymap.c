@@ -1,101 +1,101 @@
 /* A standard layout for the Dactyl Manuform 5x6 Keyboard */
 
+#include "eden.h"
 #include QMK_KEYBOARD_H
 
-#include "keymap.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // Base (Colemak-DH) https://colemakmods.github.io/mod-dh/keyboards.html#matrix-keyboards
-[_COLEMAK_DH] = LAYOUT_5x6(
+[_COLEMAK_DH] = LAYOUT_5x6_WRAPPER(
     _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
-    _______,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B   ,                        KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,_______, \
-    _______,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G   ,                        KC_M   ,HOME_CN,HOME_CE,HOME_CI,HOME_CO,KC_QUOT, \
-    OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V   ,                        KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT, \
+    ________________COLEMAK_DH_L1__________________,                        ________________COLEMAK_DH_R1__________________, \
+    ________________COLEMAK_DH_L2__________________,                        ________________COLEMAK_DH_R2__________________, \
+    ________________COLEMAK_DH_L3__________________,                        ________________COLEMAK_DH_R3__________________, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
-                                    MED_ESC,NAV_SPC,                        NUM_BSP,SYM_DEL,                                 \
-                                            OS_LSFT,MOU_TAB,        FN_ENTR,OS_RSFT,                                         \
+                                    TB_CMLL,TB_CMLC,                        TB_CMRC,TB_CMRR,                                 \
+                                            OS_LSFT,TB_CMLR,        TB_CMRL,OS_RSFT,                                         \
                                             GAME_TG,_______,        _______,_______                                          \
 ),
 
-[_QWERTY] = LAYOUT_5x6(
+[_QWERTY] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T   ,                        KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______, \
-    _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G   ,                        KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,_______, \
-    _______,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B   ,                        KC_N   ,KC_M   ,_______,_______,_______,_______, \
+    ________________QWERTY_L1______________________,                        ________________QWERTY_R1______________________, \
+    ________________QWERTY_L2______________________,                        ________________QWERTY_R2______________________, \
+    ________________QWERTY_L3______________________,                        ________________QWERTY_R3______________________, \
                     _______,_______,                                                        _______,_______,                 \
                                     _______,_______,                        _______,_______,                                 \
                                             _______,_______,        _______,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_NUM] = LAYOUT_5x6(
+[_NUM] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    _______,KC_LBRC,KC_7   ,KC_8   ,KC_9   ,KC_RBRC,                        _______,_______,_______,_______,_______,RESET  , \
-    _______,KC_SCLN,KC_4   ,KC_5   ,KC_6   ,KC_EQL ,                        _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______, \
-    _______,KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_BSLS,                        _______,DF_NUM ,_______,_______,_______,_______, \
+    ________________NUM_L1_________________________,                        ________________NUM_R1_________________________, \
+    ________________NUM_L2_________________________,                        ________________NUM_R2_________________________, \
+    ________________NUM_L3_________________________,                        ________________NUM_R3_________________________, \
                     _______,_______,                                                        _______,_______,                 \
-                                    KC_DOT ,KC_0   ,                        DF_BASE,_______,                                 \
-                                            _______,KC_MINS,        _______,_______,                                         \
+                                    TB_NMLL,TB_NMLC,                        TB_NMRC,TB_NMRR,                                 \
+                                            _______,TB_NMLR,        TB_NMRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_SYM] = LAYOUT_5x6(
+[_SYM] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    _______,KC_LCBR,KC_AMPR,KC_ASTR,KC_LPRN,KC_RCBR,                        _______,_______,_______,_______,_______,RESET  , \
-    _______,KC_COLN,KC_DLR ,KC_PERC,KC_CIRC,KC_PLUS,                        _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______, \
-    _______,KC_TILD,KC_EXLM,KC_AT  ,KC_HASH,KC_PIPE,                        _______,DF_SYM ,_______,_______,_______,_______, \
+    ________________SYM_L1_________________________,                        ________________SYM_R1_________________________, \
+    ________________SYM_L2_________________________,                        ________________SYM_R2_________________________, \
+    ________________SYM_L3_________________________,                        ________________SYM_R3_________________________, \
                     _______,_______,                                                        _______,_______,                 \
-                                    KC_LPRN,KC_RPRN,                        _______,DF_BASE,                                 \
-                                            _______,KC_UNDS,        _______,_______,                                         \
+                                    TB_SYLL,TB_SYLC,                        TB_SYRC,TB_SYRR,                                 \
+                                            _______,TB_SYLR,        TB_SYRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_FN] = LAYOUT_5x6(
+[_FN] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    KC_SLEP,KC_F12 ,KC_F7  ,KC_F8  ,KC_F9  ,KC_SLCK,                        _______,_______,_______,_______,_______,RESET  , \
-    _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,KC_PSCR,                        _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______, \
-    KC_PWR ,KC_F10 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_PAUS,                        _______,DF_FN  ,_______,_______,_______,_______, \
+    ________________FN_L1__________________________,                        ________________FN_R1__________________________, \
+    ________________FN_L2__________________________,                        ________________FN_R2__________________________, \
+    ________________FN_L3__________________________,                        ________________FN_R3__________________________, \
                     _______,_______,                                                        _______,_______,                 \
-                                    KC_APP ,KC_SPC ,                        _______,_______,                                 \
-                                            _______,KC_TAB ,        DF_BASE,_______,                                         \
+                                    TB_FNLL ,TB_FNLC,                        TB_FNRC,TB_FNRR,                                 \
+                                            _______,TB_FNLR,        TB_FNRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_NAV] = LAYOUT_5x6(
+[_NAV] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    RESET  ,_______,_______,_______,_______,_______,                        REDO   ,PASTE  ,COPY   ,CUT    ,UNDO   ,_______, \
-    _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_CAPS,_______, \
-    _______,_______,_______,_______,DF_NAV ,_______,                        KC_HOME,KC_PGDN,KC_PGUP,KC_END ,KC_INS ,_______, \
+    ________________NAV_L1_________________________,                        ________________NAV_R1_________________________, \
+    ________________NAV_L2_________________________,                        ________________NAV_R2_________________________, \
+    ________________NAV_L3_________________________,                        ________________NAV_R3_________________________, \
                     QRTY_TO,CLMK_TO,                                                        _______,_______,                 \
-                                    _______,DF_BASE,                        KC_BSPC,KC_DEL ,                                 \
-                                            _______,_______,        KC_ENT ,_______,                                         \
+                                    TB_NVLL,TB_NVLC,                        TB_NVRC,TB_NVRR,                                 \
+                                            _______,TB_NVLR,        TB_NVRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_MOUSE] = LAYOUT_5x6(
+[_MEDIA] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    RESET  ,_______,_______,_______,_______,_______,                        _______,KC_ACL0,KC_ACL1,KC_ACL2,_______,_______, \
-    _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,_______,_______, \
-    _______,_______,_______,_______,DF_MOUS,_______,                        KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,_______,_______, \
+    ________________MDA_L1_________________________,                        ________________MDA_R1_________________________, \
+    ________________MDA_L2_________________________,                        ________________MDA_R2_________________________, \
+    ________________MDA_L3_________________________,                        ________________MDA_R3_________________________, \
                     QRTY_TO,CLMK_TO,                                                        _______,_______,                 \
-                                    _______,_______,                        KC_BTN1,KC_BTN2,                                 \
-                                            _______,DF_BASE,        KC_BTN3,_______,                                         \
+                                    TB_MELL,TB_MELC,                        TB_MERC,TB_MERR,                                 \
+                                            _______,TB_MELR,        TB_MERL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_MEDIA] = LAYOUT_5x6(
+[_MOUSE] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    RESET  ,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
-    _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______,                        KC_MPRV,KC_VOLD,KC_VOLU,KC_MNXT,_______,_______, \
-    _______,_______,_______,_______,DF_MDIA,_______,                        TG_MIC ,_______,_______,_______,_______,_______, \
+    ________________MOS_L1_________________________,                        ________________MOS_R1_________________________, \
+    ________________MOS_L2_________________________,                        ________________MOS_R2_________________________, \
+    ________________MOS_L3_________________________,                        ________________MOS_R3_________________________, \
                     QRTY_TO,CLMK_TO,                                                        _______,_______,                 \
-                                    DF_BASE,_______,                        KC_MPLY,KC_MUTE,                                 \
-                                            _______,_______,        KC_MSTP,_______,                                         \
+                                    TB_MELL,TB_MOLC,                        TB_MORC,TB_MORR,                                 \
+                                            _______,TB_MELR,        TB_MORL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
-[_GAME] = LAYOUT_5x6(
+[_GAME] = LAYOUT_5x6_WRAPPER(
     KC_ESC ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
     KC_F1  ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,                        KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   , \
     KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F   ,                        KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,KC_SCLN, \
@@ -106,31 +106,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             GAME_TG,KC_M   ,        _______,_______                                          \
 ),
 };
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        // My pinkys are not as fast
-        //
-        // These two cases are covered by HOME_CA as they are all defined to the same thing once macro is expanded
-        // case HOME_QA:
-        case HOME_CA:
-        case HOME_CO:
-        case HOME_QC:
-            return TAPPING_TERM + 50;
-
-        // Using the thumb keys to swich layers is the core to thes layout. Making it faster to switch layers
-        case NAV_SPC:
-        case MOU_TAB:
-        case MED_ESC:
-        case NUM_BSP:
-        case SYM_DEL:
-        case FN_ENTR:
-            return TAPPING_TERM - 20;
-
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 // ---------------------------------------------------------------------------------------------------------------------------
 
@@ -156,7 +131,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
  *                                         +---------------+       +---------------+
  */
 /*
-[_layer] = LAYOUT_5x6(
+[_layer] = LAYOUT_5x6_WRAPPER(
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \
     _______,_______,_______,_______,_______,_______,                        _______,_______,_______,_______,_______,_______, \

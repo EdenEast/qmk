@@ -1,6 +1,6 @@
 # Eden's Keyboard Firmware
 
-This repository contains my personal keymap for my Dactyl Manuform 5x6 keyboard.
+This repository contains my personal keymap for my [Dactyl Manuform][dactman-repo] and [Corne] keyboard.
 
 This keymap uses [Colemak-DH] for its alpha base with the ability to swap to Qwerty when needed.
 It is also heavily inspired/based off of [Miryoku], an ergonomic, minimal, orthogonal layout for
@@ -8,6 +8,8 @@ ergo or ortho keyboards.
 
 [Colemak-DH]: https://colemakmods.github.io/mod-dh/
 [Miryoku]: https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org
+[dactman-repo]: https://github.com/edeneast/dactyl-manuform
+[Corne]: https://github.com/foostan/crkbd
 
 ## Quick start
 
@@ -20,10 +22,13 @@ firmware. Make sure you update your submodules before trying to execute nix-shel
 # Enter a development shell
 nix-shell
 
-# Build the dactyl-manuform layout
+# Build the corne keymap
+just crkbd
+
+# Build the dactyl-manuform keymap
 just dact
 
-# Or currently
+# Or all
 just
 ```
 

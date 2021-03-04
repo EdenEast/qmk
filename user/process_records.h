@@ -1,22 +1,5 @@
 #pragma once
-
-#include QMK_KEYBOARD_H
-
-// Initialize variables that hold the binary representation
-// of the active modifier state
-uint8_t mod_state;
-
-enum layer_names {
-    _COLEMAK_DH,
-    _QWERTY,
-    _NUM,
-    _SYM,
-    _NAV,
-    _FN,
-    _MEDIA,
-    _MOUSE,
-    _GAME,
-};
+#include "eden.h"
 
 // Layer keys
 #define NAV_SPC LT(_NAV,   KC_SPC)
@@ -77,4 +60,5 @@ enum layer_names {
 #define PASTE C(KC_V)
 
 #define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
+
 
