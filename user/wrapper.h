@@ -6,9 +6,10 @@
 #define LAYOUT KEYMAP
 #endif
 
-#define LAYOUT_5x6_WRAPPER(...)     LAYOUT_5x6(__VA_ARGS__)
-#define KEYMAP_wrapper(...)         LAYOUT(__VA_ARGS__)
-#define LAYOUT_wrapper(...)         LAYOUT(__VA_ARGS__)
+#define LAYOUT_5x6_WRAPPER(...)         LAYOUT_5x6(__VA_ARGS__)
+#define LAYOUT_split_3x6_3_WRAPPER(...) LAYOUT_split_3x6_3(__VA_ARGS__)
+#define KEYMAP_wrapper(...)             LAYOUT(__VA_ARGS__)
+#define LAYOUT_wrapper(...)             LAYOUT(__VA_ARGS__)
 
 
 #define ________________COLEMAK_DH_L1__________________ _______,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
@@ -81,3 +82,67 @@
 #define ________________MOS_R1_________________________ _______,KC_ACL0,KC_ACL1,KC_ACL2,_______,_______
 #define ________________MOS_R2_________________________ KC_MS_L,KC_MS_D,KC_MS_U,KC_MS_R,_______,_______
 #define ________________MOS_R3_________________________ KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,_______,_______
+
+
+#define TB_CMLL MED_ESC
+#define TB_CMLC NAV_SPC
+#define TB_CMLR MOU_TAB
+
+#define TB_CMRL FN_ENTR
+#define TB_CMRC NUM_BSP
+#define TB_CMRR SYM_DEL
+
+
+#define TB_NMLL KC_DOT
+#define TB_NMLC KC_0
+#define TB_NMLR KC_MINS
+
+#define TB_NMRL _______
+#define TB_NMRC DF_BASE
+#define TB_NMRR _______
+
+
+#define TB_SYLL KC_LPRN
+#define TB_SYLC KC_RPRN
+#define TB_SYLR KC_UNDS
+
+#define TB_SYRL _______
+#define TB_SYRC _______
+#define TB_SYRR DF_BASE
+
+
+#define TB_FNLL KC_ESC
+#define TB_FNLC KC_SPC
+#define TB_FNLR KC_TAB
+
+#define TB_FNRL DF_BASE
+#define TB_FNRC _______
+#define TB_FNRR _______
+
+
+#define TB_NVLL _______
+#define TB_NVLC DF_BASE
+#define TB_NVLR _______
+
+#define TB_NVRL KC_ENT
+#define TB_NVRC KC_BSPC
+#define TB_NVRR KC_DEL
+
+
+#define TB_MELL DF_BASE
+#define TB_MELC _______
+#define TB_MELR _______
+
+#define TB_MERL KC_MSTP
+#define TB_MERC KC_MPLY
+#define TB_MERR KC_MUTE
+
+
+#define TB_MOLL _______
+#define TB_MOLC _______
+#define TB_MOLR DF_BASE
+
+#define TB_MORL KC_BTN3
+#define TB_MORC KC_BTN1
+#define TB_MORR KC_BTN2
+
