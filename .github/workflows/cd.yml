@@ -27,8 +27,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: dact
-          path: result/dact.hex
+          name: result
+          path: result/
           retention-days: 1
 
   publish:
@@ -56,5 +56,6 @@ jobs:
           gzip: false
           allow_override: true
           files: |
-            dact.hex:./dact/dact.hex
+            crkbd.hex:./result/crkbd.hex
+            dact.hex:./result/dact.hex
 
