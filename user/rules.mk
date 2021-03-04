@@ -1,1 +1,2 @@
-src += eden.c
+src += eden.c \
+	   process_records.c
