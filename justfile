@@ -25,7 +25,7 @@ _build make_cmd source target: init
     )
     mv ./external/qmk_firmware/{{source}} ./result/{{target}}.hex
     printf "Result: {{green}}{{target}}.hex{{reset}}\n"
-    if [ -v "$POST_BUILD" ]; then
+    if [ ! -z "$POST_BUILD" ]; then
         echo "executing postbuild: $POST_BUILD"
         $POST_BUILD
     fi
