@@ -62,7 +62,7 @@
 #define ________________NAV_L2_________________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
 #define ________________NAV_L3_________________________ _______,_______,_______,_______,DF_NAV ,_______
 
-#define ________________NAV_R1_________________________ REDO   ,PASTE  ,COPY   ,CUT    ,UNDO   ,_______
+#define ________________NAV_R1_________________________ REDO   ,COPY   ,PASTE  ,CUT    ,UNDO   ,_______
 #define ________________NAV_R2_________________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_CAPS,_______
 #define ________________NAV_R3_________________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,KC_INS ,_______
 
