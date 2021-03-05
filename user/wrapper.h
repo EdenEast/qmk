@@ -11,6 +11,7 @@
 #define KEYMAP_wrapper(...)             LAYOUT(__VA_ARGS__)
 #define LAYOUT_wrapper(...)             LAYOUT(__VA_ARGS__)
 
+#define ________________BLANK__________________________ _______,_______,_______,_______,_______,_______
 
 #define ________________COLEMAK_DH_L1__________________ _______,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define ________________COLEMAK_DH_L2__________________ _______,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G
