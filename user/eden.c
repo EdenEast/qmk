@@ -9,7 +9,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case HOME_CA:
         case HOME_CO:
         case HOME_QC:
-            return TAPPING_TERM + 50;
+            return TAPPING_TERM + 70;
 
         // Using the thumb keys to swich layers is the core to thes layout. Making it faster to switch layers
         case NAV_SPC:
