@@ -5,9 +5,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         // My pinkys are not as fast
         //
         // These two cases are covered by HOME_CA as they are all defined to the same thing once macro is expanded
-        // case HOME_QA:
         case HOME_CA:
+        case HOME_WA:
+        case HOME_QA:
         case HOME_CO:
+        case HOME_WI:
         case HOME_QC:
             return TAPPING_TERM + 70;
 

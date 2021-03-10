@@ -7,6 +7,7 @@
 // Define layer names
 enum layer_names {
     _COLEMAK_DH,
+    _WORKMAN,
     _QWERTY,
     _NUM,
     _SYM,

@@ -10,6 +10,7 @@
 #define SYM_DEL LT(_SYM,    KC_DEL)
 
 #define CLMK_TO TO(_COLEMAK_DH)
+#define WORK_TO TO(_WORKMAN)
 #define QRTY_TO TO(_QWERTY)
 #define GAME_TG TG(_GAME)
 
@@ -29,6 +30,12 @@
 #define HOME_CS LSFT_T(KC_S)
 #define HOME_CT LCTL_T(KC_T)
 
+// Workman
+#define HOME_WA LGUI_T(KC_A)
+#define HOME_WS LALT_T(KC_S)
+#define HOME_WH LSFT_T(KC_H)
+#define HOME_WT LCTL_T(KC_T)
+
 // Qwerty
 #define HOME_QA LGUI_T(KC_A)
 #define HOME_QS LALT_T(KC_S)
@@ -41,6 +48,12 @@
 #define HOME_CI LALT_T(KC_I)
 #define HOME_CE RSFT_T(KC_E)
 #define HOME_CN RCTL_T(KC_N)
+
+// Workman
+#define HOME_WI LGUI_T(KC_I)
+#define HOME_WO LALT_T(KC_O)
+#define HOME_WE LSFT_T(KC_E)
+#define HOME_WN LCTL_T(KC_N)
 
 // Qwerty
 #define HOME_QC RGUI_T(KC_SCLN)
@@ -60,5 +73,4 @@
 #define PASTE C(KC_V)
 
 #define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
-
 
