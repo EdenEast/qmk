@@ -1,6 +1,7 @@
 #include "eden.h"
 #include QMK_KEYBOARD_H
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK_DH] = LAYOUT_split_3x6_3_WRAPPER (
         ________________COLEMAK_DH_L1__________________,                        ________________COLEMAK_DH_R1__________________,
@@ -48,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________MDA_L1_________________________,                        ________________MDA_R1_________________________,
         ________________MDA_L2_________________________,                        ________________MDA_R2_________________________,
         ________________MDA_L3_________________________,                        ________________MDA_R3_________________________,
-                                        TB_MELL,TB_MELC,TB_MELR,        TB_MERL,TB_MERC,TB_MERR
+                                        TB_MDLL,TB_MDLC,TB_MDLR,        TB_MDRL,TB_MDRC,TB_MDRR
     ),
     [_MOUSE] = LAYOUT_split_3x6_3_WRAPPER (
         ________________MOS_L1_________________________,                        ________________MOS_R1_________________________,

@@ -1,5 +1,3 @@
-/* A standard layout for the Dactyl Manuform 5x6 Keyboard */
-
 #include "eden.h"
 #include QMK_KEYBOARD_H
 
@@ -90,8 +88,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ________________MDA_L2_________________________,                        ________________MDA_R2_________________________, \
     ________________MDA_L3_________________________,                        ________________MDA_R3_________________________, \
                     CLMK_TO,WORK_TO,                                                        QRTY_TO,_______,                 \
-                                    TB_MELL,TB_MELC,                        TB_MERC,TB_MERR,                                 \
-                                            _______,TB_MELR,        TB_MERL,_______,                                         \
+                                    TB_MDLL,TB_MDLC,                        TB_MDRC,TB_MDRR,                                 \
+                                            _______,TB_MDLR,        TB_MDRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
@@ -101,8 +99,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ________________MOS_L2_________________________,                        ________________MOS_R2_________________________, \
     ________________MOS_L3_________________________,                        ________________MOS_R3_________________________, \
                     CLMK_TO,WORK_TO,                                                        QRTY_TO,_______,                 \
-                                    TB_MELL,TB_MOLC,                        TB_MORC,TB_MORR,                                 \
-                                            _______,TB_MELR,        TB_MORL,_______,                                         \
+                                    TB_MOLL,TB_MOLC,                        TB_MORC,TB_MORR,                                 \
+                                            _______,TB_MOLR,        TB_MORL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 

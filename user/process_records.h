@@ -3,7 +3,7 @@
 
 // Layer keys
 #define NAV_SPC LT(_NAV,   KC_SPC)
-#define MED_ESC LT(_MEDIA, KC_ESC)
+#define MDA_ESC LT(_MEDIA, KC_ESC)
 #define MOU_TAB LT(_MOUSE, KC_TAB)
 #define FN_ENTR LT(_FN,    KC_ENT)
 #define NUM_BSP LT(_NUM,   KC_BSPC)

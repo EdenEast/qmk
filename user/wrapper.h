@@ -94,7 +94,7 @@
 #define ________________MOS_R3_________________________ KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,_______,_______
 
 
-#define TB_CMLL MED_ESC
+#define TB_CMLL MDA_ESC
 #define TB_CMLC NAV_SPC
 #define TB_CMLR MOU_TAB
 
@@ -139,13 +139,13 @@
 #define TB_NVRR KC_DEL
 
 
-#define TB_MELL DF_BASE
-#define TB_MELC _______
-#define TB_MELR _______
+#define TB_MDLL DF_BASE
+#define TB_MDLC _______
+#define TB_MDLR _______
 
-#define TB_MERL KC_MSTP
-#define TB_MERC KC_MPLY
-#define TB_MERR KC_MUTE
+#define TB_MDRL KC_MSTP
+#define TB_MDRC KC_MPLY
+#define TB_MDRR KC_MUTE
 
 
 #define TB_MOLL _______
