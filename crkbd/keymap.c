@@ -6,7 +6,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________COLEMAK_DH_L1__________________,                        ________________COLEMAK_DH_R1__________________,
         ________________COLEMAK_DH_L2__________________,                        ________________COLEMAK_DH_R2__________________,
         ________________COLEMAK_DH_L3__________________,                        ________________COLEMAK_DH_R3__________________,
-                                        TB_CMLL,TB_CMLL,TB_CMLL,        TB_CMLL,TB_CMLL,TB_CMLL
+                                        TB_CMLL,TB_CMLC,TB_CMLR,        TB_CMRL,TB_CMRC,TB_CMRR
     ),
     [_WORKMAN] = LAYOUT_split_3x6_3_WRAPPER (
         ________________WORKMAN_L1_____________________,                        ________________WORKMAN_R1_____________________,
@@ -66,32 +66,42 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
   return rotation;
 }
 
-#define L_BASE 0
-#define L_LOWER 2
-#define L_RAISE 4
-#define L_ADJUST 8
-
 void oled_render_layer_state(void) {
     oled_write_P(PSTR("Layer: "), false);
-    switch (layer_state) {
-        case L_BASE:
-            oled_write_ln_P(PSTR("Default"), false);
+
+    switch (get_highest_layer(layer_state)) {
+        case _COLEMAK_DH:
+            oled_write_ln_P(PSTR("Colemak-DH"), false);
             break;
-        case L_LOWER:
-            oled_write_ln_P(PSTR("Lower"), false);
+        case _WORKMAN:
+            oled_write_ln_P(PSTR("Workman"), false);
             break;
-        case L_RAISE:
-            oled_write_ln_P(PSTR("Raise"), false);
+        case _QWERTY:
+            oled_write_ln_P(PSTR("Qwerty"), false);
             break;
-        case L_ADJUST:
-        case L_ADJUST|L_LOWER:
-        case L_ADJUST|L_RAISE:
-        case L_ADJUST|L_LOWER|L_RAISE:
-            oled_write_ln_P(PSTR("Adjust"), false);
+        case _NUM:
+            oled_write_ln_P(PSTR("Num"), false);
+            break;
+        case _SYM:
+            oled_write_ln_P(PSTR("Sym"), false);
+            break;
+        case _NAV:
+            oled_write_ln_P(PSTR("Nav"), false);
+            break;
+        case _FN:
+            oled_write_ln_P(PSTR("Func"), false);
+            break;
+        case _MEDIA:
+            oled_write_ln_P(PSTR("Media"), false);
+            break;
+        case _MOUSE:
+            oled_write_ln_P(PSTR("Mouse"), false);
+            break;
+        default:
+            oled_write_ln_P(PSTR("Unknown"), false);
             break;
     }
 }
-
 
 char keylog_str[24] = {};
 
