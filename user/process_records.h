@@ -1,5 +1,6 @@
 #pragma once
-#include "edeneast.h"
+
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
 #define NAV_SPC LT(_NAV,   KC_SPC)
