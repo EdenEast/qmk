@@ -82,6 +82,7 @@ right keyboard:
 
 init:
     #!/usr/bin/env bash
+    git config submodule.external/qmk_firmware.ignore all
     git submodule update --init --recursive
     if [ ! -L "{{user_symlink}}" ] ; then
         ln -sf $(pwd)/user {{user_symlink}}
