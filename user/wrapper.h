@@ -1,5 +1,5 @@
 #pragma once
-#include "eden.h"
+#include "edeneast.h"
 
 // Taken from users/drashna
 #if (!defined(LAYOUT) && defined(KEYMAP))

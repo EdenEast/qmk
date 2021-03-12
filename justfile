@@ -6,19 +6,19 @@ green  := '\033[1;32m'
 yellow := '\033[1;33m'
 blue   := '\033[1;34m'
 
-user_symlink  := "./external/qmk_firmware/users/eden"
-dact_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/eden"
-crkbd_symlink := "./external/qmk_firmware/keyboards/crkbd/keymaps/eden"
+user_symlink  := "./external/qmk_firmware/users/edeneast"
+dact_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
+crkbd_symlink := "./external/qmk_firmware/keyboards/crkbd/keymaps/edeneast"
 
 default:
     @just dact
     @just crkbd
 
 dact:
-    @just _build handwired/dactyl_manuform/5x6:eden handwired_dactyl_manuform_5x6_eden.hex dact
+    @just _build handwired/dactyl_manuform/5x6:edeneast handwired_dactyl_manuform_5x6_edeneast.hex dact
 
 crkbd:
-    @just _build crkbd:eden crkbd_rev1_legacy_eden.hex crkbd
+    @just _build crkbd:edeneast crkbd_rev1_legacy_edeneast.hex crkbd
 
 _build make_cmd source target: init
     #!/usr/bin/env bash
@@ -39,9 +39,9 @@ _build make_cmd source target: init
 flash keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:eden:dfu"
+        cmd="crkbd:edeneast:dfu"
     elif [ "{{keyboard}}" = "dact" ]; then
-        cmd="handwired/dactyl_manuform/5x6:eden:avrdude"
+        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
     fi
@@ -53,9 +53,9 @@ flash keyboard:
 left keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:eden:dfu-split-left"
+        cmd="crkbd:edeneast:dfu-split-left"
     elif [ "{{keyboard}}" = "dact" ]; then
-        cmd="handwired/dactyl_manuform/5x6:eden:avrdude-split-left"
+        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-left"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
         exit
@@ -68,9 +68,9 @@ left keyboard:
 right keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:eden:dfu-split-right"
+        cmd="crkbd:edeneast:dfu-split-right"
     elif [ "{{keyboard}}" = "dact" ]; then
-        cmd="handwired/dactyl_manuform/5x6:eden:avrdude-split-right"
+        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-right"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
         exit

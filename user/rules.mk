@@ -1,4 +1,4 @@
-src += eden.c \
+src += edeneast.c \
 	   process_records.c
 
 # Common flags

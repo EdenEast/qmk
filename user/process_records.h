@@ -1,5 +1,5 @@
 #pragma once
-#include "eden.h"
+#include "edeneast.h"
 
 // Layer keys
 #define NAV_SPC LT(_NAV,   KC_SPC)

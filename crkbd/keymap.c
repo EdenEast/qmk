@@ -1,4 +1,4 @@
-#include "eden.h"
+#include "edeneast.h"
 #include QMK_KEYBOARD_H
 
 
