@@ -36,6 +36,20 @@ _build make_cmd source target: init
         $POST_BUILD
     fi
 
+flash keyboard:
+    #!/usr/bin/env bash
+    if [ "{{keyboard}}" = "crkbd" ]; then
+        cmd="crkbd:eden:dfu"
+    elif [ "{{keyboard}}" = "dact" ]; then
+        cmd="handwired/dactyl_manuform/5x6:eden:avrdude"
+    else
+        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
+    fi
+    (
+        cd external/qmk_firmware
+        make $cmd
+    )
+
 left keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
