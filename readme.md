@@ -35,6 +35,13 @@ just
 [qmk_firmware]: https://github.com/qmk/qmk_firmware
 [Just]: https://github.com/casey/just
 
+## Trouble shooting flashing on linux
+
+If having issues with the bootloader being recongnized check issue with [udev]. Also to view list of
+usb devices run `lsusb`.
+
+[udev]: https://beta.docs.qmk.fm/faqs/faq_build#linux-udev-rules-id-linux-udev-rules
+
 ## Resources and References
 
 - [Miryoku]

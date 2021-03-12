@@ -36,6 +36,36 @@ _build make_cmd source target: init
         $POST_BUILD
     fi
 
+left keyboard:
+    #!/usr/bin/env bash
+    if [ "{{keyboard}}" = "crkbd" ]; then
+        cmd="crkbd:eden:dfu-split-left"
+    elif [ "{{keyboard}}" = "dact" ]; then
+        cmd="handwired/dactyl_manuform/5x6:eden:avrdude-split-left"
+    else
+        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
+        exit
+    fi
+    (
+        cd external/qmk_firmware
+        make $cmd
+    )
+
+right keyboard:
+    #!/usr/bin/env bash
+    if [ "{{keyboard}}" = "crkbd" ]; then
+        cmd="crkbd:eden:dfu-split-right"
+    elif [ "{{keyboard}}" = "dact" ]; then
+        cmd="handwired/dactyl_manuform/5x6:eden:avrdude-split-right"
+    else
+        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
+        exit
+    fi
+    (
+        cd external/qmk_firmware
+        make $cmd
+    )
+
 init:
     #!/usr/bin/env bash
     git submodule update --init --recursive
