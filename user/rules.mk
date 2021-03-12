@@ -1,5 +1,5 @@
-src += edeneast.c \
-	   process_records.c
+SRC += edeneast.c \
+       process_records.c
 
 # Common flags
 LTO_ENABLE      = yes # Optimize at link time for resulting smaller files
