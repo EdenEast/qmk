@@ -1,5 +1,13 @@
 #pragma once
 
+enum userspace_custom_keycodes {
+    VRSN = SAFE_RANGE,  // Prints QMK Firmware and board info
+    KC_COLEMAK,         // Sets default layer to COLEMAK
+    KC_WORKMAN,         // Sets default layer to WORKMAN
+    KC_QWERTY,          // Sets default layer to QWERTY
+    NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
+};
+
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
@@ -10,9 +18,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define NUM_BSP LT(_NUM,   KC_BSPC)
 #define SYM_DEL LT(_SYM,    KC_DEL)
 
-#define CLMK_TO TO(_COLEMAK_DH)
-#define WORK_TO TO(_WORKMAN)
-#define QRTY_TO TO(_QWERTY)
+#define COLEMAK KC_COLEMAK
+#define WORKMAN KC_WORKMAN
+#define QWERTY  KC_QWERTY
+
 #define GAME_TG TG(_GAME)
 
 // Lock layer useful when eating and trying to navigate with one hand
