@@ -74,6 +74,9 @@ void render_default_layer_state(void) {
         case _QWERTY:
             oled_write_P(PSTR(" QRTY"), false);
             break;
+        case _GAME:
+            oled_write_P(PSTR(" GAME"), false);
+            break;
     }
 }
 
@@ -97,9 +100,6 @@ void render_layer_state(void) {
             break;
         case _MOUSE:
             oled_write_ln_P(PSTR("Mouse"), false);
-            break;
-        case _GAME:
-            oled_write_ln_P(PSTR(" Game"), false);
             break;
         default:
             oled_write_ln_P(PSTR(" Base"), false);

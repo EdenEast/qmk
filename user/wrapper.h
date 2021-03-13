@@ -40,11 +40,20 @@
 #define ________________QWERTY_R3______________________ KC_N   ,KC_M   ,_______,_______,_______,_______
 
 
+#define ________________GAME_L1________________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
+#define ________________GAME_L2________________________ KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
+#define ________________GAME_L3________________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
+
+#define ________________GAME_R1________________________ KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P
+#define ________________GAME_R2________________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,COLEMAK
+#define ________________GAME_R3________________________ KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT,KC_SLSH
+
+
 #define ________________NUM_L1_________________________ _______,KC_LBRC,KC_7   ,KC_8   ,KC_9   ,KC_RBRC
 #define ________________NUM_L2_________________________ _______,KC_SCLN,KC_4   ,KC_5   ,KC_6   ,KC_EQL
 #define ________________NUM_L3_________________________ _______,KC_GRV ,KC_1   ,KC_2   ,KC_3   ,KC_BSLS
 
-#define ________________NUM_R1_________________________ _______,_______,COLEMAK,WORKMAN,QWERTY ,RESET
+#define ________________NUM_R1_________________________ _______,COLEMAK,WORKMAN,QWERTY ,GAME   ,RESET
 #define ________________NUM_R2_________________________ _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______
 #define ________________NUM_R3_________________________ _______,DF_NUM ,_______,_______,_______,_______
 
@@ -53,7 +62,7 @@
 #define ________________SYM_L2_________________________ _______,KC_COLN,KC_DLR ,KC_PERC,KC_CIRC,KC_PLUS
 #define ________________SYM_L3_________________________ _______,KC_TILD,KC_EXLM,KC_AT  ,KC_HASH,KC_PIPE
 
-#define ________________SYM_R1_________________________ _______,_______,COLEMAK,WORKMAN,QWERTY ,RESET
+#define ________________SYM_R1_________________________ _______,COLEMAK,WORKMAN,QWERTY ,GAME   ,RESET
 #define ________________SYM_R2_________________________ _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______
 #define ________________SYM_R3_________________________ _______,DF_SYM ,_______,_______,_______,_______
 
@@ -62,12 +71,12 @@
 #define ________________FN_L2__________________________ _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,KC_PSCR
 #define ________________FN_L3__________________________ KC_PWR ,KC_F10 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_PAUS
 
-#define ________________FN_R1__________________________ _______,_______,COLEMAK,WORKMAN,QWERTY ,RESET
+#define ________________FN_R1__________________________ _______,COLEMAK,WORKMAN,QWERTY ,GAME   ,RESET
 #define ________________FN_R2__________________________ _______,KC_LCTL,KC_LSFT,KC_LALT,KC_LGUI,_______
 #define ________________FN_R3__________________________ _______,DF_FN  ,_______,_______,_______,_______
 
 
-#define ________________NAV_L1_________________________ RESET  ,QWERTY ,WORKMAN,COLEMAK,_______,_______
+#define ________________NAV_L1_________________________ RESET  ,GAME   ,QWERTY ,WORKMAN,COLEMAK,_______
 #define ________________NAV_L2_________________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
 #define ________________NAV_L3_________________________ _______,_______,_______,_______,DF_NAV ,_______
 
@@ -76,7 +85,7 @@
 #define ________________NAV_R3_________________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,KC_INS ,_______
 
 
-#define ________________MDA_L1_________________________ RESET  ,QWERTY ,WORKMAN,COLEMAK,_______,_______
+#define ________________MDA_L1_________________________ RESET  ,GAME   ,QWERTY ,WORKMAN,COLEMAK,_______
 #define ________________MDA_L2_________________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
 #define ________________MDA_L3_________________________ _______,_______,_______,_______,DF_MDIA,_______
 
@@ -85,7 +94,7 @@
 #define ________________MDA_R3_________________________ TG_MIC ,_______,_______,_______,_______,_______
 
 
-#define ________________MOS_L1_________________________ RESET  ,QWERTY ,WORKMAN,COLEMAK,_______,_______
+#define ________________MOS_L1_________________________ RESET  ,GAME   ,QWERTY ,WORKMAN,COLEMAK,_______
 #define ________________MOS_L2_________________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
 #define ________________MOS_L3_________________________ _______,_______,_______,_______,DF_MOUS,_______
 
@@ -101,6 +110,16 @@
 #define TB_CMRL FN_ENTR
 #define TB_CMRC NUM_BSP
 #define TB_CMRR SYM_DEL
+
+
+// TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
+#define TB_GMLL KC_M
+#define TB_GMLC KC_SPC
+#define TB_GMLR KC_I
+
+#define TB_GMRL KC_ENT
+#define TB_GMRC KC_BSPC
+#define TB_GMRR KC_DEL
 
 
 #define TB_NMLL KC_DOT

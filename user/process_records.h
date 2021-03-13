@@ -5,6 +5,7 @@ enum userspace_custom_keycodes {
     KC_COLEMAK,         // Sets default layer to COLEMAK
     KC_WORKMAN,         // Sets default layer to WORKMAN
     KC_QWERTY,          // Sets default layer to QWERTY
+    KC_GAME,            // Sets default layer to GAME
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
 };
 
@@ -16,13 +17,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define MOU_TAB LT(_MOUSE, KC_TAB)
 #define FN_ENTR LT(_FN,    KC_ENT)
 #define NUM_BSP LT(_NUM,   KC_BSPC)
-#define SYM_DEL LT(_SYM,    KC_DEL)
+#define SYM_DEL LT(_SYM,   KC_DEL)
 
 #define COLEMAK KC_COLEMAK
 #define WORKMAN KC_WORKMAN
 #define QWERTY  KC_QWERTY
-
-#define GAME_TG TG(_GAME)
+#define GAME    KC_GAME
 
 // Lock layer useful when eating and trying to navigate with one hand
 #define DF_BASE DF(_COLEMAK_DH)

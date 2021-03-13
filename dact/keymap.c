@@ -13,29 +13,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     TB_CMLL,TB_CMLC,                        TB_CMRC,TB_CMRR,                                 \
                                             OS_LSFT,TB_CMLR,        TB_CMRL,OS_RSFT,                                         \
-                                            GAME_TG,_______,        _______,_______                                          \
+                                            _______,_______,        _______,_______                                          \
 ),
 
 [_WORKMAN] = LAYOUT_5x6_WRAPPER(
-    ________________BLANK__________________________,                        ________________BLANK__________________________, \
+    _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
     ________________WORKMAN_L1_____________________,                        ________________WORKMAN_R1_____________________, \
     ________________WORKMAN_L2_____________________,                        ________________WORKMAN_R2_____________________, \
     ________________WORKMAN_L3_____________________,                        ________________WORKMAN_R3_____________________, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     TB_CMLL,TB_CMLC,                        TB_CMRC,TB_CMRR,                                 \
                                             OS_LSFT,TB_CMLR,        TB_CMRL,OS_RSFT,                                         \
-                                            GAME_TG,_______,        _______,_______                                          \
+                                            _______,_______,        _______,_______                                          \
 ),
 
 [_QWERTY] = LAYOUT_5x6_WRAPPER(
-    ________________BLANK__________________________,                        ________________BLANK__________________________, \
+    _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
     ________________QWERTY_L1______________________,                        ________________QWERTY_R1______________________, \
     ________________QWERTY_L2______________________,                        ________________QWERTY_R2______________________, \
     ________________QWERTY_L3______________________,                        ________________QWERTY_R3______________________, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     TB_CMLL,TB_CMLC,                        TB_CMRC,TB_CMRR,                                 \
                                             OS_LSFT,TB_CMLR,        TB_CMRL,OS_RSFT,                                         \
-                                            GAME_TG,_______,        _______,_______                                          \
+                                            _______,_______,        _______,_______                                          \
+),
+
+[_GAME] = LAYOUT_5x6_WRAPPER(
+    KC_F1  ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
+    ________________GAME_L1________________________,                        ________________GAME_R1________________________, \
+    ________________GAME_L2________________________,                        ________________GAME_R2________________________, \
+    ________________GAME_L3________________________,                        ________________GAME_R3________________________, \
+                    KC_T   ,KC_G   ,                                                        _______,_______,                 \
+                                    TB_GMLL,TB_GMLC,                        TB_GMRC,TB_GMRR,                                 \
+                                            KC_WH_U,TB_GMLR,        TB_GMRL,OS_RSFT,                                         \
+                                            KC_WH_D,_______,        _______,_______                                          \
 ),
 
 [_NUM] = LAYOUT_5x6_WRAPPER(
@@ -66,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ________________FN_L2__________________________,                        ________________FN_R2__________________________, \
     ________________FN_L3__________________________,                        ________________FN_R3__________________________, \
                     COLEMAK,WORKMAN,                                                        QWERTY ,_______,                 \
-                                    TB_FNLL ,TB_FNLC,                        TB_FNRC,TB_FNRR,                                 \
+                                   TB_FNLL ,TB_FNLC,                        TB_FNRC,TB_FNRR,                                 \
                                             _______,TB_FNLR,        TB_FNRL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
@@ -102,17 +113,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     TB_MOLL,TB_MOLC,                        TB_MORC,TB_MORR,                                 \
                                             _______,TB_MOLR,        TB_MORL,_______,                                         \
                                             _______,_______,        _______,_______                                          \
-),
-
-[_GAME] = LAYOUT_5x6_WRAPPER(
-    KC_ESC ,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5   ,                        KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______, \
-    KC_F1  ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,                        KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   , \
-    KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F   ,                        KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,KC_SCLN, \
-    KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,                        KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT ,_______, \
-                    KC_T   ,KC_G   ,                                                        _______,_______,                 \
-                                    KC_WH_U,KC_SPC ,                        KC_BSPC,KC_DEL ,                                 \
-                                            KC_WH_D,KC_I   ,        KC_ENT ,_______,                                         \
-                                            GAME_TG,KC_M   ,        _______,_______                                          \
 ),
 };
 
