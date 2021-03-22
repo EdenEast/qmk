@@ -24,20 +24,20 @@
 
 #define ________________WORKMAN_L1_____________________ _______,KC_Q   ,KC_D   ,KC_R   ,KC_W   ,KC_B
 #define ________________WORKMAN_L2_____________________ _______,HOME_WA,HOME_WS,HOME_WH,HOME_WT,KC_G
-#define ________________WORKMAN_L3_____________________ _______,KC_Z   ,KC_X   ,KC_M   ,KC_C   ,KC_V
+#define ________________WORKMAN_L3_____________________ OS_LSFT,KC_Z   ,KC_X   ,KC_M   ,KC_C   ,KC_V
 
 #define ________________WORKMAN_R1_____________________ KC_J   ,KC_F   ,KC_U   ,KC_P   ,KC_SCLN,_______
-#define ________________WORKMAN_R2_____________________ KC_Y   ,HOME_WN,HOME_WE,HOME_WO,HOME_WI,_______
-#define ________________WORKMAN_R3_____________________ KC_K   ,KC_L   ,_______,_______,_______,_______
+#define ________________WORKMAN_R2_____________________ KC_Y   ,HOME_WN,HOME_WE,HOME_WO,HOME_WI,KC_QUOT
+#define ________________WORKMAN_R3_____________________ KC_K   ,KC_L   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
 
 
 #define ________________QWERTY_L1______________________ _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
 #define ________________QWERTY_L2______________________ _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G
-#define ________________QWERTY_L3______________________ _______,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B
+#define ________________QWERTY_L3______________________ OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B
 
 #define ________________QWERTY_R1______________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______
-#define ________________QWERTY_R2______________________ KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,_______
-#define ________________QWERTY_R3______________________ KC_N   ,KC_M   ,_______,_______,_______,_______
+#define ________________QWERTY_R2______________________ KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,KC_QUOT
+#define ________________QWERTY_R3______________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
 
 
 #define ________________GAME_L1________________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R

@@ -35,6 +35,67 @@ just
 [qmk_firmware]: https://github.com/qmk/qmk_firmware
 [Just]: https://github.com/casey/just
 
+## 40% Layout
+
+This is a layout made to be keyboard agnostic as I use multiple keyboards. The base layout is
+designed for a split ortho / column staggered 3x6 with 3 thumb buttons.
+
+### Features
+
+- Can be used on almost any split or non-split ergo or ortho keyboard.
+- Dual-function modifiers on home row, mirrored on both hands. ([home row mods][homerowmod])
+  - Left hand: Meta, Alt, Shift, Ctrl
+  - Right hand: Ctrl, Shift, Alt, Meta
+
+[homerowmod]: https://precondition.github.io/home-row-mods
+
+### Base layout layers
+
+This keymap has 3 main keyboard layers built in ([Colemak-DH], [Workman], Qwerty). The default
+layout is Colemak-DH. There is also a base gaming layer.
+
+[Workman]: https://workmanlayout.org/
+
+#### Colemak-DH
+
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
+|      |   Q  |   W  |   F  |   P  |   B  |      |   J  |   L  |   U  |   Y  |  ;:  |      |
+|      |   A  |   R  |   S  |   T  |   G  |      |   M  |   N  |   E  |   I  |   O  |   '  |
+| Shft |   Z  |   X  |   C  |   D  |   V  |      |   K  |   H  |  ,<  |  .>  |  /?  | Shft |
+|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
+
+#### Qwerty
+
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
+|      |   Q  |   W  |   E  |   R  |   T  |      |   Y  |   U  |   I  |   O  |   P  |      |
+|      |   A  |   S  |   D  |   F  |   G  |      |   H  |   J  |   K  |   L  |  ;:  |   '  |
+| Shft |   Z  |   X  |   C  |   V  |   B  |      |   N  |   M  |  ,<  |  .>  |  /?  | Shft |
+|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
+
+#### Workman
+
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
+|      |   Q  |   D  |   R  |   W  |   B  |      |   J  |   F  |   U  |   P  |  ;:  |      |
+|      |   A  |   S  |   H  |   T  |   G  |      |   Y  |   N  |   E  |   O  |   I  |   '  |
+| Shft |   Z  |   X  |   M  |   C  |   V  |      |   K  |   L  |  ,<  |  .>  |  /?  | Shft |
+|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
+
+
+### Hold
+
+With all the layers above if you hold a key down this will be the result.
+
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+|      |LMeta | LAlt |LShift|LCtrl |      |      |      |RCtrl |RShift| LAlt |LMeta |      |
+|      |      |      |      |      |      |      |      |      |      |      |      |      |
+|      |      |      |Media | Nav  |Mouse |      |  FN  | Num  | Sym  |      |      |      |
+
+
 ## Trouble shooting flashing on linux
 
 If having issues with the bootloader being recongnized check issue with [udev]. Also to view list of
