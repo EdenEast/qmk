@@ -45,8 +45,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ________________GAME_L3________________________,                        ________________GAME_R3________________________, \
                     KC_T   ,KC_G   ,                                                        _______,_______,                 \
                                     TB_GMLL,TB_GMLC,                        TB_GMRC,TB_GMRR,                                 \
-                                            KC_WH_U,TB_GMLR,        TB_GMRL,OS_RSFT,                                         \
-                                            KC_WH_D,_______,        _______,_______                                          \
+                                            _______,TB_GMLR,        TB_GMRL,OS_RSFT,                                         \
+                                            KC_PAUS,KC_F2  ,        _______,_______                                          \
 ),
 
 [_NUM] = LAYOUT_5x6_WRAPPER(
