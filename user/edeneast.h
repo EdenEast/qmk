@@ -3,6 +3,9 @@
 
 #include "wrapper.h"
 #include "process_records.h"
+#ifdef TAP_DANCE_ENABLE
+#    include "tap_dances.h"
+#endif  // TAP_DANCE_ENABLE
 
 // Define layer names
 enum layer_names {
