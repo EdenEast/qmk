@@ -103,13 +103,13 @@
 #define ________________MOS_R3_________________________ KC_WH_L,KC_WH_D,KC_WH_U,KC_WH_R,_______,_______
 
 
-#define TB_CMLL MDA_ESC
-#define TB_CMLC NAV_SPC
+#define TB_CMLL MDA_DEL
+#define TB_CMLC NAV_BSP
 #define TB_CMLR MOU_TAB
 
 #define TB_CMRL FN_ENTR
-#define TB_CMRC NUM_BSP
-#define TB_CMRR SYM_DEL
+#define TB_CMRC NUM_SPC
+#define TB_CMRR SYM_ESC
 
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
@@ -140,8 +140,8 @@
 #define TB_SYRR DF_BASE
 
 
-#define TB_FNLL KC_ESC
-#define TB_FNLC KC_SPC
+#define TB_FNLL KC_DEL
+#define TB_FNLC KC_BSPC
 #define TB_FNLR KC_TAB
 
 #define TB_FNRL DF_BASE
@@ -154,8 +154,8 @@
 #define TB_NVLR _______
 
 #define TB_NVRL KC_ENT
-#define TB_NVRC KC_BSPC
-#define TB_NVRR KC_DEL
+#define TB_NVRC KC_SPC
+#define TB_NVRR KC_ESC
 
 
 #define TB_MDLL DF_BASE

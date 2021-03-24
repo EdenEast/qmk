@@ -14,11 +14,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM + 100;
 
         // Using the thumb keys to swich layers is the core to thes layout. Making it faster to switch layers
-        case NAV_SPC:
+        case NUM_SPC:
         case MOU_TAB:
-        case MDA_ESC:
-        case NUM_BSP:
-        case SYM_DEL:
+        case SYM_ESC:
+        case NAV_BSP:
+        case MDA_DEL:
         case FN_ENTR:
             return TAPPING_TERM - 30;
 

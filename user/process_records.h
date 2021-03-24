@@ -12,12 +12,12 @@ enum userspace_custom_keycodes {
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
-#define NAV_SPC LT(_NAV,   KC_SPC)
-#define MDA_ESC LT(_MEDIA, KC_ESC)
+#define NUM_SPC LT(_NUM,   KC_SPC)
+#define SYM_ESC LT(_SYM, KC_ESC)
 #define MOU_TAB LT(_MOUSE, KC_TAB)
 #define FN_ENTR LT(_FN,    KC_ENT)
-#define NUM_BSP LT(_NUM,   KC_BSPC)
-#define SYM_DEL LT(_SYM,   KC_DEL)
+#define NAV_BSP LT(_NAV,   KC_BSPC)
+#define MDA_DEL LT(_MEDIA,   KC_DEL)
 
 #define COLEMAK KC_COLEMAK
 #define WORKMAN KC_WORKMAN
