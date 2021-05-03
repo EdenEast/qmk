@@ -9,12 +9,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________COLEMAK_DH_L3__________________,                        ________________COLEMAK_DH_R3__________________,
                                         TB_CMLL,TB_CMLC,TB_CMLR,        TB_CMRL,TB_CMRC,TB_CMRR
     ),
-    [_WORKMAN] = LAYOUT_split_3x6_3_WRAPPER (
-        ________________WORKMAN_L1_____________________,                        ________________WORKMAN_R1_____________________,
-        ________________WORKMAN_L2_____________________,                        ________________WORKMAN_R2_____________________,
-        ________________WORKMAN_L3_____________________,                        ________________WORKMAN_R3_____________________,
-                                        TB_CMLL,TB_CMLC,TB_CMLR,        TB_CMRL,TB_CMRC,TB_CMRR
-    ),
     [_QWERTY] = LAYOUT_split_3x6_3_WRAPPER (
         ________________QWERTY_L1______________________,                        ________________QWERTY_R1______________________,
         ________________QWERTY_L2______________________,                        ________________QWERTY_R2______________________,

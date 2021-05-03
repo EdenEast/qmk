@@ -4,8 +4,7 @@
 // Dance to determine what base layout to use
 // 1 - Colemak
 // 2 - Qwerty
-// 3 - Workman
-// 4 - Game
+// 3 - Game
 void dance_base_layer(qk_tap_dance_state_t *state, void *user_data) {
     switch (state->count) {
         case 1: // Colemak
@@ -14,10 +13,7 @@ void dance_base_layer(qk_tap_dance_state_t *state, void *user_data) {
         case 2: // Qwerty
             set_single_persistent_default_layer(_QWERTY);
             break;
-        case 3: // Workman
-            set_single_persistent_default_layer(_WORKMAN);
-            break;
-        case 4: // Game
+        case 3: // Game
             set_single_persistent_default_layer(_GAME);
             break;
     }

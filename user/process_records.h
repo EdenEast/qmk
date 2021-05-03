@@ -3,7 +3,6 @@
 enum userspace_custom_keycodes {
     VRSN = SAFE_RANGE,  // Prints QMK Firmware and board info
     KC_COLEMAK,         // Sets default layer to COLEMAK
-    KC_WORKMAN,         // Sets default layer to WORKMAN
     KC_QWERTY,          // Sets default layer to QWERTY
     KC_GAME,            // Sets default layer to GAME
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
@@ -20,7 +19,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define MDA_DEL LT(_MEDIA,   KC_DEL)
 
 #define COLEMAK KC_COLEMAK
-#define WORKMAN KC_WORKMAN
 #define QWERTY  KC_QWERTY
 #define GAME    KC_GAME
 
@@ -40,12 +38,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define HOME_CS LSFT_T(KC_S)
 #define HOME_CT LCTL_T(KC_T)
 
-// Workman
-#define HOME_WA LGUI_T(KC_A)
-#define HOME_WS LALT_T(KC_S)
-#define HOME_WH LSFT_T(KC_H)
-#define HOME_WT LCTL_T(KC_T)
-
 // Qwerty
 #define HOME_QA LGUI_T(KC_A)
 #define HOME_QS LALT_T(KC_S)
@@ -58,12 +50,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define HOME_CI LALT_T(KC_I)
 #define HOME_CE RSFT_T(KC_E)
 #define HOME_CN RCTL_T(KC_N)
-
-// Workman
-#define HOME_WI LGUI_T(KC_I)
-#define HOME_WO LALT_T(KC_O)
-#define HOME_WE LSFT_T(KC_E)
-#define HOME_WN LCTL_T(KC_N)
 
 // Qwerty
 #define HOME_QC RGUI_T(KC_SCLN)

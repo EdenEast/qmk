@@ -22,15 +22,6 @@
 #define ________________COLEMAK_DH_R3__________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
 
 
-#define ________________WORKMAN_L1_____________________ _______,KC_Q   ,KC_D   ,KC_R   ,KC_W   ,KC_B
-#define ________________WORKMAN_L2_____________________ _______,HOME_WA,HOME_WS,HOME_WH,HOME_WT,KC_G
-#define ________________WORKMAN_L3_____________________ OS_LSFT,KC_Z   ,KC_X   ,KC_M   ,KC_C   ,KC_V
-
-#define ________________WORKMAN_R1_____________________ KC_J   ,KC_F   ,KC_U   ,KC_P   ,KC_SCLN,_______
-#define ________________WORKMAN_R2_____________________ KC_Y   ,HOME_WN,HOME_WE,HOME_WO,HOME_WI,KC_QUOT
-#define ________________WORKMAN_R3_____________________ KC_K   ,KC_L   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
-
-
 #define ________________QWERTY_L1______________________ _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
 #define ________________QWERTY_L2______________________ _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G
 #define ________________QWERTY_L3______________________ OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B

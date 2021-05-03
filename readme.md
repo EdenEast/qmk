@@ -51,10 +51,8 @@ designed for a split ortho / column staggered 3x6 with 3 thumb buttons.
 
 ### Base layout layers
 
-This keymap has 3 main keyboard layers built in ([Colemak-DH], [Workman], Qwerty). The default
+This keymap has 3 main keyboard layers built in ([Colemak-DH],  Qwerty). The default
 layout is Colemak-DH. There is also a base gaming layer.
-
-[Workman]: https://workmanlayout.org/
 
 #### Colemak-DH
 
@@ -73,16 +71,6 @@ layout is Colemak-DH. There is also a base gaming layer.
 |      |   A  |   S  |   D  |   F  |   G  |      |   H  |   J  |   K  |   L  |  ;:  |   '  |
 | Shft |   Z  |   X  |   C  |   V  |   B  |      |   N  |   M  |  ,<  |  .>  |  /?  | Shft |
 |      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
-
-#### Workman
-
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
-|      |   Q  |   D  |   R  |   W  |   B  |      |   J  |   F  |   U  |   P  |  ;:  |      |
-|      |   A  |   S  |   H  |   T  |   G  |      |   Y  |   N  |   E  |   O  |   I  |   '  |
-| Shft |   Z  |   X  |   M  |   C  |   V  |      |   K  |   L  |  ,<  |  .>  |  /?  | Shft |
-|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
-
 
 ### Hold
 
