@@ -108,3 +108,4 @@ usb devices run `lsusb`.
 - [Miryoku]
 - [Precondition](https://github.com/precondition/dactyl-manuform-keymap/)
 - [Rsta](https://github.com/rstacruz/my_qmk_keymaps)
+- [curry](./external/qmk_firmware/users/curry/README.md)
