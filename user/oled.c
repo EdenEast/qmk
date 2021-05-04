@@ -80,23 +80,14 @@ void render_default_layer_state(void) {
 void render_layer_state(void) {
     oled_write_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case _NUM:
-            oled_write_ln_P(PSTR(" Numb"), false);
+        case _RAISE:
+            oled_write_ln_P(PSTR("Raise"), false);
             break;
-        case _SYM:
-            oled_write_ln_P(PSTR(" Symb"), false);
+        case _LOWER:
+            oled_write_ln_P(PSTR("Lower"), false);
             break;
         case _FN:
             oled_write_ln_P(PSTR(" Func"), false);
-            break;
-        case _NAV:
-            oled_write_ln_P(PSTR(" Navi"), false);
-            break;
-        case _MEDIA:
-            oled_write_ln_P(PSTR("Media"), false);
-            break;
-        case _MOUSE:
-            oled_write_ln_P(PSTR("Mouse"), false);
             break;
         default:
             oled_write_ln_P(PSTR(" Base"), false);

@@ -12,12 +12,9 @@ enum layer_names {
     _COLEMAK_DH = 0,
     _QWERTY,
     _GAME,
-    _NUM,
-    _SYM,
-    _NAV,
+    _RAISE,
+    _LOWER,
     _FN,
-    _MEDIA,
-    _MOUSE,
 };
 
 // Initialize variables that hold the binary representation

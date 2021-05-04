@@ -11,25 +11,22 @@ enum userspace_custom_keycodes {
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
-#define NUM_SPC LT(_NUM,   KC_SPC)
-#define SYM_ESC LT(_SYM, KC_ESC)
-#define MOU_TAB LT(_MOUSE, KC_TAB)
-#define FN_ENTR LT(_FN,    KC_ENT)
-#define NAV_BSP LT(_NAV,   KC_BSPC)
-#define MDA_DEL LT(_MEDIA,   KC_DEL)
+#define RA_SPC LT(_RAISE, KC_SPC)
+#define FN_ESC LT(_FN,    KC_ESC)
+#define LO_ENT LT(_LOWER, KC_ENT)
+#define RA_TAB LT(_RAISE, KC_TAB)
+#define FN_DEL LT(_FN,    KC_DEL)
+#define LO_BSP LT(_LOWER, KC_BSPC)
 
 #define COLEMAK KC_COLEMAK
 #define QWERTY  KC_QWERTY
 #define GAME    KC_GAME
 
 // Lock layer useful when eating and trying to navigate with one hand
-#define DF_BASE DF(_COLEMAK_DH)
-#define DF_NUM  DF(_NUM)
-#define DF_SYM  DF(_SYM)
-#define DF_NAV  DF(_NAV)
-#define DF_FN   DF(_FN)
-#define DF_MDIA DF(_MEDIA)
-#define DF_MOUS DF(_MOUSE)
+#define DF_BS DF(_COLEMAK_DH)
+#define DF_RA DF(_RAISE)
+#define DF_LO DF(_LOWER)
+#define DF_FN DF(_FN)
 
 // Left-hand home row mod
 // Colemak-DH
