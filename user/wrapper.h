@@ -15,20 +15,20 @@
 #define ______________NUMBER_LEFT______________         KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
 #define ______________NUMBER_RIGHT_____________         KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
 
-#define ________________COLEMAK_DH_L1__________________ _______,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
-#define ________________COLEMAK_DH_L2__________________ _______,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G
+#define ________________COLEMAK_DH_L1__________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
+#define ________________COLEMAK_DH_L2__________________ KC_ESC ,HOME_CA,HOME_CR,HOME_CS,HOME_CT,KC_G
 #define ________________COLEMAK_DH_L3__________________ OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V
 
-#define ________________COLEMAK_DH_R1__________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,_______
+#define ________________COLEMAK_DH_R1__________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
 #define ________________COLEMAK_DH_R2__________________ KC_M   ,HOME_CN,HOME_CE,HOME_CI,HOME_CO,KC_QUOT
 #define ________________COLEMAK_DH_R3__________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
 
 
-#define __________________QWERTY_L1____________________ _______,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
-#define __________________QWERTY_L2____________________ _______,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G
+#define __________________QWERTY_L1____________________ KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
+#define __________________QWERTY_L2____________________ KC_ESC ,HOME_QA,HOME_QS,HOME_QD,HOME_QF,KC_G
 #define __________________QWERTY_L3____________________ OS_LSFT,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B
 
-#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,_______
+#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_DEL
 #define __________________QWERTY_R2____________________ KC_H   ,HOME_QJ,HOME_QK,HOME_QL,HOME_QC,KC_QUOT
 #define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH,OS_RSFT
 
