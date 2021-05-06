@@ -1,6 +1,8 @@
 # Eden's Keyboard Firmware
 
-![reference](./resources/ednkbd.png)
+<p align="center">
+  <img src="./resources/ednkbd.png" alt="ednkbd reference">
+</p>
 
 This repository contains my personal keymap for my [Dactyl Manuform][dactman-repo] and [Corne] keyboard.
 
