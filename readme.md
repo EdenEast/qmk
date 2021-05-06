@@ -1,5 +1,7 @@
 # Eden's Keyboard Firmware
 
+![reference](./resources/ednkbd.png)
+
 This repository contains my personal keymap for my [Dactyl Manuform][dactman-repo] and [Corne] keyboard.
 
 This keymap uses [Colemak-DH] for its alpha base with the ability to swap to Qwerty when needed.

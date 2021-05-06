@@ -52,11 +52,11 @@
 
 
 #define ___________________LOWER_L1____________________ _______,KC_1   , KC_2  , KC_3  , KC_4  , KC_5
-#define ___________________LOWER_L2____________________ _______,KC_DLR ,KC_PLUS,KC_LPRN,KC_RPRN,KC_AT
+#define ___________________LOWER_L2____________________ KC_BSLS,KC_DLR ,KC_PLUS,KC_LPRN,KC_RPRN,KC_AT
 #define ___________________LOWER_L3____________________ TG_LOWR,KC_EXLM,KC_HASH,KC_LCBR,KC_RCBR,KC_TILD
 
 #define ___________________LOWER_R1____________________ KC_6   , KC_7  , KC_8  , KC_9  , KC_0  ,_______
-#define ___________________LOWER_R2____________________ KC_PIPE,KC_MINS,KC_EQL ,KC_UNDS,KC_ASTR,_______
+#define ___________________LOWER_R2____________________ KC_PIPE,KC_MINS,KC_EQL ,KC_UNDS,KC_ASTR,KC_GRV
 #define ___________________LOWER_R3____________________ KC_AMPR,KC_LBRC,KC_RBRC,KC_PERC,KC_CIRC,_______
 
 
@@ -97,13 +97,13 @@
 #define TB_RARR KC_ESC
 
 
-#define TB_LOLL KC_GRV
+#define TB_LOLL KC_DEL
 #define TB_LOLC KC_BSPC
 #define TB_LOLR KC_TAB
 
 #define TB_LORL KC_ENT
 #define TB_LORC KC_SPC
-#define TB_LORR KC_BSLS
+#define TB_LORR KC_ESC
 
 
 #define TB_FNLL KC_DEL
