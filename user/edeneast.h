@@ -16,7 +16,3 @@ enum layer_names {
     _LOWER,
     _FN,
 };
-
-// Initialize variables that hold the binary representation
-// of the active modifier state
-uint8_t mod_state;

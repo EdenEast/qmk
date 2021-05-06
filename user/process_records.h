@@ -5,6 +5,9 @@ enum userspace_custom_keycodes {
     KC_COLEMAK,         // Sets default layer to COLEMAK
     KC_QWERTY,          // Sets default layer to QWERTY
     KC_GAME,            // Sets default layer to GAME
+    KC_RAISE,           // Sets locks the layer to raise
+    KC_LOWER,           // Sets locks the layer to lower
+    KC_FN,              // Sets locks the layer to fn
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
 };
 
@@ -23,10 +26,9 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define GAME    KC_GAME
 
 // Lock layer useful when eating and trying to navigate with one hand
-#define DF_BS DF(_COLEMAK_DH)
-#define DF_RA DF(_RAISE)
-#define DF_LO DF(_LOWER)
-#define DF_FN DF(_FN)
+#define TG_RASE KC_RAISE
+#define TG_LOWR KC_LOWER
+#define TG_FUNC KC_FN
 
 // Left-hand home row mod
 // Colemak-DH

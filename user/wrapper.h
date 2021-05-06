@@ -48,25 +48,25 @@
 
 #define ___________________RAISE_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11
 #define ___________________RAISE_R2____________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_CAPS,KC_PAUS
-#define ___________________RAISE_R3____________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,KC_INS ,DF_RA
+#define ___________________RAISE_R3____________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,KC_INS ,TG_RASE
 
 
 #define ___________________LOWER_L1____________________ _______,KC_1   , KC_2  , KC_3  , KC_4  , KC_5
 #define ___________________LOWER_L2____________________ _______,KC_DLR ,KC_PLUS,KC_LPRN,KC_RPRN,KC_AT
-#define ___________________LOWER_L3____________________ DF_LO  ,KC_EXLM,KC_HASH,KC_LCBR,KC_RCBR,KC_TILD
+#define ___________________LOWER_L3____________________ TG_LOWR,KC_EXLM,KC_HASH,KC_LCBR,KC_RCBR,KC_TILD
 
 #define ___________________LOWER_R1____________________ KC_6   , KC_7  , KC_8  , KC_9  , KC_0  ,_______
 #define ___________________LOWER_R2____________________ KC_PIPE,KC_MINS,KC_EQL ,KC_UNDS,KC_ASTR,_______
 #define ___________________LOWER_R3____________________ KC_AMPR,KC_LBRC,KC_RBRC,KC_PERC,KC_CIRC,_______
 
 
-#define ____________________FN_L1______________________ KC_PWR ,KC_SLEP,_______,KC_BRIU,KC_BRID,RESET
+#define ____________________FN_L1______________________ KC_PWR ,KC_SLEP,DEBUG  ,KC_BRIU,KC_BRID,RESET
 #define ____________________FN_L2______________________ _______,_______,GAME   ,QWERTY ,COLEMAK,_______
-#define ____________________FN_L3______________________ DF_FN  ,UNDO   ,CUT    ,COPY   ,_______,PASTE
+#define ____________________FN_L3______________________ TG_FUNC,UNDO   ,CUT    ,COPY   ,_______,PASTE
 
-#define ____________________FN_R1______________________ RESET  ,KC_BRID,KC_BRIU,_______,KC_SLEP,KC_PWR
+#define ____________________FN_R1______________________ RESET  ,KC_BRID,KC_BRIU,DEBUG  ,KC_SLEP,KC_PWR
 #define ____________________FN_R2______________________ _______,COLEMAK,QWERTY ,GAME   ,_______,_______
-#define ____________________FN_R3______________________ _______,_______,_______,_______,_______,DF_FN
+#define ____________________FN_R3______________________ _______,_______,_______,_______,_______,TG_FUNC
 
 
 #define TB_CMLL FN_DEL
