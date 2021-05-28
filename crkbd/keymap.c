@@ -7,14 +7,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ________________COLEMAK_DH_L1__________________,                        ________________COLEMAK_DH_R1__________________,
         ________________COLEMAK_DH_L2__________________,                        ________________COLEMAK_DH_R2__________________,
         ________________COLEMAK_DH_L3__________________,                        ________________COLEMAK_DH_R3__________________,
-                                        TB_CMLL,TB_CMLC,TB_CMLR,        TB_CMRL,TB_CMRC,TB_CMRR
+                                        TB_LDF3,TB_LDF2,TB_LDF1,        TB_RDF1,TB_RDF2,TB_RDF3
     ),
 
     [_QWERTY] = LAYOUT_split_3x6_3_WRAPPER (
         __________________QWERTY_L1____________________,                        __________________QWERTY_R1____________________,
         __________________QWERTY_L2____________________,                        __________________QWERTY_R2____________________,
         __________________QWERTY_L3____________________,                        __________________QWERTY_R3____________________,
-                                        TB_CMLL,TB_CMLC,TB_CMLR,        TB_CMRL,TB_CMRC,TB_CMRR
+                                        TB_LDF3,TB_LDF2,TB_LDF1,        TB_RDF1,TB_RDF2,TB_RDF3
     ),
 
     [_GAME] = LAYOUT_split_3x6_3_WRAPPER (
@@ -24,26 +24,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         TB_GMLL,TB_GMLC,TB_GMLR,        TB_GMRL,TB_GMRC,TB_GMRR
     ),
 
-    [_RAISE] = LAYOUT_split_3x6_3_WRAPPER (
-        ___________________RAISE_L1____________________,                        ___________________RAISE_R1____________________,
-        ___________________RAISE_L2____________________,                        ___________________RAISE_R2____________________,
-        ___________________RAISE_L3____________________,                        ___________________RAISE_R3____________________,
-                                        TB_RALL,TB_RALC,TB_RALR,        TB_RARL,TB_RARC,TB_RARR
+    [_SYM] = LAYOUT_split_3x6_3_WRAPPER (
+        __________________SYMBOLS_L1___________________,                        __________________SYMBOLS_R1___________________,
+        __________________SYMBOLS_L2___________________,                        __________________SYMBOLS_R2___________________,
+        __________________SYMBOLS_L3___________________,                        __________________SYMBOLS_R3___________________,
+                                        TB_LSM3,TB_LSM2,TB_LSM1,        TB_RSM1,TB_RSM2,TB_RSM3
     ),
 
-    [_LOWER] = LAYOUT_split_3x6_3_WRAPPER (
-        ___________________LOWER_L1____________________,                        ___________________LOWER_R1____________________,
-        ___________________LOWER_L2____________________,                        ___________________LOWER_R2____________________,
-        ___________________LOWER_L3____________________,                        ___________________LOWER_R3____________________,
-                                        TB_LOLL,TB_LOLC,TB_LOLR,        TB_LORL,TB_LORC,TB_LORR
+    [_NAV] = LAYOUT_split_3x6_3_WRAPPER (
+        _________________NAVIGATION_L1_________________,                        _________________NAVIGATION_R1_________________,
+        _________________NAVIGATION_L2_________________,                        _________________NAVIGATION_R2_________________,
+        _________________NAVIGATION_L3_________________,                        _________________NAVIGATION_R3_________________,
+                                        TB_LNV3,TB_LNV2,TB_LNV1,        TB_RNV1,TB_RNV2,TB_RNV3
     ),
 
-    [_FN] = LAYOUT_split_3x6_3_WRAPPER (
-        ____________________FN_L1______________________,                        ____________________FN_R1______________________,
-        ____________________FN_L2______________________,                        ____________________FN_R2______________________,
-        ____________________FN_L3______________________,                        ____________________FN_R3______________________,
-                                        TB_FNLL,TB_FNLC,TB_FNLR,        TB_FNRL,TB_FNRC,TB_FNRR
+    [_FUNC] = LAYOUT_split_3x6_3_WRAPPER (
+        _________________FUNCTION_L1___________________,                        _________________FUNCTION_R1___________________,
+        _________________FUNCTION_L2___________________,                        _________________FUNCTION_R2___________________,
+        _________________FUNCTION_L3___________________,                        _________________FUNCTION_R3___________________,
+                                        TB_LFN3,TB_LFN2,TB_LFN1,        TB_RFN1,TB_RFN2,TB_RFN3
     ),
-
 };
 

@@ -12,7 +12,7 @@ enum layer_names {
     _COLEMAK_DH = 0,
     _QWERTY,
     _GAME,
-    _RAISE,
-    _LOWER,
-    _FN,
+    _SYM,
+    _NAV,
+    _FUNC,
 };

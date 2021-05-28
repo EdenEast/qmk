@@ -44,49 +44,12 @@ just
 This is a layout made to be keyboard agnostic as I use multiple keyboards. The base layout is
 designed for a split ortho / column staggered 3x6 with 3 thumb buttons.
 
-### Features
+## Ideas, Concepts, and Rationals
 
-- Can be used on almost any split or non-split ergo or ortho keyboard.
-- Dual-function modifiers on home row, mirrored on both hands. ([home row mods][homerowmod])
-  - Left hand: Meta, Alt, Shift, Ctrl
-  - Right hand: Ctrl, Shift, Alt, Meta
-
-[homerowmod]: https://precondition.github.io/home-row-mods
-
-### Base layout layers
-
-This keymap has 3 main keyboard layers built in ([Colemak-DH],  Qwerty). The default
-layout is Colemak-DH. There is also a base gaming layer.
-
-#### Colemak-DH
-
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
-|      |   Q  |   W  |   F  |   P  |   B  |      |   J  |   L  |   U  |   Y  |  ;:  |      |
-|      |   A  |   R  |   S  |   T  |   G  |      |   M  |   N  |   E  |   I  |   O  |   '  |
-| Shft |   Z  |   X  |   C  |   D  |   V  |      |   K  |   H  |  ,<  |  .>  |  /?  | Shft |
-|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
-
-#### Qwerty
-
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
-|      |   Q  |   W  |   E  |   R  |   T  |      |   Y  |   U  |   I  |   O  |   P  |      |
-|      |   A  |   S  |   D  |   F  |   G  |      |   H  |   J  |   K  |   L  |  ;:  |   '  |
-| Shft |   Z  |   X  |   C  |   V  |   B  |      |   N  |   M  |  ,<  |  .>  |  /?  | Shft |
-|      |      |      | Esc  |Space | Tab  |      |Enter | Bksp | Del  |      |      |      |
-
-### Hold
-
-With all the layers above if you hold a key down this will be the result.
-
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-| ---- |:----:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| :---:| ----:|
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-|      |LMeta | LAlt |LShift|LCtrl |      |      |      |RCtrl |RShift| LAlt |LMeta |      |
-|      |      |      |      |      |      |      |      |      |      |      |      |      |
-|      |      |      |Media | Nav  |Mouse |      |  FN  | Num  | Sym  |      |      |      |
-
+- 40% layout with 3x6 layout keeps all keys to within one key distance from the homerow.
+- No homerow mods. [home row mods][homerowmod] are popular, I have used them as well, but found that
+    it slowed me down and was too much mental tax.
+- Symbols on one layer, numbers and navigation one another.
 
 ## Trouble shooting flashing on linux
 

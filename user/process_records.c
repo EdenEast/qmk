@@ -23,10 +23,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(keycode - KC_COLEMAK);
             break;
 
-        case KC_RAISE ... KC_FN:
-            if (record->event.pressed)
-                toggle_layer_lock(keycode - KC_COLEMAK);
-            break;
+        // case KC_RAISE ... KC_FN:
+        //     if (record->event.pressed)
+        //         toggle_layer_lock(keycode - KC_COLEMAK);
+        //     break;
     }
 
     return process_record_keymap(keycode, record);
