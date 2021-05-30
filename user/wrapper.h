@@ -17,20 +17,20 @@
 
 #define ________________COLEMAK_DH_L1__________________ KC_TAB ,Q_GUI  ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define ________________COLEMAK_DH_L2__________________ KC_ESC ,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
-#define ________________COLEMAK_DH_L3__________________ _______,KC_Z   ,KC_X   ,KC_C   ,KC_D   ,KC_V
+#define ________________COLEMAK_DH_L3__________________ _______,Z_CTRL ,KC_X   ,KC_C   ,KC_D   ,KC_V
 
-#define ________________COLEMAK_DH_R1__________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
+#define ________________COLEMAK_DH_R1__________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,SCN_GUI,KC_DEL
 #define ________________COLEMAK_DH_R2__________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,KC_QUOT
-#define ________________COLEMAK_DH_R3__________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_GUI,_______
+#define ________________COLEMAK_DH_R3__________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_CTR,_______
 
 
 #define __________________QWERTY_L1____________________ KC_TAB ,Q_GUI  ,KC_W   ,KC_E   ,KC_R   ,KC_T
 #define __________________QWERTY_L2____________________ KC_ESC ,KC_A   ,KC_S   ,KC_D   ,KC_F   ,KC_G
-#define __________________QWERTY_L3____________________ _______,KC_Z   ,KC_X   ,KC_C   ,KC_V   ,KC_B
+#define __________________QWERTY_L3____________________ _______,Z_CTRL ,KC_X   ,KC_C   ,KC_V   ,KC_B
 
-#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_DEL
+#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,P_GUI ,KC_DEL
 #define __________________QWERTY_R2____________________ KC_H   ,KC_J   ,KC_K   ,KC_L   ,KC_SCLN,KC_QUOT
-#define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,SLH_GUI,_______
+#define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,SLH_CTR,_______
 
 
 #define ___________________GAME_L1_____________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R

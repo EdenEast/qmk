@@ -17,9 +17,11 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define CT_TAB  LCTL_T(KC_TAB)
 #define AL_ENT  LALT_T(KC_ENT)
 #define TT_FUNC TT(_FUNC)
+#define Z_CTRL  LCTL_T(KC_Z)
+#define SLH_CTR LCTL_T(KC_SLSH)
 #define Q_GUI   LGUI_T(KC_Q)
+#define P_GUI   LGUI_T(KC_P)
 #define SCN_GUI LGUI_T(KC_SCLN)
-#define SLH_GUI LGUI_T(KC_SLSH)
 
 #define COLEMAK KC_COLEMAK
 #define QWERTY  KC_QWERTY
