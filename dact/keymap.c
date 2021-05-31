@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ________________COLEMAK_DH_L3__________________,                        ________________COLEMAK_DH_R3__________________, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     TB_LDF2,TB_LDF1,                        TB_RDF1,TB_RDF2,                                 \
-                                            _______,TB_LDF3,        TB_RDF3,_______,                                         \
+                                            KC_ENT ,TB_LDF3,        TB_RDF3,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __________________QWERTY_L3____________________,                        __________________QWERTY_R3____________________, \
                     KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,                 \
                                     TB_LDF2,TB_LDF1,                        TB_RDF1,TB_RDF2,                                 \
-                                            _______,TB_LDF3,        TB_RDF3,_______,                                         \
+                                            KC_ENT ,TB_LDF3,        TB_RDF3,_______,                                         \
                                             _______,_______,        _______,_______                                          \
 ),
 
