@@ -18,11 +18,11 @@
 
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,R_NAV  ,S_NUM  ,T_SYML ,KC_G
-#define _________________COLEMAK_DH_L3_________________ EQL_SFT,Z_ALT  ,X_GUI  ,KC_C   ,KC_D   ,KC_V
+#define _________________COLEMAK_DH_L3_________________ EQL_ALT,Z_GUI  ,KC_X   ,KC_C   ,KC_D   ,KC_V
 
 #define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
-#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,QOT_CTL
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,DOT_GUI,SLH_ALT,ENT_SFT
+#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,ENT_CTL
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
 
 #define ____________________GAME_L1____________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
 #define ____________________GAME_L2____________________ KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F

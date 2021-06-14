@@ -19,13 +19,11 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define E_FUNC  LT(_FUNC, KC_E)
 
 #define ESC_CTL LCTL_T(KC_ESC)
-#define EQL_SFT LSFT_T(KC_EQL)
-#define Z_ALT   LALT_T(KC_Z)
-#define X_GUI   LGUI_T(KC_X)
-#define DOT_GUI LGUI_T(KC_DOT)
-#define SLH_ALT LALT_T(KC_SLSH)
-#define ENT_SFT LSFT_T(KC_ENT)
-#define QOT_CTL LCTL_T(KC_QUOT)
+#define EQL_ALT LALT_T(KC_EQL)
+#define Z_GUI   LGUI_T(KC_Z)
+#define SLH_GUI LGUI_T(KC_SLSH)
+#define QOT_ALT LALT_T(KC_QUOT)
+#define ENT_CTL LCTL_T(KC_ENT)
 #define BSP_SFT LSFT_T(KC_BSPC)
 
 
