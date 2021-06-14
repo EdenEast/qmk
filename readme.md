@@ -61,6 +61,8 @@ usb devices run `lsusb`.
 ## Resources and References
 
 - [Miryoku]
+- [ferris](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default)
+- [rs](https://github.com/qmk/qmk_firmware/tree/master/keyboards/crkbd/keymaps/rs)
 - [Precondition](https://github.com/precondition/dactyl-manuform-keymap/)
 - [Rsta](https://github.com/rstacruz/my_qmk_keymaps)
 - [curry](./external/qmk_firmware/users/curry/README.md)
