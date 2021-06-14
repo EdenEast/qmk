@@ -13,70 +13,83 @@
 
 #define ______________NUMBER_LEFT______________         KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
 #define ______________NUMBER_RIGHT_____________         KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
-#define ________________BLANK__________________________ _______,_______,_______,_______,_______,_______
+#define _______________________________________________ _______,_______,_______,_______,_______,_______
+//                             |
 
-#define ________________COLEMAK_DH_L1__________________ KC_TAB ,Q_GUI  ,KC_W   ,KC_F   ,KC_P   ,KC_B
-#define ________________COLEMAK_DH_L2__________________ KC_ESC ,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
-#define ________________COLEMAK_DH_L3__________________ _______,Z_CTRL ,KC_X   ,KC_C   ,KC_D   ,KC_V
+#define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
+#define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,R_NAV  ,S_NUM  ,T_SYML ,KC_G
+#define _________________COLEMAK_DH_L3_________________ EQL_SFT,Z_ALT  ,X_GUI  ,KC_C   ,KC_D   ,KC_V
 
-#define ________________COLEMAK_DH_R1__________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,SCN_GUI,KC_DEL
-#define ________________COLEMAK_DH_R2__________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,KC_QUOT
-#define ________________COLEMAK_DH_R3__________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_CTR,_______
+#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
+#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,QOT_CTL
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,DOT_GUI,SLH_ALT,ENT_SFT
 
+#define ____________________GAME_L1____________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
+#define ____________________GAME_L2____________________ KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
+#define ____________________GAME_L3____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
 
-#define __________________QWERTY_L1____________________ KC_TAB ,Q_GUI  ,KC_W   ,KC_E   ,KC_R   ,KC_T
-#define __________________QWERTY_L2____________________ KC_ESC ,KC_A   ,KC_S   ,KC_D   ,KC_F   ,KC_G
-#define __________________QWERTY_L3____________________ _______,Z_CTRL ,KC_X   ,KC_C   ,KC_V   ,KC_B
+#define ____________________GAME_R1____________________ KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P
+#define ____________________GAME_R2____________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,DF_BASE
+#define ____________________GAME_R3____________________ KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH
 
-#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,P_GUI ,KC_DEL
-#define __________________QWERTY_R2____________________ KC_H   ,KC_J   ,KC_K   ,KC_L   ,KC_SCLN,KC_QUOT
-#define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,SLH_CTR,_______
+#define ________________SYMBOLS_ONE_L1_________________ _______,_______,_______,_______,_______,_______
+#define ________________SYMBOLS_ONE_L2_________________ _______,KC_CIRC,KC_ASTR,KC_AMPR,KC_NO  ,_______
+#define ________________SYMBOLS_ONE_L3_________________ _______,_______,_______,_______,_______,_______
 
+#define ________________SYMBOLS_ONE_R1_________________ _______,KC_UNDS,KC_PIPE,KC_QUOT,_______,_______
+#define ________________SYMBOLS_ONE_R2_________________ KC_HASH,KC_TILD,KC_SLSH,KC_DQUO,KC_DLR ,_______
+#define ________________SYMBOLS_ONE_R3_________________ _______,KC_MINS,KC_BSLS,KC_GRV ,_______,_______
 
-#define ___________________GAME_L1_____________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
-#define ___________________GAME_L2_____________________ KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
-#define ___________________GAME_L3_____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
+#define ________________SYMBOLS_TWO_L1_________________ _______,_______,KC_COLN,KC_LT  ,KC_GT  ,KC_SCLN
+#define ________________SYMBOLS_TWO_L2_________________ _______,KC_LCBR,KC_RCBR,KC_LPRN,KC_RPRN,KC_AT
+#define ________________SYMBOLS_TWO_L3_________________ _______,_______,KC_EXLM,KC_LBRC,KC_RBRC,_______
 
-#define ___________________GAME_R1_____________________ KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P
-#define ___________________GAME_R2_____________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,DF_BASE
-#define ___________________GAME_R3_____________________ KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH
+#define ________________SYMBOLS_TWO_R1_________________ _______,_______,_______,_______,_______,_______
+#define ________________SYMBOLS_TWO_R2_________________ _______,KC_NO  ,KC_EQL ,KC_PLUS,KC_PERC,_______
+#define ________________SYMBOLS_TWO_R3_________________ _______,_______,_______,_______,_______,_______
 
+#define ___________________NUMBER_L1___________________ _______,_______,_______,_______,_______,_______
+#define ___________________NUMBER_L2___________________ _______,_______,_______,KC_NO  ,_______,_______
+#define ___________________NUMBER_L3___________________ _______,_______,_______,_______,_______,_______
 
-#define __________________SYMBOLS_L1___________________ _______,KC_QUOT,KC_DQUO,KC_CIRC,KC_QUES,KC_GRV
-#define __________________SYMBOLS_L2___________________ _______,KC_EXLM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC
-#define __________________SYMBOLS_L3___________________ _______,KC_BSLS,KC_TILD,KC_PIPE,KC_AMPR,KC_SCLN
+#define ___________________NUMBER_R1___________________ KC_PLUS,KC_7   ,KC_8   ,KC_9   ,KC_SLSH,_______
+#define ___________________NUMBER_R2___________________ KC_MINS,KC_1   ,KC_2   ,KC_3   ,KC_0   ,_______
+#define ___________________NUMBER_R3___________________ KC_EQL ,KC_4   ,KC_5   ,KC_6   ,KC_ASTR,_______
 
-#define __________________SYMBOLS_R1___________________ KC_LABK,KC_LBRC,KC_EQL ,KC_RBRC,KC_RABK,_______
-#define __________________SYMBOLS_R2___________________ KC_LCBR,KC_LPRN,KC_COLN,KC_RPRN,KC_RCBR,_______
-#define __________________SYMBOLS_R3___________________ KC_UNDS,KC_MINS,KC_PLUS,KC_ASTR,KC_SLSH,_______
+#define __________________FUNCTION_L1__________________ _______,KC_F10 ,KC_F7  ,KC_F8  ,KC_F9  ,_______
+#define __________________FUNCTION_L2__________________ _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,_______
+#define __________________FUNCTION_L3__________________ _______,KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,_______
 
+#define __________________FUNCTION_R1__________________ _______,_______,_______,_______,_______,_______
+#define __________________FUNCTION_R2__________________ _______,_______,KC_NO  ,_______,_______,_______
+#define __________________FUNCTION_R3__________________ _______,_______,_______,_______,_______,_______
 
-#define _________________NAVIGATION_L1_________________ KC_LGUI,KC_LCTL,KC_LSFT,KC_LALT,KC_TAB ,_______
-#define _________________NAVIGATION_L2_________________ _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
-#define _________________NAVIGATION_L3_________________ _______,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
+#define _________________NAVIGATION_L1_________________ _______,_______,_______,_______,_______,_______
+#define _________________NAVIGATION_L2_________________ _______,_______,KC_NO  ,_______,_______,_______
+#define _________________NAVIGATION_L3_________________ _______,_______,_______,_______,_______,_______
 
-#define _________________NAVIGATION_R1_________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,_______,COLEMAK
-#define _________________NAVIGATION_R2_________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_CAPS,QWERTY
-#define _________________NAVIGATION_R3_________________ KC_VOLD,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLU,GAME
+#define _________________NAVIGATION_R1_________________ _______,_______,_______,_______,_______,_______
+#define _________________NAVIGATION_R2_________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______
+#define _________________NAVIGATION_R3_________________ _______,_______,_______,_______,_______,_______
 
+#define ___________________ADJUST_L1___________________ _______,_______,_______,_______,_______,_______
+#define ___________________ADJUST_L2___________________ _______,_______,_______,_______,_______,_______
+#define ___________________ADJUST_L3___________________ _______,_______,_______,_______,_______,_______
 
-#define _________________FUNCTION_L1___________________ _______,KC_F11 ,KC_F12 ,_______,_______,_______
-#define _________________FUNCTION_L2___________________ _______,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
-#define _________________FUNCTION_L3___________________ _______,KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10
+#define ___________________ADJUST_R1___________________ KC_VOLU,GAME   ,_______,_______,_______,_______
+#define ___________________ADJUST_R2___________________ KC_MUTE,KC_MPRV,KC_MPLY,KC_MNXT,_______,_______
+#define ___________________ADJUST_R3___________________ KC_VOLD,_______,_______,_______,_______,RESET
 
-#define _________________FUNCTION_R1___________________ _______,_______,_______,_______,_______,RESET
-#define _________________FUNCTION_R2___________________ _______,_______,_______,_______,_______,_______
-#define _________________FUNCTION_R3___________________ _______,_______,_______,_______,_______,_______
 
 // Thumb keys are defined by priority do first priority seonds and third
 // Default thumb defineds
-#define TB_LDF1 SH_BSPC
-#define TB_LDF2 MO_SYM
-#define TB_LDF3 CT_TAB
+#define TB_LDF1 BSP_SFT
+#define TB_LDF2 _______
+#define TB_LDF3 _______
 
 #define TB_RDF1 KC_SPC
-#define TB_RDF2 MO_NAV
-#define TB_RDF3 AL_ENT
+#define TB_RDF2 _______
+#define TB_RDF3 MO(_ADJ)
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
 #define TB_GMLL KC_M
