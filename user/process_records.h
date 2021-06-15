@@ -14,7 +14,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 /* #define R_SYML LT(_SYML, KC_R) */
 #define T_SYML  LT(_SYML, KC_T)
 #define S_NUM   LT(_NUM, KC_S)
-#define R_NAV   LT(_NAV, KC_R)
 #define N_SYMR  LT(_SYMR, KC_N)
 #define E_FUNC  LT(_FUNC, KC_E)
 
@@ -25,19 +24,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define QOT_ALT LALT_T(KC_QUOT)
 #define ENT_CTL LCTL_T(KC_ENT)
 #define BSP_SFT LSFT_T(KC_BSPC)
-
-
-#define SH_BSPC LSFT_T(KC_BSPC)
-#define MO_SYM  MO(_SYM)
-#define MO_NAV  MO(_NAV)
-#define CT_TAB  LCTL_T(KC_TAB)
-#define AL_ENT  LALT_T(KC_ENT)
-#define TT_FUNC TT(_FUNC)
-#define Z_CTRL  LCTL_T(KC_Z)
-#define SLH_CTR LCTL_T(KC_SLSH)
-#define Q_GUI   LGUI_T(KC_Q)
-#define P_GUI   LGUI_T(KC_P)
-#define SCN_GUI LGUI_T(KC_SCLN)
+#define SPC_ADJ LT(_ADJ, KC_SPC)
 
 #define COLEMAK KC_COLEMAK
 #define QWERTY  KC_QWERTY

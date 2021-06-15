@@ -17,7 +17,7 @@
 //                             |
 
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
-#define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,R_NAV  ,S_NUM  ,T_SYML ,KC_G
+#define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,KC_R   ,S_NUM  ,T_SYML ,KC_G
 #define _________________COLEMAK_DH_L3_________________ EQL_ALT,Z_GUI  ,KC_X   ,KC_C   ,KC_D   ,KC_V
 
 #define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
@@ -64,21 +64,14 @@
 #define __________________FUNCTION_R2__________________ _______,KC_INS ,KC_NO  ,KC_PAUS,KC_PSCR,_______
 #define __________________FUNCTION_R3__________________ _______,_______,_______,_______,_______,_______
 
-#define _________________NAVIGATION_L1_________________ _______,_______,_______,_______,_______,_______
-#define _________________NAVIGATION_L2_________________ _______,_______,KC_NO  ,_______,_______,_______
-#define _________________NAVIGATION_L3_________________ _______,_______,_______,_______,_______,_______
+#define ___________________ADJUST_L1___________________ RESET  ,_______,_______,COLEMAK,QWERTY ,GAME
+#define ___________________ADJUST_L2___________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
+#define ___________________ADJUST_L3___________________ _______,UNDO   ,CUT    ,COPY   ,_______,PASTE
 
-#define _________________NAVIGATION_R1_________________ _______,_______,_______,_______,_______,_______
-#define _________________NAVIGATION_R2_________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______
-#define _________________NAVIGATION_R3_________________ _______,_______,_______,_______,_______,_______
-
-#define ___________________ADJUST_L1___________________ _______,_______,_______,_______,_______,_______
-#define ___________________ADJUST_L2___________________ _______,_______,_______,_______,_______,_______
-#define ___________________ADJUST_L3___________________ _______,_______,_______,_______,_______,_______
-
-#define ___________________ADJUST_R1___________________ KC_VOLU,GAME   ,_______,_______,_______,_______
-#define ___________________ADJUST_R2___________________ KC_MUTE,KC_MPRV,KC_MPLY,KC_MNXT,_______,_______
-#define ___________________ADJUST_R3___________________ KC_VOLD,_______,_______,_______,_______,RESET
+#define ___________________ADJUST_R1___________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,_______,RESET
+#define ___________________ADJUST_R2___________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______
+#define ___________________ADJUST_R3___________________ KC_VOLU,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLD,KC_MUTE
+/* #define ___________________ADJUST_R2___________________ KC_MUTE,KC_MPRV,KC_MPLY,KC_MNXT,_______,_______ */
 
 
 // Thumb keys are defined by priority do first priority seonds and third
@@ -87,9 +80,9 @@
 #define TB_LDF2 _______
 #define TB_LDF3 _______
 
-#define TB_RDF1 KC_SPC
+#define TB_RDF1 SPC_ADJ
 #define TB_RDF2 _______
-#define TB_RDF3 MO(_ADJ)
+#define TB_RDF3 _______
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
 #define TB_GMLL KC_M
