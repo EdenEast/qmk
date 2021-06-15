@@ -71,14 +71,13 @@
 #define ___________________ADJUST_R1___________________ KC_HOME,KC_PGDN,KC_PGUP,KC_END ,_______,RESET
 #define ___________________ADJUST_R2___________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______
 #define ___________________ADJUST_R3___________________ KC_VOLU,KC_MPRV,KC_MPLY,KC_MNXT,KC_VOLD,KC_MUTE
-/* #define ___________________ADJUST_R2___________________ KC_MUTE,KC_MPRV,KC_MPLY,KC_MNXT,_______,_______ */
 
 
 // Thumb keys are defined by priority do first priority seonds and third
 // Default thumb defineds
 #define TB_LDF1 BSP_SFT
 #define TB_LDF2 _______
-#define TB_LDF3 _______
+#define TB_LDF3 TAB_ADJ
 
 #define TB_RDF1 SPC_ADJ
 #define TB_RDF2 _______

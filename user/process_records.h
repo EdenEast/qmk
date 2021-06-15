@@ -25,6 +25,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define ENT_CTL LCTL_T(KC_ENT)
 #define BSP_SFT LSFT_T(KC_BSPC)
 #define SPC_ADJ LT(_ADJ, KC_SPC)
+#define TAB_ADJ LT(_ADJ, KC_TAB)
 
 #define COLEMAK KC_COLEMAK
 #define QWERTY  KC_QWERTY
