@@ -7,13 +7,15 @@
 This repository contains my personal keymap for my [Dactyl Manuform][dactman-repo] and [Corne] keyboard.
 
 This keymap uses [Colemak-DH] for its alpha base with the ability to swap to Qwerty when needed.
-It is also heavily inspired/based off of [Miryoku], an ergonomic, minimal, orthogonal layout for
-ergo or ortho keyboards.
+
+This keymap is the third iteration of my quest for a keymap that fits my needs. This current
+iteration takes a lot if insperation from the default keymap for the [ferris] keyboard.
 
 [Colemak-DH]: https://colemakmods.github.io/mod-dh/
 [Miryoku]: https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org
 [dactman-repo]: https://github.com/edeneast/dactyl-manuform
 [Corne]: https://github.com/foostan/crkbd
+[ferris]: https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default
 
 ## Quick start
 
