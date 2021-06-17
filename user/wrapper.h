@@ -24,6 +24,14 @@
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,ENT_CTL
 #define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
 
+#define __________________QWERTY_L1____________________ KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
+#define __________________QWERTY_L2____________________ ESC_CTL,KC_A   ,KC_S   ,D_NUM  ,F_SYML ,KC_G
+#define __________________QWERTY_L3____________________ ENT_ALT,Z_GUI  ,KC_X   ,KC_C   ,KC_V   ,KC_B
+
+#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_DEL
+#define __________________QWERTY_R2____________________ KC_H   ,J_SYMR ,K_FUNC ,KC_L   ,KC_SCLN,ENT_CTL
+#define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
+
 #define ____________________GAME_L1____________________ KC_ESC ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
 #define ____________________GAME_L2____________________ KC_GRV ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
 #define ____________________GAME_L3____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
