@@ -10,6 +10,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     TB_LDF3,TB_LDF2,TB_LDF1,        TB_RDF1,TB_RDF2,TB_RDF3
 ),
 
+[_GAME] = LAYOUT_split_3x6_3_WRAPPER (
+    ____________________GAME_L1____________________,                        ____________________GAME_R1____________________,
+    ____________________GAME_L2____________________,                        ____________________GAME_R2____________________,
+    ____________________GAME_L3____________________,                        ____________________GAME_R3____________________,
+                                    TB_GMLL,TB_GMLC,TB_GMLR,        TB_GMRL,TB_GMRC,TB_GMRR
+),
+
 [_SYML] = LAYOUT_split_3x6_3_WRAPPER (
     ________________SYMBOLS_ONE_L1_________________,                        ________________SYMBOLS_ONE_R1_________________,
     ________________SYMBOLS_ONE_L2_________________,                        ________________SYMBOLS_ONE_R2_________________,
