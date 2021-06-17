@@ -18,7 +18,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define E_FUNC  LT(_FUNC, KC_E)
 
 #define ESC_CTL LCTL_T(KC_ESC)
-#define EQL_ALT LALT_T(KC_EQL)
+#define ENT_ALT LALT_T(KC_ENT)
 #define Z_GUI   LGUI_T(KC_Z)
 #define SLH_GUI LGUI_T(KC_SLSH)
 #define QOT_ALT LALT_T(KC_QUOT)
