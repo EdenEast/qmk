@@ -86,11 +86,17 @@ void render_layer_state(void) {
         case _SYMR:
             oled_write_ln_P(PSTR("Sym R"), false);
             break;
+        case _NUM:
+            oled_write_ln_P(PSTR("  NUM"), false);
+            break;
         case _NAV:
             oled_write_ln_P(PSTR(" Navi"), false);
             break;
         case _FUNC:
             oled_write_ln_P(PSTR(" Func"), false);
+            break;
+        case _ADJ:
+            oled_write_ln_P(PSTR("  ADJ"), false);
             break;
         default:
             oled_write_ln_P(PSTR(" Base"), false);
