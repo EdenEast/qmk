@@ -1,4 +1,3 @@
-
 # colors
 reset  := '\033[0m'
 red    := '\033[1;31m'
@@ -14,9 +13,11 @@ default:
     @just dact
     @just crkbd
 
+# Build dactyl manuform keyboard firmware
 dact:
     @just _build handwired/dactyl_manuform/5x6:edeneast handwired_dactyl_manuform_5x6_edeneast.hex dact
 
+# Build Corne keyboard (crkbd) firmware
 crkbd:
     @just _build crkbd:edeneast crkbd_rev1_legacy_edeneast.hex crkbd
 
@@ -36,6 +37,7 @@ _build make_cmd source target: init
         $POST_BUILD
     fi
 
+# Flash `keyboard`
 flash keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
@@ -50,6 +52,7 @@ flash keyboard:
         make $cmd
     )
 
+# Flash left hand of `keyboard`
 left keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
@@ -65,6 +68,7 @@ left keyboard:
         make $cmd
     )
 
+# Flash right hand of `keyboard`
 right keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
@@ -80,10 +84,11 @@ right keyboard:
         make $cmd
     )
 
+# Setup submodule and link directories to submodules
 init:
     #!/usr/bin/env bash
     git config submodule.external/qmk_firmware.ignore all
-    git submodule update --init --recursive
+    git submodule update --init --recursive --recommend-shallow
     if [ ! -L "{{user_symlink}}" ] ; then
         ln -sf $(pwd)/user {{user_symlink}}
     fi
@@ -94,3 +99,25 @@ init:
         ln -sf $(pwd)/crkbd {{crkbd_symlink}}
     fi
 
+# Update qmk_firmware
+qmk-update:
+    #!/usr/bin/env bash
+    # https://stackoverflow.com/a/41081908
+    pushd ./external/qmk_firmware
+    git status
+    [[ -z $(git branch --show-current) ]] && git checkout master || git fetch origin --depth 1
+    git submodule update --init --recursive --recommend-shallow
+    popd
+    git add -f ./external/qmk_firmware
+    just nix-update
+
+# Update nix development environment
+nix-update:
+    #!/usr/bin/env bash
+    mkdir -p ./util/
+    rm -rf ./util/nix
+    cp -f ./external/qmk_firmware/shell.nix ./shell.nix
+    cp -fr ./external/qmk_firmware/util/nix/ ./util/
+    sed -i '$ d' shell.nix
+    echo "  nativeBuildInputs = [ fd just ];" >> ./shell.nix
+    echo "}" >> ./shell.nix
