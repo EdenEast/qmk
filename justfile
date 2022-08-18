@@ -109,6 +109,8 @@ qmk-update:
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./external/qmk_firmware
+    cp -f ./external/qmk_firmware/keyboards/handwired/dactyl_manuform/readme.md ./dact/readme.md
+    cp -f ./external/qmk_firmware/keyboards/crkbd/readme.md ./crkbd/readme.md
     just nix-update
 
 # Update nix development environment
