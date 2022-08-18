@@ -101,12 +101,12 @@
 #define TB_GMRR KC_DEL
 
 
-#define TB_LSM1 MO_NAV
+#define TB_LSM1 _______
 #define TB_LSM2 _______
 #define TB_LSM3 _______
 
 #define TB_RSM1 _______
-#define TB_RSM2 TT_FUNC
+#define TB_RSM2 _______
 #define TB_RSM3 _______
 
 
@@ -126,3 +126,12 @@
 #define TB_RFN1 _______
 #define TB_RFN2 _______
 #define TB_RFN3 _______
+
+
+#define TB_LAJ1 KC_BSPC
+#define TB_LAJ2 _______
+#define TB_LAJ3 _______
+
+#define TB_RAJ1 KC_SPC
+#define TB_RAJ2 _______
+#define TB_RAJ3 _______
