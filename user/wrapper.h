@@ -16,13 +16,13 @@
 #define _______________________________________________ _______,_______,_______,_______,_______,_______
 //                             |
 
-#define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
-#define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,KC_R   ,S_NUM  ,T_SYML ,KC_G
-#define _________________COLEMAK_DH_L3_________________ ENT_ALT,Z_GUI  ,KC_X   ,KC_C   ,KC_D   ,KC_V
+#define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,F_NUM  ,KC_P   ,KC_B
+#define _________________COLEMAK_DH_L2_________________ ESC_CTL,A_SFT  ,KC_R   ,KC_S   ,T_SYML ,KC_G
+#define _________________COLEMAK_DH_L3_________________ TMUX   ,Z_ALT  ,X_GUI  ,KC_C   ,KC_D   ,KC_V
 
-#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_DEL
-#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,ENT_CTL
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
+#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,U_FUNC ,KC_Y   ,KC_SCLN,KC_DEL
+#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,KC_E   ,KC_I   ,O_SFT  ,ENT_CTL
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,DOT_GUI,SLH_ALT,KC_QUOT
 
 #define ____________________GAME_L1____________________ KC_GRV ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
 #define ____________________GAME_L2____________________ KC_ESC ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
@@ -36,11 +36,11 @@
 #define ________________SYMBOLS_ONE_L2_________________ _______,KC_CIRC,KC_ASTR,KC_AMPR,KC_NO  ,_______
 #define ________________SYMBOLS_ONE_L3_________________ _______,_______,_______,_______,_______,_______
 
-#define ________________SYMBOLS_ONE_R1_________________ _______,KC_UNDS,KC_PIPE,KC_QUOT,_______,_______
-#define ________________SYMBOLS_ONE_R2_________________ KC_HASH,KC_TILD,KC_SLSH,KC_DQUO,KC_DLR ,_______
-#define ________________SYMBOLS_ONE_R3_________________ _______,KC_MINS,KC_BSLS,KC_GRV ,_______,_______
+#define ________________SYMBOLS_ONE_R1_________________ _______,KC_TILD,KC_BSLS,KC_QUOT,_______,_______
+#define ________________SYMBOLS_ONE_R2_________________ KC_HASH,KC_MINS,KC_SLSH,KC_DQUO,KC_DLR ,_______
+#define ________________SYMBOLS_ONE_R3_________________ _______,KC_UNDS,KC_PIPE,KC_GRV ,_______,_______
 
-#define ________________SYMBOLS_TWO_L1_________________ _______,_______,KC_COLN,KC_LT  ,KC_GT  ,KC_SCLN
+#define ________________SYMBOLS_TWO_L1_________________ _______,_______,_______,KC_LT  ,KC_GT  ,KC_COLN
 #define ________________SYMBOLS_TWO_L2_________________ _______,KC_LCBR,KC_RCBR,KC_LPRN,KC_RPRN,KC_AT
 #define ________________SYMBOLS_TWO_L3_________________ _______,_______,KC_EXLM,KC_LBRC,KC_RBRC,_______
 
@@ -56,12 +56,12 @@
 #define ___________________NUMBER_R2___________________ KC_MINS,KC_1   ,KC_2   ,KC_3   ,KC_0   ,_______
 #define ___________________NUMBER_R3___________________ KC_EQL ,KC_4   ,KC_5   ,KC_6   ,KC_ASTR,_______
 
-#define __________________FUNCTION_L1__________________ _______,KC_F10 ,KC_F7  ,KC_F8  ,KC_F9  ,_______
-#define __________________FUNCTION_L2__________________ _______,KC_F11 ,KC_F4  ,KC_F5  ,KC_F6  ,_______
-#define __________________FUNCTION_L3__________________ _______,KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,_______
+#define __________________FUNCTION_L1__________________ _______,KC_F9  ,KC_F10 ,KC_F11 ,KC_F12 ,KC_PSCR
+#define __________________FUNCTION_L2__________________ _______,KC_F5  ,KC_F6  ,KC_F7  ,KC_F8  ,KC_INS
+#define __________________FUNCTION_L3__________________ _______,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_PAUS
 
-#define __________________FUNCTION_R1__________________ _______,_______,_______,_______,_______,_______
-#define __________________FUNCTION_R2__________________ _______,KC_INS ,KC_NO  ,KC_PAUS,KC_PSCR,_______
+#define __________________FUNCTION_R1__________________ _______,TG_MIC ,KC_NO  ,KC_PAUS,_______,_______
+#define __________________FUNCTION_R2__________________ _______,_______,_______,_______,_______,_______
 #define __________________FUNCTION_R3__________________ _______,_______,_______,_______,_______,_______
 
 #define ___________________ADJUST_L1___________________ RESET  ,_______,_______,_______,COLEMAK,GAME
@@ -77,11 +77,11 @@
 // Default thumb defineds
 #define TB_LDF1 BSP_SFT
 #define TB_LDF2 TAB_ADJ
-#define TB_LDF3 _______
+#define TB_LDF3 ENT_SYM
 
 #define TB_RDF1 SPC_ADJ
-#define TB_RDF2 _______
-#define TB_RDF3 _______
+#define TB_RDF2 UNS_NUM
+#define TB_RDF3 MIN_SYM
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
 #define TB_GMLL KC_M

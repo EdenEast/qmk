@@ -1,15 +1,12 @@
 [
   {
-    "backcolor": "#AEC3CD",
-    "name": "Ednkbd",
-    "author": "EdenEast",
-    "notes": "https://github.com/EdenEast/ednkbd/"
+    "backcolor": "#AEC3CD"
   },
   [
     {
       "t": "#3D474F",
-      "f": 4,
-      "w": 12,
+      "f": 5,
+      "w": 3,
       "h": 0.5,
       "d": true
     },
@@ -20,124 +17,123 @@
       "y": -0.5,
       "x": 3,
       "c": "#3D474F",
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
+      "t": "#ff0000\n\n\n#ff8800\n#00ffff\n\n\n\n\n#F7EEE3",
       "f": 3
     },
-    "f8\n\n\n<\n\n\n\n\n\nF",
+    "f11\n\n\n<\nnum\n\n\n\n\nF",
     {
-      "x": 6
+      "x": 6,
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n\n#ff0000\n\n#28a858"
     },
-    "\n|\n8\n\n\n\n<i class='kb kb-Unicode-Page-Up-3'></i>\n\n\nU"
+    "\n\\\n8\n\nfunc\n\n<i class='kb kb-Unicode-Page-Up-3'></i>\n\n\nU"
   ],
   [
     {
-      "y": -0.87,
-      "x": 2
+      "y": -0.75,
+      "x": 2,
+      "t": "#ff0000\n\n\n#ff8800\n\n\n\n\n\n#F7EEE3"
     },
-    "f7\n\n\n:\n\n\n\n\n\nW",
+    "f10\n\n\n:\n\n\n\n\n\nW",
+    {
+      "x": 1,
+      "t": "#ff0000\n\n\n#ff8800\n\n\n#28a858\n\n\n#F7EEE3"
+    },
+    "f12\n\n\n>\n\n\n<i class='fa fa-comment-o'></i>\n\n\nP",
+    {
+      "x": 4,
+      "t": "#ff0000\n#ffff00\n#00ffff\n\n\n\n#28a858\n\n\n#F7EEE3"
+    },
+    "<i class='fa fa-microphone-slash'></i>\n~\n7\n\n\n\n<i class='kb kb-Unicode-Page-Down-3'></i>\n\n\nL",
     {
       "x": 1
     },
-    "f9\n\n\n>\n\n\n\n\n\nP",
-    {
-      "x": 4
-    },
-    "\n_\n7\n\n\n\n<i class='kb kb-Unicode-Page-Down-3'></i>\n\n\nL",
-    {
-      "x": 1
-    },
-    "\n'\n9\n\n\n\n<i class='kb kb-Line-End'></i>\n\n\nY"
+    "<i class='fa fa-chain'></i>\n'\n9\n\n\n\n<i class='kb kb-Line-End'></i>\n\n\nY"
   ],
   [
     {
-      "y": -0.8799999999999999,
+      "y": -0.75,
       "x": 5,
-      "t": "#F7EEE3",
-      "a": 7,
-      "f": 2
+      "t": "#ff0000\n\n\n\n\n\n#28a858\n\n\n#F7EEE3"
     },
-    "B",
+    "<i class='fa fa-print'></i>\n\n\n\n\n\n<i class='fa fa-gamepad'></i>\n\n\nB",
     {
       "x": 2,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
-      "a": 4,
-      "f": 3
+      "t": "#F7EEE3\n\n#00ffff\n\n\n\n#28a858"
     },
     "\n\n+\n\n\n\n<i class='kb kb-Line-Start'></i>\n\n\nJ"
   ],
   [
     {
       "y": -0.75,
-      "t": "#F7EEE3",
-      "a": 7
+      "t": "#28a858\n\n\n\n\n\n\n\n#F7EEE3",
+      "a": 6
     },
-    "<i class='kb kb-Tab-1'></i>",
+    "<i class='fa fa-refresh'></i>\n\n\n\n\n\n\n\n<i class='kb kb-Tab-1'></i>",
     {
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
+      "t": "#ff0000\n\n\n\n\n\n\n\n\n#F7EEE3",
       "a": 4
     },
-    "f10\n\n\n\n\n\n\n\n\nQ",
+    "f9\n\n\n\n\n\n\n\n\nQ",
     {
-      "x": 10
+      "x": 10,
+      "t": "#F7EEE3\n\n#00ffff"
     },
-    "\n\n/\n\n\n\n\n\n\n;",
+    "\n\n*\n\n\n\n\n\n\n;",
     {
-      "t": "#F7EEE3",
-      "a": 7
+      "t": "#28a858\n\n\n\n\n\n\n\n#F7EEE3",
+      "a": 6
     },
-    "<i class='kb kb-Unicode-DeleteRight-Big'></i>"
+    "<i class='fa fa-refresh'></i>\n\n\n\n\n\n\n\n<i class='kb kb-Unicode-DeleteRight-Big'></i>"
   ],
   [
     {
-      "y": -0.5,
+      "y": -0.75,
       "x": 3,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n#00ffff\n\n#28a858",
+      "t": "#ff0000\n#ffff00\n\n#ff8800\n\n\n#28a858\n\n\n#F7EEE3",
       "a": 4
     },
-    "f5\n&\n\n(\nnum\n\n⇧\n\n\nS",
+    "f7\n&\n\n(\n\n\n&uArr;\n\n\nS",
     {
       "x": 6,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n#ff0000\n\n#28a858"
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858"
     },
-    "\n/\n2\n=\nfunc\n\n<i class='kb kb-Arrows-Up'></i>\n\n\nE"
+    "\n/\n2\n=\n\n\n<i class='kb kb-Arrows-Up'></i>\n\n\nE"
   ],
   [
     {
-      "y": -0.8700000000000001,
+      "y": -0.75,
       "x": 2,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858"
+      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858\n\n\n#F7EEE3"
     },
-    "f4\n*\n\n}\n\n\n<i class='mss mss-Unicode-Alternate-3'></i>\n\n\nR",
+    "f6\n*\n,\n}\n\n\n<i class='kb kb-Unicode-Alternate-1'></i>\n\n\nR",
     {
       "x": 1,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n#ffff00\n\n#28a858",
-      "n": true
+      "t": "#ff0000\n\n#00ffff\n#ff8800\n#ffff00\n\n#28a858\n\n\n#F7EEE3"
     },
-    "f6\n\n\n)\nlsym\n\n<i class='mss mss-Unicode-Control-4'></i>\n\n\nT",
+    "f8\n\n.\n)\nlsym\n\n<i class='kb kb-Unicode-Control-1'></i>\n\n\nT",
     {
       "x": 4,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n#ff8800\n\n#28a858",
-      "n": true
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n\n#ff8800\n\n#28a858"
     },
-    "<i class='kb kb-Unicode-Insert-2'></i>\n~\n1\n\nrsym\n\n<i class='kb kb-Arrows-Down'></i>\n\n\nN",
+    "\n-\n1\n\nrsym\n\n<i class='kb kb-Arrows-Down'></i>\n\n\nN",
     {
       "x": 1,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858"
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858"
     },
-    "<i class='mss mss-Unicode-Pause-3'></i>\n\"\n3\n+\n\n\n<i class='kb kb-Arrows-Right'></i>\n\n\nI"
+    "\n\"\n3\n+\n\n\n<i class='kb kb-Arrows-Right'></i>\n\n\nI"
   ],
   [
     {
-      "y": -0.8799999999999999,
+      "y": -0.75,
       "x": 5,
-      "f": 2
+      "t": "#ff0000\n\n\n#ff8800\n\n\n\n\n\n#F7EEE3"
     },
-    "\n\n\n@\n\n\n\n\n\nG",
+    "<i class='fa fa-external-link'></i>\n\n\n@\n\n\n\n\n\nG",
     {
       "x": 2,
-      "f": 3
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n\n\n\n#28a858"
     },
-    "\n#\n-\n\n\n\n<i class='kb kb-Arrows-Left'></i>\n\n\nM"
+    "\n#\n=\n\n\n\n<i class='kb kb-Arrows-Left'></i>\n\n\nM"
   ],
   [
     {
@@ -147,14 +143,15 @@
     },
     "<i class='mss mss-Unicode-Escape-3'></i>\n\n\n\nctrl",
     {
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
+      "t": "#ff0000\n#ffff00\n\n#ff8800\n#F7EEE3\n\n#28a858\n\n\n#F7EEE3",
       "a": 4
     },
-    "f11\n^\n\n{\n\n\n<i class='kb kb-logo-linux-tux'></i>\n\n\nA",
+    "f5\n^\n\n{\nshift\n\n<i class='kb kb-logo-linux-tux'></i>\n\n\nA",
     {
-      "x": 10
+      "x": 10,
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n#ff8800"
     },
-    "<i class='mss mss-Unicode-PrintScreen-3'></i>\n$\n0\n%\n\n\n\n\n\nO",
+    "\n$\n0\n%\nshift\n\n\n\n\nO",
     {
       "t": "#F7EEE3",
       "a": 7
@@ -163,140 +160,114 @@
   ],
   [
     {
-      "y": -0.5,
+      "y": -0.75,
       "x": 3,
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
+      "t": "#ff0000\n\n\n#ff8800\n\n\n#28a858\n\n\n#F7EEE3",
       "a": 4
     },
-    "f2\n\n\n[\n\n\n<i class='fa fa-copy'></i>\n\n\nC",
+    "f3\n\n\n[\n\n\n<i class='fa fa-copy'></i>\n\n\nC",
     {
-      "x": 6
+      "x": 6,
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n\n\n\n#28a858"
     },
-    "\n\\\n5\n\n\n\n<i class='kb kb-Multimedia-Play-Pause'></i>\n\n\n,"
-  ],
-  [
-    {
-      "y": -0.8700000000000001,
-      "x": 2
-    },
-    "f1\n\n\n!\n\n\n<i class='fa fa-cut'></i>\n\n\nX",
-    {
-      "x": 1
-    },
-    "f3\n\n\n]\n\n\n\n\n\nD",
-    {
-      "x": 4
-    },
-    "\n-\n4\n\n\n\n<i class='kb kb-Multimedia-Rewind-Start'></i>\n\n\nH",
-    {
-      "x": 1
-    },
-    "\n`\n6\n\n\n\n<i class='kb kb-Multimedia-FastForward-End'></i>\n\n\n."
-  ],
-  [
-    {
-      "y": -0.8799999999999999,
-      "x": 5,
-      "f": 2
-    },
-    "f4\n\n\n\n\n\n<i class='fa fa-paste'></i>\n\n\nV",
-    {
-      "x": 2,
-      "f": 3
-    },
-    "\n\n=\n\n\n\n<i class='kb kb-Multimedia-Volume-Up-2'></i>\n\n\nK"
+    "\n|\n5\n\n\n\n<i class='kb kb-Multimedia-Play-Pause'></i>\n\n\n,"
   ],
   [
     {
       "y": -0.75,
-      "t": "#28a858",
-      "a": 6
+      "x": 2,
+      "t": "#ff0000\n\n\n#ff8800\n#F7EEE3\n\n#28a858\n\n\n#F7EEE3"
     },
-    "<i class='fa fa-refresh'></i>\n\n\n\nalt\n\n\n\n=",
+    "f2\n\n\n!\nsuper\n\n<i class='kb kb-Scissors-1'></i>\n\n\nX",
     {
-      "t": "#ff0000\n#ffff00\n#00ffff\n#ff8800\n\n\n#28a858",
-      "a": 4
+      "x": 1,
+      "t": "#ff0000\n\n\n#ff8800\n\n\n\n\n\n#F7EEE3"
     },
-    "f12\n\n\n\ngui\n\n<i class='mss mss-Undo-5'></i>\n\n\nZ",
+    "f4\n\n\n]\n\n\n\n\n\nD",
     {
-      "x": 10
+      "x": 4,
+      "t": "#F7EEE3\n#ffff00\n#00ffff\n\n\n\n#28a858"
     },
-    "\n\n*\n\ngui\n\n<i class='kb kb-Multimedia-Volume-Down-1'></i>\n\n\n/",
+    "\n_\n4\n\n\n\n<i class='kb kb-Multimedia-Rewind'></i>\n\n\nH",
     {
-      "t": "#28a858",
-      "a": 6
+      "x": 1,
+      "t": "#ff0000\n#ffff00\n#00ffff\n\n#F7EEE3\n\n#28a858\n\n\n#F7EEE3"
     },
-    "<i class='fa fa-refresh'></i>\n\n\n\nalt\n\n\n\n'"
+    "\n`\n6\n\nsuper\n\n<i class='kb kb-Multimedia-FastForwar'></i>\n\n\n."
   ],
   [
     {
-      "y": -0.33999999999999986,
-      "x": 3.5,
-      "t": "#F7EEE3\n\n\n\n#28a858",
+      "y": -0.75,
+      "x": 5,
+      "t": "#ff0000\n\n\n\n\n\n#28a858\n\n\n#F7EEE3"
+    },
+    "<i class='fa fa-chain'></i>\n\n\n\n\n\n<i class='fa fa-paste'></i>\n\n\nV",
+    {
+      "x": 2,
+      "t": "#F7EEE3\n\n#00ffff\n\n\n\n#28a858"
+    },
+    "\n\n-\n\n\n\n<i class='kb kb-Multimedia-Volume-Up-1'></i>\n\n\nK"
+  ],
+  [
+    {
+      "y": -0.75,
+      "t": "#F7EEE3",
       "a": 7
+    },
+    "<i class='fa fa-trademark'></i>",
+    {
+      "t": "#ff0000\n\n\n\n#F7EEE3\n\n#28a858\n\n\n#F7EEE3",
+      "a": 4
+    },
+    "f1\n\n\n\nalt\n\n<i class='mss mss-Undo-5'></i>\n\n\nZ",
+    {
+      "x": 10,
+      "t": "#F7EEE3\n\n#00ffff\n\n\n\n#28a858"
+    },
+    "\n\n/\n\nalt\n\n<i class='kb kb-Multimedia-Volume-Down-1'></i>\n\n\n/",
+    {
+      "t": "#F7EEE3",
+      "a": 7
+    },
+    "'"
+  ],
+  [
+    {
+      "x": 3.5,
+      "t": "#F7EEE3\n\n\n\n#ff8800"
+    },
+    "<i class='kb kb-Return-2'></i>\n\n\n\nrsym",
+    {
+      "t": "#F7EEE3\n\n\n\n#28a858"
     },
     "<i class='kb kb-Tab-1'></i>\n\n\n\nadj",
     {
-      "x": 5,
       "t": "#F7EEE3"
     },
-    ""
+    "<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>\n\n\n\nshift",
+    {
+      "x": 1,
+      "t": "#F7EEE3\n\n\n\n#28a858"
+    },
+    "[ ]\n\n\n\nadj",
+    {
+      "t": "#F7EEE3\n\n\n\n#00ffff"
+    },
+    "_\n\n\n\nnum",
+    {
+      "t": "#F7EEE3\n\n\n\n#ffff00"
+    },
+    "-\n\n\n\nlsym"
   ],
   [
     {
-      "y": -0.16000000000000014,
-      "c": "#C2D9E4",
+      "y": -0.5,
+      "c": "#cccccc",
       "t": "#3D474F",
       "a": 4,
-      "f": 2,
-      "fa": [
-        3
-      ],
-      "w": 12,
+      "w": 3.5,
       "d": true
     },
     "Ednkbd\n<tt>github.com/EdenEast/ednkbd/</tt>\n\n\n\n\n<i>EdenEast</i>"
-  ],
-  [
-    {
-      "r": 18,
-      "rx": 4,
-      "ry": 7.75,
-      "y": -4.09,
-      "x": -0.5,
-      "c": "#3D474F",
-      "t": "#F7EEE3",
-      "a": 7,
-      "f": 3,
-      "n": true
-    },
-    "<i class='kb kb-Unicode-BackSpace-DeleteLeft-Big'></i>\n\n\n\nshift"
-  ],
-  [
-    {
-      "r": 36,
-      "y": -1,
-      "x": -0.5
-    },
-    "<i class='kb kb-community-awesome'></i>"
-  ],
-  [
-    {
-      "r": -36,
-      "rx": 10,
-      "y": -4.09,
-      "x": -0.5
-    },
-    "<i class='kb kb-community-awesome'></i>"
-  ],
-  [
-    {
-      "r": -18,
-      "y": -1,
-      "x": -0.5,
-      "t": "#F7EEE3\n\n\n\n#28a858",
-      "n": true
-    },
-    "[ ]\n\n\n\nadj"
   ]
 ]

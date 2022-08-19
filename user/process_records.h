@@ -11,20 +11,30 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
 /* #define R_SYML LT(_SYML, KC_R) */
+#define TMUX    LCTL(KC_A)
 #define T_SYML  LT(_SYML, KC_T)
-#define S_NUM   LT(_NUM, KC_S)
+#define F_NUM   LT(_NUM, KC_F)
 #define N_SYMR  LT(_SYMR, KC_N)
-#define E_FUNC  LT(_FUNC, KC_E)
+#define U_FUNC  LT(_FUNC, KC_U)
 
 #define ESC_CTL LCTL_T(KC_ESC)
-#define ENT_ALT LALT_T(KC_ENT)
-#define Z_GUI   LGUI_T(KC_Z)
-#define SLH_GUI LGUI_T(KC_SLSH)
-#define QOT_ALT LALT_T(KC_QUOT)
 #define ENT_CTL LCTL_T(KC_ENT)
+#define A_SFT   LSFT_T(KC_A)
+#define O_SFT   LSFT_T(KC_O)
+#define Z_ALT   LALT_T(KC_Z)
+#define SLH_ALT LALT_T(KC_SLSH)
+#define DOT_GUI LGUI_T(KC_DOT)
+#define X_GUI   LGUI_T(KC_X)
+
 #define BSP_SFT LSFT_T(KC_BSPC)
 #define SPC_ADJ LT(_ADJ, KC_SPC)
+#define UNS_NUM LT(_NUM, KC_UNDS)
 #define TAB_ADJ LT(_ADJ, KC_TAB)
+#define MIN_SYM LT(_SYML, KC_MINS)
+#define ENT_SYM LT(_SYMR, KC_ENT)
+
+/* #define SPC_ADJ LT(_ADJ, KC_SPC) */
+/* #define TAB_ADJ LT(_ADJ, KC_TAB) */
 
 #define COLEMAK KC_COLEMAK
 #define GAME    KC_GAME
