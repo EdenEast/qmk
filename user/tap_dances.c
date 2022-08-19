@@ -3,17 +3,13 @@
 
 // Dance to determine what base layout to use
 // 1 - Colemak
-// 2 - Qwerty
-// 3 - Game
+// 2 - Game
 void dance_base_layer(qk_tap_dance_state_t *state, void *user_data) {
     switch (state->count) {
         case 1: // Colemak
             set_single_persistent_default_layer(_COLEMAK_DH);
             break;
-        case 2: // Qwerty
-            set_single_persistent_default_layer(_QWERTY);
-            break;
-        case 3: // Game
+        case 2: // Game
             set_single_persistent_default_layer(_GAME);
             break;
     }

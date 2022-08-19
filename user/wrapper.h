@@ -24,14 +24,6 @@
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,E_FUNC ,KC_I   ,KC_O   ,ENT_CTL
 #define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
 
-#define __________________QWERTY_L1____________________ KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R   ,KC_T
-#define __________________QWERTY_L2____________________ ESC_CTL,KC_A   ,KC_S   ,D_NUM  ,F_SYML ,KC_G
-#define __________________QWERTY_L3____________________ ENT_ALT,Z_GUI  ,KC_X   ,KC_C   ,KC_V   ,KC_B
-
-#define __________________QWERTY_R1____________________ KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P   ,KC_DEL
-#define __________________QWERTY_R2____________________ KC_H   ,J_SYMR ,K_FUNC ,KC_L   ,KC_SCLN,ENT_CTL
-#define __________________QWERTY_R3____________________ KC_N   ,KC_M   ,KC_COMM,KC_DOT ,SLH_GUI,QOT_ALT
-
 #define ____________________GAME_L1____________________ KC_GRV ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
 #define ____________________GAME_L2____________________ KC_ESC ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
 #define ____________________GAME_L3____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
@@ -72,7 +64,7 @@
 #define __________________FUNCTION_R2__________________ _______,KC_INS ,KC_NO  ,KC_PAUS,KC_PSCR,_______
 #define __________________FUNCTION_R3__________________ _______,_______,_______,_______,_______,_______
 
-#define ___________________ADJUST_L1___________________ RESET  ,_______,_______,COLEMAK,QWERTY ,GAME
+#define ___________________ADJUST_L1___________________ RESET  ,_______,_______,_______,COLEMAK,GAME
 #define ___________________ADJUST_L2___________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
 #define ___________________ADJUST_L3___________________ _______,UNDO   ,CUT    ,COPY   ,_______,PASTE
 
@@ -84,8 +76,8 @@
 // Thumb keys are defined by priority do first priority seonds and third
 // Default thumb defineds
 #define TB_LDF1 BSP_SFT
-#define TB_LDF2 _______
-#define TB_LDF3 TAB_ADJ
+#define TB_LDF2 TAB_ADJ
+#define TB_LDF3 _______
 
 #define TB_RDF1 SPC_ADJ
 #define TB_RDF2 _______

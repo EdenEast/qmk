@@ -68,9 +68,6 @@ void render_default_layer_state(void) {
         case _COLEMAK_DH:
             oled_write_P(PSTR(" COLE"), false);
             break;
-        case _QWERTY:
-            oled_write_P(PSTR(" QRTY"), false);
-            break;
         case _GAME:
             oled_write_P(PSTR(" GAME"), false);
             break;

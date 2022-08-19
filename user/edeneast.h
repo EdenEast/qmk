@@ -10,7 +10,6 @@
 // Define layer names
 enum layer_names {
     _COLEMAK_DH = 0,
-    _QWERTY,
     _GAME,
     _SYML,
     _SYMR,

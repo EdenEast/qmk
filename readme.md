@@ -6,7 +6,7 @@
 
 This repository contains my personal keymap for my [Dactyl Manuform][dactman-repo] and [Corne] keyboard.
 
-This keymap uses [Colemak-DH] for its alpha base with the ability to swap to Qwerty when needed.
+This keymap uses [Colemak-DH] for its alpha base.
 
 This keymap is the third iteration of my quest for a keymap that fits my needs. This current
 iteration takes a lot if insperation from the default keymap for the [ferris] keyboard.
