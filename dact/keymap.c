@@ -22,8 +22,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ____________________GAME_L2____________________,                        ____________________GAME_R2____________________,
     ____________________GAME_L3____________________,                        ____________________GAME_R3____________________,
                     KC_T   ,KC_G   ,                                                        _______,_______,
-                                    TB_GMLL,TB_GMLC,                        TB_GMRC,TB_GMRR,
-                                            _______,TB_GMLR,        TB_GMRL,OS_RSFT,
+                                    TB_GML2,TB_GML1,                        TB_GMR1,TB_GMR2,
+                                            _______,TB_GML3,        TB_GMR3,OS_RSFT,
                                             KC_PAUS,KC_F2  ,        _______,_______
 ),
 

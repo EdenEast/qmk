@@ -14,7 +14,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ____________________GAME_L1____________________,                        ____________________GAME_R1____________________,
     ____________________GAME_L2____________________,                        ____________________GAME_R2____________________,
     ____________________GAME_L3____________________,                        ____________________GAME_R3____________________,
-                                    TB_GMLL,TB_GMLC,TB_GMLR,        TB_GMRL,TB_GMRC,TB_GMRR
+                                    TB_GML3,TB_GML2,TB_GML1,        TB_GMR1,TB_GMR2,TB_GMR3
 ),
 
 [_SYML] = LAYOUT_split_3x6_3_WRAPPER (

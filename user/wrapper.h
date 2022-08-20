@@ -84,13 +84,13 @@
 #define TB_RDF3 MIN_SYM
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
-#define TB_GMLL KC_M
-#define TB_GMLC KC_SPC
-#define TB_GMLR KC_I
+#define TB_GML3 KC_M
+#define TB_GML1 KC_SPC
+#define TB_GML2 KC_I
 
-#define TB_GMRL KC_ENT
-#define TB_GMRC KC_BSPC
-#define TB_GMRR KC_DEL
+#define TB_GMR2 KC_ENT
+#define TB_GMR1 KC_BSPC
+#define TB_GMR3 KC_DEL
 
 
 #define TB_LSM1 _______
