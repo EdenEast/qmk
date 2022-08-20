@@ -17,11 +17,11 @@
 //                             |
 
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,F_NUM  ,KC_P   ,KC_B
-#define _________________COLEMAK_DH_L2_________________ ESC_CTL,A_SFT  ,KC_R   ,KC_S   ,T_SYML ,KC_G
+#define _________________COLEMAK_DH_L2_________________ ESC_CTL,KC_A   ,KC_R   ,KC_S   ,T_SYML ,KC_G
 #define _________________COLEMAK_DH_L3_________________ TMUX   ,Z_ALT  ,X_GUI  ,KC_C   ,KC_D   ,KC_V
 
 #define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,U_FUNC ,KC_Y   ,KC_SCLN,KC_DEL
-#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,KC_E   ,KC_I   ,O_SFT  ,ENT_CTL
+#define _________________COLEMAK_DH_R2_________________ KC_M   ,N_SYMR ,KC_E   ,KC_I   ,KC_O   ,ENT_CTL
 #define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,DOT_GUI,SLH_ALT,KC_QUOT
 
 #define ____________________GAME_L1____________________ KC_GRV ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
