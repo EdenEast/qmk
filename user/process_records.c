@@ -17,6 +17,8 @@ void toggle_layer_lock(layer_state_t layer) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    uint8_t mod_state = get_mods();
+
     switch (keycode) {
         case KC_COLEMAK ... KC_GAME:
             if (record->event.pressed)
@@ -27,6 +29,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         //     if (record->event.pressed)
         //         toggle_layer_lock(keycode - KC_COLEMAK);
         //     break;
+
+        case KC_BSPC: // SHIFT + BSPACE for del
+        {
+            static bool delkey_registered;
+            if (record->event.pressed) {
+                del_mods(MOD_MASK_SHIFT);
+                register_code(KC_DEL);
+                delkey_registered = true;
+                set_mods(mod_state);
+                return false;
+            } else {
+                if (delkey_registered) {
+                    unregister_code(KC_DEL);
+                    delkey_registered = false;
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 
     return process_record_keymap(keycode, record);
