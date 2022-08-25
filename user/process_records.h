@@ -4,6 +4,9 @@ enum userspace_custom_keycodes {
     VRSN = SAFE_RANGE,  // Prints QMK Firmware and board info
     KC_COLEMAK,         // Sets default layer to COLEMAK
     KC_GAME,            // Sets default layer to GAME
+    KC_NEQL,            // Sets '!='
+    KC_LPLT,            // '(' or '<' when shift
+    KC_RPGT,            // ')' or '>' when shift
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
 };
 
@@ -11,32 +14,28 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 // Layer keys
 /* #define R_SYML LT(_SYML, KC_R) */
-#define TMUX    LCTL(KC_A)
-#define T_SYML  LT(_SYML, KC_T)
-#define F_NUM   LT(_NUM, KC_F)
-#define N_SYMR  LT(_SYMR, KC_N)
-#define U_FUNC  LT(_FUNC, KC_U)
 
-#define ESC_CTL LCTL_T(KC_ESC)
-#define ENT_CTL LCTL_T(KC_ENT)
-#define Z_ALT   LALT_T(KC_Z)
-#define SLH_ALT LALT_T(KC_SLSH)
-#define DOT_GUI LGUI_T(KC_DOT)
-#define X_GUI   LGUI_T(KC_X)
-#define QOT_SFT RSFT_T(KC_QUOT)
+#define TMUX       LCTL(KC_A)
 
-#define BSP_SFT LSFT_T(KC_BSPC)
-#define SPC_ADJ LT(_ADJ, KC_SPC)
-#define UNS_NUM LT(_NUM, KC_UNDS)
-#define TAB_ADJ LT(_ADJ, KC_TAB)
-#define MIN_SYM LT(_SYML, KC_MINS)
-#define ENT_SYM LT(_SYMR, KC_ENT)
+#define CTL_ESC    LCTL_T(KC_ESC)
+#define CTL_ENT    LCTL_T(KC_ENT)
+#define CTL_QOT    LCTL_T(KC_QUOT)
 
-/* #define SPC_ADJ LT(_ADJ, KC_SPC) */
-/* #define TAB_ADJ LT(_ADJ, KC_TAB) */
+#define SFT_QOT    LSFT_T(KC_QUOT)
+#define SFT_ENT    LSFT_T(KC_ENT)
 
-#define COLEMAK KC_COLEMAK
-#define GAME    KC_GAME
+#define ALT_Z      LALT_T(KC_Z)
+#define ALT_SLH    LALT_T(KC_SLSH)
+
+#define GUI_Q      LGUI_T(KC_Q)
+#define GUI_SCN    LGUI_T(KC_SCLN)
+#define GUI_NEQ    LGUI_T(KC_NEQL)
+#define GUI_EXM    LGUI_T(KC_EXLM)
+#define GUI_F1     LGUI_T(KC_F1)
+#define GUI_F10    LGUI_T(KC_F10)
+
+#define COLEMAK    KC_COLEMAK
+#define GAME       KC_GAME
 
 // Lock layer useful when eating and trying to navigate with one hand
 // #define TG_RASE KC_RAISE

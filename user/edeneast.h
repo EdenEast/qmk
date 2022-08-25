@@ -11,10 +11,6 @@
 enum layer_names {
     _COLEMAK_DH = 0,
     _GAME,
-    _SYML,
-    _SYMR,
-    _NUM,
+    _CODE,
     _FUNC,
-    _NAV,
-    _ADJ,
 };
