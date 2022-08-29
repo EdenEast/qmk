@@ -23,6 +23,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define SFT_QOT    LSFT_T(KC_QUOT)
 #define SFT_ENT    LSFT_T(KC_ENT)
+#define SFT_BSP    LSFT_T(KC_BSPC)
 
 #define ALT_Z      LALT_T(KC_Z)
 #define ALT_SLH    LALT_T(KC_SLSH)

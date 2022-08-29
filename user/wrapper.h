@@ -54,7 +54,7 @@
 
 // Thumb keys are defined by priority do first priority seonds and third
 // Default thumb defineds
-#define TB_DFL1 KC_BSPC
+#define TB_DFL1 SFT_BSP // KC_BSPC
 #define TB_DFL2 MO(_CODE)
 #define TB_DFL3 MO(_FUNC)
 
@@ -80,7 +80,7 @@
 #define TB_CDR2 _______
 #define TB_CDR3 _______
 
-#define TB_FNL1 _______
+#define TB_FNL1 KC_BSPC
 #define TB_FNL2 RESET
 #define TB_FNL3 GAME
 
