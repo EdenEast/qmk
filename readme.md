@@ -20,6 +20,7 @@ This keymap is the third iteration of my quest for a keymap that fits my needs. 
 iteration takes a lot if insperation from the default keymap for the [ferris] keyboard.
 
 [Colemak-DH]: https://colemakmods.github.io/mod-dh/
+[rs]: https://github.com/qmk/qmk_firmware/blob/2d5c16/keyboards/crkbd/keymaps/rs/readme.md
 [Miryoku]: https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org
 [dactman-repo]: https://github.com/edeneast/dactyl-manuform
 [Corne]: https://github.com/foostan/crkbd
