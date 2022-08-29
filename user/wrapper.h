@@ -54,13 +54,12 @@
 
 // Thumb keys are defined by priority do first priority seonds and third
 // Default thumb defineds
-#define TB_DFL1 SFT_BSP // KC_BSPC
-#define TB_DFL2 MO(_CODE)
+#define TB_DFL1 SFT_BSP
+#define TB_DFL2 LT(_CODE, KC_TAB)
 #define TB_DFL3 MO(_FUNC)
 
-/* #define TB_DFR1 BSP_SFT */
 #define TB_DFR1 KC_SPC
-#define TB_DFR2 MO(_CODE)
+#define TB_DFR2 LT(_CODE, KC_MINS)
 #define TB_DFR3 MO(_FUNC)
 
 // TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
@@ -84,6 +83,6 @@
 #define TB_FNL2 RESET
 #define TB_FNL3 GAME
 
-#define TB_FNR1 _______
+#define TB_FNR1 KC_SPC
 #define TB_FNR2 RESET
 #define TB_FNR3 GAME
