@@ -20,6 +20,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 #define CTL_ESC    LCTL_T(KC_ESC)
 #define CTL_ENT    LCTL_T(KC_ENT)
 #define CTL_QOT    LCTL_T(KC_QUOT)
+#define CTL_GRV    LCTL_T(KC_GRV)
 
 #define SFT_QOT    LSFT_T(KC_QUOT)
 #define SFT_ENT    LSFT_T(KC_ENT)

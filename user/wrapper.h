@@ -39,7 +39,7 @@
 #define ____________________CODE_L3____________________ _______,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
 
 #define ____________________CODE_R1____________________ KC_CIRC,KC_LPLT,KC_ASTR,KC_RPGT,GUI_NEQ,_______
-#define ____________________CODE_R2____________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_BSLS,KC_GRV
+#define ____________________CODE_R2____________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_BSLS,CTL_GRV
 #define ____________________CODE_R3____________________ KC_AMPR,KC_LBRC,KC_MINS,KC_RBRC,_______,_______
 
 
