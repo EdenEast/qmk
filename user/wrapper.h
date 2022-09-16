@@ -13,9 +13,18 @@
 
 #define ______________NUMBER_LEFT______________         KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
 #define ______________NUMBER_RIGHT_____________         KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
+#define _______________________________________         _______,_______,_______,_______,_______
 #define _______________________________________________ _______,_______,_______,_______,_______,_______
 //                             |
 
+// Alpha:
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │  Tab  │ Q/Gui │   W   │   F   │   P   │   B   │  │   J   │   L   │   U   │   Y   │ ;/Gui │   =   │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │Esc/Ctl│   A   │   R   │   S   │   T   │   G   │  │   M   │   N   │   E   │   I   │   O   │ '/Ctl │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │Tmx/Sft│ Z/Alt │   X   │   C   │   D   │   V   │  │   K   │   H   │   ,   │   .   │[/]/Alt│Ent/Sft│
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,GUI_Q  ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define _________________COLEMAK_DH_L2_________________ CTL_ESC,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
 #define _________________COLEMAK_DH_L3_________________ TD_TMUX,ALT_Z  ,KC_X   ,KC_C   ,KC_D   ,KC_V
@@ -24,7 +33,71 @@
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,CTL_QOT
 #define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,ALT_SLH,SFT_ENT
 
+// Symbols:
+//   - ^ and $ are placed at beinging and end of layer just like regex meanings
+//   - ( and ) result in < and > when shifted.
+//   - All brackets are accessable from up index and middle with shifts
+//   - 0 and 1 are placed on home keys as they are the most used
+//     - Symbols are also accessable though shifts
+//     - ! is accessed by shift right home index
+//     - = / - _ ' " are omitted as they are accessable from alpha layer
+//     - -> and != are for programming shortcuts
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │       │       │   ->  │ ( [<] │ ) [>] │   |   │  │   \   │   [   │   ]   │   !=  │       │       │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │   ^   │   @   │   #   │   0   │   *   │  │   +   │   1   │   `   │   ~   │   $   │       │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │   6   │   7   │   8   │   9   │   &   │  │   %   │   2   │   3   │   4   │   5   │       │
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
+#define ____________________SYMB_L1____________________ _______,_______,KC_AROW,KC_LPLT,KC_RPGT,KC_PIPE
+#define ____________________SYMB_L2____________________ _______,KC_CIRC,KC_AT  ,KC_HASH,KC_0   ,KC_ASTR
+#define ____________________SYMB_L3____________________ _______,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_AMPR
 
+#define ____________________SYMB_R1____________________ KC_BSLS,KC_LBRC,KC_RBRC,KC_NEQL,_______,_______
+#define ____________________SYMB_R2____________________ KC_PLUS,KC_1   ,KC_GRV ,KC_TILD,KC_DLR ,_______
+#define ____________________SYMB_R3____________________ KC_PERC,KC_2   ,KC_3   ,KC_4   ,KC_5   ,_______
+
+// Navigation:
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │       │       │       │       │       │       │  │  Home │ Page+ │ Page- │  End  │       │       │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │ Super │  Alt  │ Shift │  Ctrl │       │  │   ←   │   ↓   │   ↑   │   →   │       │       │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │       │       │       │       │       │  │BwsrBak│  Prev │  Play │  Next │BwsrFwd│       │
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
+#define ____________________NAVI_L1____________________ _______,_______,_______,_______,_______,_______
+#define ____________________NAVI_L2____________________ _______,KC_LGUI,KC_LALT,KC_LSFT,KC_LCTL,_______
+#define ____________________NAVI_L3____________________ _______,_______,_______,_______,_______,_______
+
+#define ____________________NAVI_R1____________________ KC_HOME,KC_PGUP,KC_PGDN,KC_END ,_______,_______
+#define ____________________NAVI_R2____________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,_______,_______
+#define ____________________NAVI_R3____________________ KC_WBAK,KC_MPRV,KC_MPLY,KC_MNXT,KC_WFWD,_______
+
+// Adjust:
+//   - Layer is entered by activating nav and sym (tri layer activation)
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │  F11  │ F1/Gui│   F2  │   F3  │   F4  │   F5  │  │   F6  │   F7  │   F8  │   F9  │F10/Gui│  F12  │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │       │       │       │       │       │  │Bright+│  Vol+ │  Mic  │       │       │       │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │ Reset │       │       │       │       │  Game │  │Bright-│  Vol- │  Mute │       │       │ Reset │
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
+#define _____________________ADJ_L1____________________ KC_F11 ,GUI_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
+#define _____________________ADJ_L2____________________ _______,_______,_______,_______,_______,_______
+#define _____________________ADJ_L3____________________ RESET  ,_______,_______,_______,_______,GAME
+
+#define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
+#define _____________________ADJ_R2____________________ KC_BRIU,KC_VOLU,TG_MIC ,_______,_______,_______
+#define _____________________ADJ_R3____________________ KC_BRID,KC_VOLD,KC_MUTE,_______,_______,RESET
+
+// Game:
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │   `   │  Tab  │   Q   │   W   │   E   │   R   │  │   T   │   Y   │   U   │   I   │   O   │   P   │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │  Esc  │ Shift │   A   │   S   │   D   │   F   │  │   G   │   H   │   J   │   K   │   L   │Colemak│
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │  Alt  │  Ctrl │   Z   │   X   │   C   │   V   │  │   B   │   N   │   M   │   ,   │   .   │   /   │
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define ____________________GAME_L1____________________ KC_GRV ,KC_TAB ,KC_Q   ,KC_W   ,KC_E   ,KC_R
 #define ____________________GAME_L2____________________ KC_ESC ,KC_LSFT,KC_A   ,KC_S   ,KC_D   ,KC_F
 #define ____________________GAME_L3____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
@@ -33,59 +106,68 @@
 #define ____________________GAME_R2____________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,COLEMAK
 #define ____________________GAME_R3____________________ KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH
 
-
-#define ____________________CODE_L1____________________ _______,GUI_EXM,KC_AT  ,KC_HASH,KC_DLR ,KC_PERC
-#define ____________________CODE_L2____________________ _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
-#define ____________________CODE_L3____________________ _______,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0
-
-#define ____________________CODE_R1____________________ KC_CIRC,KC_LPLT,KC_ASTR,KC_RPGT,GUI_NEQ,_______
-#define ____________________CODE_R2____________________ KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT,KC_BSLS,CTL_GRV
-#define ____________________CODE_R3____________________ KC_AMPR,KC_LBRC,KC_MINS,KC_RBRC,_______,_______
-
-
-#define ____________________FUNC_L1____________________ KC_F12 ,GUI_F1 ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
-#define ____________________FUNC_L2____________________ _______,_______,KC_INS ,KC_PSCR,KC_PGUP,KC_BRIU
-#define ____________________FUNC_L3____________________ _______,_______,KC_PAUS,TG_MIC ,KC_PGDN,KC_BRID
-
-#define ____________________FUNC_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
-#define ____________________FUNC_R2____________________ KC_VOLU,KC_MPRV,KC_MPLY,KC_MNXT,_______,_______
-#define ____________________FUNC_R3____________________ KC_VOLD,KC_MUTE,TG_MIC ,_______,_______,_______
-
-
-// Thumb keys are defined by priority do first priority seonds and third
-// Default thumb defineds
+// Alpha:
+//   - Thumb keys are defined by priority do first priority seonds and third
+//     3       2       1          1       2       3
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Nav │  Sym  │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
 #define TB_DFL1 SFT_BSP
-#define TB_DFL2 LT(_CODE, KC_TAB)
-#define TB_DFL3 MO(_FUNC)
+#define TB_DFL2 LT(_SYM, KC_TAB)
+#define TB_DFL3 MO(_NAV)
 
 #define TB_DFR1 KC_SPC
-#define TB_DFR2 LT(_CODE, KC_MINS)
-#define TB_DFR3 MO(_FUNC)
+#define TB_DFR2 LT(_NAV, KC_MINS)
+#define TB_DFR3 MO(_SYM)
 
-// TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
-#define TB_GML3 KC_M
+// Symbols:
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │       │       │       │  │       │       │       │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+#define TB_SYL1 _______
+#define TB_SYL2 _______
+#define TB_SYL3 _______
+
+#define TB_SYR1 _______
+#define TB_SYR2 _______
+#define TB_SYR3 _______
+
+// Navigation:
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │       │       │  Bspc │  │       │       │       │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+#define TB_NVL1 KC_BSPC
+#define TB_NVL2 _______
+#define TB_NVL3 _______
+
+#define TB_NVR1 _______
+#define TB_NVR2 _______
+#define TB_NVR3 _______
+
+// Adjust:
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │       │       │       │  │       │       │       │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+#define TB_AJL1 _______
+#define TB_AJL2 _______
+#define TB_AJL3 _______
+
+#define TB_AJR1 _______
+#define TB_AJR2 _______
+#define TB_AJR3 _______
+
+// Game:
+//   - TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │   M   │   I   │ Space │  │  Bspc │ Enter │  Del  │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
 #define TB_GML1 KC_SPC
 #define TB_GML2 KC_I
+#define TB_GML3 KC_M
 
-#define TB_GMR2 KC_ENT
 #define TB_GMR1 KC_BSPC
+#define TB_GMR2 KC_ENT
 #define TB_GMR3 KC_DEL
-
-#define TB_CDL1 _______
-#define TB_CDL2 _______
-#define TB_CDL3 _______
-
-#define TB_CDR1 _______
-#define TB_CDR2 _______
-#define TB_CDR3 _______
-
-#define TB_FNL1 KC_BSPC
-#define TB_FNL2 RESET
-#define TB_FNL3 GAME
-
-#define TB_FNR1 KC_SPC
-#define TB_FNR2 RESET
-#define TB_FNR3 GAME
 
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // │       │       │       │       │       │       │  │       │       │       │       │       │       │

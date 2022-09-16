@@ -4,7 +4,8 @@ enum userspace_custom_keycodes {
     VRSN = SAFE_RANGE,  // Prints QMK Firmware and board info
     KC_COLEMAK,         // Sets default layer to COLEMAK
     KC_GAME,            // Sets default layer to GAME
-    KC_NEQL,            // Sets '!='
+    KC_NEQL,            // Output '!='
+    KC_AROW,            // Output '->'
     KC_LPLT,            // '(' or '<' when shift
     KC_RPGT,            // ')' or '>' when shift
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
@@ -31,8 +32,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 
 #define GUI_Q      LGUI_T(KC_Q)
 #define GUI_SCN    LGUI_T(KC_SCLN)
-#define GUI_NEQ    LGUI_T(KC_NEQL)
-#define GUI_EXM    LGUI_T(KC_EXLM)
 #define GUI_F1     LGUI_T(KC_F1)
 #define GUI_F10    LGUI_T(KC_F10)
 
@@ -49,13 +48,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 // One Shot Shifts
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
-
-// Clipboard
-#define UNDO  C(KC_Z)
-#define REDO  C(KC_Y)
-#define CUT   C(KC_X)
-#define COPY  C(KC_C)
-#define PASTE C(KC_V)
 
 #define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
 

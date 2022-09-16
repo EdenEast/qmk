@@ -16,6 +16,10 @@ void toggle_layer_lock(layer_state_t layer) {
     }
 }
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _SYM, _NAV, _ADJ);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // uint8_t mod_state = get_mods();
 
@@ -68,6 +72,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case KC_NEQL:
             if (record->event.pressed) {
                 SEND_STRING("!=");
+            }
+            return false;
+        case KC_AROW:
+            if (record->event.pressed) {
+                SEND_STRING("->");
             }
             return false;
 
