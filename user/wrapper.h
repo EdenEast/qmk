@@ -59,6 +59,8 @@
 #define ____________________SYMB_R3____________________ KC_PERC,KC_2   ,KC_3   ,KC_4   ,KC_5   ,_______
 
 // Navigation:
+//   - Modifier keys added on the left hand to make moving windows in most floating window managers
+//   - Dedicated browser back and forward as this is different on different OS
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
 // │       │       │       │       │       │       │  │  Home │ Page+ │ Page- │  End  │       │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
@@ -90,7 +92,6 @@
 #define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
 #define _____________________ADJ_R2____________________ KC_BRIU,KC_VOLU,TG_MIC ,_______,_______,_______
 #define _____________________ADJ_R3____________________ KC_BRID,KC_VOLD,KC_MUTE,_______,_______,RESET
-
 
 // Steno:
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
