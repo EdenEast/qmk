@@ -8,6 +8,8 @@ enum userspace_custom_keycodes {
     KC_AROW,            // Output '->'
     KC_LPLT,            // '(' or '<' when shift
     KC_RPGT,            // ')' or '>' when shift
+    ENB_STN,            // Enable Steno layer
+    EXT_STN,            // Exit Steno layer
     NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
 };
 

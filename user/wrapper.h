@@ -1,5 +1,6 @@
 #pragma once
 #include "edeneast.h"
+#include "keymap_steno.h"
 
 // Taken from users/drashna
 #if (!defined(LAYOUT) && defined(KEYMAP))
@@ -80,15 +81,32 @@
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │       │       │       │       │       │       │  │Bright+│  Vol+ │  Mic  │       │       │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
-// │ Reset │       │       │       │       │  Game │  │Bright-│  Vol- │  Mute │       │       │ Reset │
+// │ Reset │       │       │       │ STENO │  Game │  │Bright-│  Vol- │  Mute │       │       │ Reset │
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define _____________________ADJ_L1____________________ KC_F11 ,GUI_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
 #define _____________________ADJ_L2____________________ _______,_______,_______,_______,_______,_______
-#define _____________________ADJ_L3____________________ RESET  ,_______,_______,_______,_______,GAME
+#define _____________________ADJ_L3____________________ RESET  ,_______,_______,_______,ENB_STN,GAME
 
 #define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
 #define _____________________ADJ_R2____________________ KC_BRIU,KC_VOLU,TG_MIC ,_______,_______,_______
 #define _____________________ADJ_R3____________________ KC_BRID,KC_VOLD,KC_MUTE,_______,_______,RESET
+
+
+// Steno:
+// ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
+// │   #   │   #   │   #   │   #   │   #   │   #   │  │   #   │   #   │   #   │   #   │   #   │   #   │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │       │   S   │   T   │   P   │   H   │   *   │  │   *   │   F   │   P   │   L   │   T   │   D   │
+// ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
+// │  Exit │   S   │   K   │   W   │   R   │   *   │  │   *   │   R   │   B   │   G   │   S   │   Z   │
+// ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
+#define ____________________STENO_L1___________________ STN_N1 ,STN_N2 ,STN_N3 ,STN_N4 ,STN_N5 ,STN_N6
+#define ____________________STENO_L2___________________ STN_FN ,STN_S1 ,STN_TL ,STN_PL ,STN_HL ,STN_ST1
+#define ____________________STENO_L3___________________ EXT_STN,STN_S2 ,STN_KL ,STN_WL ,STN_RL ,STN_ST2
+
+#define ____________________STENO_R1___________________ STN_N7 ,STN_N8 ,STN_N9 ,STN_NA ,STN_NB ,STN_NC
+#define ____________________STENO_R2___________________ STN_ST3,STN_FR ,STN_PR ,STN_LR ,STN_TR ,STN_DR
+#define ____________________STENO_R3___________________ STN_ST4,STN_RR ,STN_BR ,STN_GR ,STN_SR ,STN_ZR
 
 // Game:
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
@@ -155,6 +173,20 @@
 #define TB_AJR1 _______
 #define TB_AJR2 _______
 #define TB_AJR3 _______
+
+// Adjust:
+//   - Steno thumbs matter the order in which they are assigned
+//   - Maps should keep to the order below
+// ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
+// │       │   A   │   O   │  │   E   │   U   │       │
+// ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
+#define TB_STL1 STN_O
+#define TB_STL2 STN_A
+#define TB_STL3 _______
+
+#define TB_STR1 STN_E
+#define TB_STR2 STN_U
+#define TB_STR3 _______
 
 // Game:
 //   - TODO: Tapdace one of these keys to move out of gaming layer so only need left side active
