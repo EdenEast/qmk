@@ -19,7 +19,7 @@ dact:
 
 # Build Corne keyboard (crkbd) firmware
 crkbd:
-    @just _build crkbd:edeneast crkbd_rev1_legacy_edeneast.hex crkbd
+    @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
 
 _build make_cmd source target: init
     #!/usr/bin/env bash
@@ -104,14 +104,16 @@ qmk-update:
     #!/usr/bin/env bash
     # https://stackoverflow.com/a/41081908
     pushd ./external/qmk_firmware
-    git status
-    [[ -z $(git branch --show-current) ]] && git checkout master || git fetch origin --depth 1
+    git reset --hard
+    git clean -fdx
+    git checkout master
+    git fetch origin --depth 1
+    git reset --hard origin/master
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./external/qmk_firmware
     cp -f ./external/qmk_firmware/keyboards/handwired/dactyl_manuform/readme.md ./dact/readme.md
     cp -f ./external/qmk_firmware/keyboards/crkbd/readme.md ./crkbd/readme.md
-    just nix-update
 
 # Update nix development environment
 nix-update:
