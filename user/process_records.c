@@ -88,6 +88,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             layer_off(_STENO);
             return false;
 
+        case ENB_GME:
+            layer_on(_GAME);
+            return false;
+
+        case EXT_GME:
+            layer_off(_GAME);
+            return false;
+
     }
 
     return process_record_keymap(keycode, record);
