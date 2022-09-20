@@ -10,7 +10,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _________________COLEMAK_DH_L1_________________,                        _________________COLEMAK_DH_R1_________________,
     _________________COLEMAK_DH_L2_________________,                        _________________COLEMAK_DH_R2_________________,
     _________________COLEMAK_DH_L3_________________,                        _________________COLEMAK_DH_R3_________________,
-                    KC_DOWN,KC_UP  ,                                                        KC_LEFT,KC_RGHT,
+                    KC_LEFT,KC_RGHT,                                                        KC_UP  ,KC_DOWN,
                                     TB_DFL2,TB_DFL1,                        TB_DFR1,TB_DFR2,
                                             KC_ENT ,TB_DFL3,        TB_DFR3,_______,
                                             _______,_______,        _______,_______
