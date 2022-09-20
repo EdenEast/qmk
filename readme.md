@@ -10,15 +10,13 @@ This repository contains my personal keymap for my [Dactyl Manuform][dactman-rep
 
 This keymap uses [Colemak-DH] for its alpha base.
 
-This keymap is the third iteration of my quest for a keymap that fits my needs. This current
-iteration takes a lot if insperation from the default keymap for the [ferris] keyboard.
+This keymap is the fourth iteration of my quest for a keymap that fits my needs.
 
 [colemak-dh]: https://colemakmods.github.io/mod-dh/
 [rs]: https://github.com/qmk/qmk_firmware/blob/2d5c16/keyboards/crkbd/keymaps/rs/readme.md
 [miryoku]: https://github.com/manna-harbour/qmk_firmware/blob/miryoku/users/manna-harbour_miryoku/miryoku.org
 [dactman-repo]: https://github.com/edeneast/dactyl-manuform
 [corne]: https://github.com/foostan/crkbd
-[ferris]: https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default
 
 ## Quick start
 
@@ -54,7 +52,9 @@ designed for a split ortho / column staggered 3x6 with 3 thumb buttons.
 -   40% layout with 3x6 layout keeps all keys to within one key distance from the homerow.
 -   No homerow mods. [home row mods][homerowmod] are popular, I have used them as well, but found that
     it slowed me down and was too much mental tax.
--   Symbols on one layer, numbers and navigation one another.
+-   Symbols that are accessible on my alpha layer do not need to be mapped on the sym layer.
+-   0 and 1 are the most common numbers they are on my best finger's home key. Other numbers are on the bottom
+    as I find moving down easier then up.
 
 ## Trouble shooting flashing on linux
 
