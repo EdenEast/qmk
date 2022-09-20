@@ -66,10 +66,10 @@ void render_default_layer_state(void) {
     oled_write_P(PSTR("Lyout"), false);
     switch (get_highest_layer(default_layer_state)) {
         case _COLEMAK_DH:
-            oled_write_P(PSTR(" COLE"), false);
+            oled_write_P(PSTR(" Cole"), false);
             break;
         case _GAME:
-            oled_write_P(PSTR(" GAME"), false);
+            oled_write_P(PSTR(" Game"), false);
             break;
     }
 }
@@ -77,20 +77,11 @@ void render_default_layer_state(void) {
 void render_layer_state(void) {
     oled_write_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
-        case _SYML:
-            oled_write_ln_P(PSTR("Sym L"), false);
-            break;
-        case _SYMR:
-            oled_write_ln_P(PSTR("Sym R"), false);
-            break;
-        case _NUM:
-            oled_write_ln_P(PSTR("  NUM"), false);
+        case _SYM:
+            oled_write_ln_P(PSTR(" Symb"), false);
             break;
         case _NAV:
-            oled_write_ln_P(PSTR(" Navi"), false);
-            break;
-        case _FUNC:
-            oled_write_ln_P(PSTR(" Func"), false);
+            oled_write_ln_P(PSTR(" NAVI"), false);
             break;
         case _ADJ:
             oled_write_ln_P(PSTR("  ADJ"), false);

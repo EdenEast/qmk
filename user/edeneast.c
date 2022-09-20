@@ -2,7 +2,9 @@
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    default:
-        return TAPPING_TERM;
+  case SFT_BSP:
+    return TAPPING_TERM - 80;
+  default:
+    return TAPPING_TERM;
   }
 }

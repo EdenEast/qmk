@@ -1,5 +1,6 @@
 .env
 .direnv/
+.DS_Store
 
 result/
 external/

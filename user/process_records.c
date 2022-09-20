@@ -16,8 +16,12 @@ void toggle_layer_lock(layer_state_t layer) {
     }
 }
 
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _SYM, _NAV, _ADJ);
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    uint8_t mod_state = get_mods();
+    // uint8_t mod_state = get_mods();
 
     switch (keycode) {
         case KC_COLEMAK ... KC_GAME:
@@ -25,29 +29,72 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(keycode - KC_COLEMAK);
             break;
 
-        // case KC_RAISE ... KC_FN:
-        //     if (record->event.pressed)
-        //         toggle_layer_lock(keycode - KC_COLEMAK);
-        //     break;
 
-        case KC_BSPC: // SHIFT + BSPACE for del
-        {
-            static bool delkey_registered;
+        // case KC_BSPC: // SHIFT + BSPACE for del
+        // {
+        //     static bool delkey_registered;
+        //     if (record->event.pressed) {
+        //         del_mods(MOD_MASK_SHIFT);
+        //         register_code(KC_DEL);
+        //         delkey_registered = true;
+        //         set_mods(mod_state);
+        //         return false;
+        //     } else {
+        //         if (delkey_registered) {
+        //             unregister_code(KC_DEL);
+        //             delkey_registered = false;
+        //             return false;
+        //         }
+        //     }
+        //     return true;
+        // }
+
+        case KC_LPLT:
             if (record->event.pressed) {
-                del_mods(MOD_MASK_SHIFT);
-                register_code(KC_DEL);
-                delkey_registered = true;
-                set_mods(mod_state);
-                return false;
-            } else {
-                if (delkey_registered) {
-                    unregister_code(KC_DEL);
-                    delkey_registered = false;
-                    return false;
+                if (get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT))) {
+                    tap_code(KC_COMM); // '<' (Shift already registered)
+                } else {
+                    tap_code16(KC_LPRN);
                 }
             }
-            return true;
-        }
+            return false;
+
+        case KC_RPGT:
+            if (record->event.pressed) {
+                if (get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT))) {
+                    tap_code(KC_DOT); // '>' (Shift already registered)
+                } else {
+                    tap_code16(KC_RPRN);
+                }
+            }
+            return false;
+
+        case KC_NEQL:
+            if (record->event.pressed) {
+                SEND_STRING("!=");
+            }
+            return false;
+        case KC_AROW:
+            if (record->event.pressed) {
+                SEND_STRING("->");
+            }
+            return false;
+
+        case ENB_STN:
+            layer_on(_STENO);
+            return false;
+
+        case EXT_STN:
+            layer_off(_STENO);
+            return false;
+
+        case ENB_GME:
+            layer_on(_GAME);
+            return false;
+
+        case EXT_GME:
+            layer_off(_GAME);
+            return false;
 
     }
 
