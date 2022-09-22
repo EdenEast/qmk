@@ -1,7 +1,7 @@
 #include "edeneast.h"
 #include QMK_KEYBOARD_H
 
-
+// clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_COLEMAK_DH] = LAYOUT_split_3x6_3_WRAPPER (
     _________________COLEMAK_DH_L1_________________,                        _________________COLEMAK_DH_R1_________________,

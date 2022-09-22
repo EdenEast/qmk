@@ -1,25 +1,28 @@
 #pragma once
+#include QMK_KEYBOARD_H
 
-enum userspace_custom_keycodes {
-    VRSN = SAFE_RANGE,  // Prints QMK Firmware and board info
-    KC_COLEMAK,         // Sets default layer to COLEMAK
-    KC_GAME,            // Sets default layer to GAME
-    KC_NEQL,            // Output '!='
-    KC_AROW,            // Output '->'
-    KC_LPLT,            // '(' or '<' when shift
-    KC_RPGT,            // ')' or '>' when shift
-    ENB_GME,            // Enable game layer
-    EXT_GME,            // Exit game layer
-    ENB_STN,            // Enable Steno layer
-    EXT_STN,            // Exit Steno layer
-    NEW_SAFE_RANGE      // use "NEWPLACEHOLDER for keymap specific codes
+enum userspace_custom_keycodes
+{
+    VRSN = SAFE_RANGE, // Prints QMK Firmware and board info
+    KC_COLEMAK,        // Sets default layer to COLEMAK
+    KC_GAME,           // Sets default layer to GAME
+    KC_NEQL,           // Output '!='
+    KC_AROW,           // Output '->'
+    KC_LPLT,           // '(' or '<' when shift
+    KC_RPGT,           // ')' or '>' when shift
+    ENB_GME,           // Enable game layer
+    EXT_GME,           // Exit game layer
+    ENB_STN,           // Enable Steno layer
+    EXT_STN,           // Exit Steno layer
+    NEW_SAFE_RANGE     // use "NEWPLACEHOLDER for keymap specific codes
 };
 
-bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
 
 // Layer keys
 /* #define R_SYML LT(_SYML, KC_R) */
 
+// clang-format off
 #define TMUX       LCTL(KC_A)
 
 #define CTL_ESC    LCTL_T(KC_ESC)

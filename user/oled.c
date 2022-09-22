@@ -1,8 +1,8 @@
 #include "edeneast.h"
 
 #define KEYLOGGER_LENGTH 5
-static char     keylog_str[KEYLOGGER_LENGTH + 1] = {"\n"};
-static char     coord_record_str[KEYLOGGER_LENGTH + 1] = {"\n"};
+static char keylog_str[KEYLOGGER_LENGTH + 1] = { "\n" };
+static char coord_record_str[KEYLOGGER_LENGTH + 1] = { "\n" };
 
 // clang-format off
 static const char PROGMEM code_to_name[0xFF] = {

@@ -1,9 +1,9 @@
 #include "edeneast.h"
 #include QMK_KEYBOARD_H
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    // clang-format off
 // Base (Colemak-DH) https://colemakmods.github.io/mod-dh/keyboards.html#matrix-keyboards
 [_COLEMAK_DH] = LAYOUT_5x6_WRAPPER(
     _______,______________NUMBER_LEFT______________,                        ______________NUMBER_RIGHT_____________,_______,

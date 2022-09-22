@@ -99,6 +99,9 @@ init:
         ln -sf $(pwd)/crkbd {{crkbd_symlink}}
     fi
 
+fmt:
+    clang-format -i $(fd --exclude external --extension c --extension h .)
+
 # Update qmk_firmware
 qmk-update:
     #!/usr/bin/env bash
