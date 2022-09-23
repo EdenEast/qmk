@@ -140,12 +140,12 @@ enum layer_names
 // │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Sym │  Nav  │
 // ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
 #define TB_DFL1 SFT_BSP
-#define TB_DFL2 LT(_SYM, KC_TAB)
+#define TB_DFL2 SYM_TAB
 #define TB_DFL3 MO(_NAV)
 
 #define TB_DFR1 KC_SPC
-#define TB_DFR2 LT(_SYM, KC_MINS)
-#define TB_DFR3 MO(_NAV)
+#define TB_DFR2 NAV_MNS
+#define TB_DFR3 MO(_SYM)
 
 // Symbols:
 // ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮

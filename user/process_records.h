@@ -44,6 +44,9 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
 #define GUI_F1     LGUI_T(KC_F1)
 #define GUI_F10    LGUI_T(KC_F10)
 
+#define SYM_TAB    LT(_SYM, KC_TAB)
+#define NAV_MNS    LT(_NAV, KC_MINS)
+
 #define COLEMAK    KC_COLEMAK
 #define GAME       KC_GAME
 
