@@ -10,6 +10,8 @@ enum userspace_custom_keycodes
     KC_AROW,           // Output '->'
     KC_LPLT,           // '(' or '<' when shift
     KC_RPGT,           // ')' or '>' when shift
+    KC_CMEX,           // ',' or '!' when shift
+    KC_DTAT,           // '.' or '@' when shift
     ENB_GME,           // Enable game layer
     EXT_GME,           // Exit game layer
     ENB_STN,           // Enable Steno layer

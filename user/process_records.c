@@ -87,6 +87,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
         }
         return false;
 
+    case KC_CMEX:
+        if (record->event.pressed)
+        {
+            if (get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)))
+            {
+                tap_code(KC_1); // '!' (Shift already registered)
+            }
+            else
+            {
+                tap_code16(KC_COMM);
+            }
+        }
+        return false;
+
+    case KC_DTAT:
+        if (record->event.pressed)
+        {
+            if (get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)))
+            {
+                tap_code(KC_2); // '@' (Shift already registered)
+            }
+            else
+            {
+                tap_code16(KC_DOT);
+            }
+        }
+        return false;
+
     case KC_NEQL:
         if (record->event.pressed)
         {

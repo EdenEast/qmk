@@ -34,7 +34,7 @@ enum layer_names
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │Esc/Ctl│   A   │   R   │   S   │   T   │   G   │  │   M   │   N   │   E   │   I   │   O   │ '/Ctl │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
-// │Tmx/Sft│ Z/Alt │   X   │   C   │   D   │   V   │  │   K   │   H   │   ,   │   .   │[/]/Alt│Ent/Sft│
+// │Tmx/Sft│ Z/Alt │   X   │   C   │   D   │   V   │  │   K   │   H   │ , [!] │ . [@] │[/]/Alt│Ent/Sft│
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,GUI_Q  ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define _________________COLEMAK_DH_L2_________________ CTL_ESC,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
@@ -42,31 +42,29 @@ enum layer_names
 
 #define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,GUI_SCN,KC_EQL
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,CTL_QOT
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,KC_DOT ,ALT_SLH,SFT_ENT
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_CMEX,KC_DTAT,ALT_SLH,SFT_ENT
 
 // Symbols:
 //   - ^ and $ are placed at beinging and end of layer just like regex meanings
-//   - ( and ) result in < and > when shifted.
-//   - All brackets are accessable from up index and middle with shifts
-//   - 0 and 1 are placed on home keys as they are the most used
-//     - Symbols are also accessable though shifts
-//     - ! is accessed by shift right home index
-//     - = / - _ ' " are omitted as they are accessable from alpha layer
-//     - -> and != are for programming shortcuts
+//   - All brackets are on index and middle finger
+//   - Numbers are on top with no change to keep menal overhead to a min
+//   - Slashes are at the ends and backslash is on the same key as normal slash
+//   - ! and @ are accessable from alpha layer
+//   - ~ and ` are on either side of the home row brackets as they are used alot in terminal
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
-// │       │       │   ->  │   [   │   ]   │   |   │  │   \   │ ( [<] │ ) [>] │   !=  │       │       │
+// │       │   1   │   2   │   3   │   4   │   5   │  │   6   │   7   │   8   │   9   │   0   │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
-// │       │   ^   │   @   │   #   │   0   │   *   │  │   +   │   1   │   `   │   ~   │   $   │       │
+// │       │   ^   │   *   │   {   │   }   │   +   │  │   ~   │   (   │   )   │   `   │   $   │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
-// │       │   6   │   7   │   8   │   9   │   %   │  │   &   │   2   │   3   │   4   │   5   │       │
+// │       │   |   │   #   │   [   │   ]   │   =   │  │   &   │   <   │   >   │   @   │   \   │       │
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
-#define ____________________SYMB_L1____________________ _______,_______,KC_AROW,KC_LBRC,KC_RBRC,KC_PIPE
-#define ____________________SYMB_L2____________________ _______,KC_CIRC,KC_AT  ,KC_HASH,KC_0   ,KC_ASTR
-#define ____________________SYMB_L3____________________ _______,KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_PERC
+#define ____________________SYMB_L1____________________ _______,______________NUMBER_LEFT______________
+#define ____________________SYMB_L2____________________ _______,KC_CIRC,KC_ASTR,KC_LCBR,KC_RCBR,KC_PLUS
+#define ____________________SYMB_L3____________________ _______,KC_PIPE,KC_HASH,KC_LBRC,KC_RBRC,KC_EQL
 
-#define ____________________SYMB_R1____________________ KC_BSLS,KC_LPLT,KC_RPGT,KC_NEQL,_______,_______
-#define ____________________SYMB_R2____________________ KC_PLUS,KC_1   ,KC_GRV ,KC_TILD,KC_DLR ,_______
-#define ____________________SYMB_R3____________________ KC_AMPR,KC_2   ,KC_3   ,KC_4   ,KC_5   ,_______
+#define ____________________SYMB_R1____________________ ______________NUMBER_RIGHT_____________,_______
+#define ____________________SYMB_R2____________________ KC_TILD,KC_LPRN,KC_RPRN,KC_GRV ,KC_DLR ,_______
+#define ____________________SYMB_R3____________________ KC_AMPR,KC_LABK,KC_RABK,KC_AT  ,KC_BSLS,_______
 
 // Navigation:
 //   - Modifier keys added on the left hand to make moving windows in most floating window managers
@@ -139,15 +137,15 @@ enum layer_names
 //   - Thumb keys are defined by priority do first priority seonds and third
 //     3       2       1          1       2       3
 // ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
-// │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Nav │  Sym  │
+// │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Sym │  Nav  │
 // ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
 #define TB_DFL1 SFT_BSP
 #define TB_DFL2 LT(_SYM, KC_TAB)
 #define TB_DFL3 MO(_NAV)
 
 #define TB_DFR1 KC_SPC
-#define TB_DFR2 LT(_NAV, KC_MINS)
-#define TB_DFR3 MO(_SYM)
+#define TB_DFR2 LT(_SYM, KC_MINS)
+#define TB_DFR3 MO(_NAV)
 
 // Symbols:
 // ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
