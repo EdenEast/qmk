@@ -2,10 +2,15 @@ SRC += edeneast.c \
        process_records.c
 
 # Common flags
+AUDIO_ENABLE     = no  # Use the audio system
+COMMAND_ENABLE   = no  # Commands for debug and configuration
+CONSOLE_ENABLE   = no  # Console for debugging
+MOUSEKEY_ENABLE  = no  # Mouse keys
+RGBLIGHT_ENABLE  = no  # No rgb
+MIDI_ENABLE      = no  # Dont need it
 LTO_ENABLE       = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE  = yes # Audio controls and system controls
 NKRO_ENABLE      = yes # NKey Rollover
-COMMAND_ENABLE   = no  # Commands for debug and configuration
 TAP_DANCE_ENABLE = yes # Used for tmux prefix key
 STENO_ENABLE     = yes # Enable steno
 
