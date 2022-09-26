@@ -41,6 +41,8 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
 
 #define GUI_Q      LGUI_T(KC_Q)
 #define GUI_SCN    LGUI_T(KC_SCLN)
+#define GUI_1      LGUI_T(KC_1)
+#define GUI_0      LGUI_T(KC_0)
 #define GUI_F1     LGUI_T(KC_F1)
 #define GUI_F10    LGUI_T(KC_F10)
 
