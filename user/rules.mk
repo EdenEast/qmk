@@ -3,6 +3,7 @@ SRC += edeneast.c \
 
 # Common flags
 AUDIO_ENABLE     = no  # Use the audio system
+BOOTMAGIC_ENABLE = no  # Disable to allow keys during system boot
 COMMAND_ENABLE   = no  # Commands for debug and configuration
 CONSOLE_ENABLE   = no  # Console for debugging
 MOUSEKEY_ENABLE  = no  # Mouse keys
