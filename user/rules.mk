@@ -17,6 +17,8 @@ EXTRAKEY_ENABLE    = yes # Audio controls and system controls
 NKRO_ENABLE        = yes # NKey Rollover
 TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
 STENO_ENABLE       = yes # Enable steno
+STENO_PROTOCOL     = geminipr # Better protocol for steno
+VIRTSER_ENABLE     = yes # Required for steno
 
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
     SRC += tap_dances.c

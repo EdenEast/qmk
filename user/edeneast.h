@@ -137,7 +137,7 @@ enum layer_names
 //   - Thumb keys are defined by priority do first priority seonds and third
 //     3       2       1          1       2       3
 // ╭───────┬───────┬───────╮  ╭───────┬───────┬───────╮
-// │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Sym │  Nav  │
+// │  Nav  │Tab/Sym│BSP/SFT│  │ Space │ -/Nav │  Sym  │
 // ╰───────┴───────┴───────╯  ╰───────┴───────┴───────╯
 #define TB_DFL1 SFT_BSP
 #define TB_DFL2 SYM_TAB

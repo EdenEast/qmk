@@ -22,3 +22,6 @@
 
 // Recommended for heavy chording.
 #define QMK_KEYS_PER_SCAN 4
+
+// NKRO_ENABLE only enables the ability this forces NKRO
+#define FORCE_NKRO
