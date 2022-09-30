@@ -101,12 +101,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
         }
         return false;
 
-    case KC_DTAT:
+    case KC_DTPP:
         if (record->event.pressed)
         {
             if (get_mods() & (MOD_BIT(KC_LSFT) | MOD_BIT(KC_RSFT)))
             {
-                tap_code(KC_2); // '@' (Shift already registered)
+                tap_code(KC_BSLS); // '|' (Shift already registered)
             }
             else
             {
