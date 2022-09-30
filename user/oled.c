@@ -66,16 +66,19 @@ void render_default_layer_state(void) {
     oled_write_P(PSTR("Lyout"), false);
     switch (get_highest_layer(default_layer_state)) {
         case _COLEMAK_DH:
-            oled_write_P(PSTR(" Cole"), false);
+            oled_write_P(PSTR("ColMk"), false);
             break;
         case _GAME:
             oled_write_P(PSTR(" Game"), false);
+            break;
+        case _STENO:
+            oled_write_P(PSTR("Steno"), false);
             break;
     }
 }
 
 void render_layer_state(void) {
-    oled_write_P(PSTR("LAYER"), false);
+    oled_write_P(PSTR("Layer"), false);
     switch (get_highest_layer(layer_state)) {
         case _SYM:
             oled_write_ln_P(PSTR(" Symb"), false);
@@ -129,12 +132,13 @@ void render_status_secondary(void) {
 }
 
 // Main entry point for oled render
-void oled_task_user(void) {
-    if (is_master) {
-        render_status_main();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
+bool oled_task_user(void) {
+    if (is_keyboard_master()) {
+        render_status_main();
     } else {
         render_status_secondary();
     }
+    return false;
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) { return OLED_ROTATION_270; }
