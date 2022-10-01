@@ -2,5 +2,6 @@
 .direnv/
 .DS_Store
 
-result/
 external/
+result/
+wiki/

@@ -2,7 +2,7 @@
 
 ## Reference
 
-[![](./resources/ednkbd.png)][reference]
+[![](https://raw.githubusercontent.com/wiki/EdenEast/ednkbd/resources/ednkbd.png)][reference]
 
 [reference]: http://www.keyboard-layout-editor.com/#/gists/e54a951ac17ec4a22ba0da91d7e1c954
 
