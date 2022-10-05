@@ -12,10 +12,8 @@ enum userspace_custom_keycodes
     KC_RPGT,           // ')' or '>' when shift
     KC_CMEX,           // ',' or '!' when shift
     KC_DTPP,           // '.' or '@' when shift
-    ENB_GME,           // Enable game layer
-    EXT_GME,           // Exit game layer
-    ENB_STN,           // Enable Steno layer
-    EXT_STN,           // Exit Steno layer
+    TLR_GME,           // Toggle Game layer
+    TLR_STN,           // Toggle Steno layer
     NEW_SAFE_RANGE     // use "NEWPLACEHOLDER for keymap specific codes
 };
 

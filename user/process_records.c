@@ -128,20 +128,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
         }
         return false;
 
-    case ENB_STN:
-        layer_on(_STENO);
+    case TLR_GME:
+        layer_invert(_GAME);
         return false;
 
-    case EXT_STN:
-        layer_off(_STENO);
-        return false;
-
-    case ENB_GME:
-        layer_on(_GAME);
-        return false;
-
-    case EXT_GME:
-        layer_off(_GAME);
+    case TLR_STN:
+        layer_invert(_STENO);
         return false;
     }
 

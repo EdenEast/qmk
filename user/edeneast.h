@@ -95,7 +95,7 @@ enum layer_names
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define _____________________ADJ_L1____________________ KC_F12 ,GUI_F1 ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
 #define _____________________ADJ_L2____________________ _______,_______,_______,TG_MIC ,_______,_______
-#define _____________________ADJ_L3____________________ RESET  ,AG_TOGG,_______,_______,ENB_STN,ENB_GME
+#define _____________________ADJ_L3____________________ RESET  ,AG_TOGG,_______,_______,TLR_STN,TLR_GME
 
 #define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
 #define _____________________ADJ_R2____________________ KC_BRIU,KC_VOLU,TG_MIC ,_______,_______,_______
@@ -111,7 +111,7 @@ enum layer_names
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define ____________________STENO_L1___________________ STN_N1 ,STN_N2 ,STN_N3 ,STN_N4 ,STN_N5 ,STN_N6
 #define ____________________STENO_L2___________________ STN_FN ,STN_S1 ,STN_TL ,STN_PL ,STN_HL ,STN_ST1
-#define ____________________STENO_L3___________________ EXT_STN,STN_S2 ,STN_KL ,STN_WL ,STN_RL ,STN_ST2
+#define ____________________STENO_L3___________________ TLR_STN,STN_S2 ,STN_KL ,STN_WL ,STN_RL ,STN_ST2
 
 #define ____________________STENO_R1___________________ STN_N7 ,STN_N8 ,STN_N9 ,STN_NA ,STN_NB ,STN_NC
 #define ____________________STENO_R2___________________ STN_ST3,STN_FR ,STN_PR ,STN_LR ,STN_TR ,STN_DR
@@ -130,7 +130,7 @@ enum layer_names
 #define ____________________GAME_L3____________________ KC_LALT,KC_LCTL,KC_Z   ,KC_X   ,KC_C   ,KC_V
 
 #define ____________________GAME_R1____________________ KC_T   ,KC_Y   ,KC_U   ,KC_I   ,KC_O   ,KC_P
-#define ____________________GAME_R2____________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,EXT_GME
+#define ____________________GAME_R2____________________ KC_G   ,KC_H   ,KC_J   ,KC_K   ,KC_L   ,TLR_GME
 #define ____________________GAME_R3____________________ KC_B   ,KC_N   ,KC_M   ,KC_COMM,KC_DOT ,KC_SLSH
 
 // Alpha:
