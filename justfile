@@ -6,16 +6,22 @@ yellow := '\033[1;33m'
 blue   := '\033[1;34m'
 
 user_symlink  := "./external/qmk_firmware/users/edeneast"
-dact_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
+dm4_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/4x6/keymaps/edeneast"
+dm5_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
 crkbd_symlink := "./external/qmk_firmware/keyboards/crkbd/keymaps/edeneast"
 
 default:
-    @just dact
+    @just dm4
+    @just dm5
     @just crkbd
 
-# Build dactyl manuform keyboard firmware
-dact:
-    @just _build handwired/dactyl_manuform/5x6:edeneast handwired_dactyl_manuform_5x6_edeneast.hex dact
+# Build dactyl manuform 4x6 keyboard firmware
+dm4:
+    @just _build handwired/dactyl_manuform/4x6:edeneast handwired_dactyl_manuform_4x6_edeneast.hex dm4
+
+# Build dactyl manuform 5x6 keyboard firmware
+dm5:
+    @just _build handwired/dactyl_manuform/5x6:edeneast handwired_dactyl_manuform_5x6_edeneast.hex dm5
 
 # Build Corne keyboard (crkbd) firmware
 crkbd:
@@ -42,7 +48,9 @@ flash keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu"
-    elif [ "{{keyboard}}" = "dact" ]; then
+    elif [ "{{keyboard}}" = "dm4" ]; then
+        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude"
+    elif [ "{{keyboard}}" = "dm5" ]; then
         cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
@@ -57,7 +65,9 @@ left keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu-split-left"
-    elif [ "{{keyboard}}" = "dact" ]; then
+    elif [ "{{keyboard}}" = "dm4" ]; then
+        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-left"
+    elif [ "{{keyboard}}" = "dm5" ]; then
         cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-left"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
@@ -73,7 +83,9 @@ right keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu-split-right"
-    elif [ "{{keyboard}}" = "dact" ]; then
+    elif [ "{{keyboard}}" = "dm4" ]; then
+        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-right"
+    elif [ "{{keyboard}}" = "dm5" ]; then
         cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-right"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
@@ -92,12 +104,24 @@ init:
     if [ ! -L "{{user_symlink}}" ] ; then
         ln -sf $(pwd)/user {{user_symlink}}
     fi
-    if [ ! -L "{{dact_symlink}}" ] ; then
-        ln -sf $(pwd)/dact {{dact_symlink}}
+    if [ ! -L "{{dm4_symlink}}" ] ; then
+        ln -sf $(pwd)/keyboard/dm/4x6 {{dm4_symlink}}
+    fi
+    if [ ! -L "{{dm5_symlink}}" ] ; then
+        ln -sf $(pwd)/keyboard/dm/5x6 {{dm5_symlink}}
     fi
     if [ ! -L "{{crkbd_symlink}}" ] ; then
-        ln -sf $(pwd)/crkbd {{crkbd_symlink}}
+        ln -sf $(pwd)/keyboard/crkbd {{crkbd_symlink}}
     fi
+
+# Re-initialize symlinks
+reinit:
+    #!/usr/bin/env bash
+    rm -rf {{user_symlink}}
+    rm -rf {{dm4_symlink}}
+    rm -rf {{dm5_symlink}}
+    rm -rf {{crkbd_symlink}}
+    just init
 
 fmt:
     clang-format -i $(fd --exclude external --extension c --extension h .)
@@ -115,8 +139,8 @@ qmk-update:
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./external/qmk_firmware
-    cp -f ./external/qmk_firmware/keyboards/handwired/dactyl_manuform/readme.md ./dact/readme.md
-    cp -f ./external/qmk_firmware/keyboards/crkbd/readme.md ./crkbd/readme.md
+    cp -f ./external/qmk_firmware/keyboards/handwired/dactyl_manuform/readme.md ./keyboard/dm/readme.md
+    cp -f ./external/qmk_firmware/keyboards/crkbd/readme.md ./keyboard/crkbd/readme.md
 
 # Update nix development environment
 nix-update:
