@@ -1,9 +1,10 @@
 name: Continuous Delivery
 on:
-  push:
-    branches: [master]
-    paths-ignore:
-      - "**.md"
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+  #   paths-ignore:
+  #     - "**.md"
 
 jobs:
   build:
@@ -57,5 +58,6 @@ jobs:
           allow_override: true
           files: |
             crkbd.hex:./result/crkbd.hex
-            dact.hex:./result/dact.hex
+            dm4.hex:./result/dm4.hex
+            dm5.hex:./result/dm5.hex
 
