@@ -20,6 +20,10 @@ STENO_ENABLE       = yes # Enable steno
 STENO_PROTOCOL     = geminipr # Better protocol for steno
 VIRTSER_ENABLE     = yes # Required for steno
 
+# Add LTO compile flag
+# https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
+EXTRAFLAGS += -flto
+
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
     SRC += tap_dances.c
 endif
