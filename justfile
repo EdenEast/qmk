@@ -10,7 +10,8 @@ dm4_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/4x6
 dm5_symlink  := "./external/qmk_firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
 crkbd_symlink := "./external/qmk_firmware/keyboards/crkbd/keymaps/edeneast"
 
-default:
+# Build all keyboards
+all:
     @just dm4
     @just dm5
     @just crkbd
@@ -123,6 +124,7 @@ reinit:
     rm -rf {{crkbd_symlink}}
     just init
 
+# Format c files
 fmt:
     clang-format -i $(fd --exclude external --extension c --extension h .)
 
