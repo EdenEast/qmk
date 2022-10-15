@@ -36,13 +36,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
 
 #define ALT_Z      LALT_T(KC_Z)
 #define ALT_SLH    LALT_T(KC_SLSH)
+#define ALT_AT     LALT_T(KC_AT)
+#define ALT_BSL    LALT_T(KC_BSLS)
 
-#define GUI_Q      LGUI_T(KC_Q)
-#define GUI_SCN    LGUI_T(KC_SCLN)
-#define GUI_1      LGUI_T(KC_1)
-#define GUI_0      LGUI_T(KC_0)
-#define GUI_F1     LGUI_T(KC_F1)
-#define GUI_F10    LGUI_T(KC_F10)
+#define GUI_X      LGUI_T(KC_X)
+#define GUI_DOT    LGUI_T(KC_DOT)
+#define GUI_HSH    LGUI_T(KC_HASH)
 
 #define SYM_TAB    LT(_SYM, KC_TAB)
 #define NAV_MNS    LT(_NAV, KC_MINS)

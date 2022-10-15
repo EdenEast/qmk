@@ -34,13 +34,13 @@ enum layer_names
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │Tmx/Sft│ Z/Alt │   X   │   C   │   D   │   V   │  │   K   │   H   │ , [!] │ . [|] │[/]/Alt│Ent/Sft│
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
-#define _________________COLEMAK_DH_L1_________________ KC_TAB ,GUI_Q  ,KC_W   ,KC_F   ,KC_P   ,KC_B
+#define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define _________________COLEMAK_DH_L2_________________ CTL_ESC,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
-#define _________________COLEMAK_DH_L3_________________ TD_TMUX,ALT_Z  ,KC_X   ,KC_C   ,KC_D   ,KC_V
+#define _________________COLEMAK_DH_L3_________________ TD_TMUX,ALT_Z  ,GUI_X  ,KC_C   ,KC_D   ,KC_V
 
-#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,GUI_SCN,KC_EQL
+#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_EQL
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,CTL_QOT
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_CMEX,KC_DTPP,ALT_SLH,SFT_ENT
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_CMEX,GUI_DOT,ALT_SLH,SFT_ENT
 
 // Symbols:
 //   - ^ and $ are placed at beinging and end of layer just like regex meanings
@@ -50,19 +50,19 @@ enum layer_names
 //   - ! and @ are accessable from alpha layer
 //   - ~ and ` are on either side of the home row brackets as they are used alot in terminal
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
-// │       │ 1/Gui │   2   │   3   │   4   │   5   │  │   6   │   7   │   8   │   9   │ 0/Gui │       │
+// │       │   1   │   2   │   3   │   4   │   5   │  │   6   │   7   │   8   │   9   │   0   │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │       │   ^   │   *   │   {   │   }   │   +   │  │   ~   │   (   │   )   │   `   │   $   │       │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │       │   @   │   #   │   [   │   ]   │   =   │  │   &   │   <   │   >   │       │   \   │       │
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
-#define ____________________SYMB_L1____________________ _______,GUI_1  ,KC_2   ,KC_3   ,KC_4   ,KC_5
+#define ____________________SYMB_L1____________________ _______,KC_1   ,KC_2   ,KC_3   ,KC_4   ,KC_5
 #define ____________________SYMB_L2____________________ _______,KC_CIRC,KC_ASTR,KC_LCBR,KC_RCBR,KC_PLUS
-#define ____________________SYMB_L3____________________ _______,KC_AT  ,KC_HASH,KC_LBRC,KC_RBRC,KC_EQL
+#define ____________________SYMB_L3____________________ _______,ALT_AT ,GUI_HSH,KC_LBRC,KC_RBRC,KC_EQL
 
-#define ____________________SYMB_R1____________________ KC_6   ,KC_7   ,KC_8   ,KC_9   ,GUI_0  ,_______
+#define ____________________SYMB_R1____________________ KC_6   ,KC_7   ,KC_8   ,KC_9   ,KC_0   ,_______
 #define ____________________SYMB_R2____________________ KC_TILD,KC_LPRN,KC_RPRN,KC_GRV ,KC_DLR ,_______
-#define ____________________SYMB_R3____________________ KC_AMPR,KC_LABK,KC_RABK,_______,KC_BSLS,_______
+#define ____________________SYMB_R3____________________ KC_AMPR,KC_LABK,KC_RABK,_______,ALT_BSL,_______
 
 // Navigation:
 //   - Modifier keys added on the left hand to make moving windows in most floating window managers
@@ -91,11 +91,11 @@ enum layer_names
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │ Reset │A « » G│       │       │ STENO │  Game │  │Bright-│  Vol- │  Mute │       │       │ Reset │
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
-#define _____________________ADJ_L1____________________ KC_F12 ,GUI_F1 ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
+#define _____________________ADJ_L1____________________ KC_F12 ,KC_F1  ,KC_F2  ,KC_F3  ,KC_F4  ,KC_F5
 #define _____________________ADJ_L2____________________ _______,_______,_______,TG_MIC ,_______,_______
 #define _____________________ADJ_L3____________________ RESET  ,AG_TOGG,_______,_______,TLR_STN,TLR_GME
 
-#define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,GUI_F10 ,KC_F11
+#define _____________________ADJ_R1____________________ KC_F6  ,KC_F7  ,KC_F8  ,KC_F9  ,KC_F10 ,KC_F11
 #define _____________________ADJ_R2____________________ KC_BRIU,KC_VOLU,TG_MIC ,_______,_______,_______
 #define _____________________ADJ_R3____________________ KC_BRID,KC_VOLD,KC_MUTE,_______,_______,RESET
 
