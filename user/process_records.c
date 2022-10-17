@@ -135,6 +135,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
     case TLR_STN:
         layer_invert(_STENO);
         return false;
+
+    case ALT_AT: // KC_AT is greater then 8 bits. This makes it incompatible with MT
+        if (record->tap.count && record->event.pressed)
+        {
+            tap_code16(KC_AT);
+            return false;
+        }
+        break;
+
+    case GUI_HSH: // KC_HASH is greater then 8 bits. This makes it incompatible with MT
+        if (record->tap.count && record->event.pressed)
+        {
+            tap_code16(KC_HASH);
+            return false;
+        }
+        break;
     }
 
     return process_record_keymap(keycode, record);
