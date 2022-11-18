@@ -27,4 +27,7 @@
 #define FORCE_NKRO
 
 // Number of combos
-#define COMBO_COUNT 10
+#define COMBO_COUNT 30
+
+// ms to register a combo
+#define COMBO_TERM 20

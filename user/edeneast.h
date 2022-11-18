@@ -6,6 +6,7 @@
 #ifdef TAP_DANCE_ENABLE
 #    include "tap_dances.h"
 #endif // TAP_DANCE_ENABLE
+#include "abstraction.h"
 
 // Define layer names
 enum layer_names
@@ -34,13 +35,13 @@ enum layer_names
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │Tmx/Sft│ Z/Alt │ X/Gui │   C   │   D   │   V   │  │   K   │   H   │   ,   │ ./Gui │[/]/Alt│Ent/Sft│
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
-#define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
-#define _________________COLEMAK_DH_L2_________________ CTL_ESC,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
-#define _________________COLEMAK_DH_L3_________________ TD_TMUX,ALT_Z  ,GUI_X  ,KC_C   ,KC_D   ,KC_V
+#define _________________COLEMAK_DH_L1_________________ KC_TAB ,LUP    ,LUR    ,LUM    ,LUI    ,LUII
+#define _________________COLEMAK_DH_L2_________________ CTL_ESC,LMP    ,LMR    ,LMM    ,LMI    ,LMII
+#define _________________COLEMAK_DH_L3_________________ TD_TMUX,LLP    ,LLR    ,LLM    ,LLI    ,LLII
 
-#define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_EQL
-#define _________________COLEMAK_DH_R2_________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,CTL_QOT
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,GUI_DOT,ALT_SLH,SFT_ENT
+#define _________________COLEMAK_DH_R1_________________ RUII   ,RUI    ,RUM    ,RUR    ,RUP    ,KC_EQL
+#define _________________COLEMAK_DH_R2_________________ RMII   ,RMI    ,RMM    ,RMR    ,RMP    ,CTL_QOT
+#define _________________COLEMAK_DH_R3_________________ RLII   ,RLI    ,RLM    ,RLR    ,RLP    ,SFT_ENT
 
 // Symbols:
 //   - ^ and $ are placed at beinging and end of layer just like regex meanings
