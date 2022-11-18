@@ -25,3 +25,6 @@
 
 // NKRO_ENABLE only enables the ability this forces NKRO
 #define FORCE_NKRO
+
+// Number of combos
+#define COMBO_COUNT 10

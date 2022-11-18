@@ -28,11 +28,11 @@ enum layer_names
 
 // Alpha:
 // ╭───────┬───────┬───────┬───────┬───────┬───────╮  ╭───────┬───────┬───────┬───────┬───────┬───────╮
-// │  Tab  │ Q/Gui │   W   │   F   │   P   │   B   │  │   J   │   L   │   U   │   Y   │ ;/Gui │   =   │
+// │  Tab  │   Q   │   W   │   F   │   P   │   B   │  │   J   │   L   │   U   │   Y   │   ;   │   =   │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
 // │Esc/Ctl│   A   │   R   │   S   │   T   │   G   │  │   M   │   N   │   E   │   I   │   O   │ '/Ctl │
 // ├───────┼───────┼───────┼───────┼───────┼───────┤  ├───────┼───────┼───────┼───────┼───────┼───────┤
-// │Tmx/Sft│ Z/Alt │   X   │   C   │   D   │   V   │  │   K   │   H   │ , [!] │ . [|] │[/]/Alt│Ent/Sft│
+// │Tmx/Sft│ Z/Alt │ X/Gui │   C   │   D   │   V   │  │   K   │   H   │   ,   │ ./Gui │[/]/Alt│Ent/Sft│
 // ╰───────┴───────┴───────┴───────┴───────┴───────╯  ╰───────┴───────┴───────┴───────┴───────┴───────╯
 #define _________________COLEMAK_DH_L1_________________ KC_TAB ,KC_Q   ,KC_W   ,KC_F   ,KC_P   ,KC_B
 #define _________________COLEMAK_DH_L2_________________ CTL_ESC,KC_A   ,KC_R   ,KC_S   ,KC_T   ,KC_G
@@ -40,7 +40,7 @@ enum layer_names
 
 #define _________________COLEMAK_DH_R1_________________ KC_J   ,KC_L   ,KC_U   ,KC_Y   ,KC_SCLN,KC_EQL
 #define _________________COLEMAK_DH_R2_________________ KC_M   ,KC_N   ,KC_E   ,KC_I   ,KC_O   ,CTL_QOT
-#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_CMEX,GUI_DOT,ALT_SLH,SFT_ENT
+#define _________________COLEMAK_DH_R3_________________ KC_K   ,KC_H   ,KC_COMM,GUI_DOT,ALT_SLH,SFT_ENT
 
 // Symbols:
 //   - ^ and $ are placed at beinging and end of layer just like regex meanings

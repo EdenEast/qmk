@@ -1,5 +1,6 @@
 SRC += edeneast.c \
-       process_records.c
+       process_records.c \
+       combo.c \
 
 # Common flags
 AUDIO_ENABLE       = no  # Use the audio system
@@ -12,6 +13,7 @@ MOUSEKEY_ENABLE    = no  # Mouse keys
 RGBLIGHT_ENABLE    = no  # No rgb
 SPACE_CADET_ENABLE = no  # Dont use it, save space
 
+COMBO_ENABLE       = yes # Combo keys together
 LTO_ENABLE         = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE    = yes # Audio controls and system controls
 NKRO_ENABLE        = yes # NKey Rollover
