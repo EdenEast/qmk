@@ -129,11 +129,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
         return false;
 
     case TLR_GME:
-        layer_invert(_GAME);
+        if (record->event.pressed)
+        {
+            layer_invert(_GAME);
+        }
         return false;
 
     case TLR_STN:
-        layer_invert(_STENO);
+        if (record->event.pressed)
+        {
+            layer_invert(_STENO);
+        }
         return false;
 
     case ALT_AT: // KC_AT is greater then 8 bits. This makes it incompatible with MT
