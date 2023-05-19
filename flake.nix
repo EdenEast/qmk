@@ -51,7 +51,17 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          buildInputs = with pkgs; [ just keymap-drawer qmk ];
+          buildInputs = with pkgs; [
+            just
+            keymap-drawer
+            qmk
+          ];
+
+          shellHook = ''
+            # Prevent the avr-gcc wrapper from picking up host GCC flags
+            # like -iframework, which is problematic on Darwin
+            unset NIX_CFLAGS_COMPILE_FOR_TARGET
+          '';
         };
       });
 }
