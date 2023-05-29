@@ -51,7 +51,9 @@
       in
       {
         devShells.default = pkgs.mkShell {
+          name = "qmk";
           buildInputs = with pkgs; [
+            entr
             just
             keymap-drawer
             qmk

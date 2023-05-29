@@ -127,3 +127,21 @@ reinit:
 # Format c files
 fmt:
     clang-format -i $(fd --exclude external --extension c --extension h .)
+
+# Generate layout map
+layout:
+    keymap draw ./resources/layout.yml > ./resources/layout.svg
+
+# live reload layout map
+[linux]
+@watch-layout:
+    #!/usr/bin/env bash
+    [[ $(uname -r) =~ microsoft ]] && powershell.exe start $(wslpath ./resources/layout.svg) || xdg-open ./resources/layout.svg
+    echo ./resources/layout.yml | entr -p just layout
+
+# live reload layout map
+[macos]
+@watch-layout:
+    #!/usr/bin/env bash
+    open ./resources/layout.svg
+    echo ./resources/layout.yml | entr -p just layout

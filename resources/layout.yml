@@ -1,0 +1,64 @@
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x6_3
+layers:
+  Base:
+    - [{s: '~', t: '`'}, Q, W, F, P, B, J, L, U, Y, {s: ':', t: ';'}, {s: '+', t: '='}]
+    - [{h: Ctrl, t: Esc}, {h: Super, t: A}, {h: Alt, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Alt, t: I}, {h: Super, t: O}, {h: Ctrl, s: '"', t: "'"}]
+    - [Del, Z, X, C, D, V, K, H, {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, Enter]
+    - {type: ghost, t: Leader}
+    - {h: Sym, t: Tab}
+    - {h: Shift, t: Bspc}
+    - {h: Shift, t: Spc}
+    - {h: Nav, s: '_', t: '-'}
+    - {type: ghost, t: Leader}
+
+  Sym:
+    - [{s: Swap, t: Sticky}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
+    - [null, {h: Super, t: '^'}, {h: Alt, t: '+'}, {h: Shift, t: '='}, {h: Ctrl, t: "_"}, '*', '~', {h: Ctrl, s: '{', t: '['}, {h: Shift, s: '}', t: ']'}, {h: Alt, t: '`'}, {h: Super, t: '$'}, null]
+    - [null, '!', '@', '#', '&', '%', ':', '(', ')',  '|', '\', null]
+    - null
+    - {type: held}
+    - null
+    - null
+    - null
+    - null
+
+  Nav:
+    - [null, null, null, null, null, null, Home, Pgdn, Pgup, End, null, null]
+    - [null, Super, Alt, Shift, Ctrl, null, '←', '↓', '↑', '→', null, null]
+    - [null, {s: Swap, t: Sticky}, null, null, null, null, null, '⏮', '⏯', '⏭', null, null]
+    - {type: ghost}
+    - null
+    - null
+    - null
+    - {type: held}
+    - {type: ghost}
+
+  Adj:
+    - [null, null, null, null, null, {s: Brt+, t: Vol+}, F10, F7, F8, F9, PrtSc, null]
+    - [null, Super, Alt, Shift, Ctrl, {s: Mic, t: Mute}, F11, F4, F5, F6, null, null]
+    - [null, {s: Swap, t: Sticky}, null, null, null, {s: Brt-, t: Vol-}, F12, F1, F2, F3, null, null]
+    - {type: ghost}
+    - {type: held}
+    - null
+    - null
+    - {type: held}
+    - {type: ghost}
+
+  # COMBO_REF:
+  #   - [ '0',  '1',  '2',  '3',  '4',  '5',      '6',  '7',  '8',  '9', '10', '11']
+  #   - ['12', '13', '14', '15', '16', '17',     '18', '19', '20', '21', '22', '23']
+  #   - ['24', '25', '26', '27', '28', '29',     '30', '31', '32', '33', '34', '35']
+  #                        '36', '37', '38',     '39', '40', '41',
+
+combos:
+  - {p: [0, 5], k: "BOOT", a: top, o: 0.4, l: ["Base"]}
+  - {p: [6, 11], k: "BOOT", a: top, o: 0.4, l: ["Base"]}
+
+  - {p: [26, 27], k: "copy", l: ["Base"]}
+  - {p: [27, 28], k: "paste", l: ["Base"]}
+
+  - {p: [19, 20], k: "{}←", a: top, l: ["Sym"]}
+  - {p: [19, 20], k: "[]←", l: ["Sym"]}
+  - {p: [31, 32], k: "()←", l: ["Sym"]}

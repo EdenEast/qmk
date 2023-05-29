@@ -1,0 +1,5 @@
+= Eden's qmk keyboard firmware
+
+== Reference
+
+image::./resources/layout.svg[alt]
