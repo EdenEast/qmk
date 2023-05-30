@@ -5,7 +5,7 @@ root = true
 
 [*]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 # We recommend you to keep these unchanged
 charset = utf-8
@@ -28,7 +28,3 @@ indent_style = tab
 
 [*.sh]
 end_of_line = lf
-
-[*.{nix,yml}]
-indent_size = 2
-

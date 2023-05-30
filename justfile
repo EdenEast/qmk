@@ -28,7 +28,8 @@ dm5:
 crkbd:
     @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
 
-_build make_cmd source target: init
+# _build make_cmd source target: init
+_build make_cmd source target:
     #!/usr/bin/env bash
     printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
     printf "Buildling: {{blue}}{{source}}{{reset}}\n\n"
@@ -126,7 +127,7 @@ reinit:
 
 # Format c files
 fmt:
-    clang-format -i $(fd --exclude external --extension c --extension h .)
+    clang-format --style=llvm -i $(fd --exclude ./firmware --extension c --extension h .)
 
 # Generate layout map
 layout:
