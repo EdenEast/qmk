@@ -145,3 +145,15 @@ layout:
     #!/usr/bin/env bash
     open ./resources/layout.svg
     echo ./resources/layout.yml | entr -p just layout
+
+qmk-update:
+    #!/usr/bin/env bash
+    # https://stackoverflow.com/a/41081908
+    cd ./firmware
+    git reset --hard
+    git clean -fdx
+    git co master
+    git fetch origin --depth 1
+    git reset --hard origin/master
+    git submodule update --init --recursive --recommend-shallow
+    git add -f ./firmware
