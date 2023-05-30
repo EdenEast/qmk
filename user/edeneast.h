@@ -11,4 +11,6 @@ enum userspace_layers {
   _NAV,
   _SYM,
   _ADJ,
+  _GAME,
+  _STENO,
 };

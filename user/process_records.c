@@ -30,6 +30,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       set_single_persistent_default_layer(keycode - KC_COLEMAK);
     return false;
 
+  case TL_GAME:
+    if (record->event.pressed)
+      layer_invert(_GAME);
+    return false;
+
+  case TL_STNO:
+    if (record->event.pressed)
+      layer_invert(_STENO);
+    return false;
+
   case HM_LBCK:
     if (record->tap.count && record->event.pressed) {
       tap_code16(KC_LBRC);

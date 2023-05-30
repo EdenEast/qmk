@@ -1,26 +1,19 @@
 #pragma once
 #include "edeneast.h"
 
-#if defined(KEYMAP_SAFE_RANGE)
-#define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE
-#else
-#define PLACEHOLDER_SAFE_RANGE SAFE_RANGE
-#endif
-
 enum userspace_custom_keycodes {
   VRSN = SAFE_RANGE, // Prints QMK Firmware and board info
 
-  KC_COLEMAK,         // Sets default layer to COLEMAK
-  KC_GAME,            // Sets default layer to GAME
-  TOGGLE_GAME_LAYER,  // Toggle game layer
-  TOGGLE_STENO_LAYER, // Toggle steno layer
+  KC_COLEMAK, // Sets default layer to COLEMAK
+  KC_GAME,    // Sets default layer to GAME
+  TL_GAME,    // Toggle game layer
+  TL_STNO,    // Toggle steno layer
 
   VB_UP,
   VB_DOWN,
   MUTE_MIC,
 
   NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
-  /* USER_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes */
 };
 
 #define COPY C(KC_INS)
@@ -57,5 +50,11 @@ enum userspace_custom_keycodes {
 #define SFT_BSP LSFT_T(KC_BSPC)
 #define SFT_SPC LSFT_T(KC_SPC)
 #define NAV_MIN LT(_NAV, KC_MINS)
+
+// One Shot Shifts
+#define OS_LSFT OSM(MOD_LSFT)
+#define OS_RSFT OSM(MOD_RSFT)
+
+#define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
