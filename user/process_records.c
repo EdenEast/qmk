@@ -23,6 +23,13 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode,
  * @return false Stop process keycode and do not send to host
  */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  // Sticky layer key
+  if (keycode == STCK_LY && record->event.pressed) {
+    default_layer_set(
+        default_layer_state ? 0 : (1 << get_highest_layer(layer_state)));
+    return false;
+  }
+
   uint8_t mods = get_mods();
   switch (keycode) {
   case KC_COLEMAK ... KC_GAME:
@@ -40,20 +47,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       layer_invert(_STENO);
     return false;
 
-  case HM_LBCK:
+    // Mod tap can only handle basic keycodes
+  case HM_LPRN:
     if (record->tap.count && record->event.pressed) {
-      tap_code16(KC_LBRC);
+      tap_code16(KC_LPRN);
       return false;
     }
     break;
 
-  case HM_RBCK:
+  case HM_RPRN:
     if (record->tap.count && record->event.pressed) {
-      tap_code16(KC_RBRC);
+      tap_code16(KC_RPRN);
       return false;
     }
     break;
 
+    // TODO: Shift is currently not being registered
   case VB_UP:
     if (record->event.pressed) {
       if (mods & MOD_BIT(MOD_MASK_SHIFT)) {
@@ -104,7 +113,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
  * @param state Curret layer state that will be updated
  */
 layer_state_t layer_state_set_user(layer_state_t state) {
-  return update_tri_layer_state(state, _NAV, _SYM, _ADJ);
+  return update_tri_layer_state(state, _RAISE, _LOWER, _ADJ);
 }
 
 /**
@@ -118,15 +127,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     // Pinky keys
   case HM_A:
   case HM_O:
-  case HM_CIRC:
-  case HM_DOLR:
+  case HM_GRV:
+  case HM_PRSC:
     return TAPPING_TERM + 25;
 
     // Thumb keys
-  case SYM_TAB:
+  case LOW_TAB:
   case SFT_BSP:
   case SFT_SPC:
-  case NAV_MIN:
+  case RAS_MIN:
     return TAPPING_TERM - 25;
 
   default:

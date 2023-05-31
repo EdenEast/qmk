@@ -7,38 +7,38 @@ layers:
     - [{h: Ctrl, t: Esc}, {h: Super, t: A}, {h: Alt, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Alt, t: I}, {h: Super, t: O}, {h: Ctrl, s: '"', t: "'"}]
     - [Del, Z, X, C, D, V, K, H, {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, Enter]
     - {type: ghost, t: Leader}
-    - {h: Sym, t: Tab}
+    - {h: Lower, t: Tab}
     - {h: Shift, t: Bspc}
     - {h: Shift, t: Spc}
-    - {h: Nav, s: '_', t: '-'}
+    - {h: Raise, s: '_', t: '-'}
     - {type: ghost, t: Leader}
 
-  Sym:
-    - [{s: Swap, t: Sticky}, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
-    - [null, {h: Super, t: '^'}, {h: Alt, t: '+'}, {h: Shift, t: '='}, {h: Ctrl, t: "_"}, '*', '~', {h: Ctrl, s: '{', t: '['}, {h: Shift, s: '}', t: ']'}, {h: Alt, t: '`'}, {h: Super, t: '$'}, null]
-    - [null, '!', '@', '#', '&', '%', ':', '(', ')',  '|', '\', null]
-    - null
-    - {type: held}
-    - null
-    - null
-    - null
-    - null
-
-  Nav:
-    - [null, null, null, null, null, null, Home, Pgdn, Pgup, End, null, null]
+  Raise:
+    - [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
     - [null, Super, Alt, Shift, Ctrl, null, '←', '↓', '↑', '→', null, null]
-    - [null, {s: Swap, t: Sticky}, null, null, null, null, null, '⏮', '⏯', '⏭', null, null]
+    - [null, Sticky, null, null, null, null, {s: '⏮', t: '⏭'}, '⏯', null, null, Sticky, null]
     - {type: ghost}
     - null
     - null
     - null
     - {type: held}
+    - {type: ghost}
+
+  Lower:
+    - [null, '!', '@', '#', '$', '%', '^', '&', '*', null, ':', null]
+    - [null, {h: Super}, {h: Alt, t: '_'}, {h: Shift, t: '+'}, {h: Ctrl, t: '='}, '~', '[', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Alt, t: ']'}, {h: Super, t: '`'}, null]
+    - [null, Sticky, null, null, null, null, '|', '{', '}', '\', Sticky, null]
+    - {type: ghost}
+    - {type: held}
+    - null
+    - null
+    - null
     - {type: ghost}
 
   Adj:
-    - [null, null, null, null, null, {s: Brt+, t: Vol+}, F10, F7, F8, F9, PrtSc, null]
-    - [null, Super, Alt, Shift, Ctrl, {s: Mic, t: Mute}, F11, F4, F5, F6, null, null]
-    - [null, {s: Swap, t: Sticky}, null, null, null, {s: Brt-, t: Vol-}, F12, F1, F2, F3, null, null]
+    - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
+    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, null, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
+    - [null, Sticky, null, null, Game, Steno, {s: Bright-, t: Vol-}, Mute, null, null, Sticky, null]
     - {type: ghost}
     - {type: held}
     - null
@@ -53,12 +53,15 @@ layers:
   #                        '36', '37', '38',     '39', '40', '41',
 
 combos:
-  - {p: [0, 5], k: "BOOT", a: top, o: 0.4, l: ["Base"]}
-  - {p: [6, 11], k: "BOOT", a: top, o: 0.4, l: ["Base"]}
+  - {p: [0, 5], k: "Boot", a: top, o: 0.4, l: ["Base"]}
+  - {p: [6, 11], k: "Boot", a: top, o: 0.4, l: ["Base"]}
 
-  - {p: [26, 27], k: "copy", l: ["Base"]}
-  - {p: [27, 28], k: "paste", l: ["Base"]}
+  - {p: [26, 27], k: "Copy", l: ["Base"]}
+  - {p: [27, 28], k: "Paste", l: ["Base"]}
 
-  - {p: [19, 20], k: "{}←", a: top, l: ["Sym"]}
-  - {p: [19, 20], k: "[]←", l: ["Sym"]}
-  - {p: [31, 32], k: "()←", l: ["Sym"]}
+  - {p: [12, 38], k: "Bspc", a: bottom, l: ["Base"]}
+  - {p: [23, 39], k: "Spc", a: bottom, l: ["Base"]}
+
+  - {p: [19, 20], k: "()←", l: ["Lower"]}
+  - {p: [31, 32], k: "{}←", l: ["Lower"]}
+  - {p: [18, 21], k: "[]←", a: top, l: ["Lower"]}
