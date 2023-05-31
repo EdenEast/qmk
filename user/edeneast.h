@@ -5,6 +5,10 @@
 #include "quantum.h"
 #include "wrappers.h"
 
+#ifdef STENO_ENABLE
+#include "keymap_steno.h"
+#endif
+
 // Define layer names
 enum userspace_layers {
   _COLEMAK_DH = 0,
@@ -13,4 +17,5 @@ enum userspace_layers {
   _ADJ,
   _GAME,
   _STENO,
+  _VIM,
 };
