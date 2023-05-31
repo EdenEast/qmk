@@ -48,7 +48,7 @@ enum userspace_custom_keycodes {
 
 #define SYM_TAB LT(_SYM, KC_TAB)
 #define SFT_BSP LSFT_T(KC_BSPC)
-#define SFT_SPC LSFT_T(KC_SPC)
+#define SFT_SPC RSFT_T(KC_SPC)
 #define NAV_MIN LT(_NAV, KC_MINS)
 
 // One Shot Shifts
