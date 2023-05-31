@@ -28,8 +28,7 @@ dm5:
 crkbd:
     @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
 
-# _build make_cmd source target: init
-_build make_cmd source target:
+_build make_cmd source target: init
     #!/usr/bin/env bash
     printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
     printf "Buildling: {{blue}}{{source}}{{reset}}\n\n"
@@ -138,14 +137,14 @@ layout:
 @watch-layout:
     #!/usr/bin/env bash
     [[ $(uname -r) =~ microsoft ]] && powershell.exe start $(wslpath ./resources/layout.svg) || xdg-open ./resources/layout.svg
-    echo ./resources/layout.yml | entr -p just layout
+    watchexec -nrpw resources/layout.yml -- just layout
 
 # live reload layout map
 [macos]
 @watch-layout:
     #!/usr/bin/env bash
     open ./resources/layout.svg
-    echo ./resources/layout.yml | entr -p just layout
+    watchexec -nrpw resources/layout.yml -- just layout
 
 qmk-update:
     #!/usr/bin/env bash
