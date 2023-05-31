@@ -16,6 +16,8 @@ enum userspace_custom_keycodes {
   NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
 };
 
+#define MO_VIM MO(_VIM)
+
 #define COPY C(KC_INS)
 #define PASTE S(KC_INS)
 
