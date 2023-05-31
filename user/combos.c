@@ -19,7 +19,7 @@ const uint16_t PROGMEM combo_rght_boot[] = {KC_J, KC_EQL, COMBO_END};
 const uint16_t PROGMEM combo_copy[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_paste[] = {KC_C, KC_D, COMBO_END};
 const uint16_t PROGMEM combo_lprn_rprn[] = {KC_LPRN, KC_RPRN, COMBO_END};
-const uint16_t PROGMEM combo_lbrc_rbrc[] = {KC_LBRC, KC_RBRC, COMBO_END};
+const uint16_t PROGMEM combo_lbrc_rbrc[] = {HM_LBCK, HM_RBCK, COMBO_END};
 const uint16_t PROGMEM combo_lcbr_rcbr[] = {KC_LCBR, KC_RCBR, COMBO_END};
 const uint16_t PROGMEM combo_lt_gt[] = {KC_LT, KC_GT, COMBO_END};
 
@@ -38,33 +38,42 @@ combo_t key_combos[] = {
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
+  uint8_t mods = get_mods();
   switch (combo_index) {
   case COMBO_LPRN_RPRN:
     if (pressed) {
       tap_code16(KC_LPRN);
       tap_code16(KC_RPRN);
+      del_mods(MOD_MASK_SHIFT);
       tap_code16(KC_LEFT);
+      set_mods(mods);
     }
     break;
   case COMBO_LBRC_RBRC:
     if (pressed) {
       tap_code16(KC_LBRC);
       tap_code16(KC_RBRC);
+      del_mods(MOD_MASK_SHIFT);
       tap_code16(KC_LEFT);
+      set_mods(mods);
     }
     break;
   case COMBO_LCBR_RCBR:
     if (pressed) {
       tap_code16(KC_LCBR);
       tap_code16(KC_RCBR);
+      del_mods(MOD_MASK_SHIFT);
       tap_code16(KC_LEFT);
+      set_mods(mods);
     }
     break;
   case COMBO_LT_GT:
     if (pressed) {
       tap_code16(KC_LT);
       tap_code16(KC_GT);
+      del_mods(MOD_MASK_SHIFT);
       tap_code16(KC_LEFT);
+      set_mods(mods);
     }
     break;
   }
