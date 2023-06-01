@@ -27,3 +27,6 @@ SRC += process_records.c
 SRC += combos.c
 SRC += dances.c
 
+ifeq ($(strip $(OLED_ENABLE)), yes)
+	SRC += oled.c
+endif

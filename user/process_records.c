@@ -5,9 +5,9 @@
  *
  * This is useful for key combinations that trigger modifiers when rolling.
  *
- * Example: In colemak you are having issues with rolling `en` and getting N instead
- * (with GASC mods). In process_record_user have a case for the second key in the trouble
- * sequence and call roll:
+ * Example: In colemak you are having issues with rolling `en` and getting N
+ * instead (with GASC mods). In process_record_user have a case for the second
+ * key in the trouble sequence and call roll:
  *
  *      case HM_N:
  *          if (record->event.pressed && record->tap.count > 0) {
@@ -17,7 +17,8 @@
  *
  * @param mod Modifier of the preveous key that wound have triggered
  * @param prev Keycode of the prev key that was held triggering the mod
- * @param cur Keycode of the current key that is being checked in process_record_user
+ * @param cur Keycode of the current key that is being checked in
+ * process_record_user
  */
 bool mod_roll_cancellation(uint8_t mod, uint16_t prev, uint16_t cur) {
   if (get_mods() & MOD_BIT(mod)) { // [io]
@@ -144,7 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   default:
     return true;
   }
-  return true;
+  return process_record_keymap(keycode, record);
 }
 
 /**
@@ -171,7 +172,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   case HM_O:
   case HM_GRV:
   case HM_PRSC:
-    return TAPPING_TERM + 25;
+    return TAPPING_TERM + 30;
 
     // Thumb keys
   case LOW_TAB:
