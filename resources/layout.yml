@@ -35,6 +35,17 @@ layers:
     - null
     - {type: ghost}
 
+  Game:
+    - ['`', Tab, Q, W, E, R, T, Y, U, I, O, P]
+    - [Esc, Shift, A, S, D, F, G, H, J, K, L, Exit]
+    - [Alt, Ctrl, Z, X, C, V, B, N, M, ',', '.', '/']
+    - M
+    - I
+    - Spc
+    - Bspc
+    - Enter
+    - Del
+
   Adj:
     - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
     - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, null, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]

@@ -44,7 +44,7 @@
 
 #define __ADJUST_L1_________________________________________       KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
 #define __ADJUST_L2_________________________________________       QK_BOOT, HM_PRSC, KC_LALT, KC_LSFT, KC_LCTL, _______
-#define __ADJUST_L3_________________________________________       _______, STCK_LY, _______, _______, _______, _______
+#define __ADJUST_L3_________________________________________       _______, STCK_LY, _______, _______, TL_GAME, TL_STNO
 
 #define __ADJUST_R1_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11
 #define __ADJUST_R2_________________________________________       VB_UP,   HM_MIC,  KC_RSFT, KC_LALT, HM_PRSC, QK_BOOT
