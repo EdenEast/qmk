@@ -35,6 +35,17 @@ layers:
     - null
     - {type: ghost}
 
+  Adj:
+    - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
+    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, null, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
+    - [null, Sticky, null, null, Game, Steno, {s: Bright-, t: Vol-}, Mute, null, null, Sticky, null]
+    - {type: ghost}
+    - {type: held}
+    - null
+    - null
+    - {type: held}
+    - {type: ghost}
+
   Game:
     - ['`', Tab, Q, W, E, R, T, Y, U, I, O, P]
     - [Esc, Shift, A, S, D, F, G, H, J, K, L, Exit]
@@ -46,16 +57,6 @@ layers:
     - Enter
     - Del
 
-  Adj:
-    - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, null, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
-    - [null, Sticky, null, null, Game, Steno, {s: Bright-, t: Vol-}, Mute, null, null, Sticky, null]
-    - {type: ghost}
-    - {type: held}
-    - null
-    - null
-    - {type: held}
-    - {type: ghost}
 
   # COMBO_REF:
   #   - [ '0',  '1',  '2',  '3',  '4',  '5',      '6',  '7',  '8',  '9', '10', '11']
