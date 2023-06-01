@@ -1,6 +1,36 @@
 #include "edeneast.h"
 
 /**
+ * @brief Disable homerow mod tap combinations
+ *
+ * This is useful for key combinations that trigger modifiers when rolling.
+ *
+ * Example: In colemak you are having issues with rolling `en` and getting N instead
+ * (with GASC mods). In process_record_user have a case for the second key in the trouble
+ * sequence and call roll:
+ *
+ *      case HM_N:
+ *          if (record->event.pressed && record->tap.count > 0) {
+ *              return mod_roll_cancellation(KC_RSHIFT, KC_E, KC_N); // en
+ *          }
+ *          break;
+ *
+ * @param mod Modifier of the preveous key that wound have triggered
+ * @param prev Keycode of the prev key that was held triggering the mod
+ * @param cur Keycode of the current key that is being checked in process_record_user
+ */
+bool mod_roll_cancellation(uint8_t mod, uint16_t prev, uint16_t cur) {
+  if (get_mods() & MOD_BIT(mod)) { // [io]
+    unregister_mods(MOD_BIT(mod));
+    tap_code(prev);
+    tap_code(cur);
+    add_mods(MOD_BIT(mod));
+    return false;
+  }
+  return true;
+}
+
+/**
  * @brief Keycode handler for keymaps
  *
  * This handles the keycodes at the keymap level, useful for keyboard specific
@@ -98,6 +128,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
     }
     return false;
+
+  case HM_O:
+    if (record->event.pressed && record->tap.count > 0) {
+      return mod_roll_cancellation(KC_LALT, KC_I, KC_O); // io
+    }
+    break;
+
+    // case HM_T:
+    //   if (record->event.pressed && record->tap.count > 0) {
+    //     return mod_roll_cancellation(KC_RGUI, KC_I, KC_O); // io
+    //   }
+    //   break;
 
   default:
     return true;
