@@ -3,3 +3,8 @@
 == Reference
 
 image::./resources/layout.svg[alt]
+
+=== Notes / Todo's
+
+- There is an issue with https://github.com/qmk/qmk_firmware/pull/19670:[PR 169670] that breaks any user combos. Cannot
+  update submodule until that is resolved
