@@ -157,3 +157,16 @@ qmk-update:
     git reset --hard origin/master
     git submodule update --init --recursive --recommend-shallow
     git add -f ./firmware
+
+# Update features subtree
+subtree-update:
+    #!/usr/bin/env bash
+    # https://stackoverflow.com/questions/22334382/git-subtree-only-one-file-or-directory
+    # https://gist.github.com/tswaters/542ba147a07904b1f3f5
+    [[ $(git diff --name-only --diff-filter=M | wc -l) > 0 ]] && echo 'There are uncommited changes, aborting' && exit 1
+    git fetch --depth=1 https://github.com/getreuer/qmk-keymap main:subtree-main
+    git checkout subtree-main
+    git subtree split --prefix=features -b subtree-split
+    git checkout -
+    git subtree merge --squash --prefix=user/features subtree-split
+    git branch -D subtree-main subtree-split
