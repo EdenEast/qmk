@@ -16,7 +16,7 @@ layers:
   Raise:
     - [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
     - [null, Super, Alt, Shift, Ctrl, null, '←', '↓', '↑', '→', null, null]
-    - [null, Sticky, null, null, null, null, {s: '⏮', t: '⏭'}, '⏯', null, null, Sticky, null]
+    - [null, Sticky, null, null, null, null, '⏭', '⏯', null, null, Sticky, null]
     - {type: ghost}
     - null
     - null
@@ -77,3 +77,5 @@ combos:
   - {p: [19, 20], k: "()←", l: ["Lower"]}
   - {p: [31, 32], k: "{}←", l: ["Lower"]}
   - {p: [18, 21], k: "[]←", a: top, l: ["Lower"]}
+
+  - {p: [30, 31], k: "⏮", l: ["Raise"]}

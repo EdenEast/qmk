@@ -11,6 +11,7 @@ enum combos {
   COMBO_LBRC_RBRC, /* [|] */
   COMBO_LCBR_RCBR, /* {|} */
   // COMBO_LT_GT,     /* <|> */
+  COMBO_PREV_TRACK,
   COMBO_LENGTH,
 };
 
@@ -26,6 +27,7 @@ const uint16_t PROGMEM combo_lprn_rprn[] = {HM_LPRN, HM_RPRN, COMBO_END};
 const uint16_t PROGMEM combo_lbrc_rbrc[] = {KC_LBRC, HM_RBRC, COMBO_END};
 const uint16_t PROGMEM combo_lcbr_rcbr[] = {KC_LCBR, KC_RCBR, COMBO_END};
 // const uint16_t PROGMEM combo_lt_gt[] = {KC_LT, KC_GT, COMBO_END};
+const uint16_t PROGMEM combo_prev_track[] = {KC_MNXT, KC_MPLY, COMBO_END};
 
 combo_t key_combos[] = {
     [COMBO_LEFT_BOOT] = COMBO(combo_left_boot, QK_BOOT),
@@ -42,6 +44,8 @@ combo_t key_combos[] = {
     [COMBO_LBRC_RBRC] = COMBO_ACTION(combo_lbrc_rbrc),
     [COMBO_LCBR_RCBR] = COMBO_ACTION(combo_lcbr_rcbr),
     // [COMBO_LT_GT] = COMBO_ACTION(combo_lt_gt),
+
+    [COMBO_PREV_TRACK] = COMBO(combo_prev_track, KC_MPRV),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {

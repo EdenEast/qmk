@@ -16,8 +16,9 @@ NKRO_ENABLE        = yes # NKey Rollover
 STENO_ENABLE       = yes # Enable steno
 STENO_PROTOCOL     = geminipr # Better protocol for steno
 VIRTSER_ENABLE     = yes # Required for steno
-TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
+# TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
 
+# Feature enables
 ACHORDION_ENABLE   = yes
 
 # Add LTO compile flag
@@ -27,12 +28,16 @@ EXTRAFLAGS += -flto
 SRC += edeneast.c
 SRC += process_records.c
 SRC += combos.c
-SRC += dances.c
 
-ifeq ($(strip $(ACHORDION_ENABLE)), yes)
-	SRC += features/achordion.c
+ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
+	SRC += dances.c
 endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += oled.c
 endif
+
+ifeq ($(strip $(ACHORDION_ENABLE)), yes)
+	SRC += features/achordion.c
+endif
+

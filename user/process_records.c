@@ -140,7 +140,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 
-
 #ifndef ACHORDION_ENABLE
   case HM_O:
     if (record->event.pressed && record->tap.count > 0) {
@@ -148,7 +147,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 #endif
-
 
     // case HM_T:
     //   if (record->event.pressed && record->tap.count > 0) {
