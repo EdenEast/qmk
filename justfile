@@ -126,7 +126,7 @@ reinit:
 
 # Format c files
 fmt:
-    clang-format --style=llvm -i $(fd --exclude ./firmware --extension c --extension h .)
+    clang-format --style=llvm -i $(fd --exclude firmware --exclude user/features --extension c --extension h .)
 
 # Generate layout map
 layout:
@@ -163,6 +163,7 @@ subtree-update:
     #!/usr/bin/env bash
     # https://stackoverflow.com/questions/22334382/git-subtree-only-one-file-or-directory
     # https://gist.github.com/tswaters/542ba147a07904b1f3f5
+    # https://getreuer.info/posts/keyboards/achordion/index.html
     [[ $(git diff --name-only --diff-filter=M | wc -l) > 0 ]] && echo 'There are uncommited changes, aborting' && exit 1
     git fetch --depth=1 https://github.com/getreuer/qmk-keymap main:subtree-main
     git checkout subtree-main

@@ -18,6 +18,8 @@ STENO_PROTOCOL     = geminipr # Better protocol for steno
 VIRTSER_ENABLE     = yes # Required for steno
 TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
 
+ACHORDION_ENABLE   = yes
+
 # Add LTO compile flag
 # https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 EXTRAFLAGS += -flto
@@ -26,6 +28,10 @@ SRC += edeneast.c
 SRC += process_records.c
 SRC += combos.c
 SRC += dances.c
+
+ifeq ($(strip $(ACHORDION_ENABLE)), yes)
+	SRC += features/achordion.c
+endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += oled.c

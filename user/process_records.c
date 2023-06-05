@@ -1,5 +1,9 @@
 #include "edeneast.h"
 
+#ifdef ACHORDION_ENABLE
+#include "features/achordion.h"
+#endif /* ifdef ACHORDION_ENABLE */
+
 /**
  * @brief Disable homerow mod tap combinations
  *
@@ -54,6 +58,12 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode,
  * @return false Stop process keycode and do not send to host
  */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef ACHORDION_ENABLE
+  if (!process_achordion(keycode, record)) {
+    return false;
+  }
+#endif
+
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
     default_layer_set(
@@ -130,11 +140,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     return false;
 
+
+#ifndef ACHORDION_ENABLE
   case HM_O:
     if (record->event.pressed && record->tap.count > 0) {
       return mod_roll_cancellation(KC_LALT, KC_I, KC_O); // io
     }
     break;
+#endif
+
 
     // case HM_T:
     //   if (record->event.pressed && record->tap.count > 0) {
@@ -145,6 +159,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   default:
     return true;
   }
+
   return process_record_keymap(keycode, record);
 }
 
@@ -185,3 +200,43 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return TAPPING_TERM;
   }
 }
+
+#ifdef ACHORDION_ENABLE
+
+// https://getreuer.info/posts/keyboards/achordion/index.html
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
+                     uint16_t other_keycode, keyrecord_t *other_record) {
+  // Exceptionally consider the following chords as holds, even though they
+  // are on the same hand in Dvorak.
+  switch (tap_hold_keycode) {
+  case LOW_TAB:
+  case RAS_MIN:
+  case SFT_SPC:
+  case SFT_BSP:
+    return true;
+
+  case HM_A:
+    if (other_keycode == LOW_TAB) {
+      return true;
+    } // cmd + tab on mac
+    break;
+
+  case HM_S:
+    if (other_keycode == LOW_TAB) {
+      return true;
+    } // alt + tab on mac
+    break;
+  }
+
+  // Also allow same-hand holds when the other key is in the rows below the
+  // alphas. I need the `% (MATRIX_ROWS / 2)` because my keyboard is split.
+  if (other_record->event.key.row % (MATRIX_ROWS / 2) >= 4) {
+    return true;
+  }
+
+  // Otherwise, follow the opposite hands rule.
+  return achordion_opposite_hands(tap_hold_record, other_record);
+}
+
+void matrix_scan_user(void) { achordion_task(); }
+#endif
