@@ -212,6 +212,8 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   case RAS_MIN:
   case SFT_SPC:
   case SFT_BSP:
+  case CTR_ESC:
+  case CTR_QOT:
     return true;
 
   case HM_A:
@@ -220,7 +222,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
     } // cmd + tab on mac
     break;
 
-  case HM_S:
+  case HM_R:
     if (other_keycode == LOW_TAB) {
       return true;
     } // alt + tab on mac
