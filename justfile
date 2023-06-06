@@ -149,13 +149,14 @@ layout:
 qmk-update:
     #!/usr/bin/env bash
     # https://stackoverflow.com/a/41081908
-    cd ./firmware
+    pushd ./firmware
     git reset --hard
     git clean -fdx
     git co master
     git fetch origin --depth 1
     git reset --hard origin/master
     git submodule update --init --recursive --recommend-shallow
+    popd
     git add -f ./firmware
 
 # Update features subtree

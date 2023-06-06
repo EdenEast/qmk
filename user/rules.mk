@@ -32,7 +32,10 @@ EXTRAFLAGS += -flto
 
 SRC += edeneast.c
 SRC += process_records.c
-SRC += combos.c
+
+ifeq ($(strip $(COMBO_ENABLE)), yes)
+	INTROSPECTION_KEYMAP_C = combos.c
+endif
 
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
 	SRC += dances.c
