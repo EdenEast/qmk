@@ -50,12 +50,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_M,    KC_I,    KC_SPC,           KC_BSPC, KC_ENT,  KC_DEL
   ),
 
+#ifdef STENO_ENABLE
   [_STENO] = LAYOUT_WRAPPER(
     __STENO_L1__________________________________________,                            __STENO_R1__________________________________________,
     __STENO_L2__________________________________________,                            __STENO_R2__________________________________________,
     __STENO_L3__________________________________________,                            __STENO_R3__________________________________________,
                                         _______, STN_A,   STN_O,            STN_E,   STN_U,   _______
   ),
+  #endif
 
 };
 

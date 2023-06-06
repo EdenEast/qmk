@@ -71,8 +71,8 @@ combos:
   - {p: [26, 27], k: "Copy", l: ["Base"]}
   - {p: [27, 28], k: "Paste", l: ["Base"]}
 
-  - {p: [12, 38], k: "Bspc", a: bottom, l: ["Base"]}
-  - {p: [23, 39], k: "Spc", a: bottom, l: ["Base"]}
+  - {p: [24, 38], k: "Bspc", a: bottom, l: ["Base"]}
+  - {p: [35, 39], k: "Spc", a: bottom, l: ["Base"]}
 
   - {p: [19, 20], k: "()←", l: ["Lower"]}
   - {p: [31, 32], k: "{}←", l: ["Lower"]}

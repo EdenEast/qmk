@@ -60,6 +60,7 @@
 #define __GAME_R3___________________________________________       KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH
 
 
+#ifdef STENO_ENABLE
 #define __STENO_L1__________________________________________       STN_N1,  STN_N2,  STN_N3,  STN_N4,  STN_N5,  STN_N6
 #define __STENO_L2__________________________________________       STN_FN,  STN_S1,  STN_TL,  STN_PL,  STN_HL,  STN_ST1
 #define __STENO_L3__________________________________________       TL_STNO, STN_S2,  STN_KL,  STN_WL,  STN_RL,  STN_ST2
@@ -67,5 +68,6 @@
 #define __STENO_R1__________________________________________       STN_N7 ,  STN_N8,  STN_N9,  STN_NA,  STN_NB,  STN_NC
 #define __STENO_R2__________________________________________       STN_ST3,  STN_FR,  STN_PR,  STN_LR,  STN_TR,  STN_DR
 #define __STENO_R3__________________________________________       STN_ST4,  STN_RR,  STN_BR,  STN_GR,  STN_SR,  STN_ZR
+#endif
 
 // clang-format on

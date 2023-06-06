@@ -13,10 +13,13 @@ COMBO_ENABLE       = yes # Combo keys together
 LTO_ENABLE         = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE    = yes # Audio controls and system controls
 NKRO_ENABLE        = yes # NKey Rollover
-STENO_ENABLE       = yes # Enable steno
-STENO_PROTOCOL     = geminipr # Better protocol for steno
-VIRTSER_ENABLE     = yes # Required for steno
+# STENO_ENABLE       = yes # Enable steno
 # TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
+
+ifeq ($(strip $(STENO_ENABLE)), yes)
+	STENO_PROTOCOL     = geminipr # Better protocol for steno
+	VIRTSER_ENABLE     = yes # Required for steno
+endif
 
 # Feature enables
 ACHORDION_ENABLE   = yes

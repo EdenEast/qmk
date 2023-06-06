@@ -53,6 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_PAUS, KC_F2,          _______, _______
   ),
 
+#ifdef STENO_ENABLE
   [_STENO] = LAYOUT_WRAPPER(
     __STENO_L1__________________________________________,                         __STENO_R1__________________________________________,
     __STENO_L2__________________________________________,                         __STENO_R2__________________________________________,
@@ -62,6 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  _______, _______,        _______, _______,
                                                  _______, _______,        _______, _______
   ),
+  #endif
 
 };
 
