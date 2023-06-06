@@ -7,6 +7,7 @@ enum combos {
   COMBO_SPC_HOLD,
   COMBO_COPY,
   COMBO_PASTE,
+  COMBO_CAP_WORD,
   COMBO_LPRN_RPRN, /* (|) */
   COMBO_LBRC_RBRC, /* [|] */
   COMBO_LCBR_RCBR, /* {|} */
@@ -23,6 +24,7 @@ const uint16_t PROGMEM combo_bspc_hold[] = {KC_DEL, SFT_BSP, COMBO_END};
 const uint16_t PROGMEM combo_spc_hold[] = {KC_ENT, SFT_SPC, COMBO_END};
 const uint16_t PROGMEM combo_copy[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM combo_paste[] = {KC_C, KC_D, COMBO_END};
+const uint16_t PROGMEM combo_cap_word[] = {KC_G, KC_M, COMBO_END};
 const uint16_t PROGMEM combo_lprn_rprn[] = {HM_LPRN, HM_RPRN, COMBO_END};
 const uint16_t PROGMEM combo_lbrc_rbrc[] = {KC_LBRC, HM_RBRC, COMBO_END};
 const uint16_t PROGMEM combo_lcbr_rcbr[] = {KC_LCBR, KC_RCBR, COMBO_END};
@@ -38,6 +40,8 @@ combo_t key_combos[] = {
 
     [COMBO_COPY] = COMBO(combo_copy, COPY),
     [COMBO_PASTE] = COMBO(combo_paste, PASTE),
+
+    [COMBO_CAP_WORD] = COMBO(combo_cap_word, QK_CAPS_WORD_TOGGLE),
 
     [COMBO_LPRN_RPRN] = COMBO_ACTION(combo_lprn_rprn),
     [COMBO_LPRN_RPRN] = COMBO_ACTION(combo_lprn_rprn),

@@ -13,6 +13,7 @@ COMBO_ENABLE       = yes # Combo keys together
 LTO_ENABLE         = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE    = yes # Audio controls and system controls
 NKRO_ENABLE        = yes # NKey Rollover
+CAPS_WORD_ENABLE   = yes
 # STENO_ENABLE       = yes # Enable steno
 # TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
 

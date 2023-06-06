@@ -195,6 +195,11 @@ path {
 <path d="M702.0,69.0 h134.0 a6.0,6.0 0 0 1 6.0,6.0 v33.733333333333334"/>
 <rect rx="6.0" ry="6.0" x="688.0" y="56.0" width="28.0" height="26.0" class="combo"/>
 <text x="702.0" y="69.0" class="combo">Boot</text>
+<path d="M450.0,176.4 l-93.33333333333333,0.0"/>
+<path d="M450.0,176.4 l93.33333333333333,0.0"/>
+<rect rx="6.0" ry="6.0" x="436.0" y="163.4" width="28.0" height="26.0" class="combo"/>
+<text x="450.0" y="176.4" class="combo">
+<tspan x="450.0" dy="-0.6em">Cap</tspan><tspan x="450.0" dy="1.2em">word</tspan></text>
 <rect rx="6.0" ry="6.0" x="184.0" y="208.9" width="28.0" height="26.0" class="combo"/>
 <text x="198.0" y="221.9" class="combo">Copy</text>
 <rect rx="6.0" ry="6.0" x="240.0" y="208.9" width="28.0" height="26.0" class="combo"/>

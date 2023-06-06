@@ -68,6 +68,8 @@ combos:
   - {p: [0, 5], k: "Boot", a: top, o: 0.4, l: ["Base"]}
   - {p: [6, 11], k: "Boot", a: top, o: 0.4, l: ["Base"]}
 
+  - {p: [17, 18], k: "Cap word", l: ["Base"]}
+
   - {p: [26, 27], k: "Copy", l: ["Base"]}
   - {p: [27, 28], k: "Paste", l: ["Base"]}
 
