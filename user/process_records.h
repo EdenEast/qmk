@@ -14,6 +14,8 @@ enum userspace_custom_keycodes {
   VB_DOWN,
   MUTE_MIC,
 
+  TG_SENT,    // Toggle sentence case
+
   NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
 };
 

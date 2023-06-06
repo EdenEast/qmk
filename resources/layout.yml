@@ -37,7 +37,7 @@ layers:
 
   Adj:
     - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, null, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
+    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, Toggle Sentence, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
     - [null, Sticky, null, null, Game, Steno, {s: Bright-, t: Vol-}, Mute, null, null, Sticky, null]
     - {type: ghost}
     - {type: held}

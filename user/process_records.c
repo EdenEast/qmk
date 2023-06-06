@@ -4,6 +4,10 @@
 #include "features/achordion.h"
 #endif
 
+#ifdef SENTENCE_CASE_ENABLE
+#include "features/sentence_case.h"
+#endif
+
 /**
  * @brief Disable homerow mod tap combinations
  *
@@ -58,6 +62,12 @@ __attribute__((weak)) bool process_record_keymap(uint16_t keycode,
  * @return false Stop process keycode and do not send to host
  */
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef SENTENCE_CASE_ENABLE
+  if (!process_sentence_case(keycode, record)) {
+    return false;
+  }
+#endif
+
 #ifdef ACHORDION_ENABLE
   if (!process_achordion(keycode, record)) {
     return false;
@@ -89,6 +99,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed)
       layer_invert(_STENO);
     return false;
+
+#ifdef SENTENCE_CASE_ENABLE
+  case TG_SENT:
+    if (record->event.pressed)
+      sentence_case_toggle();
+    return false;
+#endif
 
     // Mod tap can only handle basic keycodes
   case HM_LPRN:

@@ -416,6 +416,8 @@ path {
 <rect rx="6.0" ry="6.0" x="256.0" y="1135.3592008768392" width="52.0" height="52.0" class=""/>
 <text x="282.0" y="1161.3592008768392" class="tap">Ctrl</text>
 <rect rx="6.0" ry="6.0" x="312.0" y="1142.3592008768392" width="52.0" height="52.0" class=""/>
+<text x="338.0" y="1168.3592008768392" class="tap">
+<tspan x="338.0" dy="-0.6em">Toggle</tspan><tspan x="338.0" dy="1.2em">Sentence</tspan></text>
 <rect rx="6.0" ry="6.0" x="536.0" y="1142.3592008768392" width="52.0" height="52.0" class=""/>
 <text x="562.0" y="1168.3592008768392" class="tap">Vol+</text>
 <text x="562.0" y="1144.3592008768392" class="shifted">Bright+</text>

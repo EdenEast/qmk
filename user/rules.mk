@@ -22,7 +22,8 @@ ifeq ($(strip $(STENO_ENABLE)), yes)
 endif
 
 # Feature enables
-ACHORDION_ENABLE   = yes
+ACHORDION_ENABLE     = yes
+SENTENCE_CASE_ENABLE = yes
 
 # Add LTO compile flag
 # https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
@@ -43,5 +44,10 @@ endif
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)
 	SRC += features/achordion.c
 	OPT_DEFS += -DACHORDION_ENABLE
+endif
+
+ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
+	SRC += features/sentence_case.c
+	OPT_DEFS += -DSENTENCE_CASE_ENABLE
 endif
 
