@@ -234,9 +234,17 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
     return true;
 
   case HM_A:
-    if (other_keycode == LOW_TAB) {
+    switch (other_keycode) {
+    case LOW_TAB:
+    case KC_Z:
+    case KC_X:
+    case KC_C:
+    case KC_D:
+    case KC_V:
+    case KC_W:
+    case KC_Q:
       return true;
-    } // cmd + tab on mac
+    }
     break;
 
   case HM_R:

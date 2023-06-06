@@ -23,7 +23,7 @@ ifeq ($(strip $(STENO_ENABLE)), yes)
 endif
 
 # Feature enables
-# ACHORDION_ENABLE     = yes
+ACHORDION_ENABLE     = yes
 SENTENCE_CASE_ENABLE = yes
 
 # Add LTO compile flag
