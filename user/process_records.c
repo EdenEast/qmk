@@ -2,7 +2,7 @@
 
 #ifdef ACHORDION_ENABLE
 #include "features/achordion.h"
-#endif /* ifdef ACHORDION_ENABLE */
+#endif
 
 /**
  * @brief Disable homerow mod tap combinations
@@ -200,7 +200,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef ACHORDION_ENABLE
-
 // https://getreuer.info/posts/keyboards/achordion/index.html
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {

@@ -39,5 +39,6 @@ endif
 
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)
 	SRC += features/achordion.c
+	OPT_DEFS += -DACHORDION_ENABLE
 endif
 
