@@ -18,7 +18,7 @@ enum combos {
 
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
-const uint16_t PROGMEM combo_left_boot[] = {KC_GRV, KC_B, COMBO_END};
+const uint16_t PROGMEM combo_left_boot[] = {TD_GRV, KC_B, COMBO_END};
 const uint16_t PROGMEM combo_rght_boot[] = {KC_J, KC_EQL, COMBO_END};
 const uint16_t PROGMEM combo_bspc_hold[] = {KC_DEL, SFT_BSP, COMBO_END};
 const uint16_t PROGMEM combo_spc_hold[] = {KC_ENT, SFT_SPC, COMBO_END};

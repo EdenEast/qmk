@@ -15,7 +15,7 @@
 #define _______________________BLANK________________________       _______, _______, _______, _______, _______, _______
 
 
-#define __COLEMAK_DH_L1_____________________________________       KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
+#define __COLEMAK_DH_L1_____________________________________       TD_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HM_A,    HM_R,    HM_S,    HM_T,    KC_G
 #define __COLEMAK_DH_L3_____________________________________       KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
 

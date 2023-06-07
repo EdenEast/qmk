@@ -15,7 +15,7 @@ EXTRAKEY_ENABLE    = yes # Audio controls and system controls
 CAPS_WORD_ENABLE   = yes
 # NKRO_ENABLE        = yes # NKey Rollover
 # STENO_ENABLE       = yes # Enable steno
-# TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
+TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
 
 ifeq ($(strip $(STENO_ENABLE)), yes)
 	STENO_PROTOCOL     = geminipr # Better protocol for steno

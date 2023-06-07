@@ -9,9 +9,11 @@
 // Custon tap dance keys
 enum dances {
   TD_MEDIA_NEXT_PREV = 0,
+  TD_GRV_PAIRS = 0,
 };
 
 #define TD_MDNP TD(TD_MEDIA_NEXT_PREV)
+#define TD_GRV TD(TD_GRV_PAIRS)
 
 // Define a type for as many tap dance states as you need
 typedef enum {
