@@ -1,8 +1,8 @@
 #include "edeneast.h"
 
 #define KEYLOGGER_LENGTH 5
-static char keylog_str[KEYLOGGER_LENGTH + 1] = { "\n" };
-static char coord_record_str[KEYLOGGER_LENGTH + 1] = { "\n" };
+static char keylog_str[KEYLOGGER_LENGTH + 1] = {"\n"};
+static char coord_record_str[KEYLOGGER_LENGTH + 1] = {"\n"};
 
 // clang-format off
 static const char PROGMEM code_to_name[0xFF] = {
@@ -80,14 +80,14 @@ void render_default_layer_state(void) {
 void render_layer_state(void) {
     oled_write_P(PSTR("Layer"), false);
     switch (get_highest_layer(layer_state)) {
-        case _SYM:
-            oled_write_ln_P(PSTR(" Symb"), false);
+        case _LOWER:
+            oled_write_ln_P(PSTR("Lower"), false);
             break;
-        case _NAV:
-            oled_write_ln_P(PSTR(" NAVI"), false);
+        case _RAISE:
+            oled_write_ln_P(PSTR("Raise"), false);
             break;
         case _ADJ:
-            oled_write_ln_P(PSTR("  ADJ"), false);
+            oled_write_ln_P(PSTR("Adjst"), false);
             break;
         default:
             oled_write_ln_P(PSTR(" Base"), false);
@@ -98,10 +98,10 @@ void render_layer_state(void) {
 void render_mod_status(uint8_t modifiers) {
     oled_write_P(PSTR("Mods:"), false);
     oled_write_P(PSTR(" "), false);
-    oled_write_P(PSTR("S"), (modifiers & MOD_MASK_SHIFT));
-    oled_write_P(PSTR("C"), (modifiers & MOD_MASK_CTRL));
+    oled_write_P(PSTR("G"), (modifiers & MOD_MASK_GUI));
     oled_write_P(PSTR("A"), (modifiers & MOD_MASK_ALT));
-    oled_write_ln_P(PSTR("G"), (modifiers & MOD_MASK_GUI));
+    oled_write_P(PSTR("S"), (modifiers & MOD_MASK_SHIFT));
+    oled_write_ln_P(PSTR("C"), (modifiers & MOD_MASK_CTRL));
 }
 
 void render_keylock_status(uint8_t led_usb_state) {

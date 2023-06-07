@@ -1,60 +1,93 @@
 #pragma once
-#include QMK_KEYBOARD_H
+#include "edeneast.h"
 
-enum userspace_custom_keycodes
-{
-    VRSN = SAFE_RANGE, // Prints QMK Firmware and board info
-    KC_COLEMAK,        // Sets default layer to COLEMAK
-    KC_GAME,           // Sets default layer to GAME
-    KC_NEQL,           // Output '!='
-    KC_AROW,           // Output '->'
-    KC_LPLT,           // '(' or '<' when shift
-    KC_RPGT,           // ')' or '>' when shift
-    KC_CMEX,           // ',' or '!' when shift
-    KC_DTPP,           // '.' or '@' when shift
-    TLR_GME,           // Toggle Game layer
-    TLR_STN,           // Toggle Steno layer
-    NEW_SAFE_RANGE     // use "NEWPLACEHOLDER for keymap specific codes
+enum userspace_custom_keycodes {
+  VRSN = SAFE_RANGE, // Prints QMK Firmware and board info
+
+  KC_COLEMAK, // Sets default layer to COLEMAK
+  KC_GAME,    // Sets default layer to GAME
+  TL_GAME,    // Toggle game layer
+  TL_STNO,    // Toggle steno layer
+  STCK_LY,
+
+  VB_UP,
+  VB_DOWN,
+  MUTE_MIC,
+
+  TG_SENT, // Toggle sentence case
+
+  NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
 };
 
-bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
+#define MO_VIM MO(_VIM)
 
-// Layer keys
-/* #define R_SYML LT(_SYML, KC_R) */
+#define COPY C(KC_INS)
+#define PASTE S(KC_INS)
 
-// clang-format off
-#define TMUX       LCTL(KC_A)
+// Homerow mod keys
+// Base layer
+#define HM_A LGUI_T(KC_A)
+#define HM_R LALT_T(KC_R)
+#define HM_S LSFT_T(KC_S)
+#define HM_T LCTL_T(KC_T)
 
-#define CTL_ESC    LCTL_T(KC_ESC)
-#define CTL_ENT    LCTL_T(KC_ENT)
-#define CTL_QOT    LCTL_T(KC_QUOT)
-#define CTL_GRV    LCTL_T(KC_GRV)
+#define HM_O RGUI_T(KC_O)
+#define HM_I LALT_T(KC_I)
+#define HM_E RSFT_T(KC_E)
+#define HM_N RCTL_T(KC_N)
 
-#define SFT_QOT    LSFT_T(KC_QUOT)
-#define SFT_ENT    LSFT_T(KC_ENT)
-#define SFT_BSP    LSFT_T(KC_BSPC)
+// Lower
+// #define HM_ LGUI_T(KC_)
+#define HM_UNDS LALT_T(KC_UNDS)
+#define HM_PLUS LSFT_T(KC_PLUS)
+#define HM_EQL LCTL_T(KC_EQL)
 
-#define ALT_Z      LALT_T(KC_Z)
-#define ALT_SLH    LALT_T(KC_SLSH)
-#define ALT_AT     LALT_T(KC_AT)
-#define ALT_BSL    LALT_T(KC_BSLS)
+#define HM_LPRN RCTL_T(KC_LPRN)
+#define HM_RPRN RSFT_T(KC_RPRN)
+#define HM_RBRC LALT_T(KC_RBRC)
+#define HM_GRV RGUI_T(KC_GRV)
 
-#define GUI_X      LGUI_T(KC_X)
-#define GUI_DOT    LGUI_T(KC_DOT)
-#define GUI_HSH    LGUI_T(KC_HASH)
+// Raise
+// #define HM_ LGUI_T(KC_)
+// #define HM_ LALT_T(KC_)
+// #define HM_ LSFT_T(KC_)
+// #define HM_ LCTL_T(KC_)
+//
+// #define HM_ RCTL_T(KC_)
+// #define HM_ RSFT_T(KC_)
+// #define HM_ LALT_T(KC_)
+// #define HM_ RGUI_T(KC_)
 
-#define SYM_TAB    LT(_SYM, KC_TAB)
-#define NAV_MNS    LT(_NAV, KC_MINS)
+// Adj
+#define HM_PRSC LGUI_T(KC_PSCR)
+// #define HM_ LALT_T(KC_)
+// #define HM_ LSFT_T(KC_)
+// #define HM_ LCTL_T(KC_)
+//
+#define HM_MIC RCTL_T(KC_F20)
+// #define HM_ RSFT_T(KC_)
+// #define HM_ LALT_T(KC_)
 
-#define COLEMAK    KC_COLEMAK
-#define GAME       KC_GAME
+// Template
+// #define HM_ LGUI_T(KC_)
+// #define HM_ LALT_T(KC_)
+// #define HM_ LSFT_T(KC_)
+// #define HM_ LCTL_T(KC_)
+//
+// #define HM_ RCTL_T(KC_)
+// #define HM_ RSFT_T(KC_)
+// #define HM_ LALT_T(KC_)
+// #define HM_ RGUI_T(KC_)
 
-// Lock layer useful when eating and trying to navigate with one hand
-// #define TG_RASE KC_RAISE
-// #define TG_LOWR KC_LOWER
-// #define TG_FUNC KC_FN
+#define CTR_ESC LCTL_T(KC_ESC)
+#define CTR_QOT LCTL_T(KC_QUOT)
 
-#define DF_BASE DF(0)
+// Thumb keys
+
+#define LOW_TAB LT(_LOWER, KC_TAB)
+#define SFT_BSP LSFT_T(KC_BSPC)
+#define SFT_SPC RSFT_T(KC_SPC)
+#define RAS_MIN LT(_RAISE, KC_MINS)
 
 // One Shot Shifts
 #define OS_LSFT OSM(MOD_LSFT)
@@ -62,3 +95,4 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record);
 
 #define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
 
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record);

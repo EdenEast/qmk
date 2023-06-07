@@ -126,4 +126,49 @@ reinit:
 
 # Format c files
 fmt:
-    clang-format -i $(fd --exclude external --extension c --extension h .)
+    clang-format --style=llvm -i $(fd --exclude firmware --exclude user/features --extension c --extension h .)
+
+# Generate layout map
+layout:
+    keymap draw ./resources/layout.yml > ./resources/layout.svg
+
+# live reload layout map
+[linux]
+@watch-layout:
+    #!/usr/bin/env bash
+    [[ $(uname -r) =~ microsoft ]] && powershell.exe start $(wslpath ./resources/layout.svg) || xdg-open ./resources/layout.svg
+    watchexec -nrpw resources/layout.yml -- just layout
+
+# live reload layout map
+[macos]
+@watch-layout:
+    #!/usr/bin/env bash
+    open ./resources/layout.svg
+    watchexec -nrpw resources/layout.yml -- just layout
+
+qmk-update:
+    #!/usr/bin/env bash
+    # https://stackoverflow.com/a/41081908
+    pushd ./firmware
+    git reset --hard
+    git clean -fdx
+    git co master
+    git fetch origin --depth 1
+    git reset --hard origin/master
+    git submodule update --init --recursive --recommend-shallow
+    popd
+    git add -f ./firmware
+
+# Update features subtree
+subtree-update:
+    #!/usr/bin/env bash
+    # https://stackoverflow.com/questions/22334382/git-subtree-only-one-file-or-directory
+    # https://gist.github.com/tswaters/542ba147a07904b1f3f5
+    # https://getreuer.info/posts/keyboards/achordion/index.html
+    [[ $(git diff --name-only --diff-filter=M | wc -l) > 0 ]] && echo 'There are uncommited changes, aborting' && exit 1
+    git fetch --depth=1 https://github.com/getreuer/qmk-keymap main:subtree-main
+    git checkout subtree-main
+    git subtree split --prefix=features -b subtree-split
+    git checkout -
+    git subtree merge --squash --prefix=user/features subtree-split
+    git branch -D subtree-main subtree-split

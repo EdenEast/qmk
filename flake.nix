@@ -51,10 +51,12 @@
       in
       {
         devShells.default = pkgs.mkShell {
+          name = "qmk";
           buildInputs = with pkgs; [
             just
             keymap-drawer
             qmk
+            watchexec
           ];
 
           shellHook = ''

@@ -1,7 +1,3 @@
-SRC += edeneast.c \
-       process_records.c \
-       combo.c \
-
 # Common flags
 AUDIO_ENABLE       = no  # Use the audio system
 BOOTMAGIC_ENABLE   = no  # Disable to allow keys during system boot
@@ -16,21 +12,46 @@ SPACE_CADET_ENABLE = no  # Dont use it, save space
 COMBO_ENABLE       = yes # Combo keys together
 LTO_ENABLE         = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE    = yes # Audio controls and system controls
-NKRO_ENABLE        = yes # NKey Rollover
-STENO_ENABLE       = yes # Enable steno
-STENO_PROTOCOL     = geminipr # Better protocol for steno
-VIRTSER_ENABLE     = yes # Required for steno
+CAPS_WORD_ENABLE   = yes
+# NKRO_ENABLE        = yes # NKey Rollover
+# STENO_ENABLE       = yes # Enable steno
 # TAP_DANCE_ENABLE   = yes # Used for tmux prefix key
+
+ifeq ($(strip $(STENO_ENABLE)), yes)
+	STENO_PROTOCOL     = geminipr # Better protocol for steno
+	VIRTSER_ENABLE     = yes # Required for steno
+endif
+
+# Feature enables
+ACHORDION_ENABLE     = yes
+SENTENCE_CASE_ENABLE = yes
 
 # Add LTO compile flag
 # https://thomasbaart.nl/2018/12/01/reducing-firmware-size-in-qmk/
 EXTRAFLAGS += -flto
 
+SRC += edeneast.c
+SRC += process_records.c
+
+ifeq ($(strip $(COMBO_ENABLE)), yes)
+	INTROSPECTION_KEYMAP_C = combos.c
+endif
+
 ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-    SRC += tap_dances.c
+	SRC += dances.c
 endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
-    SRC += oled.c
+	SRC += oled.c
+endif
+
+ifeq ($(strip $(ACHORDION_ENABLE)), yes)
+	SRC += features/achordion.c
+	OPT_DEFS += -DACHORDION_ENABLE
+endif
+
+ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
+	SRC += features/sentence_case.c
+	OPT_DEFS += -DSENTENCE_CASE_ENABLE
 endif
 

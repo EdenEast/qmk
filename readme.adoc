@@ -1,0 +1,52 @@
+= Eden's qmk keyboard firmware
+
+== Reference
+
+.Reference
+image::./resources/layout.svg[reference]
+
+== Quick start
+
+This repository uses https://github.com/qmk/qmk_firmware[qmk_firmware] as a submodule located in `./firmware`. Make sure
+that you have https://github.com/casy/just[just] installed as this repository is built upon automating tasks with just
+recipes. You should also use `nix` with `flake` support as this is the best way to setup the environment.
+
+[source,bash]
+----
+# build all keyboards
+just
+
+# Build and flash a keyboard
+just flash crkbd
+
+# Write hand information to keyboard
+just left crkbd
+just right crkbd
+
+# Format all c files
+just fmt
+
+# Generate keyboard reference svg
+just layout
+----
+
+
+== Trouble shooting flashing on linux
+
+If having issues with the bootloader being recongized, check is there is issues with
+https://docs.qmk.fm/#/faq_build?id=can39t-program-on-linux[udev]. Also to view a list of usb devices run `lsusb`.
+
+== Resources and reference
+
+* Posts
+** https://precondition.github.io/home-row-mods[home-row-mods]
+** https://getreuer.info/posts/keyboards/index.html[getreuer qmk library]
+** https://sunaku.github.io/ergohaven-remnant-keyboard.html[sunaku keymap description]
+** https://sunaku.github.io/home-row-mods.html[sunaku taming home row mods]
+
+* Keymaps
+** https://github.com/manna-harbour/miryoku[miryoku]
+** https://github.com/rayduck/pnohty/tree/master[pnohty]
+** https://github.com/precondition/dactyl-manuform-keymap[precondition]
+** https://github.com/markstos/qmk_firmware/blob/markstos/keyboards/crkbd/keymaps/markstos/README.md[markstos]
+** https://github.com/rafaelromao/keyboards[rafaelromao]
