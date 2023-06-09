@@ -1,4 +1,4 @@
-[submodule "external/qmk_firmware"]
+[submodule "firmware"]
 	path = firmware
 	url = https://github.com/qmk/qmk_firmware
 	shallow = true
