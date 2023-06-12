@@ -252,6 +252,12 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
       return true;
     } // alt + tab on mac
     break;
+
+  case HM_T:
+    if (other_keycode == LOW_TAB) {
+      return true;
+    } // ctrl + tab for browsers
+    break;
   }
 
   // Also allow same-hand holds when the other key is in the rows below the
