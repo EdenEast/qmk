@@ -10,6 +10,10 @@ dm4_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/4x6/keymaps/eden
 dm5_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
 crkbd_symlink := "./firmware/keyboards/crkbd/keymaps/edeneast"
 
+alias f := flash
+alias l := layout
+alias w := watch-layout
+
 # Build all keyboards
 all:
     @just dm4
