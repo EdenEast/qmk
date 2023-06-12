@@ -15,6 +15,7 @@ enum userspace_custom_keycodes {
   MUTE_MIC,
 
   TG_SENT, // Toggle sentence case
+  KC_MAKE, // Run keyboard's customized make command
 
   NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
 };
@@ -96,3 +97,4 @@ enum userspace_custom_keycodes {
 #define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+void send_make_command(bool flash_bootloader);

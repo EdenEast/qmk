@@ -114,6 +114,9 @@ init:
     if [ ! -L "{{crkbd_symlink}}" ] ; then
         ln -sf $(pwd)/keyboard/crkbd {{crkbd_symlink}}
     fi
+    if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
+      qmk config user.qmk_home="{{justfile_directory()}}/firmware"
+    fi
 
 # Re-initialize symlinks
 reinit:

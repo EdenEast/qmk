@@ -55,3 +55,7 @@ ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
 	OPT_DEFS += -DSENTENCE_CASE_ENABLE
 endif
 
+# Enable this for boards that dont have a shift key (macro pads)
+ifeq ($(strip $(FLASH_BOOTLOADER)), yes)
+    OPT_DEFS += -DFLASH_BOOTLOADER
+endif

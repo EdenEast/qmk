@@ -107,6 +107,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
 #endif
 
+  case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
+    if (record->event.pressed) {
+      bool flash = false;
+// If is a keyboard and auto-flash is not set in rules.mk,
+// then Shift will trigger the flash command
+#if !defined(FLASH_BOOTLOADER) && !defined(IS_MACROPAD)
+      uint8_t temp_mod = get_mods();
+      uint8_t temp_osm = get_oneshot_mods();
+      clear_mods();
+      clear_oneshot_mods();
+      if ((temp_mod | temp_osm) & MOD_MASK_SHIFT)
+#endif
+      {
+        flash = true;
+      }
+      send_make_command(flash);
+    }
+    break;
+
     // Mod tap can only handle basic keycodes
   case HM_LPRN:
     if (record->tap.count && record->event.pressed) {
@@ -272,3 +291,25 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
 
 void matrix_scan_user(void) { achordion_task(); }
 #endif
+
+/**
+ * Send Make Command
+ *
+ * Sends 'qmk compile -kb keyboard -km keymap' command to compile firmware
+ * Uses 'qmk flash' and resets keyboard, if flash_bootloader set to true
+ */
+void send_make_command(bool flash_bootloader) {
+  SEND_STRING("qmk ");
+  if (flash_bootloader) {
+    SEND_STRING("flash ");
+  } else {
+    SEND_STRING("compile ");
+  }
+  SEND_STRING("-j0 ");
+  SEND_STRING("-kb " QMK_KEYBOARD " ");
+  SEND_STRING("-km " QMK_KEYMAP);
+  SEND_STRING(SS_TAP(X_ENTER));
+  if (flash_bootloader) {
+    reset_keyboard();
+  }
+}

@@ -5,7 +5,8 @@
 static td_tap_t media_tap_state = {.is_press_action = true, .state = TD_NONE};
 
 // Initialize tap structure associated with example tap dance key
-static td_tap_t grv_pair_tap_state = {.is_press_action = true, .state = TD_NONE};
+static td_tap_t grv_pair_tap_state = {.is_press_action = true,
+                                      .state = TD_NONE};
 
 td_state_t cur_dance(tap_dance_state_t *state) {
   switch (state->count) {
@@ -48,7 +49,7 @@ void td_media_reset(tap_dance_state_t *state, void *user_data) {
   media_tap_state.state = TD_NONE;
 }
 
-void tap_pair(uint16_t keycode, uint8_t times){
+void tap_pair(uint16_t keycode, uint8_t times) {
   for (uint8_t i = 0; i < times * 2; ++i) {
     tap_code16(keycode);
   }
@@ -88,6 +89,6 @@ tap_dance_action_t tap_dance_actions[] = {
     [TD_MEDIA_NEXT_PREV] =
         ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_media_finished, td_media_reset),
 
-    [TD_GRV_PAIRS] =
-        ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_grv_pairs_finished, td_grv_pairs_reset),
+    [TD_GRV_PAIRS] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_grv_pairs_finished,
+                                                  td_grv_pairs_reset),
 };

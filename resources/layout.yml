@@ -65,8 +65,10 @@ layers:
   #                        '36', '37', '38',     '39', '40', '41',
 
 combos:
-  - {p: [0, 5], k: "Boot", a: top, o: 0.4, l: ["Base"]}
-  - {p: [6, 11], k: "Boot", a: top, o: 0.4, l: ["Base"]}
+  - {p: [0, 5], k: "Boot", a: top, o: 0.8, l: ["Base"]}
+  - {p: [6, 11], k: "Boot", a: top, o: 0.8, l: ["Base"]}
+  - {p: [0, 4], k: "Compile", a: top, o: 0.2, l: ["Base"]}
+  - {p: [7, 11], k: "Compile", a: top, o: 0.2, l: ["Base"]}
 
   - {p: [17, 18], k: "Cap word", l: ["Base"]}
 
