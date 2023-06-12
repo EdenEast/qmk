@@ -309,7 +309,4 @@ void send_make_command(bool flash_bootloader) {
   SEND_STRING("-kb " QMK_KEYBOARD " ");
   SEND_STRING("-km " QMK_KEYMAP);
   SEND_STRING(SS_TAP(X_ENTER));
-  if (flash_bootloader) {
-    reset_keyboard();
-  }
 }
