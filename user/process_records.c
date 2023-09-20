@@ -88,17 +88,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       set_single_persistent_default_layer(keycode - KC_COLEMAK);
     return false;
 
-#ifdef STENO_ENABLE
   case TL_GAME: // TODO: save state of sentence case and turn it off
     if (record->event.pressed)
       layer_invert(_GAME);
     return false;
-#endif
 
+#ifdef STENO_ENABLE
   case TL_STNO: // TODO: save state of sentence case and turn it off
     if (record->event.pressed)
       layer_invert(_STENO);
     return false;
+#endif
 
 #ifdef SENTENCE_CASE_ENABLE
   case TG_SENT:
