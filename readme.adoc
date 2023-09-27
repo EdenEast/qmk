@@ -36,6 +36,10 @@ just layout
 If having issues with the bootloader being recongized, check is there is issues with
 https://docs.qmk.fm/#/faq_build?id=can39t-program-on-linux[udev]. Also to view a list of usb devices run `lsusb`.
 
+=== Nixos
+
+For nixos, to be able to flash qmk it is required to have `hardware.keyboard.qmk.enable = true`.
+
 == Resources and reference
 
 * Posts
