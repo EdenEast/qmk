@@ -13,7 +13,7 @@
     k21, k22, k23, k24, k25, k26,     k27, k28, k29, k2A, k2B, k2C, \
     KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, \
     LOW_TAB, SFT_BSP, SFT_SPC, RAS_MIN, \
-    _______,_______, _______,_______, _______,_______, _______,_______ \
+    _______,_______, _______,_______, _______,TL_GAME, _______,_______ \
   )
 
 #define LAYOUT_base_wrapper(...)       LAYOUT_base(__VA_ARGS__)
@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_T,    KC_G,                                                                _______, _______,
                                         KC_I,     KC_SPC,                         KC_BSPC, KC_ENT,
                                                  TG_MIC,  KC_M,           KC_DEL, OS_RSFT,
-                                                 KC_PAUS, KC_F2,          _______, _______
+                                                 KC_PAUS, TL_GAME,        _______, _______
   ),
 
 #ifdef STENO_ENABLE
