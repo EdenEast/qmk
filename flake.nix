@@ -7,6 +7,15 @@
     };
   };
 
+  nixConfig = {
+    extra-substituters = [
+      "https://edeneast-qmk-firmware.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "edeneast-qmk-firmware.cachix.org-1:lZ1aALkZD5qlipgrCqrJbYUAmwm6ED04fAnG23QqQaQ="
+    ];
+  };
+
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
