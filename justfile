@@ -165,6 +165,7 @@ qmk-update:
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./firmware
+    just reinit
 
 # Update features subtree
 subtree-update:
