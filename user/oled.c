@@ -65,7 +65,7 @@ void render_coord_status(void) {
 void render_default_layer_state(void) {
     oled_write_P(PSTR("Lyout"), false);
     switch (get_highest_layer(default_layer_state)) {
-        case _COLEMAK_DH:
+        case _BASE:
             oled_write_P(PSTR("ColMk"), false);
             break;
         case _GAME:

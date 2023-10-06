@@ -15,7 +15,7 @@
 
 // Define layer names
 enum userspace_layers {
-  _COLEMAK_DH = 0,
+  _BASE = 0,
   _LOWER,
   _RAISE,
   _ADJ,

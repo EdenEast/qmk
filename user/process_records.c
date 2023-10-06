@@ -83,9 +83,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   uint8_t mods = get_mods();
   switch (keycode) {
-  case KC_COLEMAK ... KC_GAME:
+  case KC_BASE ... KC_GAME:
     if (record->event.pressed)
-      set_single_persistent_default_layer(keycode - KC_COLEMAK);
+      set_single_persistent_default_layer(keycode - KC_BASE);
     return false;
 
   case TL_GAME: // TODO: save state of sentence case and turn it off

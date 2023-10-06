@@ -19,7 +19,7 @@
 #define LAYOUT_base_wrapper(...)       LAYOUT_base(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_COLEMAK_DH] = LAYOUT_base_wrapper(
+  [_BASE] = LAYOUT_base_wrapper(
     __COLEMAK_DH_L1_____________________________________, __COLEMAK_DH_R1_____________________________________,
     __COLEMAK_DH_L2_____________________________________, __COLEMAK_DH_R2_____________________________________,
     __COLEMAK_DH_L3_____________________________________, __COLEMAK_DH_R3_____________________________________
