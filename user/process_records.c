@@ -107,6 +107,24 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
 #endif
 
+  case ED_COPY:
+    if (record->event.pressed) {
+      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+      register_code(mod);
+      tap_code(KC_C);
+      unregister_code(mod);
+    }
+    break;
+
+  case ED_PASTE:
+    if (record->event.pressed) {
+      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+      register_code(mod);
+      tap_code(KC_V);
+      unregister_code(mod);
+    }
+    break;
+
   case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
     if (record->event.pressed) {
       bool flash = false;
@@ -191,9 +209,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     //     return mod_roll_cancellation(KC_RGUI, KC_I, KC_O); // io
     //   }
     //   break;
-
-  default:
-    return true;
   }
 
   return process_record_keymap(keycode, record);

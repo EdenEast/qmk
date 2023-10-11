@@ -10,6 +10,9 @@ enum userspace_custom_keycodes {
   TL_STNO, // Toggle steno layer
   STCK_LY,
 
+  ED_COPY,
+  ED_PASTE,
+
   VB_UP,
   VB_DOWN,
   MUTE_MIC,

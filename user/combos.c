@@ -45,8 +45,8 @@ combo_t key_combos[] = {
     [COMBO_BSPC_HOLD] = COMBO(combo_bspc_hold, KC_BSPC),
     [COMBO_SPC_HOLD] = COMBO(combo_spc_hold, KC_SPC),
 
-    [COMBO_COPY] = COMBO(combo_copy, COPY),
-    [COMBO_PASTE] = COMBO(combo_paste, PASTE),
+    [COMBO_COPY] = COMBO(combo_copy, ED_COPY),
+    [COMBO_PASTE] = COMBO(combo_paste, ED_PASTE),
 
     [COMBO_CAP_WORD] = COMBO(combo_cap_word, QK_CAPS_WORD_TOGGLE),
 
