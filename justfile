@@ -9,6 +9,7 @@ user_symlink  := "./firmware/users/edeneast"
 dm4_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/4x6/keymaps/edeneast"
 dm5_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
 crkbd_symlink := "./firmware/keyboards/crkbd/keymaps/edeneast"
+tofu_symlink := "./firmware/keyboards/dz60/keymaps/edeneast"
 
 alias f := flash
 alias l := layout
@@ -31,6 +32,9 @@ dm5:
 # Build Corne keyboard (crkbd) firmware
 crkbd:
     @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
+
+tofu:
+    @just _build dz60:edeneast dz60_edeneast.hex tofu
 
 _build make_cmd source target: init
     #!/usr/bin/env bash
@@ -57,6 +61,8 @@ flash keyboard:
         cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude"
     elif [ "{{keyboard}}" = "dm5" ]; then
         cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude"
+    elif [ "{{keyboard}}" = "tofu" ]; then
+        cmd="handwired/dz60:edeneast:dfu"
     else
         printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
     fi
@@ -118,6 +124,9 @@ init:
     if [ ! -L "{{crkbd_symlink}}" ] ; then
         ln -sf $(pwd)/keyboard/crkbd {{crkbd_symlink}}
     fi
+    if [ ! -L "{{tofu_symlink}}" ] ; then
+        ln -sf $(pwd)/keyboard/tofu {{tofu_symlink}}
+    fi
     if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
       qmk config user.qmk_home="{{justfile_directory()}}/firmware"
     fi
@@ -129,6 +138,7 @@ reinit:
     rm -rf {{dm4_symlink}}
     rm -rf {{dm5_symlink}}
     rm -rf {{crkbd_symlink}}
+    rm -rf {{tofu_symlink}}
     just init
 
 # Format c files
