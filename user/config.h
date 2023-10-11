@@ -30,3 +30,6 @@
 #define COMBO_TERM 20
 // #define COMBO_COUNT 10
 #endif
+
+// Enable make compile command
+#define ENABLE_COMPILE_KEYCODE
