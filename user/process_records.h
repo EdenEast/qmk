@@ -25,9 +25,6 @@ enum userspace_custom_keycodes {
 
 #define MO_VIM MO(_VIM)
 
-#define COPY C(KC_INS)
-#define PASTE S(KC_INS)
-
 // Homerow mod keys
 // Base layer
 #define HM_A LGUI_T(KC_A)

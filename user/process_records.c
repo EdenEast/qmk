@@ -125,6 +125,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  case HM_A:
+  case HM_O:
+    if (!record->tap.count) {
+      uint16_t kc = is_macos() ? KC_LGUI : KC_LALT;
+      if (record->event.pressed) {
+        register_code(kc);
+      } else {
+        unregister_code(kc);
+      }
+      return false;
+    }
+    break;
+
+  case HM_R:
+  case HM_I:
+    if (!record->tap.count) {
+      uint16_t kc = is_macos() ? KC_LALT : KC_LGUI;
+      if (record->event.pressed) {
+        register_code(kc);
+      } else {
+        unregister_code(kc);
+      }
+      return false;
+    }
+    break;
+
   case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
     if (record->event.pressed) {
       bool flash = false;
