@@ -286,8 +286,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 // https://getreuer.info/posts/keyboards/achordion/index.html
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
-  // Exceptionally consider the following chords as holds, even though they
-  // are on the same hand in Dvorak.
   switch (tap_hold_keycode) {
   case LOW_TAB:
   case RAS_MIN:
@@ -321,6 +319,14 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
     if (other_keycode == LOW_TAB) {
       return true;
     } // ctrl + tab for browsers
+    break;
+
+  case HM_N:
+  case HM_I:
+  case HM_O:
+    if (other_keycode == SFT_SPC) {
+      return true;
+    } // GUI + space for finder
     break;
   }
 
