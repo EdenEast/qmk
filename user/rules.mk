@@ -2,7 +2,7 @@
 AUDIO_ENABLE        = no  # Use the audio system
 BOOTMAGIC_ENABLE    = no  # Disable to allow keys during system boot
 COMMAND_ENABLE      = no  # Commands for debug and configuration
-CONSOLE_ENABLE      = no  # Console for debugging
+CONSOLE_ENABLE      = yes  # Console for debugging
 GRAVE_ESC_ENABLE    = no  # Dont use it, save space
 MIDI_ENABLE         = no  # Dont use it, save space
 MOUSEKEY_ENABLE     = no  # Mouse keys
@@ -17,6 +17,7 @@ CAPS_WORD_ENABLE    = yes
 # STENO_ENABLE        = yes # Enable steno
 TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
 OS_DETECTION_ENABLE = yes # Enable os detection
+DEFERRED_EXEC_ENABLE = yes
 
 ifeq ($(strip $(STENO_ENABLE)), yes)
 	STENO_PROTOCOL     = geminipr # Better protocol for steno

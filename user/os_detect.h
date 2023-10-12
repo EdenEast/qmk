@@ -7,4 +7,6 @@
 bool is_macos(void);
 bool is_linux(void);
 bool is_windows(void);
+
+void startup(void);
 bool process_os_toggle(uint16_t keycode, keyrecord_t *record);

@@ -17,6 +17,8 @@ enum userspace_custom_keycodes {
   VB_DOWN,
   MUTE_MIC,
 
+  DB_OS,
+
   TG_SENT, // Toggle sentence case
   KC_MAKE, // Run keyboard's customized make command
 
