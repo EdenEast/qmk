@@ -20,6 +20,7 @@ all:
     @just dm4
     @just dm5
     @just crkbd
+    @just tofu
 
 # Build dactyl manuform 4x6 keyboard firmware
 dm4:
