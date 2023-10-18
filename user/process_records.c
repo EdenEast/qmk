@@ -293,7 +293,23 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef ACHORDION_ENABLE
-// https://getreuer.info/posts/keyboards/achordion/index.html
+/**
+ * @brief Bilateral combinations
+ *
+ * Decide the outcome of tap-hold key depending on the other key pressed.
+ * When return is true the tap-hold key is concidered held, else it is
+ * determined to be both tapped.
+ *
+ * @see
+ * https://getreuer.info/posts/keyboards/achordion/index.html#achordion_chord
+ *
+ * @paran tap_hold_keycode Key to be decided if key is tapped of held
+ * @paran tap_hold_record The matrix information for the tap hold key
+ * @paran other_keycode The other key that will determine the state of the
+ * tap_hold key
+ * @paran other_record The matrix information for the other key
+ * @return true considered tap-hold, false considered both tap keys
+ */
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
   switch (tap_hold_keycode) {
