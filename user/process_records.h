@@ -65,7 +65,7 @@ enum userspace_custom_keycodes {
 // #define HM_ LSFT_T(KC_)
 // #define HM_ LCTL_T(KC_)
 //
-#define HM_MIC RCTL_T(KC_F20)
+#define HM_MIC RCTL_T(MUTE_MIC)
 // #define HM_ RSFT_T(KC_)
 // #define HM_ LALT_T(KC_)
 

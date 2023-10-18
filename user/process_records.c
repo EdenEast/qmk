@@ -218,11 +218,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   case MUTE_MIC:
     if (record->event.pressed) {
-      if (mods & MOD_BIT(MOD_MASK_SHIFT)) {
-        tap_code16(KC_F20);
+      uint8_t code = is_macos() ? KC_F19 : KC_F20;
+      tap_code(code);
+    }
+    return false;
+
+  case HM_MIC:
+    if (!record->tap.count) { // not tapped and key is held
+      if (record->event.pressed) {
+        register_code(KC_RCTL);
       } else {
-        tap_code16(KC_MUTE);
+        unregister_code(KC_RCTL);
       }
+    } else {
+      uint8_t code = is_macos() ? KC_F19 : KC_F20;
+      tap_code(code);
     }
     return false;
 

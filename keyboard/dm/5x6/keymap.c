@@ -15,7 +15,7 @@
     k21, k22, k23, k24, k25, k26,     k27, k28, k29, k2A, k2B, k2C, \
     KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, \
     LOW_TAB, SFT_BSP, SFT_SPC, RAS_MIN, \
-    _______,_______, _______,_______, _______,TL_GAME, _______,_______ \
+    MUTE_MIC,_______, _______,_______, _______,TL_GAME, _______,_______ \
   )
 
 #define LAYOUT_base_wrapper(...)       LAYOUT_base_5x6(__VA_ARGS__)
