@@ -53,8 +53,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __GAME_L3___________________________________________,                         __GAME_R3___________________________________________,
                       KC_T,    KC_G,                                                                _______, _______,
                                         KC_I,     KC_SPC,                         KC_BSPC, KC_ENT,
-                                                 TG_MIC,  KC_M,           KC_DEL, OS_RSFT,
-                                                 KC_PAUS, TL_GAME,        _______, _______
+                                                 MUTE_MIC,  KC_M,           KC_DEL, OS_RSFT,
+                                                 KC_MPLY, TL_GAME,        _______, _______
   ),
 
 #ifdef STENO_ENABLE

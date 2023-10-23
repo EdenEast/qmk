@@ -94,7 +94,5 @@ enum userspace_custom_keycodes {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-#define TG_MIC KC_F20 // Default binding for XF86AudioMicMute
-
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 void send_make_command(bool flash_bootloader);
