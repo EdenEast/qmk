@@ -15,6 +15,9 @@ alias f := flash
 alias l := layout
 alias w := watch-layout
 
+stow:
+  stow -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
+
 # Build all keyboards
 all:
     @just dm4
@@ -111,40 +114,18 @@ right keyboard:
 # Setup submodule and link directories to submodules
 init:
     #!/usr/bin/env bash
-    git config submodule.firmware.ignore all
     git submodule update --init --recursive --recommend-shallow
-    if [ ! -L "{{user_symlink}}" ] ; then
-        ln -sf $(pwd)/user {{user_symlink}}
-    fi
-    if [ ! -L "{{dm4_symlink}}" ] ; then
-        ln -sf $(pwd)/keyboard/dm/4x6 {{dm4_symlink}}
-    fi
-    if [ ! -L "{{dm5_symlink}}" ] ; then
-        ln -sf $(pwd)/keyboard/dm/5x6 {{dm5_symlink}}
-    fi
-    if [ ! -L "{{crkbd_symlink}}" ] ; then
-        ln -sf $(pwd)/keyboard/crkbd {{crkbd_symlink}}
-    fi
-    if [ ! -L "{{tofu_symlink}}" ] ; then
-        ln -sf $(pwd)/keyboard/tofu {{tofu_symlink}}
+    stow -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
+    if [ $(git config submodule.firmware.ignore) != "all" ]; then
+      git config submodule.firmware.ignore all
     fi
     if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
       qmk config user.qmk_home="{{justfile_directory()}}/firmware"
     fi
 
-# Re-initialize symlinks
-reinit:
-    #!/usr/bin/env bash
-    rm -rf {{user_symlink}}
-    rm -rf {{dm4_symlink}}
-    rm -rf {{dm5_symlink}}
-    rm -rf {{crkbd_symlink}}
-    rm -rf {{tofu_symlink}}
-    just init
-
 # Format c files
 fmt:
-    clang-format --style=llvm -i $(fd --exclude firmware --exclude user/features --extension c --extension h .)
+    clang-format --style=llvm -i $(fd --exclude firmware --exclude qmk/users/edeneast/features --extension c --extension h .)
 
 # Generate layout map
 layout:
@@ -176,7 +157,7 @@ qmk-update:
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./firmware
-    just reinit
+    just init
 
 # Update features subtree
 subtree-update:

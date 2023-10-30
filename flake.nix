@@ -65,6 +65,7 @@
             just
             keymap-drawer
             qmk
+            stow
             watchexec
           ];
 
