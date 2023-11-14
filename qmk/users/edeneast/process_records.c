@@ -194,7 +194,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // TODO: Shift is currently not being registered
   case VB_UP:
     if (record->event.pressed) {
-      if (mods & MOD_BIT(MOD_MASK_SHIFT)) {
+      if (mods & MOD_MASK_SHIFT) {
         register_code16(KC_BRIU);
       } else {
         register_code16(KC_VOLU);
@@ -207,7 +207,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   case VB_DOWN:
     if (record->event.pressed) {
-      if (mods & MOD_BIT(MOD_MASK_SHIFT)) {
+      if (mods & MOD_MASK_SHIFT) {
         register_code16(KC_BRID);
       } else {
         register_code16(KC_VOLD);
@@ -378,14 +378,11 @@ void matrix_scan_user(void) { achordion_task(); }
  * Uses 'qmk flash' and resets keyboard, if flash_bootloader set to true
  */
 void send_make_command(bool flash_bootloader) {
-  SEND_STRING("qmk ");
+  SEND_STRING_DELAY("qmk ",TAP_CODE_DELAY);
   if (flash_bootloader) {
-    SEND_STRING("flash ");
+    SEND_STRING_DELAY("flash ", TAP_CODE_DELAY);
   } else {
-    SEND_STRING("compile ");
+    SEND_STRING_DELAY("compile ", TAP_CODE_DELAY);
   }
-  SEND_STRING("-j0 ");
-  SEND_STRING("-kb " QMK_KEYBOARD " ");
-  SEND_STRING("-km " QMK_KEYMAP);
-  SEND_STRING(SS_TAP(X_ENTER));
+  SEND_STRING_DELAY("-j0 -kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER), TAP_CODE_DELAY);
 }
