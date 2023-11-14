@@ -16,7 +16,7 @@ alias l := layout
 alias w := watch-layout
 
 stow:
-  stow -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
+  stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
 
 # Build all keyboards
 all:
@@ -38,7 +38,7 @@ crkbd:
     @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
 
 tofu:
-    @just _build dz60:edeneast dz60_edeneast.hex tofu
+    @just _build dztech/dz60v2:edeneast dz60_edeneast.hex tofu
 
 _build make_cmd source target: init
     #!/usr/bin/env bash
@@ -115,7 +115,10 @@ right keyboard:
 init:
     #!/usr/bin/env bash
     git submodule update --init --recursive --recommend-shallow
-    stow -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
+    if [ -f ./firmware/keyboards/dztech/dz60v2/info.json ]; then
+      rm ./firmware/keyboards/dztech/dz60v2/info.json
+    fi
+    stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
     if [ $(git config submodule.firmware.ignore) != "all" ]; then
       git config submodule.firmware.ignore all
     fi
