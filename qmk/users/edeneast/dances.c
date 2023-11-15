@@ -2,20 +2,26 @@
 #include "edeneast.h"
 
 __attribute__((weak)) td_state_t dance_state(tap_dance_state_t *state) {
-  if (state->count == 1){
-      return (state->interrupted || !state->pressed) ? TD_SINGLE_TAP : TD_SINGLE_HOLD;
+  if (state->count == 1) {
+    return (state->interrupted || !state->pressed) ? TD_SINGLE_TAP
+                                                   : TD_SINGLE_HOLD;
   }
   if (state->count == 2) {
-    // TD_DOUBLE_SINGLE_TAP is used to distinguish between typing something like 'pepper', and actually wanting a tap
-    // dance double tap action when hitting 'pp'.
-    if (state->interrupted) return TD_DOUBLE_SINGLE_TAP;
-    else if (state->pressed) return TD_DOUBLE_HOLD;
-    else return TD_DOUBLE_TAP;
+    // TD_DOUBLE_SINGLE_TAP is used to distinguish between typing something like
+    // 'pepper', and actually wanting a tap dance double tap action when hitting
+    // 'pp'.
+    if (state->interrupted)
+      return TD_DOUBLE_SINGLE_TAP;
+    else if (state->pressed)
+      return TD_DOUBLE_HOLD;
+    else
+      return TD_DOUBLE_TAP;
   }
-  if (state->count == 3){
-    return (state->interrupted || !state->pressed) ? TD_TRIPLE_TAP : TD_TRIPLE_HOLD;
+  if (state->count == 3) {
+    return (state->interrupted || !state->pressed) ? TD_TRIPLE_TAP
+                                                   : TD_TRIPLE_HOLD;
   }
-  if (state->count == 4){
+  if (state->count == 4) {
     return (state->interrupted || !state->pressed) ? TD_QUAD_TAP : TD_QUAD_HOLD;
   }
 
@@ -28,6 +34,7 @@ void td_media_next_prev(tap_dance_state_t *state, void *user_data) {
   case TD_SINGLE_TAP:
     tap_code16(KC_MNXT);
     break;
+  case TD_DOUBLE_SINGLE_TAP:
   case TD_DOUBLE_TAP:
     tap_code16(KC_MPRV);
     break;
@@ -53,6 +60,7 @@ void td_grv_pairs(tap_dance_state_t *state, void *user_data) {
   case TD_SINGLE_TAP:
     tap_code16(KC_GRV);
     break;
+  case TD_DOUBLE_SINGLE_TAP:
   case TD_DOUBLE_TAP:
     tap_pair(KC_GRV, 1);
     break;

@@ -23,7 +23,7 @@ typedef enum {
   TD_SINGLE_HOLD,
   TD_DOUBLE_TAP,
   TD_DOUBLE_HOLD,
-  TD_DOUBLE_SINGLE_TAP,  // Send two single taps
+  TD_DOUBLE_SINGLE_TAP, // Send two single taps
   TD_TRIPLE_TAP,
   TD_TRIPLE_HOLD,
   TD_QUAD_TAP,

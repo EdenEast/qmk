@@ -378,11 +378,12 @@ void matrix_scan_user(void) { achordion_task(); }
  * Uses 'qmk flash' and resets keyboard, if flash_bootloader set to true
  */
 void send_make_command(bool flash_bootloader) {
-  SEND_STRING_DELAY("qmk ",TAP_CODE_DELAY);
+  SEND_STRING_DELAY("qmk ", TAP_CODE_DELAY);
   if (flash_bootloader) {
     SEND_STRING_DELAY("flash ", TAP_CODE_DELAY);
   } else {
     SEND_STRING_DELAY("compile ", TAP_CODE_DELAY);
   }
-  SEND_STRING_DELAY("-j0 -kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER), TAP_CODE_DELAY);
+  SEND_STRING_DELAY("-j0 -kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER),
+                    TAP_CODE_DELAY);
 }
