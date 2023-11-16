@@ -10,10 +10,12 @@
 enum dances {
   TD_MEDIA_NEXT_PREV = 0,
   TD_GRV_PAIRS,
+  TD_ALT_RAISE,
 };
 
 #define TD_MDNP TD(TD_MEDIA_NEXT_PREV)
 #define TD_GRV TD(TD_GRV_PAIRS)
+#define TD_LALT TD(TD_ALT_RAISE)
 
 // Define a type for as many tap dance states as you need
 typedef enum {

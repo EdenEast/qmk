@@ -1,6 +1,8 @@
 #include "dances.h"
 #include "edeneast.h"
 
+static uint8_t alttap_state = TD_NONE;
+
 __attribute__((weak)) td_state_t dance_state(tap_dance_state_t *state) {
   if (state->count == 1) {
     return (state->interrupted || !state->pressed) ? TD_SINGLE_TAP
@@ -75,8 +77,49 @@ void td_grv_pairs(tap_dance_state_t *state, void *user_data) {
   }
 }
 
+void alt_finished(tap_dance_state_t *state, void *user_data) {
+  alttap_state = dance_state(state);
+  switch (alttap_state) {
+  case TD_SINGLE_TAP:
+    set_oneshot_layer(_RAISE, ONESHOT_START);
+    clear_oneshot_layer_state(ONESHOT_PRESSED);
+    break;
+  case TD_SINGLE_HOLD:
+    register_code(KC_LALT);
+    break;
+  case TD_DOUBLE_SINGLE_TAP:
+  case TD_DOUBLE_TAP:
+    set_oneshot_layer(_RAISE, ONESHOT_START);
+    set_oneshot_layer(_RAISE, ONESHOT_PRESSED);
+    break;
+  case TD_DOUBLE_HOLD:
+    register_code(KC_LALT);
+    layer_on(_RAISE);
+    break;
+  }
+}
+
+void alt_reset(tap_dance_state_t *state, void *user_data) {
+  switch (alttap_state) {
+  case TD_SINGLE_TAP:
+    break;
+  case TD_SINGLE_HOLD:
+    unregister_code(KC_LALT);
+    break;
+  case TD_DOUBLE_SINGLE_TAP:
+  case TD_DOUBLE_TAP:
+    break;
+  case TD_DOUBLE_HOLD:
+    layer_off(_RAISE);
+    unregister_code(KC_LALT);
+    break;
+  }
+  alttap_state = TD_NONE;
+}
+
 // Register tap dance actios to qmk
 tap_dance_action_t tap_dance_actions[] = {
     [TD_MEDIA_NEXT_PREV] = ACTION_TAP_DANCE_FN(td_media_next_prev),
     [TD_GRV_PAIRS] = ACTION_TAP_DANCE_FN(td_grv_pairs),
+    [TD_ALT_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, alt_finished, alt_reset),
 };
