@@ -121,5 +121,6 @@ void alt_reset(tap_dance_state_t *state, void *user_data) {
 tap_dance_action_t tap_dance_actions[] = {
     [TD_MEDIA_NEXT_PREV] = ACTION_TAP_DANCE_FN(td_media_next_prev),
     [TD_GRV_PAIRS] = ACTION_TAP_DANCE_FN(td_grv_pairs),
-    [TD_ALT_RAISE] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, alt_finished, alt_reset),
+    [TD_ALT_RAISE] =
+        ACTION_TAP_DANCE_FN_ADVANCED(NULL, alt_finished, alt_reset),
 };
