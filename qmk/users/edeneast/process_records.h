@@ -94,5 +94,43 @@ enum userspace_custom_keycodes {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
+/**
+ * @brief Keycode handler for keymaps
+ *
+ * This handles the keycodes at the keymap level, useful for keyboard specific
+ * customization
+ */
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+
+/**
+ * @brief Per key tapping term for keymaps
+ *
+ * Get the tapping term for a specific key at the keymap level.
+ */
+uint16_t get_tapping_term_keymap(uint16_t keycode, keyrecord_t *record);
+
+#ifndef ACHORDION_ENABLE
+/**
+ * @brief Achordion handler for keymaps
+ *
+ * This determines tap-hold keys at the keymap level, useful for keyboard
+ * specific customization
+ *
+ * @paran tap_hold_keycode Key to be decided if key is tapped of held
+ * @paran tap_hold_record The matrix information for the tap hold key
+ * @paran other_keycode The other key that will determine the state of the
+ * tap_hold key
+ * @paran other_record The matrix information for the other key
+ * @return true considered tap-hold, false considered both tap keys
+ */
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
+                     uint16_t other_keycode, keyrecord_t *other_record);
+#endif
+
+/**
+ * Send Make Command
+ *
+ * Sends 'qmk compile -kb keyboard -km keymap' command to compile firmware
+ * Uses 'qmk flash' and resets keyboard, if flash_bootloader set to true
+ */
 void send_make_command(bool flash_bootloader);

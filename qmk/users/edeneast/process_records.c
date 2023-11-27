@@ -39,12 +39,6 @@ bool mod_roll_cancellation(uint8_t mod, uint16_t prev, uint16_t cur) {
   return true;
 }
 
-/**
- * @brief Keycode handler for keymaps
- *
- * This handles the keycodes at the keymap level, useful for keyboard specific
- * customization
- */
 __attribute__((weak)) bool process_record_keymap(uint16_t keycode,
                                                  keyrecord_t *record) {
   return true;
@@ -239,6 +233,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _RAISE, _LOWER, _ADJ);
 }
 
+__attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode,
+                                                       keyrecord_t *record) {
+  return TAPPING_TERM;
+}
+
 /**
  * @brief Per key tapping term
  *
@@ -262,11 +261,16 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return TAPPING_TERM - 25;
 
   default:
-    return TAPPING_TERM;
+    return get_tapping_term_keymap(keycode, record);
   }
 }
 
 #ifdef ACHORDION_ENABLE
+__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
+                     uint16_t other_keycode, keyrecord_t *other_record){
+  return false;
+}
+
 /**
  * @brief Bilateral combinations
  *
@@ -286,6 +290,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
  */
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
+  if (achordion_chord_keymap(tap_hold_keycode, tap_hold_record, other_keycode,
+                             other_record)) {
+    return true;
+  }
+
   switch (tap_hold_keycode) {
   case LOW_TAB:
   case RAS_MIN:
@@ -340,15 +349,10 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-void matrix_scan_user(void) { achordion_task(); }
+void matrix_scan_user(void) {
+  achordion_task(); }
 #endif
 
-/**
- * Send Make Command
- *
- * Sends 'qmk compile -kb keyboard -km keymap' command to compile firmware
- * Uses 'qmk flash' and resets keyboard, if flash_bootloader set to true
- */
 void send_make_command(bool flash_bootloader) {
   SEND_STRING_DELAY("qmk ", TAP_CODE_DELAY);
   if (flash_bootloader) {
