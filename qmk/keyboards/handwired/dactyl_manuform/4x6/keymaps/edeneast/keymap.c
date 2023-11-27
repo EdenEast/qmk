@@ -1,5 +1,10 @@
 #include "edeneast.h"
 
+#define OSSL OSM(MOD_LSFT)
+#define OSSR OSM(MOD_LSFT)
+#define RAS_SPC LT(_RAISE, KC_SPC)
+#define RAS_BSP LT(_RAISE, KC_BSPC)
+
 // clang-format off
 #define LAYOUT_WRAPPER(...) LAYOUT(__VA_ARGS__)
 #define LAYOUT_base( \
@@ -12,7 +17,7 @@
     k11, k12, k13, k14, k15, k16,     k17, k18, k19, k1A, k1B, k1C, \
     k21, k22, k23, k24, k25, k26,     k27, k28, k29, k2A, k2B, k2C, \
     KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, \
-    LOW_TAB, SFT_BSP, SFT_SPC, RAS_MIN, \
+    OSSL, RAS_BSP, RAS_SPC, OSSR, \
     MUTE_MIC,_______, _______,_______, _______,TL_GAME, _______,_______ \
   )
 
@@ -76,3 +81,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                              _______, _______,        _______, _______
 
 // clang-format on
+
+bool achordion_chord_keymap(uint16_t tap_hold_keycode,
+                            keyrecord_t *tap_hold_record,
+                            uint16_t other_keycode, keyrecord_t *other_record) {
+  switch (tap_hold_keycode) {
+  case RAS_SPC:
+  case RAS_BSP:
+    return true;
+    break;
+  }
+  return false;
+}
+
+uint16_t get_tapping_term_keymap(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+  case RAS_SPC:
+  case RAS_BSP:
+    return TAPPING_TERM - 25;
+  }
+
+    return TAPPING_TERM;
+}

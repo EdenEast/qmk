@@ -17,11 +17,11 @@
 
 #define __COLEMAK_DH_L1_____________________________________       TD_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HM_A,    HM_R,    HM_S,    HM_T,    KC_G
-#define __COLEMAK_DH_L3_____________________________________       KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define __COLEMAK_DH_L3_____________________________________       KC_DEL,  HM_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
 #define __COLEMAK_DH_R1_____________________________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL
 #define __COLEMAK_DH_R2_____________________________________       KC_M,    HM_N,    HM_E,    HM_I,    HM_O,    CTR_QOT
-#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT
+#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  HM_SLSH, KC_ENT
 
 
 #define __RAISE_L1__________________________________________       _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5
@@ -33,13 +33,13 @@
 #define __RAISE_R3__________________________________________       TD_MDNP, KC_MPLY, _______, _______, STCK_LY, _______
 
 
-#define __LOWER_L1__________________________________________       _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC
-#define __LOWER_L2__________________________________________       _______, _______, HM_UNDS, HM_PLUS, HM_EQL,  KC_TILD
-#define __LOWER_L3__________________________________________       _______, STCK_LY, _______, _______, _______, _______
+#define __LOWER_L1__________________________________________       _______, KC_QUOT, KC_LABK, KC_RABK, KC_DQUO, KC_DLR
+#define __LOWER_L2__________________________________________       _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH
+#define __LOWER_L3__________________________________________       _______, KC_CIRC, KC_SLSH, KC_ASTR, KC_BSLS, _______
 
-#define __LOWER_R1__________________________________________       KC_CIRC, KC_AMPR, KC_ASTR, _______, KC_COLN, _______
-#define __LOWER_R2__________________________________________       KC_LBRC, HM_LPRN, HM_RPRN, HM_RBRC, KC_GRV,  _______
-#define __LOWER_R3__________________________________________       KC_PIPE, KC_LCBR, KC_RCBR, KC_BSLS, STCK_LY, _______
+#define __LOWER_R1__________________________________________       KC_AMPR, _______, KC_LBRC, KC_RBRC, KC_PERC, _______
+#define __LOWER_R2__________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_QUES, _______
+#define __LOWER_R3__________________________________________       KC_TILD, KC_UNDS,  KC_LCBR, KC_RCBR, KC_AT,   _______
 
 
 #define __ADJUST_L1_________________________________________       KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5

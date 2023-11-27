@@ -27,12 +27,16 @@ enum userspace_custom_keycodes {
 
 // Homerow mod keys
 // Base layer
-#define HM_A LGUI_T(KC_A)
+// #define HM_A LGUI_T(KC_A)
+#define HM_A LT(_LOWER, KC_A)
+#define HM_Z LGUI_T(KC_Z)
 #define HM_R LALT_T(KC_R)
 #define HM_S LSFT_T(KC_S)
 #define HM_T LCTL_T(KC_T)
 
-#define HM_O RGUI_T(KC_O)
+// #define HM_O RGUI_T(KC_O)
+#define HM_O LT(_LOWER, KC_O)
+#define HM_SLSH RGUI_T(KC_SLSH)
 #define HM_I LALT_T(KC_I)
 #define HM_E RSFT_T(KC_E)
 #define HM_N RCTL_T(KC_N)
@@ -94,5 +98,9 @@ enum userspace_custom_keycodes {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
 void send_make_command(bool flash_bootloader);
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record);
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record);
+bool achordion_chord_keymap(uint16_t tap_hold_keycode,
+                            keyrecord_t *tap_hold_record,
+                            uint16_t other_keycode, keyrecord_t *other_record);

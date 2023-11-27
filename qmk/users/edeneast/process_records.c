@@ -239,6 +239,11 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _RAISE, _LOWER, _ADJ);
 }
 
+__attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode,
+                                                       keyrecord_t *record) {
+  return TAPPING_TERM;
+}
+
 /**
  * @brief Per key tapping term
  *
@@ -262,11 +267,32 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     return TAPPING_TERM - 25;
 
   default:
-    return TAPPING_TERM;
+    return get_tapping_term_keymap(keycode, record);
   }
 }
 
 #ifdef ACHORDION_ENABLE
+
+/**
+ * @brief Achordion handler for keymaps
+ *
+ * This determines tap-hold keys at the keymap level, useful for keyboard
+ * specific customization
+ *
+ * @paran tap_hold_keycode Key to be decided if key is tapped of held
+ * @paran tap_hold_record The matrix information for the tap hold key
+ * @paran other_keycode The other key that will determine the state of the
+ * tap_hold key
+ * @paran other_record The matrix information for the other key
+ * @return true considered tap-hold, false considered both tap keys
+ */
+__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode,
+                                                  keyrecord_t *tap_hold_record,
+                                                  uint16_t other_keycode,
+                                                  keyrecord_t *other_record) {
+  return false;
+}
+
 /**
  * @brief Bilateral combinations
  *
@@ -286,6 +312,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
  */
 bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
                      uint16_t other_keycode, keyrecord_t *other_record) {
+  if (achordion_chord_keymap(tap_hold_keycode, tap_hold_record, other_keycode,
+                             other_record)) {
+    return true;
+  }
+
   switch (tap_hold_keycode) {
   case LOW_TAB:
   case RAS_MIN:
