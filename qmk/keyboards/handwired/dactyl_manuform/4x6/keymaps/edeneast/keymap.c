@@ -2,6 +2,7 @@
 
 #define OSSL OSM(MOD_LSFT)
 #define OSSR OSM(MOD_LSFT)
+#define TAB_SFT LSFT_T(KC_TAB)
 #define RAS_SPC LT(_RAISE, KC_SPC)
 #define RAS_BSP LT(_RAISE, KC_BSPC)
 
@@ -17,7 +18,7 @@
     k11, k12, k13, k14, k15, k16,     k17, k18, k19, k1A, k1B, k1C, \
     k21, k22, k23, k24, k25, k26,     k27, k28, k29, k2A, k2B, k2C, \
     KC_LEFT, KC_RGHT, KC_UP, KC_DOWN, \
-    OSSL, RAS_BSP, RAS_SPC, OSSR, \
+    TAB_SFT, RAS_BSP, RAS_SPC, OSSR, \
     MUTE_MIC,_______, _______,_______, _______,TL_GAME, _______,_______ \
   )
 
@@ -90,6 +91,9 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode,
   case RAS_BSP:
     return true;
     break;
+  case HM_Z:
+  case HM_R:
+    if (other_keycode == TAB_SFT) return true;
   }
   return false;
 }
