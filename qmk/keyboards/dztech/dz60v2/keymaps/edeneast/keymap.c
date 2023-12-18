@@ -115,10 +115,12 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case TG_SETT:
     if (record->event.pressed) {
-      if (mods & MOD_MASK_SHIFT) {
+      if (mods & MOD_MASK_ALT) {
         sentence_case_toggle();
+      } else if (mods & MOD_MASK_SHIFT) {
+        layer_on(_GAME);
       } else {
-        layer_invert(_GAME);
+        layer_off(_GAME);
       }
     }
     return false;
