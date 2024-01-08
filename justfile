@@ -5,12 +5,6 @@ green  := '\033[1;32m'
 yellow := '\033[1;33m'
 blue   := '\033[1;34m'
 
-user_symlink  := "./firmware/users/edeneast"
-dm4_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/4x6/keymaps/edeneast"
-dm5_symlink  := "./firmware/keyboards/handwired/dactyl_manuform/5x6/keymaps/edeneast"
-crkbd_symlink := "./firmware/keyboards/crkbd/keymaps/edeneast"
-tofu_symlink := "./firmware/keyboards/dz60/keymaps/edeneast"
-
 alias f := flash
 alias l := layout
 alias w := watch-layout
@@ -24,6 +18,10 @@ all:
     @just dm5
     @just crkbd
     @just tofu
+
+# Build dactyl manuform 4x6 keyboard firmware
+ard:
+    @just _build handwired/arc:edeneast handwired_arc_edeneast.hex arc
 
 # Build dactyl manuform 4x6 keyboard firmware
 dm4:
@@ -61,6 +59,8 @@ flash keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu"
+    elif [ "{{keyboard}}" = "arc" ]; then
+        cmd="handwired/arc:edeneast:avrdude"
     elif [ "{{keyboard}}" = "dm4" ]; then
         cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude"
     elif [ "{{keyboard}}" = "dm5" ]; then
@@ -80,6 +80,8 @@ left keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu-split-left"
+    elif [ "{{keyboard}}" = "arc" ]; then
+        cmd="handwired/arc:edeneast:avrdude-split-left"
     elif [ "{{keyboard}}" = "dm4" ]; then
         cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-left"
     elif [ "{{keyboard}}" = "dm5" ]; then
@@ -98,6 +100,8 @@ right keyboard:
     #!/usr/bin/env bash
     if [ "{{keyboard}}" = "crkbd" ]; then
         cmd="crkbd:edeneast:dfu-split-right"
+    elif [ "{{keyboard}}" = "arc" ]; then
+        cmd="handwired/arc:edeneast:avrdude-split-right"
     elif [ "{{keyboard}}" = "dm4" ]; then
         cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-right"
     elif [ "{{keyboard}}" = "dm5" ]; then
