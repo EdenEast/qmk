@@ -17,6 +17,7 @@
 // Define layer names
 enum userspace_layers {
   _BASE = 0,
+  _ENGRAM,
   _LOWER,
   _RAISE,
   _ADJ,

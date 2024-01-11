@@ -91,6 +91,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       layer_invert(_GAME);
     return false;
 
+  case TL_ENGM: // TODO: save state of sentence case and turn it off
+    if (record->event.pressed)
+      layer_invert(_ENGRAM);
+    return false;
+
 #ifdef STENO_ENABLE
   case TL_STNO: // TODO: save state of sentence case and turn it off
     if (record->event.pressed)

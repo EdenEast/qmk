@@ -8,6 +8,7 @@ enum userspace_custom_keycodes {
   KC_GAME, // Sets default layer to GAME
   TL_GAME, // Toggle game layer
   TL_STNO, // Toggle steno layer
+  TL_ENGM, // Toggle engram layer
   STCK_LY,
 
   ED_COPY,

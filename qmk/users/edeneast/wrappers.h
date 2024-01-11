@@ -24,6 +24,15 @@
 #define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT
 
 
+#define __ENGRAM_L1_________________________________________       TD_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
+#define __ENGRAM_L2_________________________________________       CTR_ESC, KC_C,    KC_I,    KC_E,    KC_A,    KC_COMM
+#define __ENGRAM_L3_________________________________________       KC_DEL,  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL
+
+#define __ENGRAM_R1_________________________________________       KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z
+#define __ENGRAM_R2_________________________________________       KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_Q
+#define __ENGRAM_R3_________________________________________       KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    KC_ENT
+
+
 #define __RAISE_L1__________________________________________       _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define __RAISE_L2__________________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
 #define __RAISE_L3__________________________________________       _______, STCK_LY, _______, _______, _______, _______
@@ -44,7 +53,8 @@
 
 #define __ADJUST_L1_________________________________________       KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
 #define __ADJUST_L2_________________________________________       QK_BOOT, HM_PRSC, KC_LALT, KC_LSFT, KC_LCTL, TG_SENT
-#define __ADJUST_L3_________________________________________       _______, STCK_LY, _______, _______, TL_GAME, TL_STNO
+#define __ADJUST_L3_________________________________________       _______, STCK_LY, _______, TL_ENGM, TL_GAME, TL_STNO
+
 
 #define __ADJUST_R1_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11
 #define __ADJUST_R2_________________________________________       VB_UP,   HM_MIC,  KC_RSFT, KC_LALT, HM_PRSC, QK_BOOT
