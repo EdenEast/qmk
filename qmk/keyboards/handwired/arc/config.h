@@ -6,4 +6,4 @@
 // Hardware settings
 #define USE_SERIAL
 
-#define EE_HANDS
+#define SPLIT_HAND_PIN D2
