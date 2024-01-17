@@ -72,6 +72,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 
+  if (!process_smart_case(keycode, record)) {
+    return false;
+  }
+
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
     default_layer_set(
@@ -271,8 +275,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 }
 
 #ifdef ACHORDION_ENABLE
-__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
-                     uint16_t other_keycode, keyrecord_t *other_record){
+__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode,
+                                                  keyrecord_t *tap_hold_record,
+                                                  uint16_t other_keycode,
+                                                  keyrecord_t *other_record) {
   return false;
 }
 
@@ -354,8 +360,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-void matrix_scan_user(void) {
-  achordion_task(); }
+void matrix_scan_user(void) { achordion_task(); }
 #endif
 
 void send_make_command(bool flash_bootloader) {
