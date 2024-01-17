@@ -4,6 +4,7 @@
 #include "os_detect.h"
 #include "process_records.h"
 #include "quantum.h"
+#include "smart_case.h"
 #include "wrappers.h"
 
 #ifdef TAP_DANCE_ENABLE
