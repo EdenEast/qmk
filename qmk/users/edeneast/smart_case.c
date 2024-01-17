@@ -112,18 +112,18 @@ void set_smart_case_for_mods(void) {
     return;
   }
 
-    /**
-     * LCTRL:          WORD_CASE
-     * LSHIFT:         CAMEL_CASE
-     * LCTRL + LSHIFT: PASCAL_CASE
-     * LALT:           SNAKE_CASE
-     * LALT + LSHIFT:  CONSTNAT_CASE
-     * RCTRL:          CAPS_LOCK
-     * RALT:           KEBAB_CASE
-     * RALT + RCTRL:   SCREAMING_KEBAB_CASE
-     * RSHIFT:         SLASH_CASE
-     * RSHIFT + RCTRL: SCREAMING_SLASH_CASE
-     */
+  /**
+   * LCTRL:          WORD_CASE
+   * LSHIFT:         CAMEL_CASE
+   * LCTRL + LSHIFT: PASCAL_CASE
+   * LALT:           SNAKE_CASE
+   * LALT + LSHIFT:  CONSTNAT_CASE
+   * RCTRL:          CAPS_LOCK
+   * RALT:           KEBAB_CASE
+   * RALT + RCTRL:   SCREAMING_KEBAB_CASE
+   * RSHIFT:         SLASH_CASE
+   * RSHIFT + RCTRL: SCREAMING_SLASH_CASE
+   */
   if (mods == 0 || mods & MOD_BIT(KC_LCTL)) {
     toggle_smart_case(WORD_CASE);
     toggle_capslock();
@@ -143,6 +143,11 @@ void set_smart_case_for_mods(void) {
   if (mods & MOD_BIT(KC_RALT)) {
     toggle_smart_case(KEBAB_CASE);
   }
+}
+
+__attribute__((weak)) bool process_smart_case_keymap(uint16_t keycode,
+                                                     keyrecord_t *record) {
+  return true;
 }
 
 // Double tapping space will deactivate smart case. This stores the state of the
@@ -168,6 +173,10 @@ bool process_smart_case(uint16_t keycode, keyrecord_t *record) {
     // Checking if we are not typing a space
     if (key != KC_SPC) {
       spacing = false;
+    }
+
+    if (!process_smart_case_keymap(keycode, record)) {
+      return false;
     }
 
     switch (key) {

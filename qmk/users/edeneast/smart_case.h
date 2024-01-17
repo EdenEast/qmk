@@ -18,6 +18,39 @@ typedef struct {
 } smart_case_t;
 
 /**
+ * @brief Check if any smart case is enabled
+ *
+ * @return true if any smart case is enabled
+ */
+bool has_any_smart_case(void);
+
+/**
+ * @brief Check if smart case is enabled
+ *
+ * @param smart_case_types The smart case types to Check
+ *
+ * @return true if smart case is enabled
+ */
+bool has_smart_case(smart_case_type_t smart_case_types);
+
+/**
+ * @brief Enable smart case type
+ *
+ * @param smart_case_types The smart case types to enable
+ */
+void enable_smartcase(smart_case_type_t smart_case_types);
+
+/**
+ * @brief Disable any smart case set
+ */
+void disable_smart_case(void);
+
+/**
+ * @brief Toggle smart case type
+ */
+void toggle_smart_case(smart_case_type_t smart_case_types);
+
+/**
  * @brief Set smart case for mods
  *
  * Sets the smart case for the current mods being held
@@ -44,3 +77,13 @@ bool set_smart_case_for_mods_keymap(uint8_t mods, smart_case_type_t *type);
  * send to host
  */
 bool process_smart_case(uint16_t keycode, keyrecord_t *record);
+
+/**
+ * @brief Process smart case for keymap
+ *
+ * @param keycode The keycode being processed
+ * @param record The keyrecord being processed
+ *
+ * @return false if process_smart_case should stop processing keycode
+ */
+bool process_smart_case_keymap(uint16_t keycode, keyrecord_t *record);

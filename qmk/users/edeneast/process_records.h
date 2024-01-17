@@ -24,8 +24,6 @@ enum userspace_custom_keycodes {
   NEW_SAFE_RANGE, // use "NEWPLACEHOLDER for keymap specific codes
 };
 
-#define MO_VIM MO(_VIM)
-
 // Homerow mod keys
 // Base layer
 #define HM_A LGUI_T(KC_A)
