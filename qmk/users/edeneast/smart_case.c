@@ -114,14 +114,14 @@ void set_smart_case_for_mods(void) {
 
   /**
    * LCTRL:          WORD_CASE
-   * LSHIFT:         CAMEL_CASE
-   * LCTRL + LSHIFT: PASCAL_CASE
-   * LALT:           SNAKE_CASE
-   * LALT + LSHIFT:  CONSTNAT_CASE
+   * LSHIFT:         SNAKE_CASE
+   * LCTRL + LSHIFT: CONSTNAT_CASE
+   * LALT:           CAMEL_CASE
+   * LCTRL + LALT:   PASCAL_CASE
    * RCTRL:          CAPS_LOCK
    * RALT:           KEBAB_CASE
-   * RALT + RCTRL:   SCREAMING_KEBAB_CASE
-   * RSHIFT:         SLASH_CASE
+   * RSHIFT + RCTRL: SCREAMING_KEBAB_CASE
+   * RALT:           SLASH_CASE
    * RSHIFT + RCTRL: SCREAMING_SLASH_CASE
    */
   if (mods == 0 || mods & MOD_BIT(KC_LCTL)) {
@@ -132,15 +132,15 @@ void set_smart_case_for_mods(void) {
     toggle_capslock();
   }
   if (mods & MOD_BIT(KC_LSFT)) {
-    toggle_smart_case(CAMEL_CASE);
-  }
-  if (mods & MOD_BIT(KC_RSFT)) {
-    toggle_smart_case(SLASH_CASE);
-  }
-  if (mods & MOD_BIT(KC_LALT)) {
     toggle_smart_case(SNAKE_CASE);
   }
   if (mods & MOD_BIT(KC_RALT)) {
+    toggle_smart_case(SLASH_CASE);
+  }
+  if (mods & MOD_BIT(KC_LALT)) {
+    toggle_smart_case(CAMEL_CASE);
+  }
+  if (mods & MOD_BIT(KC_RSFT)) {
     toggle_smart_case(KEBAB_CASE);
   }
 }
