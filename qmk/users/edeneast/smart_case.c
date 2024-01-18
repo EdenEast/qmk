@@ -239,6 +239,7 @@ bool process_smart_case(uint16_t keycode, keyrecord_t *record) {
       }
     case KC_ESC:
       disable_smart_case();
+      return false;
       break;
     default:
       disable_smart_case();
