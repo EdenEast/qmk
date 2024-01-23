@@ -4,8 +4,6 @@
 
 // clang-format off
 
-#define MOR MO(_RAISE)
-#define TGG TG(_GAME)
 #define MIC MUTE_MIC
 #define OSSL OSM(MOD_LSFT)
 #define OSSR OSM(MOD_RSFT)
@@ -43,9 +41,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_BASE] = LAYOUT_60_ansi_split_arrow(
-    TD_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
+    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
-    CTR_ESC, HRM_A,   HRM_S,   HRM_D,   HRM_F,   KC_G,    KC_H,    HRM_J,   HRM_K,   HRM_L,   HRM_SCN, KC_QUOT, KC_ENT,
+    CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
     OSSL,             KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSSR,
     KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  CASE_RI, KC_SPC,           KC_RALT, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
   ),
@@ -69,29 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, TG_SETT,
     _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, TD_MDNP, KC_MPLY,
     _______,          _______, _______, _______, MIC,     _______, _______, _______, VB_DOWN, KC_MUTE, VB_UP,   _______,
-    _______, _______, _______,          _______, _______, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
-  ),
-
-/** Lower
- * ,-----------------------------------------------------------------------------------------.
- * |     |     |     |     |     |     |     |     |     |     |     |     |     |           |
- * |-----------------------------------------------------------------------------------------+
- * |        |     |     |     |     |     |     |     |     |     |     |     |     |        |
- * |-----------------------------------------------------------------------------------------+
- * |         |  A  |  S  |  D  |  F  |     |     |  J  |  K  |  L  |  ;  |     |             |
- * |------------------------------^-----------------^----------------------------------------+
- * |           |     |     |     |     |     |     |     |     |     |     |                 |
- * |-----------------------------------------------------------------------------------------+
- * |      |       |       |           |      |                |     |      |     |     |     |
- * `-----------------------------------------------------------------------------------------'
- */
-
-  [_LOWER] = LAYOUT_60_ansi_split_arrow(
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, KC_A,    KC_S,    KC_D,    KC_F,    _______, _______, KC_J,    KC_K,    KC_L,    KC_SCLN, _______, _______,
-    _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______,          _______, _______, _______,          _______, _______, _______, _______, _______
+    _______, _______, _______,          _______, CASE_RI, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
 /** Game
@@ -113,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, KC_A,    KC_S,    KC_D,    KC_F, _______, _______,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______, _______,
     KC_LSFT,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_RSFT,
-    _______, _______, KC_LALT,          KC_SPC,  _______, KC_SPC,           KC_LALT, _______, _______, _______, _______
+    _______, _______, KC_LALT,          KC_SPC,  CASE_RI, KC_SPC,           KC_LALT, _______, _______, _______, _______
   ),
 
 
@@ -150,15 +126,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
       if (mods & MOD_MASK_ALT) {
         sentence_case_toggle();
-      } else if (mods & MOD_MASK_CTRL) {
-        layer_on(_LOWER);
-        layer_off(_GAME);
       } else if (mods & MOD_MASK_SHIFT) {
         layer_on(_GAME);
-        layer_off(_LOWER);
       } else {
         layer_off(_GAME);
-        layer_off(_LOWER);
       }
     }
     return false;
