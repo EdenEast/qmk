@@ -3,8 +3,10 @@
 enum combos {
   COMBO_LEFT_BOOT,
   COMBO_RGHT_BOOT,
+  COMBO_SINGLE_BOOT,
   COMBO_LEFT_COMPILE,
   COMBO_RGHT_COMPILE,
+  COMBO_SINGLE_COMPILE,
   COMBO_BSPC_HOLD,
   COMBO_SPC_HOLD,
   COMBO_COPY,
@@ -21,8 +23,10 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 
 const uint16_t PROGMEM combo_left_boot[] = {TD_GRV, KC_B, COMBO_END};
 const uint16_t PROGMEM combo_rght_boot[] = {KC_J, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_single_boot[] = {KC_BSPC, KC_MINS, COMBO_END};
 const uint16_t PROGMEM combo_left_compile[] = {TD_GRV, KC_P, COMBO_END};
 const uint16_t PROGMEM combo_rght_compile[] = {KC_L, KC_EQL, COMBO_END};
+const uint16_t PROGMEM combo_single_compile[] = {KC_BSPC, KC_0, COMBO_END};
 const uint16_t PROGMEM combo_bspc_hold[] = {KC_DEL, SFT_BSP, COMBO_END};
 const uint16_t PROGMEM combo_spc_hold[] = {KC_ENT, SFT_SPC, COMBO_END};
 const uint16_t PROGMEM combo_copy[] = {KC_X, KC_C, COMBO_END};
@@ -36,9 +40,11 @@ const uint16_t PROGMEM combo_lcbr_rcbr[] = {KC_LCBR, KC_RCBR, COMBO_END};
 combo_t key_combos[] = {
     [COMBO_LEFT_BOOT] = COMBO(combo_left_boot, QK_BOOT),
     [COMBO_RGHT_BOOT] = COMBO(combo_rght_boot, QK_BOOT),
+    [COMBO_SINGLE_BOOT] = COMBO(combo_single_boot, QK_BOOT),
 
     [COMBO_LEFT_COMPILE] = COMBO(combo_left_compile, QK_MAKE),
     [COMBO_RGHT_COMPILE] = COMBO(combo_rght_compile, QK_MAKE),
+    [COMBO_SINGLE_COMPILE] = COMBO(combo_single_compile, QK_MAKE),
 
     [COMBO_BSPC_HOLD] = COMBO(combo_bspc_hold, KC_BSPC),
     [COMBO_SPC_HOLD] = COMBO(combo_spc_hold, KC_SPC),
