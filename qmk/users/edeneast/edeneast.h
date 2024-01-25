@@ -19,6 +19,8 @@
 enum userspace_layers {
   _BASE = 0,
   _ENGRAM,
+  _SYMBOL,
+  _NAV,
   _LOWER,
   _RAISE,
   _ADJ,

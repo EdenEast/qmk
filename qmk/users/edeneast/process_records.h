@@ -32,7 +32,7 @@ enum userspace_custom_keycodes {
 #define HM_T LCTL_T(KC_T)
 
 #define HM_O RGUI_T(KC_O)
-#define HM_I LALT_T(KC_I)
+#define HM_I RALT_T(KC_I)
 #define HM_E RSFT_T(KC_E)
 #define HM_N RCTL_T(KC_N)
 
