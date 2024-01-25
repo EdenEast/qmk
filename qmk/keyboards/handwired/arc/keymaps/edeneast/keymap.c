@@ -119,6 +119,24 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     record->event.pressed ? add_mods(MOD_RSFT) : unregister_mods(MOD_RSFT);
     return false;
 
+  case SYM_MIN:
+    if (record->tap.count > 0) {
+      if (record->event.pressed) {
+        uint8_t mods = get_mods();
+        bool is_shift_held =
+            (mods | get_weak_mods() | get_oneshot_mods()) & MOD_MASK_SHIFT;
+        uint16_t key = is_shift_held ? KC_MINS : KC_UNDS;
+        del_weak_mods(MOD_MASK_SHIFT);
+        del_oneshot_mods(MOD_MASK_SHIFT);
+        unregister_mods(MOD_MASK_SHIFT);
+        tap_code16(key);
+        set_mods(mods);
+        return false;
+      }
+    }
+    record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
+    return false;
+
   default:
     return true;
   }
