@@ -12,12 +12,14 @@
 // clang-format off
 #define __NUMBER_LEFT______________________________                KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define __NUMBER_RIGHT_____________________________                KC_6,    KC_7,    KC_8,    KC_9,    KC_0
+#define __NUMBER_OPT_LEFT__________________________                KC_7,    KC_8,    KC_9,    KC_0,    KC_5
+#define __NUMBER_OPT_RIGHT_________________________                KC_6,    KC_1,    KC_2,    KC_3,    KC_4
 #define __BLANK_____________________________________________       _______, _______, _______, _______, _______, _______
 
 
 #define __COLEMAK_DH_L1_____________________________________       TD_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HM_A,    HM_R,    HM_S,    HM_T,    KC_G
-#define __COLEMAK_DH_L3_____________________________________       KC_DEL,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define __COLEMAK_DH_L3_____________________________________       C(KC_A), KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
 #define __COLEMAK_DH_R1_____________________________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL
 #define __COLEMAK_DH_R2_____________________________________       KC_M,    HM_N,    HM_E,    HM_I,    HM_O,    CTR_QOT
@@ -26,11 +28,33 @@
 
 #define __ENGRAM_L1_________________________________________       TD_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
 #define __ENGRAM_L2_________________________________________       CTR_ESC, KC_C,    KC_I,    KC_E,    KC_A,    KC_COMM
-#define __ENGRAM_L3_________________________________________       KC_DEL,  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL
+#define __ENGRAM_L3_________________________________________       C(KC_A),  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL
 
 #define __ENGRAM_R1_________________________________________       KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z
 #define __ENGRAM_R2_________________________________________       KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_Q
 #define __ENGRAM_R3_________________________________________       KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    KC_ENT
+
+
+#define __SYMBOL_L0_________________________________________       _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F5
+#define __SYMBOL_L1_________________________________________       _______, _______, KC_LABK, KC_RABK, KC_AT,   _______
+#define __SYMBOL_L2_________________________________________       _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH
+#define __SYMBOL_L3_________________________________________       _______, _______, KC_BSLS, KC_ASTR, KC_CIRC, _______
+
+#define __SYMBOL_R0_________________________________________       KC_F6,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F11
+#define __SYMBOL_R1_________________________________________       KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12
+#define __SYMBOL_R2_________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, _______
+#define __SYMBOL_R3_________________________________________       _______, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______
+
+
+#define __NAVIGATION_L0_____________________________________       _______, _______, _______, _______, _______, _______
+#define __NAVIGATION_L1_____________________________________       _______, _______, _______, _______, _______, _______
+#define __NAVIGATION_L2_____________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
+#define __NAVIGATION_L3_____________________________________       _______, _______, _______, _______, _______, _______
+
+#define __NAVIGATION_R0_____________________________________       _______, _______, _______, _______, _______, _______
+#define __NAVIGATION_R1_____________________________________       _______, _______, _______, _______, _______, _______
+#define __NAVIGATION_R2_____________________________________       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______
+#define __NAVIGATION_R3_____________________________________       _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______
 
 
 #define __RAISE_L1__________________________________________       _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5

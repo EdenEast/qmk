@@ -90,6 +90,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       set_single_persistent_default_layer(keycode - KC_BASE);
     return false;
 
+    // Shift backspace to delete
+  case KC_BSPC:;
+    static bool is_del_held = false;
+    if (record->event.pressed) {
+      bool is_shift = mods & MOD_MASK_SHIFT;
+      uint16_t key = is_shift ? KC_DEL : KC_BSPC;
+      is_del_held = is_shift;
+      register_code(key);
+    } else {
+      uint16_t key = is_del_held ? KC_DEL : KC_BSPC;
+      unregister_code(key);
+    }
+    return false;
+
   case TL_GAME: // TODO: save state of sentence case and turn it off
     if (record->event.pressed)
       layer_invert(_GAME);

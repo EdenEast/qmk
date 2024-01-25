@@ -1,8 +1,8 @@
 # Common flags
 AUDIO_ENABLE        = no  # Use the audio system
 BOOTMAGIC_ENABLE    = no  # Disable to allow keys during system boot
-COMMAND_ENABLE      = no  # Commands for debug and configuration
-CONSOLE_ENABLE      = no  # Console for debugging
+COMMAND_ENABLE      = yes  # Commands for debug and configuration
+CONSOLE_ENABLE      = yes  # Console for debugging
 GRAVE_ESC_ENABLE    = no  # Dont use it, save space
 MIDI_ENABLE         = no  # Dont use it, save space
 MOUSEKEY_ENABLE     = no  # Mouse keys
