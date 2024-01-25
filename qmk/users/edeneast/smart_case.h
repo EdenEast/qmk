@@ -38,7 +38,7 @@ bool has_smart_case(smart_case_type_t smart_case_types);
  *
  * @param smart_case_types The smart case types to enable
  */
-void enable_smartcase(smart_case_type_t smart_case_types);
+void enable_smart_case(smart_case_type_t smart_case_types);
 
 /**
  * @brief Disable any smart case set

@@ -50,7 +50,7 @@ uint16_t extract_tapping_keycode(uint16_t keycode) {
   }
 }
 
-void enable_smartcase(smart_case_type_t smart_case_types) {
+void enable_smart_case(smart_case_type_t smart_case_types) {
   if (smart_case.type == NO_CASE) {
     smart_case.type = smart_case_types;
   } else {
@@ -60,7 +60,7 @@ void enable_smartcase(smart_case_type_t smart_case_types) {
 }
 
 void enable_capslock(void) {
-  enable_smartcase(CAPS_LOCK);
+  enable_smart_case(CAPS_LOCK);
   if (!caps_lock_enabled) {
     tap_code(KC_CAPS);
     caps_lock_enabled = true;
@@ -79,7 +79,7 @@ void set_smart_case(smart_case_type_t smart_case_types) {
       add_oneshot_mods(MOD_MASK_SHIFT);
     }
   }
-  enable_smartcase(smart_case_types);
+  enable_smart_case(smart_case_types);
 }
 
 void toggle_capslock(void) {
@@ -124,10 +124,20 @@ void set_smart_case_for_mods(void) {
    * RALT:           SLASH_CASE
    * RSHIFT + RCTRL: SCREAMING_SLASH_CASE
    */
+#if defined SMART_CASE_DEFAULT_ONESHOT_SHIFT
+  if (mods == 0) {
+    add_oneshot_mods(MOD_LSFT);
+  }
+  if (mods & MOD_BIT(KC_LCTL)) {
+    toggle_smart_case(WORD_CASE);
+    toggle_capslock();
+  }
+#else
   if (mods == 0 || mods & MOD_BIT(KC_LCTL)) {
     toggle_smart_case(WORD_CASE);
     toggle_capslock();
   }
+#endif
   if (mods & MOD_BIT(KC_RCTL)) {
     toggle_capslock();
   }
@@ -214,7 +224,7 @@ bool process_smart_case(uint16_t keycode, keyrecord_t *record) {
         return false;
       }
       if (has_smart_case(CAMEL_CASE)) {
-        add_oneshot_mods(MOD_LSFT);
+        add_oneshot_mods(MOD_MASK_SHIFT);
         start_smart_case_timer();
         return false;
       }
