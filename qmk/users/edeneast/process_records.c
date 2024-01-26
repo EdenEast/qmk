@@ -97,7 +97,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       bool is_shift = mods & MOD_MASK_SHIFT;
       uint16_t key = is_shift ? KC_DEL : KC_BSPC;
       is_del_held = is_shift;
+      del_weak_mods(MOD_MASK_SHIFT);
+      del_oneshot_mods(MOD_MASK_SHIFT);
+      unregister_mods(MOD_MASK_SHIFT);
       register_code(key);
+      set_mods(mods);
     } else {
       uint16_t key = is_del_held ? KC_DEL : KC_BSPC;
       unregister_code(key);
