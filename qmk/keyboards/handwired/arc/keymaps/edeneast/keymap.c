@@ -25,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __COLEMAK_DH_L2_____________________________________,                                         __COLEMAK_DH_R2_____________________________________,
     __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
 
-    MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSR_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    // MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSR_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
-                                        KC_HOME, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSR_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSR_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+                                        KC_ENGM, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  KC_PGDN,                                         KC_DOWN
 
   ),
@@ -38,9 +38,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __ENGRAM_L2_________________________________________,                                         __ENGRAM_R2_________________________________________,
     __ENGRAM_L3_________________________________________,                                         __ENGRAM_R3_________________________________________,
 
-    _______,          _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,          _______,
-                                        _______, TL_ENGM, _______,                       _______, _______, _______,
-                                                 _______,                                         _______
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSR_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSR_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+                                        KC_CLMK, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
+                                                 KC_PGDN,                                         KC_DOWN
   ),
 
   [_SYMBOL] = LAYOUT_WRAPPER(
@@ -72,7 +73,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __ADJUSTMENT_L3_____________________________________,                                         __ADJUSTMENT_R3_____________________________________,
 
     _______,          _______, _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______, _______,          _______,
-                                        _______, TL_ENGM, TL_GAME,                       _______, _______, _______,
+                                        _______, _______, TL_GAME,                       _______, _______, _______,
                                                  _______,                                         _______
   ),
 
@@ -142,22 +143,20 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
     return false;
 
-    case TG_PLAM:
-      if (record->event.pressed) {
-        dprintf("before: game_use_alt_palm: %s\n", game_use_alt_palm ? "true" : "false");
-        game_use_alt_palm = !game_use_alt_palm;
-        dprintf("after: game_use_alt_palm: %s\n", game_use_alt_palm ? "true" : "false");
-      }
-      return false;
+  case TG_PLAM:
+    if (record->event.pressed) {
+      game_use_alt_palm = !game_use_alt_palm;
+    }
+    return false;
 
-    case GM_PLAM:
-      if (record->event.pressed) {
-        last_game_plam = game_use_alt_palm ? KC_LALT : KC_LCTL;
-        register_code16(last_game_plam);
-      } else {
-        unregister_code16(last_game_plam);
-      }
-      return false;
+  case GM_PLAM:
+    if (record->event.pressed) {
+      last_game_plam = game_use_alt_palm ? KC_LALT : KC_LCTL;
+      register_code16(last_game_plam);
+    } else {
+      unregister_code16(last_game_plam);
+    }
+    return false;
 
   default:
     return true;

@@ -85,9 +85,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   uint8_t mods = get_mods();
   switch (keycode) {
-  case KC_BASE ... KC_GAME:
+  case KC_CLMK ... KC_GAME:
     if (record->event.pressed)
-      set_single_persistent_default_layer(keycode - KC_BASE);
+      set_single_persistent_default_layer(keycode - KC_CLMK);
     return false;
 
     // Shift backspace to delete

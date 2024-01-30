@@ -4,7 +4,8 @@
 enum userspace_custom_keycodes {
   VRSN = SAFE_RANGE, // Prints QMK Firmware and board info
 
-  KC_BASE, // Sets default layer to BASE
+  KC_CLMK, // Sets default layer to COLEMAK_DH
+  KC_ENGM, // Sets default layer to ENGRAM
   KC_GAME, // Sets default layer to GAME
   TL_GAME, // Toggle game layer
   TL_STNO, // Toggle steno layer
