@@ -42,9 +42,9 @@ combo_t key_combos[] = {
     [COMBO_RGHT_BOOT] = COMBO(combo_rght_boot, QK_BOOT),
     [COMBO_SINGLE_BOOT] = COMBO(combo_single_boot, QK_BOOT),
 
-    [COMBO_LEFT_COMPILE] = COMBO(combo_left_compile, QK_MAKE),
-    [COMBO_RGHT_COMPILE] = COMBO(combo_rght_compile, QK_MAKE),
-    [COMBO_SINGLE_COMPILE] = COMBO(combo_single_compile, QK_MAKE),
+    [COMBO_LEFT_COMPILE] = COMBO(combo_left_compile, KC_MAKE),
+    [COMBO_RGHT_COMPILE] = COMBO(combo_rght_compile, KC_MAKE),
+    [COMBO_SINGLE_COMPILE] = COMBO(combo_single_compile, KC_MAKE),
 
     [COMBO_BSPC_HOLD] = COMBO(combo_bspc_hold, KC_BSPC),
     [COMBO_SPC_HOLD] = COMBO(combo_spc_hold, KC_SPC),
