@@ -298,7 +298,7 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   case HME_N:
   case HM_GRV:
   case HM_PRSC:
-    return TAPPING_TERM + 30;
+    return TAPPING_TERM + 40;
 
     // Thumb keys
   case LOW_TAB:
