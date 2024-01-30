@@ -13,6 +13,8 @@
 enum keymap_keycodes {
   TG_SETT = NEW_SAFE_RANGE, // Toggle settings
   BOOT,
+  TG_PLAM,
+  GM_PLAM,
 };
 
 // clang-format off
@@ -80,9 +82,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __GAME_L2___________________________________________,                                         __GAME_R2___________________________________________,
     __GAME_L3___________________________________________,                                         __GAME_R3___________________________________________,
 
-    KC_LALT,         KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    _______,     _______, _______, KC_BSPC, _______, _______, _______,          _______,
-                                        KC_MPLY, _______, TL_GAME,                       _______, _______, _______,
-                                                 MUTE_MIC,                                         _______
+
+    GM_PLAM,          KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    _______,     _______, _______, KC_BSPC, _______, _______, _______,          _______,
+                                       KC_MPLY, TG_PLAM, TL_GAME,                       _______, _______, _______,
+                                                 MUTE_MIC,                                       _______
   ),
 
 };
@@ -97,7 +100,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                              _______,                                         _______
 
 // clang-format on
-
+static bool game_use_alt_palm = false;
+static uint16_t last_game_plam = 0;
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
   case OSL_CSE:
@@ -137,6 +141,23 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     }
     record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
     return false;
+
+    case TG_PLAM:
+      if (record->event.pressed) {
+        dprintf("before: game_use_alt_palm: %s\n", game_use_alt_palm ? "true" : "false");
+        game_use_alt_palm = !game_use_alt_palm;
+        dprintf("after: game_use_alt_palm: %s\n", game_use_alt_palm ? "true" : "false");
+      }
+      return false;
+
+    case GM_PLAM:
+      if (record->event.pressed) {
+        last_game_plam = game_use_alt_palm ? KC_LALT : KC_LCTL;
+        register_code16(last_game_plam);
+      } else {
+        unregister_code16(last_game_plam);
+      }
+      return false;
 
   default:
     return true;
