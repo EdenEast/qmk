@@ -1,6 +1,6 @@
 // Home row mod settings
 #undef TAPPING_TERM
-#define TAPPING_TERM 175
+#define TAPPING_TERM 180
 #define TAPPING_TERM_PER_KEY
 
 // Prevent normal rollover from triggering mods
