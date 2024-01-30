@@ -18,20 +18,20 @@
 
 
 #define __COLEMAK_DH_L1_____________________________________       KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
-#define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HM_A,    HM_R,    HM_S,    HM_T,    KC_G
+#define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G
 #define __COLEMAK_DH_L3_____________________________________       C(KC_A), KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
 #define __COLEMAK_DH_R1_____________________________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL
-#define __COLEMAK_DH_R2_____________________________________       KC_M,    HM_N,    HM_E,    HM_I,    HM_O,    CTR_QOT
+#define __COLEMAK_DH_R2_____________________________________       KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT
 #define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT
 
 
 #define __ENGRAM_L1_________________________________________       KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
-#define __ENGRAM_L2_________________________________________       CTR_ESC, KC_C,    KC_I,    KC_E,    KC_A,    KC_COMM
-#define __ENGRAM_L3_________________________________________       C(KC_A),  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL
+#define __ENGRAM_L2_________________________________________       CTR_ESC, HME_C,   HME_I,   HME_E,   HME_A,   KC_COMM
+#define __ENGRAM_L3_________________________________________       C(KC_A),  KC_G,   KC_X,    KC_J,    KC_K,    KC_EQL
 
 #define __ENGRAM_R1_________________________________________       KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z
-#define __ENGRAM_R2_________________________________________       KC_DOT,  KC_H,    KC_T,    KC_S,    KC_N,    KC_Q
+#define __ENGRAM_R2_________________________________________       KC_DOT,  HME_H,   HME_T,   HME_S,   HME_N,   KC_Q
 #define __ENGRAM_R3_________________________________________       KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    KC_ENT
 
 

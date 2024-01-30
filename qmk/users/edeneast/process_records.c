@@ -17,7 +17,7 @@
  * instead (with GASC mods). In process_record_user have a case for the second
  * key in the trouble sequence and call roll:
  *
- *      case HM_N:
+ *      case HMA_N:
  *          if (record->event.pressed && record->tap.count > 0) {
  *              return mod_roll_cancellation(KC_RSHIFT, KC_E, KC_N); // en
  *          }
@@ -250,14 +250,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
 
 #ifndef ACHORDION_ENABLE
-  case HM_O:
+  case HMA_O:
     if (record->event.pressed && record->tap.count > 0) {
       return mod_roll_cancellation(KC_LALT, KC_I, KC_O); // io
     }
     break;
 #endif
 
-    // case HM_T:
+    // case HMA_T:
     //   if (record->event.pressed && record->tap.count > 0) {
     //     return mod_roll_cancellation(KC_RGUI, KC_I, KC_O); // io
     //   }
@@ -292,8 +292,10 @@ __attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode,
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     // Pinky keys
-  case HM_A:
-  case HM_O:
+  case HMA_A:
+  case HMA_O:
+  case HME_C:
+  case HME_N:
   case HM_GRV:
   case HM_PRSC:
     return TAPPING_TERM + 30;
@@ -351,7 +353,7 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   case CTR_QOT:
     return true;
 
-  case HM_A:
+  case HMA_A:
     switch (other_keycode) {
     case LOW_TAB:
     case KC_Z:
@@ -365,21 +367,26 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
     }
     break;
 
-  case HM_R:
+  case HMA_R:
+  case HME_I:
     if (other_keycode == LOW_TAB) {
       return true;
     } // alt + tab on mac
     break;
 
-  case HM_T:
+  case HMA_T:
+  case HME_A:
     if (other_keycode == LOW_TAB) {
       return true;
     } // ctrl + tab for browsers
     break;
 
-  case HM_N:
-  case HM_I:
-  case HM_O:
+  case HMA_N:
+  case HMA_I:
+  case HMA_O:
+  case HME_A:
+  case HME_S:
+  case HME_N:
     if (other_keycode == SFT_SPC) {
       return true;
     } // GUI + space for finder

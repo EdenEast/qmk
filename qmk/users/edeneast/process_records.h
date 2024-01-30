@@ -27,16 +27,27 @@ enum userspace_custom_keycodes {
 };
 
 // Homerow mod keys
-// Base layer
-#define HM_A LGUI_T(KC_A)
-#define HM_R LALT_T(KC_R)
-#define HM_S LSFT_T(KC_S)
-#define HM_T LCTL_T(KC_T)
+// Colemak-DH Base layer
+#define HMA_A LGUI_T(KC_A)
+#define HMA_R LALT_T(KC_R)
+#define HMA_S LSFT_T(KC_S)
+#define HMA_T LCTL_T(KC_T)
 
-#define HM_O RGUI_T(KC_O)
-#define HM_I RALT_T(KC_I)
-#define HM_E RSFT_T(KC_E)
-#define HM_N RCTL_T(KC_N)
+#define HMA_O RGUI_T(KC_O)
+#define HMA_I RALT_T(KC_I)
+#define HMA_E RSFT_T(KC_E)
+#define HMA_N RCTL_T(KC_N)
+
+// Engram base layer
+#define HME_C LGUI_T(KC_C)
+#define HME_I LALT_T(KC_I)
+#define HME_E LSFT_T(KC_E)
+#define HME_A LCTL_T(KC_A)
+
+#define HME_N RGUI_T(KC_N)
+#define HME_S RALT_T(KC_S)
+#define HME_T RSFT_T(KC_T)
+#define HME_H RCTL_T(KC_H)
 
 // Lower
 // #define HM_ LGUI_T(KC_)
