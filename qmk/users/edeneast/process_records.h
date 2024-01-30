@@ -11,6 +11,8 @@ enum userspace_custom_keycodes {
   TL_ENGM, // Toggle engram layer
   STCK_LY,
 
+  ED_UNDO,
+  ED_CUT,
   ED_COPY,
   ED_PASTE,
 
