@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,7 +20,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        pcpp = with pkgs; python3Packages.buildPythonPackage rec {
+        pcpp = with pkgs; python311Packages.buildPythonPackage rec {
           pname = "pcpp";
           version = "1.30";
 
@@ -34,14 +34,14 @@
         };
         keymap-drawer = with pkgs; python3Packages.buildPythonApplication rec{
           pname = "keymap-drawer";
-          version = "0.6.0";
+          version = "0.13.3";
           format = "pyproject";
 
           src = pkgs.fetchFromGitHub {
             owner = "caksoylar";
             repo = "keymap-drawer";
             rev = "v${version}";
-            sha256 = "sha256-NvWx6X9kfnigR2jmLo9g4neDZ3SlUr0ck3wjtPjKhWM=";
+            sha256 = "sha256-dbVpsgsWuFpmt8LMIXVTYXNSrS0gYyehULhhBtNa+Bs=";
           };
 
           doCheck = false;
@@ -54,11 +54,12 @@
             pyyaml
             pyparsing
             pydantic
+            platformdirs
           ] ++ [ pcpp ];
-
         };
       in
       {
+        inherit pkgs;
         devShells.default = pkgs.mkShell {
           name = "qmk";
           buildInputs = with pkgs; [
