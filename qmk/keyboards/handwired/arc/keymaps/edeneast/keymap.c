@@ -25,21 +25,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __COLEMAK_DH_L2_____________________________________,                                         __COLEMAK_DH_R2_____________________________________,
     __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSR_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSR_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_ENGM, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  KC_PGDN,                                         KC_DOWN
 
   ),
 
   [_ENGRAM] = LAYOUT_WRAPPER(
-    TL_ENGM, _______, _______, _______, _______, _______,                                         _______, _______, _______, _______, _______, _______,
+    _______, __NUMBER_OPT_LEFT__________________________,                                         __NUMBER_OPT_RIGHT_________________________, _______,
     __ENGRAM_L1_________________________________________,                                         __ENGRAM_R1_________________________________________,
     __ENGRAM_L2_________________________________________,                                         __ENGRAM_R2_________________________________________,
     __ENGRAM_L3_________________________________________,                                         __ENGRAM_R3_________________________________________,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSR_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSR_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_CLMK, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  KC_PGDN,                                         KC_DOWN
   ),
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __NAVIGATION_L2_____________________________________,                                         __NAVIGATION_R2_____________________________________,
     __NAVIGATION_L3_____________________________________,                                         __NAVIGATION_R3_____________________________________,
 
-    _______,          _______, _______, KC_SPC,  _______, _______, _______,     _______, _______, _______, _______, _______, _______,          _______,
+    _______,          _______, _______, _______, _______,  KC_SPC, _______,     _______, _______, _______, _______, _______, _______,          _______,
                                         KC_LEFT, KC_UP,   KC_RGHT,                       KC_MPRV, _______, KC_MNXT,
                                                  KC_DOWN,                                         KC_MPLY
   ),
@@ -114,31 +114,11 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     }
     record->event.pressed ? add_mods(MOD_LSFT) : unregister_mods(MOD_LSFT);
     return false;
-  case OSR_CSE:
-    if (record->tap.count > 0) {
-      if (record->event.pressed) {
-        set_smart_case_for_mods();
-        return false;
-      }
-    }
-    record->event.pressed ? add_mods(MOD_RSFT) : unregister_mods(MOD_RSFT);
-    return false;
 
   case SYM_MIN:
     if (record->tap.count > 0) {
-      if (record->event.pressed) {
+      if (record->event.pressed)
         tap_code16(KC_MINS);
-        //   uint8_t mods = get_mods();
-        //   bool is_shift_held =
-        //       (mods | get_weak_mods() | get_oneshot_mods()) & MOD_MASK_SHIFT;
-        //   uint16_t key = is_shift_held ? KC_MINS : KC_UNDS;
-        //   del_weak_mods(MOD_MASK_SHIFT);
-        //   del_oneshot_mods(MOD_MASK_SHIFT);
-        //   unregister_mods(MOD_MASK_SHIFT);
-        //   tap_code16(key);
-        //   set_mods(mods);
-        //   return false;
-      }
     }
     record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
     return false;
