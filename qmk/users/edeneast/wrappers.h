@@ -17,7 +17,7 @@
 #define __BLANK_____________________________________________       _______, _______, _______, _______, _______, _______
 
 
-#define __COLEMAK_DH_L1_____________________________________       TD_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
+#define __COLEMAK_DH_L1_____________________________________       KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HM_A,    HM_R,    HM_S,    HM_T,    KC_G
 #define __COLEMAK_DH_L3_____________________________________       C(KC_A), KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
@@ -26,7 +26,7 @@
 #define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT
 
 
-#define __ENGRAM_L1_________________________________________       TD_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
+#define __ENGRAM_L1_________________________________________       KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
 #define __ENGRAM_L2_________________________________________       CTR_ESC, KC_C,    KC_I,    KC_E,    KC_A,    KC_COMM
 #define __ENGRAM_L3_________________________________________       C(KC_A),  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL
 
@@ -52,20 +52,20 @@
 #define __NAVIGATION_L3_____________________________________       _______, _______, _______, _______, _______, _______
 
 #define __NAVIGATION_R0_____________________________________       _______, _______, _______, _______, _______, _______
-#define __NAVIGATION_R1_____________________________________       _______, _______, _______, _______, _______, _______
+#define __NAVIGATION_R1_____________________________________       KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______
 #define __NAVIGATION_R2_____________________________________       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______
-#define __NAVIGATION_R3_____________________________________       _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______
+#define __NAVIGATION_R3_____________________________________       _______, _______, _______, _______, _______, _______
 
 
 #define __ADJUSTMENT_L0_____________________________________       QK_BOOT, KC_MAKE, KC_CAPS, KC_ESC,  _______, _______
 #define __ADJUSTMENT_L1_____________________________________       _______, _______, _______, _______, _______, _______
-#define __ADJUSTMENT_L2_____________________________________       _______, _______, _______, _______, _______, KC_PSCR
-#define __ADJUSTMENT_L3_____________________________________       _______, ED_UNDO, ED_CUT, ED_COPY, ED_PASTE, _______
+#define __ADJUSTMENT_L2_____________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
+#define __ADJUSTMENT_L3_____________________________________       _______, ED_UNDO, ED_CUT, ED_COPY, ED_PASTE, KC_PSCR
 
 #define __ADJUSTMENT_R0_____________________________________       _______, _______, _______, _______, KC_MAKE, QK_BOOT
-#define __ADJUSTMENT_R1_____________________________________       VB_UP,   _______, _______, _______, _______, _______
-#define __ADJUSTMENT_R2_____________________________________       KC_MUTE, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______
-#define __ADJUSTMENT_R3_____________________________________       VB_DOWN, MUTE_MIC, _______, _______, TG_SENT, _______
+#define __ADJUSTMENT_R1_____________________________________       _______,   VB_UP, VB_DOWN, KC_MUTE, _______, _______
+#define __ADJUSTMENT_R2_____________________________________       _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______
+#define __ADJUSTMENT_R3_____________________________________       _______, MUTE_MIC, _______, _______, TG_SENT, _______
 
 
 #define __RAISE_L1__________________________________________       _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5
