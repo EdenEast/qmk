@@ -5,7 +5,7 @@ layers:
   "Colemak-DH":
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
     - [ {s: '~', t: '`'}, 'Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y', {s: ':', t: ';'}, {s: '+', t: '='} ]
-    - [ {h: Ctrl, t: Esc}, 'A', 'R', 'S', 'T', 'G', 'M', 'N', 'E', 'I', 'O', {s: '"', t: "'"} ]
+    - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'A'}, {h: 'Alt', t: 'R'}, {h: 'Shift', t: 'S'}, {h: 'Ctrl', t: 'T'}, 'G', 'M', {h: 'Ctrl', t: 'N'}, {h: 'Shift', t: 'E'}, {h: 'Alt', t: 'I'}, {h: 'Super', t: 'O'}, {h: 'Ctrl', s: '"', t: "'"} ]
     - [ 'Tmux', 'Z', 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, 'Return' ]
     - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
     - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
@@ -16,7 +16,7 @@ layers:
   "Engram":
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
     - [ {s: '~', t: '`'}, 'B', 'Y', 'O', 'U', {s: '"', t: "'"}, {s: ':', t: ';'}, 'L', 'D', 'W', 'V', 'Z' ]
-    - [ {h: Ctrl, t: Esc}, 'C', 'I', 'E', 'A', {s: '<', t: ','}, {s: '>', t: '.'}, 'H', 'T', 'S', 'N', 'Q' ]
+    - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'C'}, {h: 'Alt', t: 'I'}, {h: 'Shift', t: 'E'}, {h: 'Ctrl', t: 'A'}, {s: '<', t: ','}, {s: '>', t: '.'}, {h: 'Ctrl', t: 'H'}, {h: 'Shift', t: 'T'}, {h: 'Alt', t: 'S'}, {h: 'Super', t: 'N'}, {h: 'Ctrl', t: "Q"} ]
     - [ 'Tmux', 'G', 'X', 'J', 'K', {s: '+', t: '='}, {s: '?', t: '/'}, 'R', 'M', 'F', 'P', 'Return' ]
     - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
     - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
