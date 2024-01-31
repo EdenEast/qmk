@@ -11,6 +11,7 @@ enum userspace_custom_keycodes {
   TL_STNO, // Toggle steno layer
   TL_ENGM, // Toggle engram layer
   STCK_LY,
+  LLOCK,
 
   ED_UNDO,
   ED_CUT,

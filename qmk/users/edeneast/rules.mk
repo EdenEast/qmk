@@ -35,6 +35,7 @@ SRC += edeneast.c
 SRC += process_records.c
 SRC += os_detect.c
 SRC += smart_case.c
+SRC += features/layer_lock.c
 
 ifeq ($(strip $(COMBO_ENABLE)), yes)
 	INTROSPECTION_KEYMAP_C = combos.c

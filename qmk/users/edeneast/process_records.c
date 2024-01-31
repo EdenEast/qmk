@@ -76,6 +76,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 
+  if (!process_layer_lock(keycode, record, LLOCK)) {
+    return false;
+  }
+
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
     default_layer_set(
