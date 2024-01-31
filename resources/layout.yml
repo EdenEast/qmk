@@ -1,85 +1,87 @@
 layout:
-  qmk_keyboard: corne_rotated
-  qmk_layout: LAYOUT_split_3x6_3
+  qmk_keyboard: handwired/lagrange
+  qmk_layout: LAYOUT
 layers:
-  Base:
-    - [{s: '~', t: '`'}, Q, W, F, P, B, J, L, U, Y, {s: ':', t: ';'}, {s: '+', t: '='}]
-    - [{h: Ctrl, t: Esc}, {h: Super, t: A}, {h: Alt, t: R}, {h: Shift, t: S}, {h: Ctrl, t: T}, G, M, {h: Ctrl, t: N}, {h: Shift, t: E}, {h: Alt, t: I}, {h: Super, t: O}, {h: Ctrl, s: '"', t: "'"}]
-    - [Del, Z, X, C, D, V, K, H, {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, Enter]
-    - {type: ghost, t: Leader}
-    - {h: Lower, t: Tab}
-    - {h: Shift, t: Bspc}
-    - {h: Shift, t: Spc}
-    - {h: Raise, s: '_', t: '-'}
-    - {type: ghost, t: Leader}
+  "Colemak-DH":
+    - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
+    - [ {s: '~', t: '`'}, 'Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y', {s: ':', t: ';'}, {s: '+', t: '='} ]
+    - [ {h: Ctrl, t: Esc}, 'A', 'R', 'S', 'T', 'G', 'M', 'N', 'E', 'I', 'O', {s: '"', t: "'"} ]
+    - [ 'Tmux', 'Z', 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, 'Return' ]
+    - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
+    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
+    - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
+    - [ '(', ')', 'Nav' ]
+    - [ 'Engram', 'PgUp', 'Game', '←', '↑', '→', 'PgDn', '↓' ]
 
-  Raise:
-    - [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, null]
-    - [null, Super, Alt, Shift, Ctrl, null, '←', '↓', '↑', '→', null, null]
-    - [null, Sticky, null, null, null, null, '⏭', '⏯', null, null, Sticky, null]
-    - {type: ghost}
-    - null
-    - null
-    - null
-    - {type: held}
-    - {type: ghost}
+  "Engram":
+    - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
+    - [ {s: '~', t: '`'}, 'B', 'Y', 'O', 'U', {s: '"', t: "'"}, {s: ':', t: ';'}, 'L', 'D', 'W', 'V', 'Z' ]
+    - [ {h: Ctrl, t: Esc}, 'C', 'I', 'E', 'A', {s: '<', t: ','}, {s: '>', t: '.'}, 'H', 'T', 'S', 'N', 'Q' ]
+    - [ 'Tmux', 'G', 'X', 'J', 'K', {s: '+', t: '='}, {s: '?', t: '/'}, 'R', 'M', 'F', 'P', 'Return' ]
+    - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
+    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
+    - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
+    - [ '(', ')', 'Nav' ]
+    - [ 'Colemak', 'PgUp', 'Game', '←', '↑', '→', 'PgDn', '↓' ]
 
-  Lower:
-    - [null, '!', '@', '#', '$', '%', '^', '&', '*', null, ':', null]
-    - [null, {h: Super}, {h: Alt, t: '_'}, {h: Shift, t: '+'}, {h: Ctrl, t: '='}, '~', '[', {h: Ctrl, t: '('}, {h: Shift, t: ')'}, {h: Alt, t: ']'}, {h: Super, t: '`'}, null]
-    - [null, Sticky, null, null, null, null, '|', '{', '}', '\', Sticky, null]
-    - {type: ghost}
-    - {type: held}
-    - null
-    - null
-    - null
-    - {type: ghost}
+  Symbol:
+    - [ '', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11' ]
+    - [ '', '', '<', '>', '@', '', '&', '', '[', ']', '', '' ]
+    - [ '', '!', '-', '+', '=', '#', '|', ':', '(', ')', '%', '' ]
+    - [ '', '\', '/', '*', '^', '', '~', '$', '{', '}', '', '' ]
+    - [ '', '', '']
+    - [ {type: held}, '', '', 'Layer Lock']
+    - [ 'Layer Lock', '', '', {type: held}]
+    - [ '', '', '' ]
+    - [ '', '', '', '', '', '', '', '' ]
 
-  Adj:
-    - [F12, F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11]
-    - [Boot, {h: Super, t: PrtSc}, Alt, Shift, Ctrl, Toggle Sentence, {s: Bright+, t: Vol+}, {h: Ctrl, t: Mic}, Shift, Alt, {h: Super, t: PrtSc}, Boot]
-    - [null, Sticky, null, null, Game, Steno, {s: Bright-, t: Vol-}, Mute, null, null, Sticky, null]
-    - {type: ghost}
-    - {type: held}
-    - null
-    - null
-    - {type: held}
-    - {type: ghost}
+  Navigation:
+    - [ '', '', '', '', '', '', '', '', '', '', '', '' ]
+    - [ '', '', ' ⏮', '⏯', '⏭', '', 'Home', 'PgDn', 'PgUp', 'End', '', '' ]
+    - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '←', '↓', '↑', '→', '', '' ]
+    - [ '', '', '', '', '', '', '', '', '', '', '', '' ]
+    - [ {type: held}, '', '']
+    - [ '', '', 'Space', 'Layer Lock']
+    - [ 'Layer Lock', '', '', '']
+    - [ '', '', {type: held} ]
+    - [ '←', '↑', '→', ' ⏮', '', '⏭', '↓', '⏯' ]
+
+  Adjust:
+    - [ 'Boot', 'Make', 'Capslock', 'Esc', '', '', '', '', '', '', 'Make', 'Boot' ]
+    - [ '', '', '', '', '', '', '', {s: '🔆+', t: '🔊+'}, {s: '🔅-', t: '🔉-'}, '🔇', '', '' ]
+    - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '', '⏮', '⏯', '⏭', '', '' ]
+    - [ '', 'Undo', 'Cut', 'Copy', 'Paste', 'PrintSc', '', 'Mic', '', '', 'Toggle Sentence', '' ]
+    - [ {type: held}, '', '']
+    - [ {type: held}, '', '', 'Layer Lock']
+    - [ 'Layer Lock', '', '', {type: held}]
+    - [ '', '', {type: held} ]
+    - [ '', '', '', '', '', '', '', '' ]
 
   Game:
-    - ['`', Tab, Q, W, E, R, T, Y, U, I, O, P]
-    - [Esc, Shift, A, S, D, F, G, H, J, K, L, Exit]
-    - [Alt, Ctrl, Z, X, C, V, B, N, M, ',', '.', '/']
-    - M
-    - I
-    - Spc
-    - Bspc
-    - Enter
-    - Del
-
+    - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
+    - [ '`', 'Tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P' ]
+    - [ 'Esc', 'Shift', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Game Off' ]
+    - [ 'Alt', 'Ctrl', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/' ]
+    - [ 'Alt/Ctrl', 'T', 'G']
+    - [ 'I', 'Space', 'M', '']
+    - [ '', '', 'Bspc', '']
+    - [ '', '', '' ]
+    - [ '⏯', 'Toggle Palm', 'Game Off', '', '', '', 'Mic', '' ]
 
   # COMBO_REF:
-  #   - [ '0',  '1',  '2',  '3',  '4',  '5',      '6',  '7',  '8',  '9', '10', '11']
-  #   - ['12', '13', '14', '15', '16', '17',     '18', '19', '20', '21', '22', '23']
-  #   - ['24', '25', '26', '27', '28', '29',     '30', '31', '32', '33', '34', '35']
-  #                        '36', '37', '38',     '39', '40', '41',
+  #   - [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11' ]
+  #   - [ '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23' ]
+  #   - [ '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35' ]
+  #   - [ '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47' ]
+  #   - [ '48', '49', '50']                                # Left palm key and extra middle and ring finger
+  #   - [ '51', '52', '53', '54']                          # Left thumb keys
+  #   - [ '55', '56', '57', '58']                          # Right thumb keys
+  #   - [ '59', '60', '61' ]                               # Right palm key and extra middle and ring finger
+  #   - [ '62', '63', '64', '65', '66', '67', '68', '69' ] # Thumb dpads
 
-combos:
-  - {p: [0, 5], k: "Boot", a: top, o: 0.8, l: ["Base"]}
-  - {p: [6, 11], k: "Boot", a: top, o: 0.8, l: ["Base"]}
-  - {p: [0, 4], k: "Compile", a: top, o: 0.2, l: ["Base"]}
-  - {p: [7, 11], k: "Compile", a: top, o: 0.2, l: ["Base"]}
+# combos:
+#   - {p: [12, 16], k: Make, a: top, o: 1.5, l: ['Colemak-DH', 'Engram']}
+#   - {p: [19, 23], k: Make, a: top, o: 1.5, l: ['Colemak-DH', 'Engram']}
+#   - {p: [12, 17], k: Boot, a: top, o: 1.8, l: ['Colemak-DH', 'Engram']}
+#   - {p: [18, 23], k: Boot, a: top, o: 1.8, l: ['Colemak-DH', 'Engram']}
 
-  - {p: [17, 18], k: "Cap word", l: ["Base"]}
-
-  - {p: [26, 27], k: "Copy", l: ["Base"]}
-  - {p: [27, 28], k: "Paste", l: ["Base"]}
-
-  - {p: [24, 38], k: "Bspc", a: bottom, l: ["Base"]}
-  - {p: [35, 39], k: "Spc", a: bottom, l: ["Base"]}
-
-  - {p: [19, 20], k: "()←", l: ["Lower"]}
-  - {p: [31, 32], k: "{}←", l: ["Lower"]}
-  - {p: [18, 21], k: "[]←", a: top, l: ["Lower"]}
-
-  - {p: [30, 31], k: "⏮", l: ["Raise"]}
