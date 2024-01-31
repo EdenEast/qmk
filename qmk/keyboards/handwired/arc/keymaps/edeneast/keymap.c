@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "edeneast.h"
+#include "features/layer_lock.h"
 
 #define LAYOUT_WRAPPER(...) LAYOUT(__VA_ARGS__)
 #define MO_NAV MO(_NAV)
@@ -25,8 +26,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __COLEMAK_DH_L2_____________________________________,                                         __COLEMAK_DH_R2_____________________________________,
     __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_ENGM, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  KC_PGDN,                                         KC_DOWN
 
@@ -38,8 +39,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __ENGRAM_L2_________________________________________,                                         __ENGRAM_R2_________________________________________,
     __ENGRAM_L3_________________________________________,                                         __ENGRAM_R3_________________________________________,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, STCK_LY,     STCK_LY, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, STCK_LY,     STCK_LY, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_CLMK, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  KC_PGDN,                                         KC_DOWN
   ),
@@ -104,6 +105,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 static bool game_use_alt_palm = false;
 static uint16_t last_game_plam = 0;
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  if (!process_layer_lock(keycode, record, LLOCK)) {
+    return false;
+  }
+
   switch (keycode) {
   case OSL_CSE:
     if (record->tap.count > 0) {

@@ -11,3 +11,4 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 UNICODE_ENABLE = no
 SPLIT_KEYBOARD = yes
+LEADER_ENABLE = yes
