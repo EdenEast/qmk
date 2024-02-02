@@ -161,6 +161,18 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   }
 }
 
+bool achordion_chord_keymap(uint16_t tap_hold_keycode,
+                            keyrecord_t *tap_hold_record,
+                            uint16_t other_keycode, keyrecord_t *other_record) {
+  switch (tap_hold_keycode) {
+  case SYM_TAB:
+  case SYM_MIN:
+  case LOW_PDN:
+    return true;
+  }
+  return false;
+}
+
 layer_state_t layer_state_set_kb(layer_state_t state) {
   return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJ);
 }
