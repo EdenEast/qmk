@@ -5,7 +5,6 @@ COMMAND_ENABLE      = no  # Commands for debug and configuration
 CONSOLE_ENABLE      = no  # Console for debugging
 GRAVE_ESC_ENABLE    = no  # Dont use it, save space
 MIDI_ENABLE         = no  # Dont use it, save space
-# MOUSEKEY_ENABLE     = no  # Mouse keys
 RGBLIGHT_ENABLE     = no  # No rgb
 SPACE_CADET_ENABLE  = no  # Dont use it, save space
 
@@ -13,8 +12,6 @@ COMBO_ENABLE        = yes # Combo keys together
 LTO_ENABLE          = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE     = yes # Audio controls and system controls
 CAPS_WORD_ENABLE    = yes
-# NKRO_ENABLE         = yes # NKey Rollover
-# STENO_ENABLE        = yes # Enable steno
 TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
 OS_DETECTION_ENABLE = yes # Enable os detection
 
@@ -24,7 +21,6 @@ ifeq ($(strip $(STENO_ENABLE)), yes)
 endif
 
 # Feature enables
-# ACHORDION_ENABLE     = yes
 SENTENCE_CASE_ENABLE = yes
 
 # Add LTO compile flag

@@ -12,6 +12,7 @@ enum userspace_custom_keycodes {
   TL_ENGM, // Toggle engram layer
   STCK_LY,
   LLOCK,
+  TMUX_PX, // Gui when pressed, Tmux prefix when tapped
 
   ED_UNDO,
   ED_CUT,
@@ -50,6 +51,9 @@ enum userspace_custom_keycodes {
 #define HME_S RALT_T(KC_S)
 #define HME_T RSFT_T(KC_T)
 #define HME_H RCTL_T(KC_H)
+
+#define HM_MUX LGUI_T(TMUX_PX)
+#define HM_ENT LGUI_T(KC_ENT)
 
 // Lower
 // #define HM_ LGUI_T(KC_)

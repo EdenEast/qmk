@@ -187,6 +187,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
     break;
 
+  case HM_MUX:
+    if (record->tap.count && record->event.pressed) {
+      tap_code16(C(KC_A));
+      return false;
+    }
+    record->event.pressed ? register_code(KC_LGUI) : unregister_code(KC_LGUI);
+    return false;
+
     // Mod tap can only handle basic keycodes
   case HM_LPRN:
     if (record->tap.count && record->event.pressed) {
@@ -345,51 +353,40 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   }
 
   switch (tap_hold_keycode) {
-  case LOW_TAB:
-  case RAS_MIN:
-  case SFT_SPC:
-  case SFT_BSP:
+  // Keys that should be considered tap-hold regardless of the other key.
+  // Achordion should not consider these keys.
   case CTR_ESC:
   case CTR_QOT:
+  case HM_MUX:
+  case HM_ENT:
     return true;
 
+    // Allow one handed ctrl/super key combinations for non-homerow keys
   case HMA_A:
     switch (other_keycode) {
-    case LOW_TAB:
     case KC_Z:
     case KC_X:
     case KC_C:
     case KC_D:
     case KC_V:
-    case KC_W:
     case KC_Q:
+    case KC_W:
+    case KC_F:
       return true;
     }
     break;
-
-  case HMA_R:
-  case HME_I:
-    if (other_keycode == LOW_TAB) {
-      return true;
-    } // alt + tab on mac
-    break;
-
   case HMA_T:
-  case HME_A:
-    if (other_keycode == LOW_TAB) {
+    switch (other_keycode) {
+    case KC_Z:
+    case KC_X:
+    case KC_C:
+    case KC_D:
+    case KC_V:
+    case KC_Q:
+    case KC_W:
+    case KC_F:
       return true;
-    } // ctrl + tab for browsers
-    break;
-
-  case HMA_N:
-  case HMA_I:
-  case HMA_O:
-  case HME_A:
-  case HME_S:
-  case HME_N:
-    if (other_keycode == SFT_SPC) {
-      return true;
-    } // GUI + space for finder
+    }
     break;
   }
 
