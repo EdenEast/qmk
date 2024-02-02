@@ -8,6 +8,7 @@
 #define MO_NAV MO(_NAV)
 #define SYM_MIN LT(_SYMBOL, KC_MINS)
 #define SYM_TAB LT(_SYMBOL, KC_TAB)
+#define LOW_PDN LT(_LOWER, KC_PGDN)
 #define OSL_CSE OSM(MOD_LSFT)
 #define OSR_CSE OSM(MOD_RSFT)
 
@@ -29,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
     MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_ENGM, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
-                                                 KC_PGDN,                                         KC_DOWN
+                                                 LOW_PDN,                                         KC_DOWN
 
   ),
 
@@ -42,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
     MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_CLMK, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
-                                                 KC_PGDN,                                         KC_DOWN
+                                                 LOW_PDN,                                         KC_DOWN
   ),
 
   [_SYMBOL] = LAYOUT_WRAPPER(
@@ -88,6 +89,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GM_PLAM,          KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    _______,     _______, _______, KC_BSPC, _______, _______, _______,          _______,
                                        KC_MPLY, TG_PLAM, TL_GAME,                       _______, _______, _______,
                                                  MUTE_MIC,                                       _______
+  ),
+
+  [_LOWER] = LAYOUT_WRAPPER(
+    _______, _______, _______, _______, _______, _______,                                         _______, _______, _______, _______, _______, _______,
+    _______, _______, KC_BTN2, KC_MS_U, KC_BTN1, _______,                                         _______, _______, _______, _______, _______, _______,
+    _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,                                         _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, KC_WH_D, KC_WH_U, _______,                                         _______, _______, _______, _______, _______, _______,
+
+
+    _______,          _______, _______, KC_BTN2, KC_BTN1, KC_BTN3, LLOCK,       LLOCK,   _______, _______, _______, _______, _______,          _______,
+                                        _______, _______, _______,                       _______, _______, _______,
+                                                 _______,                                         _______
   ),
 
 };

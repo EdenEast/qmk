@@ -5,7 +5,7 @@ COMMAND_ENABLE      = no  # Commands for debug and configuration
 CONSOLE_ENABLE      = no  # Console for debugging
 GRAVE_ESC_ENABLE    = no  # Dont use it, save space
 MIDI_ENABLE         = no  # Dont use it, save space
-MOUSEKEY_ENABLE     = no  # Mouse keys
+# MOUSEKEY_ENABLE     = no  # Mouse keys
 RGBLIGHT_ENABLE     = no  # No rgb
 SPACE_CADET_ENABLE  = no  # Dont use it, save space
 

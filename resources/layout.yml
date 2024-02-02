@@ -6,12 +6,12 @@ layers:
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
     - [ {s: '~', t: '`'}, 'Q', 'W', 'F', 'P', 'B', 'J', 'L', 'U', 'Y', {s: ':', t: ';'}, {s: '+', t: '='} ]
     - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'A'}, {h: 'Alt', t: 'R'}, {h: 'Shift', t: 'S'}, {h: 'Ctrl', t: 'T'}, 'G', 'M', {h: 'Ctrl', t: 'N'}, {h: 'Shift', t: 'E'}, {h: 'Alt', t: 'I'}, {h: 'Super', t: 'O'}, {h: 'Ctrl', s: '"', t: "'"} ]
-    - [ 'Tmux', 'Z', 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, 'Return' ]
+    - [ {h: Super, t: 'Tmux'}, 'Z', 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {s: '?', t: '/'}, {h: Super, t: 'Return' } ]
     - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
     - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
     - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
     - [ '(', ')', 'Nav' ]
-    - [ 'Engram', 'PgUp', 'Game', '←', '↑', '→', 'PgDn', '↓' ]
+    - [ 'Engram', 'PgUp', 'Game', '←', '↑', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
 
   "Engram":
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
@@ -22,7 +22,7 @@ layers:
     - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
     - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
     - [ '(', ')', 'Nav' ]
-    - [ 'Colemak', 'PgUp', 'Game', '←', '↑', '→', 'PgDn', '↓' ]
+    - [ 'Colemak', 'PgUp', 'Game', '←', '↑', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
 
   Symbol:
     - [ '', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11' ]
@@ -45,6 +45,17 @@ layers:
     - [ 'Layer Lock', '', '', '']
     - [ '', '', {type: held} ]
     - [ '←', '↑', '→', ' ⏮', '', '⏭', '↓', '⏯' ]
+
+  Mouse:
+    - [ '', '', '', '', '', '', '', '', '', '', '', '' ]
+    - [ '', '', 'Right Click', '↑', 'Left Click', '', '', '', '', '', '', '' ]
+    - [ '', '', '←', '↓', '→', '', '', '', '', '', '', '' ]
+    - [ '', '', '', 'Wheel ↓', 'Wheel ↑', '', '', '', '', '', '', '' ]
+    - [ '', '', '' ]
+    - [ 'Right Click', 'Left Click', 'Middle Click', '' ]
+    - [ '', '', '', '' ]
+    - [ '', '', '' ]
+    - [ '', '', '', '', '', '', {type: held}, '' ]
 
   Adjust:
     - [ 'Boot', 'Make', 'Capslock', 'Esc', '', '', '', '', '', '', 'Make', 'Boot' ]
