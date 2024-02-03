@@ -86,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __GAME_L3___________________________________________,                                         __GAME_R3___________________________________________,
 
 
-    GM_PLAM,          KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    _______,     _______, _______, KC_BSPC, _______, _______, _______,          _______,
+    GM_PLAM,          KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    KC_N,        _______, _______, KC_BSPC, _______, _______, _______,          _______,
                                        KC_MPLY, TG_PLAM, TL_GAME,                       _______, _______, _______,
                                                  MUTE_MIC,                                       _______
   ),

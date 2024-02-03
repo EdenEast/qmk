@@ -74,7 +74,7 @@ layers:
     - [ 'Esc', 'Shift', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Game Off' ]
     - [ 'Alt', 'Ctrl', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/' ]
     - [ 'Alt/Ctrl', 'T', 'G']
-    - [ 'I', 'Space', 'M', '']
+    - [ 'I', 'Space', 'M', 'N']
     - [ '', '', 'Bspc', '']
     - [ '', '', '' ]
     - [ '⏯', 'Toggle Palm', 'Game Off', '', '', '', 'Mic', '' ]
