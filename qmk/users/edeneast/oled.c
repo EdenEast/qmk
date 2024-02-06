@@ -1,9 +1,9 @@
 #include "edeneast.h"
 
 #define KEYLOGGER_LENGTH 5
-static uint32_t oled_timer = 0;
-static char keylog_str[KEYLOGGER_LENGTH + 1] = {"\n"};
-static uint16_t log_timer = 0;
+static uint32_t oled_timer                       = 0;
+static char     keylog_str[KEYLOGGER_LENGTH + 1] = {"\n"};
+static uint16_t log_timer                        = 0;
 // clang-format off
 static const char PROGMEM code_to_name[0xFF] = {
 //   0    1    2    3    4    5    6    7    8    9    A    B    c    D    E    F
@@ -33,9 +33,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 }
 
 void add_keylog(uint16_t keycode) {
-  if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) ||
-      (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX) ||
-      (keycode >= QK_MODS && keycode <= QK_MODS_MAX)) {
+  if ((keycode >= QK_MOD_TAP && keycode <= QK_MOD_TAP_MAX) || (keycode >= QK_LAYER_TAP && keycode <= QK_LAYER_TAP_MAX) || (keycode >= QK_MODS && keycode <= QK_MODS_MAX)) {
     keycode = keycode & 0xFF;
   } else if (keycode > 0xFF) {
     keycode = 0;
@@ -60,15 +58,15 @@ void render_keylogger_status(void) {
 void render_default_layer_state(void) {
   oled_write_P(PSTR("Lyout"), false);
   switch (get_highest_layer(default_layer_state)) {
-  case _BASE:
-    oled_write_P(PSTR(" Base"), false);
-    break;
-  case _GAME:
-    oled_write_P(PSTR(" Game"), false);
-    break;
-  case _STENO:
-    oled_write_P(PSTR("Steno"), false);
-    break;
+    case _BASE:
+      oled_write_P(PSTR(" Base"), false);
+      break;
+    case _GAME:
+      oled_write_P(PSTR(" Game"), false);
+      break;
+    case _STENO:
+      oled_write_P(PSTR("Steno"), false);
+      break;
   }
 }
 

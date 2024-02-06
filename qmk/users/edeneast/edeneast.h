@@ -8,11 +8,11 @@
 #include "wrappers.h"
 
 #ifdef TAP_DANCE_ENABLE
-#include "dances.h"
+#  include "dances.h"
 #endif
 
 #ifdef STENO_ENABLE
-#include "keymap_steno.h"
+#  include "keymap_steno.h"
 #endif
 
 // Define layer names

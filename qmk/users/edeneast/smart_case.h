@@ -3,9 +3,9 @@
 #include QMK_KEYBOARD_H
 
 typedef enum {
-  NO_CASE = 1 << 0,
-  CAPS_LOCK = 1 << 1,
-  WORD_CASE = 1 << 2,
+  NO_CASE    = 1 << 0,
+  CAPS_LOCK  = 1 << 1,
+  WORD_CASE  = 1 << 2,
   SNAKE_CASE = 1 << 3,
   KEBAB_CASE = 1 << 4,
   CAMEL_CASE = 1 << 5,
@@ -14,7 +14,7 @@ typedef enum {
 
 typedef struct {
   smart_case_type_t type;
-  uint16_t timer;
+  uint16_t          timer;
 } smart_case_t;
 
 /**

@@ -13,10 +13,10 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: 'false'
 BinPackArguments: 'true'
 BinPackParameters: 'true'
-ColumnLimit: '120'
+ColumnLimit: '1000'
 IndentCaseLabels: 'true'
 IndentPPDirectives: AfterHash
-IndentWidth: '4'
+IndentWidth: '2'
 MaxEmptyLinesToKeep: '1'
 PointerAlignment: Right
 SortIncludes: 'false'
@@ -24,7 +24,7 @@ SpaceBeforeAssignmentOperators: 'true'
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: 'false'
 SpacesBeforeTrailingComments: 1
-TabWidth: '4'
+TabWidth: '2'
 UseTab: Never
 
 ...

@@ -122,39 +122,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   uint8_t mods = get_mods();
   switch (keycode) {
-  case TG_SETT:
-    if (record->event.pressed) {
-      if (mods & MOD_MASK_ALT) {
-        sentence_case_toggle();
-      } else if (mods & MOD_MASK_SHIFT) {
-        layer_on(_GAME);
-      } else {
-        layer_off(_GAME);
-      }
-    }
-    return false;
-  case BOOT:
-    if (record->event.pressed) {
-      if ((mods & MOD_MASK_SHIFT) || (mods & MOD_MASK_CTRL)) {
-        clear_mods();
-        send_make_command(mods & MOD_MASK_SHIFT);
-        set_mods(mods);
-      } else {
-        reset_keyboard();
-      }
-    }
-    return false;
-
-  case CASE_RI:
-    if (record->tap.count > 0) {
+    case TG_SETT:
       if (record->event.pressed) {
-        set_smart_case_for_mods();
+        if (mods & MOD_MASK_ALT) {
+          sentence_case_toggle();
+        } else if (mods & MOD_MASK_SHIFT) {
+          layer_on(_GAME);
+        } else {
+          layer_off(_GAME);
+        }
       }
-    } else {
-      record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
-    }
-    return false;
-  default:
-    return true;
+      return false;
+    case BOOT:
+      if (record->event.pressed) {
+        if ((mods & MOD_MASK_SHIFT) || (mods & MOD_MASK_CTRL)) {
+          clear_mods();
+          send_make_command(mods & MOD_MASK_SHIFT);
+          set_mods(mods);
+        } else {
+          reset_keyboard();
+        }
+      }
+      return false;
+
+    case CASE_RI:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          set_smart_case_for_mods();
+        }
+      } else {
+        record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
+      }
+      return false;
+    default:
+      return true;
   }
 }

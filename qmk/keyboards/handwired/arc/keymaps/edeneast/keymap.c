@@ -115,60 +115,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //                                              _______,                                         _______
 
 // clang-format on
-static bool game_use_alt_palm = false;
-static uint16_t last_game_plam = 0;
+
+static bool     game_use_alt_palm = false;
+static uint16_t last_game_plam    = 0;
+
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   if (!process_layer_lock(keycode, record, LLOCK)) {
     return false;
   }
 
   switch (keycode) {
-  case OSL_CSE:
-    if (record->tap.count > 0) {
-      if (record->event.pressed) {
-        set_smart_case_for_mods();
-        return false;
+    case OSL_CSE:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          set_smart_case_for_mods();
+          return false;
+        }
       }
-    }
-    record->event.pressed ? add_mods(MOD_LSFT) : unregister_mods(MOD_LSFT);
-    return false;
+      record->event.pressed ? add_mods(MOD_LSFT) : unregister_mods(MOD_LSFT);
+      return false;
 
-  case SYM_MIN:
-    if (record->tap.count > 0) {
-      if (record->event.pressed)
-        tap_code16(KC_MINS);
-    }
-    record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
-    return false;
+    case SYM_MIN:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) tap_code16(KC_MINS);
+      }
+      record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
+      return false;
 
-  case TG_PLAM:
-    if (record->event.pressed) {
-      game_use_alt_palm = !game_use_alt_palm;
-    }
-    return false;
+    case TG_PLAM:
+      if (record->event.pressed) {
+        game_use_alt_palm = !game_use_alt_palm;
+      }
+      return false;
 
-  case GM_PLAM:
-    if (record->event.pressed) {
-      last_game_plam = game_use_alt_palm ? KC_LALT : KC_LCTL;
-      register_code16(last_game_plam);
-    } else {
-      unregister_code16(last_game_plam);
-    }
-    return false;
+    case GM_PLAM:
+      if (record->event.pressed) {
+        last_game_plam = game_use_alt_palm ? KC_LALT : KC_LCTL;
+        register_code16(last_game_plam);
+      } else {
+        unregister_code16(last_game_plam);
+      }
+      return false;
 
-  default:
-    return true;
+    default:
+      return true;
   }
 }
 
-bool achordion_chord_keymap(uint16_t tap_hold_keycode,
-                            keyrecord_t *tap_hold_record,
-                            uint16_t other_keycode, keyrecord_t *other_record) {
+bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
   switch (tap_hold_keycode) {
-  case SYM_TAB:
-  case SYM_MIN:
-  case LOW_PDN:
-    return true;
+    case SYM_TAB:
+    case SYM_MIN:
+    case LOW_PDN:
+      return true;
   }
   return false;
 }

@@ -3,17 +3,20 @@
 
 #include "smart_case.h"
 
-smart_case_t smart_case = {.timer = 0, .type = NO_CASE};
-static bool caps_lock_enabled = false;
+smart_case_t smart_case        = {.timer = 0, .type = NO_CASE};
+static bool  caps_lock_enabled = false;
 
-void start_smart_case_timer(void) { smart_case.timer = timer_read(); }
+void start_smart_case_timer(void) {
+  smart_case.timer = timer_read();
+}
 
-void clear_smart_case_timer(void) { smart_case.timer = 0; }
+void clear_smart_case_timer(void) {
+  smart_case.timer = 0;
+}
 
 bool smart_case_timer_expired(void) {
 #if (defined(ONESHOT_TIMEOUT) && (ONESHOT_TIMEOUT > 0))
-  return smart_case.timer > 0 &&
-         (timer_elapsed(smart_case.timer) > 5 * ONESHOT_TIMEOUT);
+  return smart_case.timer > 0 && (timer_elapsed(smart_case.timer) > 5 * ONESHOT_TIMEOUT);
 #else
   return false;
 #endif
@@ -34,7 +37,9 @@ void disable_smart_case(void) {
   }
 }
 
-bool has_any_smart_case(void) { return smart_case.type != NO_CASE; }
+bool has_any_smart_case(void) {
+  return smart_case.type != NO_CASE;
+}
 
 bool has_smart_case(smart_case_type_t smart_case_types) {
   return smart_case.type & smart_case_types;
@@ -42,11 +47,11 @@ bool has_smart_case(smart_case_type_t smart_case_types) {
 
 uint16_t extract_tapping_keycode(uint16_t keycode) {
   switch (keycode) {
-  case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-  case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-    return keycode &= 0xFF;
-  default:
-    return keycode;
+    case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+    case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+      return keycode &= 0xFF;
+    default:
+      return keycode;
   }
 }
 
@@ -98,8 +103,7 @@ void toggle_smart_case(smart_case_type_t smart_case_types) {
   }
 }
 
-__attribute__((weak)) bool
-set_smart_case_for_mods_keymap(uint8_t mods, smart_case_type_t *type) {
+__attribute__((weak)) bool set_smart_case_for_mods_keymap(uint8_t mods, smart_case_type_t *type) {
   return false;
 }
 
@@ -155,27 +159,26 @@ void set_smart_case_for_mods(void) {
   }
 }
 
-__attribute__((weak)) bool process_smart_case_keymap(uint16_t keycode,
-                                                     keyrecord_t *record) {
+__attribute__((weak)) bool process_smart_case_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
 // Double tapping space will deactivate smart case. This stores the state of the
 // first space press.
 static bool spacing = false;
-bool process_smart_case(uint16_t keycode, keyrecord_t *record) {
+bool        process_smart_case(uint16_t keycode, keyrecord_t *record) {
   if (has_any_smart_case() && record->event.pressed) {
     switch (keycode) {
-    // Earlier return if this has not been considered tapped yet.
-    case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-    case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-      if (record->tap.count == 0) {
+      // Earlier return if this has not been considered tapped yet.
+      case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+      case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+        if (record->tap.count == 0) {
+          return true;
+        }
+        break;
+        // Skip tapdance
+      case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
         return true;
-      }
-      break;
-      // Skip tapdance
-    case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
-      return true;
     }
 
     uint16_t key = extract_tapping_keycode(keycode);
@@ -190,71 +193,68 @@ bool process_smart_case(uint16_t keycode, keyrecord_t *record) {
     }
 
     switch (key) {
-    case KC_SPC:
-      if (spacing) {
-        if (has_smart_case(SNAKE_CASE) || has_smart_case(KEBAB_CASE) ||
-            has_smart_case(SLASH_CASE)) {
-          tap_code(KC_BSPC);
+      case KC_SPC:
+        if (spacing) {
+          if (has_smart_case(SNAKE_CASE) || has_smart_case(KEBAB_CASE) || has_smart_case(SLASH_CASE)) {
+            tap_code(KC_BSPC);
+          }
+          disable_smart_case();
+          tap_code(KC_SPC);
+          return false;
+        } else {
+          spacing = true;
         }
-        disable_smart_case();
-        tap_code(KC_SPC);
-        return false;
-      } else {
-        spacing = true;
-      }
-      if (has_smart_case(WORD_CASE) && !(has_smart_case(SNAKE_CASE)) &&
-          !(has_smart_case(CAMEL_CASE)) && !(has_smart_case(KEBAB_CASE)) &&
-          !(has_smart_case(SLASH_CASE))) {
-        disable_smart_case();
-        return true;
-      }
-      if (has_smart_case(SNAKE_CASE)) {
-        tap_code16(KC_UNDS);
-        start_smart_case_timer();
-        return false;
-      }
-      if (has_smart_case(KEBAB_CASE)) {
-        tap_code16(KC_MINS);
-        start_smart_case_timer();
-        return false;
-      }
-      if (has_smart_case(SLASH_CASE)) {
-        tap_code(KC_SLSH);
-        start_smart_case_timer();
-        return false;
-      }
-      if (has_smart_case(CAMEL_CASE)) {
-        add_oneshot_mods(MOD_MASK_SHIFT);
-        start_smart_case_timer();
-        return false;
-      }
-    case KC_A ... KC_Z:
-    case KC_1 ... KC_0:
-    case KC_BSPC:
-    case KC_MINS:
-    case KC_UNDS:
-    case KC_LEFT:
-    case KC_RIGHT:
-    case KC_UP:
-    case KC_DOWN:
-    case KC_HOME:
-    case KC_END:
-      start_smart_case_timer();
-      break;
-    case KC_DOT:
-    case KC_SLSH:
-      if (has_smart_case(SLASH_CASE)) {
+        if (has_smart_case(WORD_CASE) && !(has_smart_case(SNAKE_CASE)) && !(has_smart_case(CAMEL_CASE)) && !(has_smart_case(KEBAB_CASE)) && !(has_smart_case(SLASH_CASE))) {
+          disable_smart_case();
+          return true;
+        }
+        if (has_smart_case(SNAKE_CASE)) {
+          tap_code16(KC_UNDS);
+          start_smart_case_timer();
+          return false;
+        }
+        if (has_smart_case(KEBAB_CASE)) {
+          tap_code16(KC_MINS);
+          start_smart_case_timer();
+          return false;
+        }
+        if (has_smart_case(SLASH_CASE)) {
+          tap_code(KC_SLSH);
+          start_smart_case_timer();
+          return false;
+        }
+        if (has_smart_case(CAMEL_CASE)) {
+          add_oneshot_mods(MOD_MASK_SHIFT);
+          start_smart_case_timer();
+          return false;
+        }
+      case KC_A ... KC_Z:
+      case KC_1 ... KC_0:
+      case KC_BSPC:
+      case KC_MINS:
+      case KC_UNDS:
+      case KC_LEFT:
+      case KC_RIGHT:
+      case KC_UP:
+      case KC_DOWN:
+      case KC_HOME:
+      case KC_END:
         start_smart_case_timer();
         break;
-      }
-    case KC_ESC:
-      disable_smart_case();
-      return false;
-      break;
-    default:
-      disable_smart_case();
-      tap_code16(key);
-      return false;
+      case KC_DOT:
+      case KC_SLSH:
+        if (has_smart_case(SLASH_CASE)) {
+          start_smart_case_timer();
+          break;
+        }
+      case KC_ESC:
+        disable_smart_case();
+        return false;
+        break;
+      default:
+        disable_smart_case();
+        tap_code16(key);
+        return false;
     }
   }
   return true;

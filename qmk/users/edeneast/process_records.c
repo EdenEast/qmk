@@ -1,11 +1,11 @@
 #include "edeneast.h"
 
 #ifdef ACHORDION_ENABLE
-#include "features/achordion.h"
+#  include "features/achordion.h"
 #endif
 
 #ifdef SENTENCE_CASE_ENABLE
-#include "features/sentence_case.h"
+#  include "features/sentence_case.h"
 #endif
 
 /**
@@ -39,8 +39,7 @@ bool mod_roll_cancellation(uint8_t mod, uint16_t prev, uint16_t cur) {
   return true;
 }
 
-__attribute__((weak)) bool process_record_keymap(uint16_t keycode,
-                                                 keyrecord_t *record) {
+__attribute__((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
@@ -78,198 +77,192 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
-    default_layer_set(
-        default_layer_state ? 0 : (1 << get_highest_layer(layer_state)));
+    default_layer_set(default_layer_state ? 0 : (1 << get_highest_layer(layer_state)));
     return false;
   }
 
   uint8_t mods = get_mods();
   switch (keycode) {
-  case KC_CLMK ... KC_GAME:
-    if (record->event.pressed)
-      set_single_persistent_default_layer(keycode - KC_CLMK);
-    return false;
+    case KC_CLMK ... KC_GAME:
+      if (record->event.pressed) set_single_persistent_default_layer(keycode - KC_CLMK);
+      return false;
 
-    // Shift backspace to delete
-  case KC_BSPC:;
-    static bool is_del_held = false;
-    if (record->event.pressed) {
-      bool is_shift = mods & MOD_MASK_SHIFT;
-      uint16_t key = is_shift ? KC_DEL : KC_BSPC;
-      is_del_held = is_shift;
-      del_weak_mods(MOD_MASK_SHIFT);
-      del_oneshot_mods(MOD_MASK_SHIFT);
-      unregister_mods(MOD_MASK_SHIFT);
-      register_code(key);
-      set_mods(mods);
-    } else {
-      uint16_t key = is_del_held ? KC_DEL : KC_BSPC;
-      unregister_code(key);
-    }
-    return false;
+      // Shift backspace to delete
+    case KC_BSPC:;
+      static bool is_del_held = false;
+      if (record->event.pressed) {
+        bool     is_shift = mods & MOD_MASK_SHIFT;
+        uint16_t key      = is_shift ? KC_DEL : KC_BSPC;
+        is_del_held       = is_shift;
+        del_weak_mods(MOD_MASK_SHIFT);
+        del_oneshot_mods(MOD_MASK_SHIFT);
+        unregister_mods(MOD_MASK_SHIFT);
+        register_code(key);
+        set_mods(mods);
+      } else {
+        uint16_t key = is_del_held ? KC_DEL : KC_BSPC;
+        unregister_code(key);
+      }
+      return false;
 
-  case TL_GAME: // TODO: save state of sentence case and turn it off
-    if (record->event.pressed)
-      layer_invert(_GAME);
-    return false;
+    case TL_GAME: // TODO: save state of sentence case and turn it off
+      if (record->event.pressed) layer_invert(_GAME);
+      return false;
 
-  case TL_ENGM: // TODO: save state of sentence case and turn it off
-    if (record->event.pressed)
-      layer_invert(_ENGRAM);
-    return false;
+    case TL_ENGM: // TODO: save state of sentence case and turn it off
+      if (record->event.pressed) layer_invert(_ENGRAM);
+      return false;
 
 #ifdef STENO_ENABLE
-  case TL_STNO: // TODO: save state of sentence case and turn it off
-    if (record->event.pressed)
-      layer_invert(_STENO);
-    return false;
+    case TL_STNO: // TODO: save state of sentence case and turn it off
+      if (record->event.pressed) layer_invert(_STENO);
+      return false;
 #endif
 
 #ifdef SENTENCE_CASE_ENABLE
-  case TG_SENT:
-    if (record->event.pressed)
-      sentence_case_toggle();
-    return false;
+    case TG_SENT:
+      if (record->event.pressed) sentence_case_toggle();
+      return false;
 #endif
 
-  case ED_UNDO:
-    if (record->event.pressed) {
-      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-      register_code(mod);
-      tap_code(KC_Z);
-      unregister_code(mod);
-    }
-    break;
+    case ED_UNDO:
+      if (record->event.pressed) {
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        register_code(mod);
+        tap_code(KC_Z);
+        unregister_code(mod);
+      }
+      break;
 
-  case ED_CUT:
-    if (record->event.pressed) {
-      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-      register_code(mod);
-      tap_code(KC_X);
-      unregister_code(mod);
-    }
-    break;
+    case ED_CUT:
+      if (record->event.pressed) {
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        register_code(mod);
+        tap_code(KC_X);
+        unregister_code(mod);
+      }
+      break;
 
-  case ED_COPY:
-    if (record->event.pressed) {
-      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-      register_code(mod);
-      tap_code(KC_C);
-      unregister_code(mod);
-    }
-    break;
+    case ED_COPY:
+      if (record->event.pressed) {
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        register_code(mod);
+        tap_code(KC_C);
+        unregister_code(mod);
+      }
+      break;
 
-  case ED_PASTE:
-    if (record->event.pressed) {
-      uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-      register_code(mod);
-      tap_code(KC_V);
-      unregister_code(mod);
-    }
-    break;
+    case ED_PASTE:
+      if (record->event.pressed) {
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        register_code(mod);
+        tap_code(KC_V);
+        unregister_code(mod);
+      }
+      break;
 
-  case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
-    if (record->event.pressed) {
-      bool flash = false;
+    case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
+      if (record->event.pressed) {
+        bool flash = false;
 // If is a keyboard and auto-flash is not set in rules.mk,
 // then Shift will trigger the flash command
 #if !defined(FLASH_BOOTLOADER) && !defined(IS_MACROPAD)
-      uint8_t temp_mod = get_mods();
-      uint8_t temp_osm = get_oneshot_mods();
-      clear_mods();
-      clear_oneshot_mods();
-      if ((temp_mod | temp_osm) & MOD_MASK_SHIFT)
+        uint8_t temp_mod = get_mods();
+        uint8_t temp_osm = get_oneshot_mods();
+        clear_mods();
+        clear_oneshot_mods();
+        if ((temp_mod | temp_osm) & MOD_MASK_SHIFT)
 #endif
-      {
-        flash = true;
+        {
+          flash = true;
+        }
+        send_make_command(flash);
       }
-      send_make_command(flash);
-    }
-    break;
+      break;
 
-  case HM_MUX:
-    if (record->tap.count && record->event.pressed) {
-      tap_code16(C(KC_A));
-      return false;
-    }
-    record->event.pressed ? register_code(KC_LGUI) : unregister_code(KC_LGUI);
-    return false;
-
-    // Mod tap can only handle basic keycodes
-  case HM_LPRN:
-    if (record->tap.count && record->event.pressed) {
-      tap_code16(KC_LPRN);
-      return false;
-    }
-    break;
-
-  case HM_RPRN:
-    if (record->tap.count && record->event.pressed) {
-      tap_code16(KC_RPRN);
-      return false;
-    }
-    break;
-
-    // TODO: Shift is currently not being registered
-  case VB_UP:
-    if (record->event.pressed) {
-      if (mods & MOD_MASK_SHIFT) {
-        register_code16(KC_BRIU);
-      } else {
-        register_code16(KC_VOLU);
+    case HM_MUX:
+      if (record->tap.count && record->event.pressed) {
+        tap_code16(C(KC_A));
+        return false;
       }
-    } else {
-      unregister_code16(KC_BRIU);
-      unregister_code16(KC_VOLU);
-    }
-    return false;
+      record->event.pressed ? register_code(KC_LGUI) : unregister_code(KC_LGUI);
+      return false;
 
-  case VB_DOWN:
-    if (record->event.pressed) {
-      if (mods & MOD_MASK_SHIFT) {
-        register_code16(KC_BRID);
-      } else {
-        register_code16(KC_VOLD);
+      // Mod tap can only handle basic keycodes
+    case HM_LPRN:
+      if (record->tap.count && record->event.pressed) {
+        tap_code16(KC_LPRN);
+        return false;
       }
-    } else {
-      unregister_code16(KC_BRID);
-      unregister_code16(KC_VOLD);
-    }
-    return false;
+      break;
 
-  case MUTE_MIC:
-    if (record->event.pressed) {
-      uint8_t code = is_macos() ? KC_F19 : KC_F20;
-      tap_code(code);
-    }
-    return false;
+    case HM_RPRN:
+      if (record->tap.count && record->event.pressed) {
+        tap_code16(KC_RPRN);
+        return false;
+      }
+      break;
 
-  case HM_MIC:
-    if (!record->tap.count) { // not tapped and key is held
+      // TODO: Shift is currently not being registered
+    case VB_UP:
       if (record->event.pressed) {
-        register_code(KC_RCTL);
+        if (mods & MOD_MASK_SHIFT) {
+          register_code16(KC_BRIU);
+        } else {
+          register_code16(KC_VOLU);
+        }
       } else {
-        unregister_code(KC_RCTL);
+        unregister_code16(KC_BRIU);
+        unregister_code16(KC_VOLU);
       }
-    } else {
-      uint8_t code = is_macos() ? KC_F19 : KC_F20;
-      tap_code(code);
-    }
-    return false;
+      return false;
+
+    case VB_DOWN:
+      if (record->event.pressed) {
+        if (mods & MOD_MASK_SHIFT) {
+          register_code16(KC_BRID);
+        } else {
+          register_code16(KC_VOLD);
+        }
+      } else {
+        unregister_code16(KC_BRID);
+        unregister_code16(KC_VOLD);
+      }
+      return false;
+
+    case MUTE_MIC:
+      if (record->event.pressed) {
+        uint8_t code = is_macos() ? KC_F19 : KC_F20;
+        tap_code(code);
+      }
+      return false;
+
+    case HM_MIC:
+      if (!record->tap.count) { // not tapped and key is held
+        if (record->event.pressed) {
+          register_code(KC_RCTL);
+        } else {
+          unregister_code(KC_RCTL);
+        }
+      } else {
+        uint8_t code = is_macos() ? KC_F19 : KC_F20;
+        tap_code(code);
+      }
+      return false;
 
 #ifndef ACHORDION_ENABLE
-  case HMA_O:
-    if (record->event.pressed && record->tap.count > 0) {
-      return mod_roll_cancellation(KC_LALT, KC_I, KC_O); // io
-    }
-    break;
+    case HMA_O:
+      if (record->event.pressed && record->tap.count > 0) {
+        return mod_roll_cancellation(KC_LALT, KC_I, KC_O); // io
+      }
+      break;
 #endif
 
-    // case HMA_T:
-    //   if (record->event.pressed && record->tap.count > 0) {
-    //     return mod_roll_cancellation(KC_RGUI, KC_I, KC_O); // io
-    //   }
-    //   break;
+      // case HMA_T:
+      //   if (record->event.pressed && record->tap.count > 0) {
+      //     return mod_roll_cancellation(KC_RGUI, KC_I, KC_O); // io
+      //   }
+      //   break;
   }
 
   return process_record_keymap(keycode, record);
@@ -286,8 +279,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _RAISE, _LOWER, _ADJ);
 }
 
-__attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode,
-                                                       keyrecord_t *record) {
+__attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode, keyrecord_t *record) {
   return TAPPING_TERM;
 }
 
@@ -299,32 +291,29 @@ __attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode,
  */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    // Pinky keys
-  case HMA_A:
-  case HMA_O:
-  case HME_C:
-  case HME_N:
-  case HM_GRV:
-  case HM_PRSC:
-    return TAPPING_TERM + 40;
+      // Pinky keys
+    case HMA_A:
+    case HMA_O:
+    case HME_C:
+    case HME_N:
+    case HM_GRV:
+    case HM_PRSC:
+      return TAPPING_TERM + 40;
 
-    // Thumb keys
-  case LOW_TAB:
-  case SFT_BSP:
-  case SFT_SPC:
-  case RAS_MIN:
-    return TAPPING_TERM - 25;
+      // Thumb keys
+    case LOW_TAB:
+    case SFT_BSP:
+    case SFT_SPC:
+    case RAS_MIN:
+      return TAPPING_TERM - 25;
 
-  default:
-    return get_tapping_term_keymap(keycode, record);
+    default:
+      return get_tapping_term_keymap(keycode, record);
   }
 }
 
 #ifdef ACHORDION_ENABLE
-__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode,
-                                                  keyrecord_t *tap_hold_record,
-                                                  uint16_t other_keycode,
-                                                  keyrecord_t *other_record) {
+__attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
   return false;
 }
 
@@ -345,49 +334,47 @@ __attribute__((weak)) bool achordion_chord_keymap(uint16_t tap_hold_keycode,
  * @paran other_record The matrix information for the other key
  * @return true considered tap-hold, false considered both tap keys
  */
-bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
-                     uint16_t other_keycode, keyrecord_t *other_record) {
-  if (achordion_chord_keymap(tap_hold_keycode, tap_hold_record, other_keycode,
-                             other_record)) {
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+  if (achordion_chord_keymap(tap_hold_keycode, tap_hold_record, other_keycode, other_record)) {
     return true;
   }
 
   switch (tap_hold_keycode) {
-  // Keys that should be considered tap-hold regardless of the other key.
-  // Achordion should not consider these keys.
-  case CTR_ESC:
-  case CTR_QOT:
-  case HM_MUX:
-  case HM_ENT:
-    return true;
+    // Keys that should be considered tap-hold regardless of the other key.
+    // Achordion should not consider these keys.
+    case CTR_ESC:
+    case CTR_QOT:
+    case HM_MUX:
+    case HM_ENT:
+      return true;
 
-    // Allow one handed ctrl/super key combinations for non-homerow keys
-  case HMA_A:
-    switch (other_keycode) {
-    case KC_Z:
-    case KC_X:
-    case KC_C:
-    case KC_D:
-    case KC_V:
-    case KC_Q:
-    case KC_W:
-    case KC_F:
-      return true;
-    }
-    break;
-  case HMA_T:
-    switch (other_keycode) {
-    case KC_Z:
-    case KC_X:
-    case KC_C:
-    case KC_D:
-    case KC_V:
-    case KC_Q:
-    case KC_W:
-    case KC_F:
-      return true;
-    }
-    break;
+      // Allow one handed ctrl/super key combinations for non-homerow keys
+    case HMA_A:
+      switch (other_keycode) {
+        case KC_Z:
+        case KC_X:
+        case KC_C:
+        case KC_D:
+        case KC_V:
+        case KC_Q:
+        case KC_W:
+        case KC_F:
+          return true;
+      }
+      break;
+    case HMA_T:
+      switch (other_keycode) {
+        case KC_Z:
+        case KC_X:
+        case KC_C:
+        case KC_D:
+        case KC_V:
+        case KC_Q:
+        case KC_W:
+        case KC_F:
+          return true;
+      }
+      break;
   }
 
   // Also allow same-hand holds when the other key is in the rows below the
@@ -400,7 +387,9 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-void matrix_scan_user(void) { achordion_task(); }
+void matrix_scan_user(void) {
+  achordion_task();
+}
 #endif
 
 void send_make_command(bool flash_bootloader) {
@@ -410,6 +399,5 @@ void send_make_command(bool flash_bootloader) {
   } else {
     SEND_STRING_DELAY("compile ", TAP_CODE_DELAY);
   }
-  SEND_STRING_DELAY("-j0 -kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER),
-                    TAP_CODE_DELAY);
+  SEND_STRING_DELAY("-j0 -kb " QMK_KEYBOARD " -km " QMK_KEYMAP SS_TAP(X_ENTER), TAP_CODE_DELAY);
 }

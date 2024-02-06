@@ -141,8 +141,7 @@ uint16_t get_tapping_term_keymap(uint16_t keycode, keyrecord_t *record);
  * @paran other_record The matrix information for the other key
  * @return true considered tap-hold, false considered both tap keys
  */
-bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record,
-                     uint16_t other_keycode, keyrecord_t *other_record);
+bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record);
 #endif
 
 /**

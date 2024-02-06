@@ -26,8 +26,8 @@
 
 #ifdef COMBO_ENABLE
 // ms to register a combo
-#undef COMBO_TERM
-#define COMBO_TERM 20
+#  undef COMBO_TERM
+#  define COMBO_TERM 20
 // #define COMBO_COUNT 10
 #endif
 

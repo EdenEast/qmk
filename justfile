@@ -132,7 +132,7 @@ init:
 
 # Format c files
 fmt:
-    clang-format --style=llvm -i $(fd --exclude firmware --exclude qmk/users/edeneast/features --extension c --extension h .)
+    clang-format -i $(fd --exclude firmware --exclude qmk/users/edeneast/features --extension c --extension h .)
 
 # Generate layout map
 layout:
