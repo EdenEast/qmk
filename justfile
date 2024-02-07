@@ -177,5 +177,5 @@ subtree-update:
     git checkout subtree-main
     git subtree split --prefix=features -b subtree-split
     git checkout -
-    git subtree merge --squash --prefix=user/features subtree-split
+    git subtree merge --squash --prefix=./qmk/users/edeneast/features subtree-split
     git branch -D subtree-main subtree-split
