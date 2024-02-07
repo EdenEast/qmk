@@ -386,11 +386,16 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
+#endif
+
+__attribute__((weak)) void matrix_scan_keymap(void) {}
 
 void matrix_scan_user(void) {
+  matrix_scan_keymap();
+#ifdef ACHORDION_ENABLE
   achordion_task();
-}
 #endif
+}
 
 void send_make_command(bool flash_bootloader) {
   SEND_STRING_DELAY("qmk ", TAP_CODE_DELAY);
