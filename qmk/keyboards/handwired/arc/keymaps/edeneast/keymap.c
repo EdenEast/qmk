@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
 
     // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_UNDS, KC_BSLS,          MO_NAV,
                                         KC_ENGM, KC_PGUP, TL_GAME,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  LOW_PDN,                                         KC_DOWN
 
