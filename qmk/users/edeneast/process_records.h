@@ -13,6 +13,7 @@ enum userspace_custom_keycodes {
   STCK_LY,
   LLOCK,
   TMUX_PX, // Gui when pressed, Tmux prefix when tapped
+  TRP_GRV, // Triggers grave
 
   ED_UNDO,
   ED_CUT,

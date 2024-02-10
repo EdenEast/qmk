@@ -36,7 +36,7 @@
 
 
 #define __SYMBOL_L0_________________________________________       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_F5
-#define __SYMBOL_L1_________________________________________       _______, _______, KC_LABK, KC_RABK, KC_AT,   _______
+#define __SYMBOL_L1_________________________________________       TRP_GRV, _______, KC_LABK, KC_RABK, KC_AT,   _______
 #define __SYMBOL_L2_________________________________________       _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH
 #define __SYMBOL_L3_________________________________________       _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, _______
 

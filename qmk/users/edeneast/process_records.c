@@ -125,6 +125,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
 #endif
 
+    case TRP_GRV:
+      if (record->event.pressed) {
+        tap_code16(KC_GRV);
+        tap_code16(KC_GRV);
+        tap_code16(KC_GRV);
+      }
+      return false;
+
     case ED_UNDO:
       if (record->event.pressed) {
         uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
