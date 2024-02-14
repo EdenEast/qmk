@@ -91,12 +91,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_BSPC:;
       static bool is_del_held = false;
       if (record->event.pressed) {
-        bool     is_shift = mods & MOD_MASK_SHIFT;
-        uint16_t key      = is_shift ? KC_DEL : KC_BSPC;
-        is_del_held       = is_shift;
-        del_weak_mods(MOD_MASK_SHIFT);
-        del_oneshot_mods(MOD_MASK_SHIFT);
-        unregister_mods(MOD_MASK_SHIFT);
+        bool     is_alt = mods & MOD_MASK_ALT;
+        uint16_t key    = is_alt ? KC_DEL : KC_BSPC;
+        is_del_held     = is_alt;
+        del_weak_mods(MOD_MASK_ALT);
+        del_oneshot_mods(MOD_MASK_ALT);
+        unregister_mods(MOD_MASK_ALT);
         register_code(key);
         set_mods(mods);
       } else {
