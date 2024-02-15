@@ -42,7 +42,7 @@
 
 #define __SYMBOL_R0_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11
 #define __SYMBOL_R1_________________________________________       KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12
-#define __SYMBOL_R2_________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, _______
+#define __SYMBOL_R2_________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT
 #define __SYMBOL_R3_________________________________________       KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______
 
 
