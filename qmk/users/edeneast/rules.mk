@@ -11,7 +11,6 @@ SPACE_CADET_ENABLE  = no  # Dont use it, save space
 COMBO_ENABLE        = yes # Combo keys together
 LTO_ENABLE          = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE     = yes # Audio controls and system controls
-CAPS_WORD_ENABLE    = yes
 TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
 OS_DETECTION_ENABLE = yes # Enable os detection
 
@@ -29,7 +28,6 @@ EXTRAFLAGS += -flto
 
 SRC += edeneast.c
 SRC += process_records.c
-SRC += os_detect.c
 SRC += smart_case.c
 SRC += features/layer_lock.c
 

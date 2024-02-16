@@ -67,10 +67,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
-  if (!process_os_toggle(keycode, record)) {
-    return false;
-  }
-
   if (!process_smart_case(keycode, record)) {
     return false;
   }
@@ -135,7 +131,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_UNDO:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        uint16_t mod = KC_LCTL;
         register_code(mod);
         tap_code(KC_Z);
         unregister_code(mod);
@@ -144,7 +140,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_CUT:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        uint16_t mod = KC_LCTL;
         register_code(mod);
         tap_code(KC_X);
         unregister_code(mod);
@@ -153,7 +149,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_COPY:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        uint16_t mod = KC_LCTL;
         register_code(mod);
         tap_code(KC_C);
         unregister_code(mod);
@@ -162,7 +158,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_PASTE:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
+        uint16_t mod = KC_LCTL;
         register_code(mod);
         tap_code(KC_V);
         unregister_code(mod);
@@ -240,8 +236,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case MUTE_MIC:
       if (record->event.pressed) {
-        uint8_t code = is_macos() ? KC_F19 : KC_F20;
-        tap_code(code);
+        tap_code(KC_F20);
       }
       return false;
 
@@ -253,8 +248,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code(KC_RCTL);
         }
       } else {
-        uint8_t code = is_macos() ? KC_F19 : KC_F20;
-        tap_code(code);
+        tap_code(KC_F20);
       }
       return false;
 
