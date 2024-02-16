@@ -11,7 +11,7 @@ SPACE_CADET_ENABLE  = no  # Dont use it, save space
 COMBO_ENABLE        = yes # Combo keys together
 LTO_ENABLE          = yes # Optimize at link time for resulting smaller files
 EXTRAKEY_ENABLE     = yes # Audio controls and system controls
-TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
+# TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
 OS_DETECTION_ENABLE = yes # Enable os detection
 
 ifeq ($(strip $(STENO_ENABLE)), yes)

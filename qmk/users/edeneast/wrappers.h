@@ -19,11 +19,11 @@
 
 #define __COLEMAK_DH_L1_____________________________________       KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G
-#define __COLEMAK_DH_L3_____________________________________       HM_MUX,  KC_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define __COLEMAK_DH_L3_____________________________________       HM_MUX,  HMA_Z,    KC_X,    KC_C,    KC_D,    KC_V
 
 #define __COLEMAK_DH_R1_____________________________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL
 #define __COLEMAK_DH_R2_____________________________________       KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT
-#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, HM_ENT
+#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  HMA_SLSH, HM_ENT
 
 
 #define __ENGRAM_L1_________________________________________       KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT

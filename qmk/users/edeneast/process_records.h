@@ -36,11 +36,13 @@ enum userspace_custom_keycodes {
 #define HMA_R LALT_T(KC_R)
 #define HMA_S LSFT_T(KC_S)
 #define HMA_T LCTL_T(KC_T)
+#define HMA_Z LT(_RAISE, KC_Z)
 
 #define HMA_O RGUI_T(KC_O)
 #define HMA_I RALT_T(KC_I)
 #define HMA_E RSFT_T(KC_E)
 #define HMA_N RCTL_T(KC_N)
+#define HMA_SLSH LT(_RAISE, KC_SLSH)
 
 // Engram base layer
 #define HME_C LGUI_T(KC_C)

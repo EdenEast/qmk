@@ -68,6 +68,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  KC_DOWN,                                         KC_MPLY
   ),
 
+  [_RAISE] =  LAYOUT_WRAPPER(
+    _______, _______, _______, _______, _______, _______,                                         KC_TILD, KC_CIRC, KC_HASH, KC_DLR,  KC_AT,   KC_EXLM,
+    _______, _______, _______, _______, _______, _______,                                         KC_PERC, KC_7,    KC_8,    KC_9,    KC_COLN, KC_LT,
+    _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______,                                         KC_PLUS, KC_4,    KC_5,    KC_6,    KC_MINS, KC_GT,
+    _______, _______, _______, _______, _______, _______,                                         KC_ASTR, KC_1,    KC_2,    KC_3,    KC_SLSH, KC_EQL,
+
+    _______,          _______, _______, KC_COMM, _______, _______, LLOCK,         LLOCK, KC_DOT,  KC_SPC,  KC_0,    KC_LPRN, KC_RPRN,          _______,
+                                        _______, _______, _______,                       _______, _______, _______,
+                                                 _______,                                         _______
+  ),
+
   [_ADJ] = LAYOUT_WRAPPER(
     __ADJUSTMENT_L0_____________________________________,                                         __ADJUSTMENT_R0_____________________________________,
     __ADJUSTMENT_L1_____________________________________,                                         __ADJUSTMENT_R1_____________________________________,
@@ -157,6 +168,24 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
+    case HMA_SLSH:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          tap_code16(KC_SLSH);
+          return false;
+        }
+      }
+      if (record->event.pressed) {
+        swap_hands_on();
+        layer_on(_RAISE);
+        dprintf("raise on");
+      } else {
+        layer_off(_RAISE);
+        swap_hands_off();
+        dprintf("raise off");
+      }
+      return false;
+
     default:
       return true;
   }
@@ -167,6 +196,8 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_rec
     case SYM_TAB:
     case SYM_MIN:
     case LOW_PDN:
+    case HMA_SLSH:
+    case HMA_Z:
       return true;
   }
   return false;
