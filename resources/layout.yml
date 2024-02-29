@@ -74,7 +74,7 @@ layers:
     - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '', '⏮', '⏯', '⏭', '', '' ]
     - [ '', 'Undo', 'Cut', 'Copy', 'Paste', 'PrintSc', '', 'Mic', '', '', 'Toggle Sentence', '' ]
     - [ {type: held}, '', '']
-    - [ {type: held}, '', '', 'Layer Lock']
+    - [ {type: held}, 'Del', '', 'Layer Lock']
     - [ 'Layer Lock', '', '', {type: held}]
     - [ '', '', {type: held} ]
     - [ '', '', '', '', '', '', '', '' ]
