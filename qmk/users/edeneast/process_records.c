@@ -1,4 +1,5 @@
 #include "edeneast.h"
+#include "process_records.h"
 
 #ifdef ACHORDION_ENABLE
 #  include "features/achordion.h"
@@ -77,7 +78,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 
-  uint8_t mods = get_mods();
+  const uint8_t mods         = get_mods();
+  const uint8_t oneshot_mods = get_oneshot_mods();
   switch (keycode) {
     case KC_CLMK ... KC_GAME:
       if (record->event.pressed) set_single_persistent_default_layer(keycode - KC_CLMK);
@@ -146,6 +148,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         unregister_code(mod);
       }
       break;
+
+    case UP_DIR:
+      if (record->event.pressed) {
+        SEND_STRING("../");
+      }
+      return false;
+
+    case KC_RARW:
+      if (record->event.pressed) {
+        SEND_STRING("<-");
+      }
+      return false;
+
+    case DB_QUOT:
+      if (record->event.pressed) {
+        clear_oneshot_mods(); // Temporarily disable mods.
+        unregister_mods(MOD_MASK_CSAG);
+        if ((mods | oneshot_mods) & MOD_MASK_SHIFT) {
+          SEND_STRING("\"\"");
+        } else if ((mods | oneshot_mods) & MOD_MASK_CTRL) {
+          SEND_STRING("``");
+        } else {
+          SEND_STRING("''");
+        }
+        tap_code(KC_LEFT);
+        register_mods(mods);
+      }
+      return false;
 
     case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
       if (record->event.pressed) {

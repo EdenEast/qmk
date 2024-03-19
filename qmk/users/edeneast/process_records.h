@@ -15,6 +15,10 @@ enum userspace_custom_keycodes {
   TMUX_PX, // Gui when pressed, Tmux prefix when tapped
   TRP_GRV, // Triggers grave
 
+  UP_DIR,  // '../' up directory
+  DB_QUOT, // Double quote `''<-=<=<=<=<<=<=<=<=<=<=<=<=<=`
+  KC_RARW, // Right arrow <-
+
   ED_UNDO,
   ED_CUT,
   ED_COPY,

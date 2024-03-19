@@ -381,7 +381,7 @@ path.combo {
 </g>
 <g transform="translate(308, 420)" class="key keypos-62">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Engram</text>
+<text x="0" y="0" class="key tap">←</text>
 </g>
 <g transform="translate(364, 392)" class="key keypos-63">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -389,7 +389,7 @@ path.combo {
 </g>
 <g transform="translate(420, 420)" class="key keypos-64">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Game</text>
+<text x="0" y="0" class="key tap">→</text>
 </g>
 <g transform="translate(644, 420)" class="key keypos-65">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -691,7 +691,7 @@ path.combo {
 </g>
 <g transform="translate(308, 420)" class="key keypos-62">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Colemak</text>
+<text x="0" y="0" class="key tap">←</text>
 </g>
 <g transform="translate(364, 392)" class="key keypos-63">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -699,7 +699,7 @@ path.combo {
 </g>
 <g transform="translate(420, 420)" class="key keypos-64">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Game</text>
+<text x="0" y="0" class="key tap">→</text>
 </g>
 <g transform="translate(644, 420)" class="key keypos-65">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -776,7 +776,6 @@ path.combo {
 </g>
 <g transform="translate(42, 126)" class="key keypos-12">
 <rect rx="6" ry="6" x="-40" y="-26" width="80" height="52" class="key"/>
-<text x="0" y="0" class="key tap">```</text>
 </g>
 <g transform="translate(112, 126)" class="key keypos-13">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -795,6 +794,7 @@ path.combo {
 </g>
 <g transform="translate(336, 112)" class="key keypos-17">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">../</text>
 </g>
 <g transform="translate(728, 112)" class="key keypos-18">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -886,6 +886,7 @@ path.combo {
 </g>
 <g transform="translate(336, 224)" class="key keypos-41">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">&#x27;&#x27;←</text>
 </g>
 <g transform="translate(728, 224)" class="key keypos-42">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1946,12 +1947,15 @@ path.combo {
 </g>
 <g transform="translate(308, 420)" class="key keypos-62">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Colemak</text>
 </g>
 <g transform="translate(364, 392)" class="key keypos-63">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Engram</text>
 </g>
 <g transform="translate(420, 420)" class="key keypos-64">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Game</text>
 </g>
 <g transform="translate(644, 420)" class="key keypos-65">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

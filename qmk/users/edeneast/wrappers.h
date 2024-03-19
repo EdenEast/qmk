@@ -19,11 +19,11 @@
 
 #define __COLEMAK_DH_L1_____________________________________       KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
 #define __COLEMAK_DH_L2_____________________________________       CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G
-#define __COLEMAK_DH_L3_____________________________________       HM_MUX,  HMA_Z,    KC_X,    KC_C,    KC_D,    KC_V
+#define __COLEMAK_DH_L3_____________________________________       HM_MUX,  HMA_Z,    KC_X,    KC_C,    KC_D,   KC_V
 
 #define __COLEMAK_DH_R1_____________________________________       KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL
 #define __COLEMAK_DH_R2_____________________________________       KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT
-#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  HMA_SLSH, HM_ENT
+#define __COLEMAK_DH_R3_____________________________________       KC_K,    KC_H,    KC_COMM, KC_DOT,  HMA_SLSH,HM_ENT
 
 
 #define __ENGRAM_L1_________________________________________       KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT
@@ -35,12 +35,12 @@
 #define __ENGRAM_R3_________________________________________       KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    HM_ENT
 
 
-#define __SYMBOL_L0_________________________________________       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_F5
-#define __SYMBOL_L1_________________________________________       TRP_GRV, _______, KC_LABK, KC_RABK, KC_AT,   _______
+#define __SYMBOL_L0_________________________________________       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
+#define __SYMBOL_L1_________________________________________       _______, _______, KC_LABK, KC_RABK, KC_AT,   UP_DIR
 #define __SYMBOL_L2_________________________________________       _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH
-#define __SYMBOL_L3_________________________________________       _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, _______
+#define __SYMBOL_L3_________________________________________       _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, DB_QUOT
 
-#define __SYMBOL_R0_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,   KC_F11
+#define __SYMBOL_R0_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11
 #define __SYMBOL_R1_________________________________________       KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12
 #define __SYMBOL_R2_________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT
 #define __SYMBOL_R3_________________________________________       KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______
