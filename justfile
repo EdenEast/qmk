@@ -16,11 +16,12 @@ stow:
 all:
     @just dm4
     @just dm5
+    @just arc
     @just crkbd
     @just tofu
 
 # Build dactyl manuform 4x6 keyboard firmware
-ard:
+arc:
     @just _build handwired/arc:edeneast handwired_arc_edeneast.hex arc
 
 # Build dactyl manuform 4x6 keyboard firmware
