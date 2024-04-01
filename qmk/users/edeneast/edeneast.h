@@ -9,6 +9,10 @@
 #include "os_detect.h"
 #include "callbacks.h"
 
+#ifdef LEADER_ENABLE
+#  include "leader.h"
+#endif
+
 #ifdef TAP_DANCE_ENABLE
 #  include "dances.h"
 #endif

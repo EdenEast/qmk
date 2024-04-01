@@ -14,7 +14,7 @@ EXTRAKEY_ENABLE       = yes # Audio controls and system controls
 OS_DETECTION_ENABLE  ?= yes # Enable os detection
 DEFERRED_EXEC_ENABLE ?= yes # Enable defer execution for os detection startup
 TAP_DANCE_ENABLE     ?= no  # Used for tmux prefix key
-LEADERKEY_ENABLE     ?= no  # Enable leader keys
+LEADER_ENABLE     ?= no  # Enable leader keys
 
 ifeq ($(strip $(STENO_ENABLE)), yes)
 	STENO_PROTOCOL     = geminipr # Better protocol for steno
@@ -45,6 +45,10 @@ endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
 	SRC += oled.c
+endif
+
+ifeq ($(strip $(LEADER_ENABLE)), yes)
+	SRC += leader.c
 endif
 
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)

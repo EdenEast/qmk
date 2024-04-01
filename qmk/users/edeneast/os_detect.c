@@ -18,6 +18,25 @@ void set_os(os_variant_t os) {
   os_type = os;
 }
 
+void set_os_win(void) {
+  os_type = OS_WINDOWS;
+}
+
+void set_os_macos(void) {
+  os_type = OS_MACOS;
+}
+
+void set_os_linux(void) {
+  os_type = OS_LINUX;
+}
+
+void reset_os(void) {
+  os_variant_t variant = detected_host_os();
+  if (variant != OS_UNSURE) {
+    os_type = variant;
+  }
+}
+
 uint32_t os_detect_startup(uint32_t trigger_time, void *cb_arg) {
   os_type = detected_host_os();
   switch (os_type) {
@@ -39,13 +58,9 @@ uint32_t os_detect_startup(uint32_t trigger_time, void *cb_arg) {
 }
 
 bool process_os_toggle(uint16_t keycode, keyrecord_t *record) {
-  os_variant_t variant;
   switch (keycode) {
     case OS_RST:
-      variant = detected_host_os();
-      if (variant != OS_UNSURE) {
-        os_type = variant;
-      }
+      reset_os();
       return false;
     case OS_WIN:
       os_type = OS_WINDOWS;
