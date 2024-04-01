@@ -1,18 +1,20 @@
 # Common flags
-AUDIO_ENABLE        = no  # Use the audio system
-BOOTMAGIC_ENABLE    = no  # Disable to allow keys during system boot
-COMMAND_ENABLE      = no  # Commands for debug and configuration
-CONSOLE_ENABLE      = no  # Console for debugging
-GRAVE_ESC_ENABLE    = no  # Dont use it, save space
-MIDI_ENABLE         = no  # Dont use it, save space
-RGBLIGHT_ENABLE     = no  # No rgb
-SPACE_CADET_ENABLE  = no  # Dont use it, save space
+AUDIO_ENABLE          = no  # Use the audio system
+BOOTMAGIC_ENABLE      = no  # Disable to allow keys during system boot
+COMMAND_ENABLE        = no  # Commands for debug and configuration
+CONSOLE_ENABLE        = no  # Console for debugging
+GRAVE_ESC_ENABLE      = no  # Dont use it, save space
+MIDI_ENABLE           = no  # Dont use it, save space
+RGBLIGHT_ENABLE       = no  # No rgb
+SPACE_CADET_ENABLE    = no  # Dont use it, save space
 
-COMBO_ENABLE        = yes # Combo keys together
-LTO_ENABLE          = yes # Optimize at link time for resulting smaller files
-EXTRAKEY_ENABLE     = yes # Audio controls and system controls
-# TAP_DANCE_ENABLE    = yes # Used for tmux prefix key
-OS_DETECTION_ENABLE = yes # Enable os detection
+COMBO_ENABLE          = yes # Combo keys together
+LTO_ENABLE            = yes # Optimize at link time for resulting smaller files
+EXTRAKEY_ENABLE       = yes # Audio controls and system controls
+OS_DETECTION_ENABLE  ?= yes # Enable os detection
+DEFERRED_EXEC_ENABLE ?= yes # Enable defer execution for os detection startup
+TAP_DANCE_ENABLE     ?= no  # Used for tmux prefix key
+LEADERKEY_ENABLE     ?= no  # Enable leader keys
 
 ifeq ($(strip $(STENO_ENABLE)), yes)
 	STENO_PROTOCOL     = geminipr # Better protocol for steno
@@ -29,6 +31,8 @@ EXTRAFLAGS += -flto
 SRC += edeneast.c
 SRC += process_records.c
 SRC += smart_case.c
+SRC += os_detect.c
+SRC += callbacks.c
 SRC += features/layer_lock.c
 
 ifeq ($(strip $(COMBO_ENABLE)), yes)

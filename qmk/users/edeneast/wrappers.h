@@ -58,7 +58,7 @@
 
 
 #define __ADJUSTMENT_L0_____________________________________       QK_BOOT, KC_MAKE, KC_CAPS, KC_ESC,  _______, _______
-#define __ADJUSTMENT_L1_____________________________________       _______, _______, _______, _______, _______, _______
+#define __ADJUSTMENT_L1_____________________________________       OS_RST,  OS_MAC,  OS_WIN,  _______, _______, _______
 #define __ADJUSTMENT_L2_____________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
 #define __ADJUSTMENT_L3_____________________________________       _______, ED_UNDO, ED_CUT, ED_COPY, ED_PASTE, KC_PSCR
 

@@ -68,6 +68,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
+  if (!process_os_toggle(keycode, record)) {
+    return false;
+  }
+
   if (!process_smart_case(keycode, record)) {
     return false;
   }
@@ -115,7 +119,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_UNDO:
       if (record->event.pressed) {
-        uint16_t mod = KC_LCTL;
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
         register_code(mod);
         tap_code(KC_Z);
         unregister_code(mod);
@@ -124,7 +128,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_CUT:
       if (record->event.pressed) {
-        uint16_t mod = KC_LCTL;
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
         register_code(mod);
         tap_code(KC_X);
         unregister_code(mod);
@@ -133,7 +137,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_COPY:
       if (record->event.pressed) {
-        uint16_t mod = KC_LCTL;
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
         register_code(mod);
         tap_code(KC_C);
         unregister_code(mod);
@@ -142,7 +146,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_PASTE:
       if (record->event.pressed) {
-        uint16_t mod = KC_LCTL;
+        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
         register_code(mod);
         tap_code(KC_V);
         unregister_code(mod);
@@ -401,15 +405,6 @@ bool achordion_chord(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, ui
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 #endif
-
-__attribute__((weak)) void matrix_scan_keymap(void) {}
-
-void matrix_scan_user(void) {
-  matrix_scan_keymap();
-#ifdef ACHORDION_ENABLE
-  achordion_task();
-#endif
-}
 
 void send_make_command(bool flash_bootloader) {
   SEND_STRING_DELAY("qmk ", TAP_CODE_DELAY);
