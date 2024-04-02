@@ -119,37 +119,37 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case ED_UNDO:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-        register_code(mod);
-        tap_code(KC_Z);
-        unregister_code(mod);
+        if (is_macos())
+          tap_code16(G(KC_Z));
+        else
+          tap_code16(C(KC_Z));
       }
       break;
 
     case ED_CUT:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-        register_code(mod);
-        tap_code(KC_X);
-        unregister_code(mod);
+        if (is_macos())
+          tap_code16(G(KC_V));
+        else
+          tap_code16(C(KC_V));
       }
       break;
 
     case ED_COPY:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-        register_code(mod);
-        tap_code(KC_C);
-        unregister_code(mod);
+        if (is_macos())
+          tap_code16(G(KC_C));
+        else
+          tap_code16(C(KC_C));
       }
       break;
 
     case ED_PASTE:
       if (record->event.pressed) {
-        uint16_t mod = is_macos() ? KC_LGUI : KC_LCTL;
-        register_code(mod);
-        tap_code(KC_V);
-        unregister_code(mod);
+        if (is_macos())
+          tap_code16(G(KC_V));
+        else
+          tap_code16(C(KC_V));
       }
       break;
 
