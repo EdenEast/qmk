@@ -198,6 +198,7 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_rec
     case LOW_PDN:
     case HMA_SLSH:
     case HMA_Z:
+    case OSL_CSE:
       return true;
   }
   return false;
