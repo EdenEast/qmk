@@ -205,5 +205,8 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_rec
 }
 
 layer_state_t layer_state_set_kb(layer_state_t state) {
-  return update_tri_layer_state(state, _NAV, _SYMBOL, _ADJ);
+  if (!is_layer_locked(_ADJ)) {
+    state = update_tri_layer_state(state, _NAV, _SYMBOL, _ADJ);
+  }
+  return state;
 }
