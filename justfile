@@ -120,9 +120,6 @@ right keyboard:
 init:
     #!/usr/bin/env bash
     git submodule update --init --recursive --recommend-shallow
-    if [ -f ./firmware/keyboards/dztech/dz60v2/info.json ]; then
-      rm ./firmware/keyboards/dztech/dz60v2/info.json
-    fi
     stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
     if [ $(git config submodule.firmware.ignore) != "all" ]; then
       git config submodule.firmware.ignore all
