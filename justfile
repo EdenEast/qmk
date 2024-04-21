@@ -9,6 +9,7 @@ alias f := flash
 alias l := layout
 alias w := watch-layout
 
+# Symbolic link qmk directory into firmware
 stow:
   stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
 
@@ -121,7 +122,7 @@ init:
     #!/usr/bin/env bash
     git submodule update --init --recursive --recommend-shallow
     stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
-    if [ $(git config submodule.firmware.ignore) != "all" ]; then
+    if [ "$(git config submodule.firmware.ignore)" != "all" ]; then
       git config submodule.firmware.ignore all
     fi
     if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
@@ -150,6 +151,7 @@ layout:
     open ./resources/layout.svg
     watchexec -nrpw resources/layout.yml -- just layout
 
+# Update qmk submodule
 qmk-update:
     #!/usr/bin/env bash
     # https://stackoverflow.com/a/41081908
