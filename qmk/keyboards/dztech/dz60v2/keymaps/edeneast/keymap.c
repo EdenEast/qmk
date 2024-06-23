@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_GAME] = LAYOUT_60_ansi_split_arrow(
-    KC_ESC,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    KC_ESC,  KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F, _______, _______,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______, _______,
     KC_LSFT,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_RSFT,
@@ -139,8 +139,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
           clear_mods();
           send_make_command(mods & MOD_MASK_SHIFT);
           set_mods(mods);
-        } else {
+        } else if (mods & MOD_MASK_ALT) {
           reset_keyboard();
+        } else {
+          tap_code(KC_ESC);
         }
       }
       return false;
