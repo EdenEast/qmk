@@ -119,9 +119,71 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // clang-format on
 
+bool left_flag  = false;
+bool right_flag = false;
+
+typedef enum {
+  SOCD_OFF,
+  SOCD_NEUTRAL,
+  SOCD_LIP,
+} socd_mode_t;
+
+socd_mode_t mode = SOCD_NEUTRAL;
+
+void handle_socd_left_right_off(bool pressed, uint16_t keycode) {
+  pressed ? register_code(keycode) : unregister_code(keycode);
+}
+
+void handle_socd_left_right_neutral(bool pressed, uint16_t keycode, uint16_t other, bool other_flag) {
+  if (pressed) {
+    other_flag ? unregister_code(other) : register_code(keycode);
+  } else {
+    unregister_code(keycode);
+    if (other_flag) {
+      unregister_code(other);
+    }
+  }
+}
+
+void handle_socd_left_right_lip(bool pressed, uint16_t keycode, uint16_t other, bool other_flag) {
+  if (pressed) {
+    if (other_flag) {
+      unregister_code(other);
+    }
+    register_code(keycode);
+  } else {
+    unregister_code(keycode);
+    if (other_flag) {
+      register_code(other);
+    }
+  }
+}
+
+bool handle_socd_left_right(keyrecord_t *record, uint16_t keycode, uint16_t other, bool other_flag) {
+  bool pressed = record->event.pressed;
+
+  switch (mode) {
+    case SOCD_OFF:
+      handle_socd_left_right_off(pressed, keycode);
+    case SOCD_NEUTRAL:
+      handle_socd_left_right_neutral(pressed, keycode, other, other_flag);
+    case SOCD_LIP:
+      handle_socd_left_right_lip(pressed, keycode, other, other_flag);
+  }
+
+  return pressed;
+}
+
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   uint8_t mods = get_mods();
   switch (keycode) {
+    case KC_A:
+      left_flag = handle_socd_left_right(record, KC_A, KC_D, right_flag);
+      return false;
+    case KC_D:
+      left_flag = handle_socd_left_right(record, KC_D, KC_A, left_flag);
+      return false;
+
     case TG_SETT:
       if (record->event.pressed) {
         if (mods & MOD_MASK_ALT) {
