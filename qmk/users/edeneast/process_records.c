@@ -9,6 +9,10 @@
 #  include "features/sentence_case.h"
 #endif
 
+#ifdef JOYSTICK_ENABLE
+#  include "joystick.h"
+#endif
+
 /**
  * @brief Disable homerow mod tap combinations
  *
@@ -64,6 +68,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef ACHORDION_ENABLE
   if (!process_achordion(keycode, record)) {
+    return false;
+  }
+#endif
+
+#ifdef JOYSTICK_ENABLE
+  if (!process_joystick(keycode, record)) {
     return false;
   }
 #endif

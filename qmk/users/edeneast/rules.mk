@@ -55,6 +55,10 @@ ifeq ($(strip $(LEADER_ENABLE)), yes)
 	SRC += leader.c
 endif
 
+ifeq ($(strip $(JOYSTICK_ENABLE)), yes)
+	SRC += joystick.c
+endif
+
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)
 	SRC += features/achordion.c
 	OPT_DEFS += -DACHORDION_ENABLE
