@@ -72,9 +72,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return false;
   }
 
+#ifdef SMART_CASE_ENABLE
   if (!process_smart_case(keycode, record)) {
     return false;
   }
+#endif
 
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
