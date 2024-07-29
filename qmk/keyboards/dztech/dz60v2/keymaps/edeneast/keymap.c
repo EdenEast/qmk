@@ -8,6 +8,7 @@
 #define OSSL OSM(MOD_LSFT)
 #define OSSR OSM(MOD_RSFT)
 #define CASE_RI OSL(_RAISE)
+#define MO_RAIS MO(_RAISE)
 
 enum keymap_keycodes {
   TG_SETT = NEW_SAFE_RANGE, // Toggle settings
@@ -45,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
     CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
     OSSL,             KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSSR,
-    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  CASE_RI, KC_SPC,           KC_RALT, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
+    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           KC_RALT, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
   ),
 
 /** Raise
@@ -67,7 +68,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, KC_PGDN, KC_PGUP, _______, _______, _______, _______, TG_SETT,
     _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_MPRV, KC_MNXT, KC_MPLY,
     _______,          _______, _______, _______, MIC,     _______, _______, _______, VB_DOWN, VB_UP,   KC_MUTE, _______,
-    _______, _______, _______,          _______, CASE_RI, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+    _______, _______, _______,          _______, MO_RAIS, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
 /** Game
@@ -85,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
   [_GAME] = LAYOUT_60_ansi_split_arrow(
-    KC_ESC,  KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, _______, _______, _______,
+    KC_ESC,  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F, _______, _______,    KC_J,    KC_K,    KC_L,    KC_SCLN, _______, _______,
     KC_LSFT,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_RSFT,
-    _______, _______, KC_LALT,          KC_SPC,  CASE_RI, KC_SPC,           KC_LALT, _______, _______, _______, _______
+    _______, _______, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           KC_LALT, _______, _______, _______, _______
   ),
 
 
@@ -147,15 +148,15 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
-    case CASE_RI:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          set_smart_case_for_mods();
-        }
-      } else {
-        record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
-      }
-      return false;
+    // case CASE_RI:
+    //   if (record->tap.count > 0) {
+    //     if (record->event.pressed) {
+    //       set_smart_case_for_mods();
+    //     }
+    //   } else {
+    //     record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
+    //   }
+    //   return false;
     default:
       return true;
   }
