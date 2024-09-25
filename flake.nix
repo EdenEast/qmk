@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +19,18 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        overlay = self': super': {
+          platformdirs3 = super'.python3Packages.platformdirs.overrideAttrs (old: {
+            version = "3.5.1";
+            src = super'.fetchFromGitHub {
+              owner = old.pname;
+              repo = old.pname;
+              rev = "refs/tags/3.5.1";
+              hash = "sha256-/qi22jiF+P7XcG/D+dxoOrHk89amdBoGewrTqZZOsoM=";
+            };
+          });
+        };
+        pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; };
         pcpp = with pkgs; python311Packages.buildPythonPackage rec {
           pname = "pcpp";
           version = "1.30";
@@ -34,14 +45,14 @@
         };
         keymap-drawer = with pkgs; python3Packages.buildPythonApplication rec{
           pname = "keymap-drawer";
-          version = "0.13.3";
+          version = "0.18.0";
           format = "pyproject";
 
           src = pkgs.fetchFromGitHub {
             owner = "caksoylar";
             repo = "keymap-drawer";
             rev = "v${version}";
-            sha256 = "sha256-dbVpsgsWuFpmt8LMIXVTYXNSrS0gYyehULhhBtNa+Bs=";
+            sha256 = "sha256-3NLOoCSPt/2Mt+e4xL4RyAqN4gF0sAgkQoZMsmKdnYw=";
           };
 
           doCheck = false;
@@ -54,8 +65,10 @@
             pyyaml
             pyparsing
             pydantic
-            platformdirs
-          ] ++ [ pcpp ];
+            pydantic-settings
+            platformdirs3
+            pcpp
+          ];
         };
       in
       {

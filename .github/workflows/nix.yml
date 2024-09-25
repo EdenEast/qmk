@@ -18,7 +18,8 @@ jobs:
           - os: ubuntu-latest
             target: x86_64-linux
           - os: macos-latest
-            target: x86_64-darwin
+            target: aarch64-darwin
+
     runs-on: ${{ matrix.os }}
     steps:
       - name: Setup | Checkout
