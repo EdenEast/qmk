@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     __STENO_L3__________________________________________,                            __STENO_R3__________________________________________,
                                         _______, STN_A,   STN_O,            STN_E,   STN_U,   _______
   ),
-  #endif
+#endif
 
 };
 
