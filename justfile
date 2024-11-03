@@ -38,7 +38,7 @@ crkbd:
     @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
 
 tofu:
-    @just _build dztech/dz60v2:edeneast dz60_edeneast.hex tofu
+    @just _build dztech/dz60v2/tofu:edeneast dztech_dz60v2_tofu_edeneast.hex tofu
 
 _build make_cmd source target: init
     #!/usr/bin/env bash
@@ -177,5 +177,5 @@ subtree-update:
     git checkout subtree-main
     git subtree split --prefix=features -b subtree-split
     git checkout -
-    git subtree merge --squash --prefix=./qmk/users/edeneast/features subtree-split
+    git subtree merge --squash --prefix=qmk/users/edeneast/features subtree-split
     git branch -D subtree-main subtree-split
