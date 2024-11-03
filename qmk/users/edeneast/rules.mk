@@ -26,26 +26,24 @@ SRC += features/layer_lock.c
 
 # Feature defaults
 SENTENCE_CASE_ENABLE ?= yes
-SMART_CASE_ENABLE    ?= yes
+SMART_CASE_ENABLE    ?= no
+SOCD_CLEANER_ENABLE  ?= no
+STENO_ENABLE         ?= no
 
 # Feature settings
-ifeq ($(strip $(STENO_ENABLE)), yes)
-	STENO_PROTOCOL     = geminipr # Better protocol for steno
-	VIRTSER_ENABLE     = yes # Required for steno
-endif
-
-ifeq ($(strip $(DEBUG_ENABLE)), yes)
-	COMMAND_ENABLE = yes  # Commands for debug and configuration
-	CONSOLE_ENABLE = yes  # Console for debugging
-	OPT_DEFS += -DDEBUG_ENABLE
+ifeq ($(strip $(ACHORDION_ENABLE)), yes)
+	SRC += features/achordion.c
+	OPT_DEFS += -DACHORDION_ENABLE
 endif
 
 ifeq ($(strip $(COMBO_ENABLE)), yes)
 	INTROSPECTION_KEYMAP_C = combos.c
 endif
 
-ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-	SRC += dances.c
+ifeq ($(strip $(DEBUG_ENABLE)), yes)
+	COMMAND_ENABLE = yes  # Commands for debug and configuration
+	CONSOLE_ENABLE = yes  # Console for debugging
+	OPT_DEFS += -DDEBUG_ENABLE
 endif
 
 ifeq ($(strip $(OLED_ENABLE)), yes)
@@ -56,18 +54,28 @@ ifeq ($(strip $(LEADER_ENABLE)), yes)
 	SRC += leader.c
 endif
 
-ifeq ($(strip $(SMART_CASE_ENABLE)), yes)
-	SRC += smart_case.c
-endif
-
-ifeq ($(strip $(ACHORDION_ENABLE)), yes)
-	SRC += features/achordion.c
-	OPT_DEFS += -DACHORDION_ENABLE
-endif
-
 ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
 	SRC += features/sentence_case.c
 	OPT_DEFS += -DSENTENCE_CASE_ENABLE
+endif
+
+ifeq ($(strip $(SMART_CASE_ENABLE)), yes)
+	SRC += smart_case.c
+	OPT_DEFS += -DSMART_CASE_ENABLE
+endif
+
+ifeq ($(strip $(SOCD_CLEANER_ENABLE)), yes)
+	SRC += features/socd_cleaner.c
+	OPT_DEFS += -DSOCD_CLEANER_ENABLE
+endif
+
+ifeq ($(strip $(STENO_ENABLE)), yes)
+	STENO_PROTOCOL = geminipr # Better protocol for steno
+	VIRTSER_ENABLE = yes # Required for steno
+endif
+
+ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
+	SRC += dances.c
 endif
 
 # Enable this for boards that dont have a shift key (macro pads)

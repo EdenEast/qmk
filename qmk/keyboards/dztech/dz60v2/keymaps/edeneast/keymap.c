@@ -14,6 +14,9 @@ enum keymap_keycodes {
   BOOT,
 };
 
+socd_cleaner_t socd_v = {{KC_W, KC_S}, SOCD_CLEANER_LAST};
+socd_cleaner_t socd_h = {{KC_A, KC_D}, SOCD_CLEANER_LAST};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /** Qwerty
@@ -26,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------------------------------^-----------------^----------------------------------------+
  * | Shift     |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |     RShift      |
  * |-----------------------------------------------------------------------------------------+
- * | Ctrl | Super |  Alt  |   Bkspc   |  Fn  |     Space      | Alt | Lft  | Dwn | Up  | Rgh |
+ * | Ctrl | Super |  Alt  |   Bkspc   |  Fn  |     Space      | Lead| Lft  | Dwn | Up  | Rgh |
  * `-----------------------------------------------------------------------------------------'
  */
 
@@ -35,20 +38,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
     CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
     OSSL,             KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSSR,
-    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           KC_RALT, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
+    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           QK_LEAD, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
   ),
 
 /** Raise
  * ,-----------------------------------------------------------------------------------------.
  * | Boot|  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |   Del     |
  * |-----------------------------------------------------------------------------------------+
- * |        |     |     |     |     |     |     |PGDN |PGUP |     |     |     |     |  Game  |
+ * |        |     |     |     |     |     |     |     |     |     |     |     |     |  Game  |
  * |-----------------------------------------------------------------------------------------+
- * |         |     |     |     |     |     | Left| Down|  Up |Right|     |NxPrv|    Play     |
+ * |         |     |     |     |     |     | Left| Down|  Up |Right| Prev| Next|    Play     |
  * |------------------------------^-----------------^----------------------------------------+
  * |           |     |     |     | Mic |     |     |     |Vol D| Mute|Vol U|                 |
  * |-----------------------------------------------------------------------------------------+
- * |      |       |       |           |      |                 |     |     |     |     |     |
+ * |      |       |       |           |      |                 |     | HOME| PGDN| PGUP| End |
  * `-----------------------------------------------------------------------------------------'
  */
 
@@ -79,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     KC_LCTL, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     KC_LSFT,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_RSFT,
-    _______, _______, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           KC_LALT, _______, _______, _______, _______
+    _______, _______, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           _______, _______, _______, _______, _______
   ),
 
 
@@ -109,7 +112,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // clang-format on
 
+layer_state_t layer_state_set_kb(layer_state_t state) {
+  socd_cleaner_enabled = IS_LAYER_ON_STATE(state, _GAME);
+  return state;
+}
+
+void leader_end_keymap(void) {
+  if (leader_sequence_two_keys(KC_G, KC_G)) {
+    socd_cleaner_enabled = !socd_cleaner_enabled;
+  }
+  if (leader_sequence_two_keys(KC_G, KC_A)) {
+    socd_h.resolution = SOCD_CLEANER_LAST;
+    socd_v.resolution = SOCD_CLEANER_LAST;
+  }
+  if (leader_sequence_two_keys(KC_G, KC_S)) {
+    socd_h.resolution = SOCD_CLEANER_0_WINS;
+    socd_v.resolution = SOCD_CLEANER_NEUTRAL;
+  }
+}
+
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  if (!process_socd_cleaner(keycode, record, &socd_v)) {
+    return false;
+  }
+  if (!process_socd_cleaner(keycode, record, &socd_h)) {
+    return false;
+  }
+
   uint8_t mods = get_mods();
   switch (keycode) {
     case TG_SETT:

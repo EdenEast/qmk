@@ -13,5 +13,6 @@ UNICODE_ENABLE = no
 SPLIT_KEYBOARD = yes
 LEADER_ENABLE = yes
 SWAP_HANDS_ENABLE = yes
+SMART_CASE_ENABLE = yes
 
 SRC += split_hand.c
