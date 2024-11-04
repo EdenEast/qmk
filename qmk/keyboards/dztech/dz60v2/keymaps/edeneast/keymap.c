@@ -118,16 +118,21 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
 }
 
 void leader_end_keymap(void) {
-  if (leader_sequence_two_keys(KC_G, KC_G)) {
-    socd_cleaner_enabled = !socd_cleaner_enabled;
+  if (leader_sequence_two_keys(KC_G, KC_E)) {
+    socd_cleaner_enabled = true;
   }
+  if (leader_sequence_two_keys(KC_G, KC_Q)) {
+    socd_cleaner_enabled = false;
+  }
+
   if (leader_sequence_two_keys(KC_G, KC_A)) {
     socd_h.resolution = SOCD_CLEANER_LAST;
     socd_v.resolution = SOCD_CLEANER_LAST;
   }
-  if (leader_sequence_two_keys(KC_G, KC_S)) {
-    socd_h.resolution = SOCD_CLEANER_0_WINS;
-    socd_v.resolution = SOCD_CLEANER_NEUTRAL;
+
+  if (leader_sequence_two_keys(KC_G, KC_D)) {
+    socd_h.resolution = SOCD_CLEANER_NEUTRAL;
+    socd_v.resolution = SOCD_CLEANER_0_WINS;
   }
 }
 
