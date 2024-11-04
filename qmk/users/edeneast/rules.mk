@@ -19,7 +19,6 @@ LTO_ENABLE           = yes # Optimize at link time for resulting smaller files
 OS_DETECTION_ENABLE  = yes # Enable os detection
 
 SRC += process_records.c
-SRC += os_detect.c
 SRC += callbacks.c
 SRC += features/layer_lock.c
 
@@ -50,6 +49,11 @@ endif
 
 ifeq ($(strip $(LEADER_ENABLE)), yes)
 	SRC += leader.c
+endif
+
+ifeq ($(strip $(OS_DETECTION_ENABLE)), yes)
+	SRC += os_detect.c
+	OPT_DEFS += -DOS_DETECTION_ENABLE
 endif
 
 ifeq ($(strip $(SENTENCE_CASE_ENABLE)), yes)
