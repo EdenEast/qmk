@@ -1,92 +1,87 @@
-#include "edeneast.h"
+#define COMBOS_DEF "combos_user.inc"
 
+// clang-format off
+#define C_ENUM(name, val, ...) name,
+#define C_DATA(name, val, ...) uint16_t const name##_combo[] PROGMEM = {__VA_ARGS__, COMBO_END};
+#define C_TYPE(name, val, ...) [name] = COMBO(name##_combo, val),
+#define A_TYPE(name, val, ...) [name] = COMBO_ACTION(name##_combo),
+#define P_SSTR(name, val, ...) case name: if (pressed) { SEND_STRING(val); } break;
+#define P_FNCT(name, val, ...) case name: if (pressed) { val; } break;
+#define UNUSED(...)
+// clang-format on
+
+#define COMB C_ENUM
+#define SSTR C_ENUM
+#define FNCT C_ENUM
+#define ADVC C_ENUM
 enum combos {
-  COMBO_LEFT_BOOT,
-  COMBO_RGHT_BOOT,
-  COMBO_SINGLE_BOOT,
-  COMBO_LEFT_COMPILE,
-  COMBO_RGHT_COMPILE,
-  COMBO_SINGLE_COMPILE,
-  COMBO_BSPC_HOLD,
-  COMBO_SPC_HOLD,
-  COMBO_COPY,
-  COMBO_PASTE,
-  COMBO_CAP_WORD,
-  COMBO_LPRN_RPRN, /* (|) */
-  COMBO_LBRC_RBRC, /* [|] */
-  COMBO_LCBR_RCBR, /* {|} */
-  COMBO_LENGTH,
+#include COMBOS_DEF
+#ifdef COMBOS_KEYMAP
+#  include COMBOS_KEYMAP
+#endif
 };
 
-uint16_t COMBO_LEN = COMBO_LENGTH;
+#undef COMB
+#undef SSTR
+#undef FNCT
+#undef ADVC
+#define COMB C_DATA
+#define SSTR C_DATA
+#define FNCT C_DATA
+#define ADVC C_DATA
+#include COMBOS_DEF
+#ifdef COMBOS_KEYMAP
+#  include COMBOS_KEYMAP
+#endif
 
-const uint16_t PROGMEM combo_left_boot[]      = {KC_GRV, KC_B, COMBO_END};
-const uint16_t PROGMEM combo_rght_boot[]      = {KC_J, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_single_boot[]    = {KC_BSPC, KC_MINS, COMBO_END};
-const uint16_t PROGMEM combo_left_compile[]   = {KC_GRV, KC_P, COMBO_END};
-const uint16_t PROGMEM combo_rght_compile[]   = {KC_L, KC_EQL, COMBO_END};
-const uint16_t PROGMEM combo_single_compile[] = {KC_BSPC, KC_0, COMBO_END};
-const uint16_t PROGMEM combo_bspc_hold[]      = {KC_DEL, SFT_BSP, COMBO_END};
-const uint16_t PROGMEM combo_spc_hold[]       = {KC_ENT, SFT_SPC, COMBO_END};
-const uint16_t PROGMEM combo_copy[]           = {KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo_paste[]          = {KC_C, KC_D, COMBO_END};
-const uint16_t PROGMEM combo_cap_word[]       = {KC_G, KC_M, COMBO_END};
-const uint16_t PROGMEM combo_lprn_rprn[]      = {HM_LPRN, HM_RPRN, COMBO_END};
-const uint16_t PROGMEM combo_lbrc_rbrc[]      = {KC_LBRC, HM_RBRC, COMBO_END};
-const uint16_t PROGMEM combo_lcbr_rcbr[]      = {KC_LCBR, KC_RCBR, COMBO_END};
-
+#undef COMB
+#undef SSTR
+#undef FNCT
+#undef ADVC
+#define COMB C_TYPE
+#define SSTR A_TYPE
+#define FNCT A_TYPE
+#define ADVC A_TYPE
 combo_t key_combos[] = {
-    [COMBO_LEFT_BOOT]   = COMBO(combo_left_boot, QK_BOOT),
-    [COMBO_RGHT_BOOT]   = COMBO(combo_rght_boot, QK_BOOT),
-    [COMBO_SINGLE_BOOT] = COMBO(combo_single_boot, QK_BOOT),
-
-    [COMBO_LEFT_COMPILE]   = COMBO(combo_left_compile, KC_MAKE),
-    [COMBO_RGHT_COMPILE]   = COMBO(combo_rght_compile, KC_MAKE),
-    [COMBO_SINGLE_COMPILE] = COMBO(combo_single_compile, KC_MAKE),
-
-    [COMBO_BSPC_HOLD] = COMBO(combo_bspc_hold, KC_BSPC),
-    [COMBO_SPC_HOLD]  = COMBO(combo_spc_hold, KC_SPC),
-
-    [COMBO_COPY]  = COMBO(combo_copy, ED_COPY),
-    [COMBO_PASTE] = COMBO(combo_paste, ED_PASTE),
-
-    [COMBO_CAP_WORD] = COMBO(combo_cap_word, QK_CAPS_WORD_TOGGLE),
-
-    [COMBO_LPRN_RPRN] = COMBO_ACTION(combo_lprn_rprn),
-    [COMBO_LPRN_RPRN] = COMBO_ACTION(combo_lprn_rprn),
-    [COMBO_LBRC_RBRC] = COMBO_ACTION(combo_lbrc_rbrc),
-    [COMBO_LCBR_RCBR] = COMBO_ACTION(combo_lcbr_rcbr),
+#include COMBOS_DEF
+#ifdef COMBOS_KEYMAP
+#  include COMBOS_KEYMAP
+#endif
 };
 
+__attribute__((weak)) bool process_combo_event_keymap(uint16_t combo_index, bool pressed) {
+  return true;
+}
+
+__attribute__((weak)) bool process_combo_event_user(uint16_t combo_index, bool pressed) {
+  return true;
+}
+
+#undef COMB
+#undef SSTR
+#undef FNCT
+#undef ADVC
+#define COMB UNUSED
+#define SSTR P_SSTR
+#define FNCT P_ACTN
+#define ADVC UNUSED
 void process_combo_event(uint16_t combo_index, bool pressed) {
-  uint8_t mods = get_mods();
+  if (!process_combo_event_keymap(combo_index, pressed)) {
+    return;
+  }
+  if (!process_combo_event_user(combo_index, pressed)) {
+    return;
+  }
+
   switch (combo_index) {
-    case COMBO_LPRN_RPRN:
-      if (pressed) {
-        tap_code16(KC_LPRN);
-        tap_code16(KC_RPRN);
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(KC_LEFT);
-        set_mods(mods);
-      }
-      break;
-    case COMBO_LBRC_RBRC:
-      if (pressed) {
-        tap_code16(KC_LBRC);
-        tap_code16(KC_RBRC);
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(KC_LEFT);
-        set_mods(mods);
-      }
-      break;
-    case COMBO_LCBR_RCBR:
-      if (pressed) {
-        tap_code16(KC_LCBR);
-        tap_code16(KC_RCBR);
-        del_mods(MOD_MASK_SHIFT);
-        tap_code16(KC_LEFT);
-        set_mods(mods);
-      }
-      break;
+#include COMBOS_DEF
+#ifdef COMBOS_KEYMAP
+#  include COMBOS_KEYMAP
+#endif
   }
 }
+
+#undef COMB
+#undef SSTR
+#undef FNCT
+#undef ADVC

@@ -54,6 +54,7 @@ For nixos, to be able to flash qmk it is required to have `hardware.keyboard.qmk
 ** https://github.com/precondition/dactyl-manuform-keymap[precondition]
 ** https://github.com/markstos/qmk_firmware/blob/markstos/keyboards/crkbd/keymaps/markstos/README.md[markstos]
 ** https://github.com/rafaelromao/keyboards[rafaelromao]
+** https://github.com/filterpaper/qmk_userspace[filterpaper]
 
 * Layouts
 ** https://github.com/sunaku/engrammer
