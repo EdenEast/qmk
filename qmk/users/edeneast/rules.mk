@@ -18,7 +18,6 @@ EXTRAKEY_ENABLE      = yes # Audio controls and system controls
 LTO_ENABLE           = yes # Optimize at link time for resulting smaller files
 OS_DETECTION_ENABLE  = yes # Enable os detection
 
-SRC += edeneast.c
 SRC += process_records.c
 SRC += os_detect.c
 SRC += callbacks.c
@@ -30,14 +29,13 @@ SMART_CASE_ENABLE    ?= no
 SOCD_CLEANER_ENABLE  ?= no
 STENO_ENABLE         ?= no
 
+# Allow for keymap or userspace rules.mk to specify an alternate location for the keymap array
+INTROSPECTION_KEYMAP_C = edeneast.c
+
 # Feature settings
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)
 	SRC += features/achordion.c
 	OPT_DEFS += -DACHORDION_ENABLE
-endif
-
-ifeq ($(strip $(COMBO_ENABLE)), yes)
-	INTROSPECTION_KEYMAP_C = combos.c
 endif
 
 ifeq ($(strip $(DEBUG_ENABLE)), yes)
@@ -72,10 +70,6 @@ endif
 ifeq ($(strip $(STENO_ENABLE)), yes)
 	STENO_PROTOCOL = geminipr # Better protocol for steno
 	VIRTSER_ENABLE = yes # Required for steno
-endif
-
-ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-	SRC += dances.c
 endif
 
 # Enable this for boards that dont have a shift key (macro pads)
