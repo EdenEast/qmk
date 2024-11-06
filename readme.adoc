@@ -2,7 +2,6 @@
 
 == Reference
 
-.Reference
 image::./resources/arc-layout.svg[arc-reference]
 
 .Tofu Reference
