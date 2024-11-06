@@ -3,7 +3,7 @@
 == Reference
 
 .Reference
-image::./resources/layout.svg[reference]
+image::./resources/arc-layout.svg[reference]
 
 == Quick start
 

@@ -1,6 +1,5 @@
 layout:
-  qmk_keyboard: handwired/lagrange
-  qmk_layout: LAYOUT
+  qmk_info_json: resources/arc-layout.json
 layers:
   "Colemak-DH":
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
@@ -8,21 +7,23 @@ layers:
     - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'A'}, {h: 'Alt', t: 'R'}, {h: 'Shift', t: 'S'}, {h: 'Ctrl', t: 'T'}, 'G', 'M', {h: 'Ctrl', t: 'N'}, {h: 'Shift', t: 'E'}, {h: 'Alt', t: 'I'}, {h: 'Super', t: 'O'}, {h: 'Ctrl', s: '"', t: "'"} ]
     - [ {h: Super, t: 'Tmux'}, {h: Number, t: Z}, 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {h: Number, s: '?', t: '/'}, {h: Super, t: 'Return' } ]
     - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
-    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
-    - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
     - [ '_', '\', 'Nav' ]
-    - [ '←', 'PgUp', '→', '←', '↑', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
+    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case' ]
+    - [ 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
+    - [ 'Leader', 'Leader' ]
+    - [ 'PgUp', '↑', '←', '→', '←', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
 
-  "Engram":
-    - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
-    - [ {s: '~', t: '`'}, 'B', 'Y', 'O', 'U', {s: '"', t: "'"}, {s: ':', t: ';'}, 'L', 'D', 'W', 'V', 'Z' ]
-    - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'C'}, {h: 'Alt', t: 'I'}, {h: 'Shift', t: 'E'}, {h: 'Ctrl', t: 'A'}, {s: '<', t: ','}, {s: '>', t: '.'}, {h: 'Ctrl', t: 'H'}, {h: 'Shift', t: 'T'}, {h: 'Alt', t: 'S'}, {h: 'Super', t: 'N'}, {h: 'Ctrl', t: "Q"} ]
-    - [ 'Tmux', 'G', 'X', 'J', 'K', {s: '+', t: '='}, {s: '?', t: '/'}, 'R', 'M', 'F', 'P', 'Return' ]
-    - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
-    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case', 'Leader' ]
-    - [ 'Leader', 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
-    - [ '_', '\', 'Nav' ]
-    - [ '←', 'PgUp', '→', '←', '↑', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
+  # "Engram":
+  #   - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
+  #   - [ {s: '~', t: '`'}, 'B', 'Y', 'O', 'U', {s: '"', t: "'"}, {s: ':', t: ';'}, 'L', 'D', 'W', 'V', 'Z' ]
+  #   - [ {h: Ctrl, t: Esc}, {h: 'Super', t: 'C'}, {h: 'Alt', t: 'I'}, {h: 'Shift', t: 'E'}, {h: 'Ctrl', t: 'A'}, {s: '<', t: ','}, {s: '>', t: '.'}, {h: 'Ctrl', t: 'H'}, {h: 'Shift', t: 'T'}, {h: 'Alt', t: 'S'}, {h: 'Super', t: 'N'}, {h: 'Ctrl', t: "Q"} ]
+  #   - [ 'Tmux', 'G', 'X', 'J', 'K', {s: '+', t: '='}, {s: '?', t: '/'}, 'R', 'M', 'F', 'P', 'Return' ]
+  #   - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
+  #   - [ '_', '\', 'Nav' ]
+  #   - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case' ]
+  #   - [ 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
+  #   - [ 'Leader', 'Leader' ]
+  #   - [ 'PgUp', '↑', '←', '→', '←', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
 
   Symbol:
     - [ '', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11' ]
@@ -30,9 +31,10 @@ layers:
     - [ '', '!', '-', '+', '=', '#', '|', ':', '(', ')', '%', '"' ]
     - [ '', '\', '/', '*', '^', '""←', '~', '$', '{', '}', '', '' ]
     - [ '', '', '']
-    - [ {type: held}, '', '', 'Layer Lock']
-    - [ 'Layer Lock', '', '', {type: held}]
     - [ '', '', '' ]
+    - [ {type: held}, '', '']
+    - [ '', '', {type: held}]
+    - [ 'Layer Lock', 'Layer Lock' ]
     - [ '', '', '', '', '', '', '', '' ]
 
   Navigation:
@@ -41,10 +43,11 @@ layers:
     - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '←', '↓', '↑', '→', '', '' ]
     - [ '', '', '', '', '', '', '', '', '', '', '', '' ]
     - [ {type: held}, '', '']
-    - [ '', '', 'Space', 'Layer Lock']
-    - [ 'Layer Lock', '', '', '']
     - [ '', '', {type: held} ]
-    - [ '←', '↑', '→', ' ⏮', '', '⏭', '↓', '⏯' ]
+    - [ '', '', 'Space']
+    - [ '', '', '']
+    - [ 'Layer Lock', 'Layer Lock']
+    - [ '↑', '', '←', '→', '⏮', '⏭', '↓', '⏯' ]
 
   Number:
     - [ '', '', '', '', '', '', '~', '^', '#', '$', '@', '!' ]
@@ -52,9 +55,10 @@ layers:
     - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '+', '4', '5', '6', '-', '>' ]
     - [ '', {type: held}, '', '', '', '', '*', '1', '2', '3', '/', '=' ]
     - [ '', '', '']
-    - [ ',', '', '', 'Layer Lock']
-    - [ 'Layer Lock', '.', '', '0']
     - [ '(', ')', '' ]
+    - [ ',', '', '' ]
+    - [ '.', '', '0']
+    - [ 'Layer Lock', 'Layer Lock' ]
     - [ '', '', '', '', '', '', '', '' ]
 
   Mouse:
@@ -63,9 +67,10 @@ layers:
     - [ '', '', '←', '↓', '→', '', '', '', '', '', '', '' ]
     - [ '', '', '', 'Wheel ↓', 'Wheel ↑', '', '', '', '', '', '', '' ]
     - [ '', '', '' ]
-    - [ 'Right Click', 'Left Click', 'Middle Click', '' ]
-    - [ '', '', '', '' ]
     - [ '', '', '' ]
+    - [ 'Right Click', 'Left Click', 'Middle Click' ]
+    - [ '', '', '' ]
+    - [ '', '' ]
     - [ '', '', '', '', '', '', {type: held}, '' ]
 
   Adjust:
@@ -74,10 +79,11 @@ layers:
     - [ '', 'Super', 'Alt', 'Shift', 'Ctrl', '', '', '⏮', '⏯', '⏭', '', '' ]
     - [ '', 'Undo', 'Cut', 'Copy', 'Paste', 'PrintSc', '', 'Mic', '', '', 'Toggle Sentence', '' ]
     - [ {type: held}, '', '']
-    - [ {type: held}, 'Del', '', 'Layer Lock']
-    - [ 'Layer Lock', '', '', {type: held}]
     - [ '', '', {type: held} ]
-    - [ 'Colemak', 'Engram', 'Game', '', '', '', '', '' ]
+    - [ {type: held}, 'Del', '' ]
+    - [ '', '', {type: held}]
+    - [ 'Layer Lock', 'Layer Lock' ]
+    - [ 'Engram', '', 'Colemak', 'Game', '', '', '', '' ]
 
   Game:
     - [ '', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '' ]
@@ -85,10 +91,11 @@ layers:
     - [ 'Esc', 'Shift', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Game Off' ]
     - [ 'Alt', 'Ctrl', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/' ]
     - [ 'Alt/Ctrl', 'T', 'G']
-    - [ 'I', 'Space', 'M', 'N']
-    - [ '', '', 'Bspc', '']
     - [ '', '', '' ]
-    - [ '⏯', 'Toggle Palm', 'Game Off', '', '', '', 'Mic', '' ]
+    - [ 'I', 'Space', 'M']
+    - [ '', 'Bspc', ''  ]
+    - [ 'N', '']
+    - [ 'Toggle Palm', '', '⏯', 'Game Off', '', '', 'Mic', '' ]
 
   # COMBO_REF:
   #   - [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11' ]
@@ -96,14 +103,18 @@ layers:
   #   - [ '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35' ]
   #   - [ '36', '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47' ]
   #   - [ '48', '49', '50']                                # Left palm key and extra middle and ring finger
-  #   - [ '51', '52', '53', '54']                          # Left thumb keys
-  #   - [ '55', '56', '57', '58']                          # Right thumb keys
   #   - [ '59', '60', '61' ]                               # Right palm key and extra middle and ring finger
+  #   - [ '51', '52', '53' ]                               # Left thumb keys minus farthest
+  #   - [ '54', '55', '56' ]                               # Right thumb keys
+  #   - [ '57', '58']                                      # Inner most thumb keys
   #   - [ '62', '63', '64', '65', '66', '67', '68', '69' ] # Thumb dpads
 
-# combos:
-#   - {p: [12, 16], k: Make, a: top, o: 1.5, l: ['Colemak-DH', 'Engram']}
-#   - {p: [19, 23], k: Make, a: top, o: 1.5, l: ['Colemak-DH', 'Engram']}
-#   - {p: [12, 17], k: Boot, a: top, o: 1.8, l: ['Colemak-DH', 'Engram']}
-#   - {p: [18, 23], k: Boot, a: top, o: 1.8, l: ['Colemak-DH', 'Engram']}
+combos:
+  - {p: [12, 16, 19, 23], k: Make, a: top, o: 1.5, l: ['Colemak-DH']}
+  - {p: [12, 17, 18, 23], k: Boot, a: top, o: 1.8, l: ['Colemak-DH']}
 
+draw_config:
+  dark_mode: true
+  n_columns: 1
+  separate_combo_diagrams: true
+  combo_diagrams_scale: 2
