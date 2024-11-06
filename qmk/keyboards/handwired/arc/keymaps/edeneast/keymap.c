@@ -131,10 +131,6 @@ static bool     game_use_alt_palm = false;
 static uint16_t last_game_plam    = 0;
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
-  if (!process_layer_lock(keycode, record, LLOCK)) {
-    return false;
-  }
-
   switch (keycode) {
     case OSL_CSE:
       if (record->tap.count > 0) {
@@ -205,6 +201,8 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_rec
 }
 
 layer_state_t layer_state_set_kb(layer_state_t state) {
+  // Handle layer locking with tri layers (for ADJ layer)
+  // https://github.com/getreuer/qmk-keymap/issues/61#issuecomment-2045770839
   if (!is_layer_locked(_ADJ)) {
     state = update_tri_layer_state(state, _NAV, _SYMBOL, _ADJ);
   }

@@ -5,6 +5,10 @@
 #  include "features/achordion.h"
 #endif
 
+#ifdef LAYER_LOCK_ENABLE
+#  include "features/layer_lock.h"
+#endif
+
 #ifdef SENTENCE_CASE_ENABLE
 #  include "features/sentence_case.h"
 #endif
@@ -68,15 +72,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
 #endif
 
-  if (!process_os_toggle(keycode, record)) {
+#ifdef LAYER_LOCK_ENABLE
+  if (!process_layer_lock(keycode, record, LLOCK)) {
     return false;
   }
+#endif
 
 #ifdef SMART_CASE_ENABLE
   if (!process_smart_case(keycode, record)) {
     return false;
   }
 #endif
+
+  if (!process_os_toggle(keycode, record)) {
+    return false;
+  }
 
   // Sticky layer key
   if (keycode == STCK_LY && record->event.pressed) {
