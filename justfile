@@ -136,20 +136,23 @@ fmt:
 # Generate layout map
 layout:
     keymap draw ./resources/arc-layout.yml > ./resources/arc-layout.svg
+    keymap draw ./resources/tofu-layout.yml > ./resources/tofu-layout.svg
 
 # live reload layout map
 [linux]
 @watch-layout:
     #!/usr/bin/env bash
     [[ $(uname -r) =~ microsoft ]] && powershell.exe start $(wslpath ./resources/arc-layout.svg) || xdg-open ./resources/arc-layout.svg
-    watchexec -nrpw resources/arc-layout.yml -- just layout
+    [[ $(uname -r) =~ microsoft ]] && powershell.exe start $(wslpath ./resources/tofu-layout.svg) || xdg-open ./resources/tofu-layout.svg
+    watchexec -nrpw resources e yml -- just layout
 
 # live reload layout map
 [macos]
 @watch-layout:
     #!/usr/bin/env bash
     open ./resources/arc-layout.svg
-    watchexec -nrpw resources/arc-layout.yml -- just layout
+    open ./resources/tofu-layout.svg
+    watchexec -nrpw resources -e yml -- just layout
 
 # Update qmk submodule
 qmk-update:

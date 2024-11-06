@@ -62,10 +62,10 @@
                 { "label": "k46", "matrix": [4, 6], "w": 1.25, "x": 6, "y": 4 },
                 { "label": "k48", "matrix": [4, 8], "w": 2.75, "x": 7.25, "y": 4 },
                 { "label": "k4a", "matrix": [4, 10], "x": 10, "y": 4 },
-                { "label": "k4b", "matrix": [4, 11], "x": 10, "y": 4 },
-                { "label": "k4c", "matrix": [4, 12], "x": 11.25, "y": 4 },
-                { "label": "k4d", "matrix": [4, 13], "x": 12.5, "y": 4 },
-                { "label": "k4e", "matrix": [4, 14], "x": 13.75, "y": 4 }
+                { "label": "k4b", "matrix": [4, 11], "x": 11, "y": 4 },
+                { "label": "k4c", "matrix": [4, 12], "x": 12, "y": 4 },
+                { "label": "k4d", "matrix": [4, 13], "x": 13, "y": 4 },
+                { "label": "k4e", "matrix": [4, 14], "x": 14, "y": 4 }
             ]
         }
     }
