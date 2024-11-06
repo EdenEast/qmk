@@ -8,7 +8,7 @@ layers:
     - [ {h: Super, t: 'Tmux'}, {h: Number, t: Z}, 'X', 'C', 'D', 'V', 'K', 'H', {s: '<', t: ','}, {s: '>', t: '.'}, {h: Number, s: '?', t: '/'}, {h: Super, t: 'Return' } ]
     - [ 'Nav', {s: '{', t: '['}, {s: '}', t: ']'} ]
     - [ '_', '\', 'Nav' ]
-    - [ {t: 'Tab', h: 'Symbol'}, 'Backspace', 'Smart Case' ]
+    - [ {t: 'Tab', h: 'Symbol'}, 'Back space', 'Smart Case' ]
     - [ 'Smart Case', 'Space', {t: '-', s: '_', h: 'Symbol'} ]
     - [ 'Leader', 'Leader' ]
     - [ 'PgUp', '↑', '←', '→', '←', '→', {h: Mouse, t: 'PgDn' }, '↓' ]
@@ -110,11 +110,5 @@ layers:
   #   - [ '62', '63', '64', '65', '66', '67', '68', '69' ] # Thumb dpads
 
 combos:
-  - {p: [12, 16, 19, 23], k: Make, a: top, o: 1.5, l: ['Colemak-DH']}
-  - {p: [12, 17, 18, 23], k: Boot, a: top, o: 1.8, l: ['Colemak-DH']}
-
-draw_config:
-  dark_mode: true
-  n_columns: 1
-  separate_combo_diagrams: true
-  combo_diagrams_scale: 2
+  - {p: [12, 16, 19, 23], k: Make, a: top, o: 1.5, l: ['Colemak-DH'], draw_separate: true}
+  - {p: [12, 17, 18, 23], k: Boot, a: top, o: 1.8, l: ['Colemak-DH'], draw_separate: true}

@@ -40,16 +40,3 @@ layers:
 combos:
   - {p: [11, 13], k: Boot, a: top, o: 0.2, l: ['Base'], draw_separate: true}
   - {p: [10, 13], k: Make, a: top, o: 0.6, l: ['Base'], draw_separate: true}
-
-draw_config:
-  svg_extra_style: |
-    svg.keymap { background-color: #2d353b;}
-    rect.key { fill: #d3c6aa; stroke: #9f9b92; stroke-width: 1; }
-    rect.held, rect.combo.held { fill: #e67e80; }
-    rect.ghost, rect.combo.ghost { fill: #b0b0b0; stroke-dasharray: none; stroke-width: 1; }
-    rect.combo, rect.combo-separate { fill: #7fbbb4 }
-    text.label, text.footer { stroke: none; fill: #dfdfdf;}
-    text.key, text.combo { stroke: none; fill: #242a2f;}
-
-
-

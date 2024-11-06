@@ -116,14 +116,13 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
-svg.keymap { fill: #d1d6db; }
-rect.key { fill: #3f4750; }
-rect.key, rect.combo { stroke: #60666c; }
-rect.combo, rect.combo-separate { fill: #1f3d7a; }
-rect.held, rect.combo.held { fill: #854747; }
-text.label, text.footer { stroke: black; }
-text.trans { fill: #7e8184; }
-path.combo { stroke: #7f7f7f; }
+svg.keymap { background-color: #242933;}
+rect.key { fill: #BBC3D4; stroke: #E5E9F0; stroke-width: 1; }
+rect.held, rect.combo.held { fill: #BF616A; }
+rect.ghost, rect.combo.ghost { fill: #b0b0b0; stroke-dasharray: none; stroke-width: 1; }
+rect.combo, rect.combo-separate { fill: #88C0D0 }
+text.label, text.footer { stroke: none; fill: #ECEFF4;}
+text.key, text.combo { stroke: none; fill: #1e222a;}
 </style>
 <g transform="translate(30, 0)" class="layer-Colemak-DH">
 <text x="0" y="28" class="label" id="Colemak-DH">Colemak-DH:</text>
@@ -375,7 +374,9 @@ path.combo { stroke: #7f7f7f; }
 </a></g>
 <g transform="translate(336, 322)" class="key keypos-55">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 78%">Backspace</tspan></text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Back</tspan><tspan x="0" dy="1.2em">space</tspan>
+</text>
 </g>
 <g transform="translate(392, 322)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>

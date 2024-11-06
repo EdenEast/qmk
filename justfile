@@ -135,8 +135,8 @@ fmt:
 
 # Generate layout map
 layout:
-    keymap draw ./resources/arc-layout.yml > ./resources/arc-layout.svg
-    keymap draw ./resources/tofu-layout.yml > ./resources/tofu-layout.svg
+    keymap --config ./resources/km-drawer-config.yml draw ./resources/arc-layout.yml > ./resources/arc-layout.svg
+    keymap --config ./resources/km-drawer-config.yml draw ./resources/tofu-layout.yml > ./resources/tofu-layout.svg
 
 # live reload layout map
 [linux]

@@ -1,0 +1,22 @@
+draw_config:
+  combo_diagrams_scale: 2
+
+  # # Everforest theme
+  # svg_extra_style: |
+  #   svg.keymap { background-color: #2d353b;}
+  #   rect.key { fill: #d3c6aa; stroke: #9f9b92; stroke-width: 1; }
+  #   rect.held, rect.combo.held { fill: #e67e80; }
+  #   rect.ghost, rect.combo.ghost { fill: #b0b0b0; stroke-dasharray: none; stroke-width: 1; }
+  #   rect.combo, rect.combo-separate { fill: #7fbbb4 }
+  #   text.label, text.footer { stroke: none; fill: #dfdfdf;}
+  #   text.key, text.combo { stroke: none; fill: #242a2f;}
+
+  # Nordic theme
+  svg_extra_style: |
+    svg.keymap { background-color: #242933;}
+    rect.key { fill: #BBC3D4; stroke: #E5E9F0; stroke-width: 1; }
+    rect.held, rect.combo.held { fill: #BF616A; }
+    rect.ghost, rect.combo.ghost { fill: #b0b0b0; stroke-dasharray: none; stroke-width: 1; }
+    rect.combo, rect.combo-separate { fill: #88C0D0 }
+    text.label, text.footer { stroke: none; fill: #ECEFF4;}
+    text.key, text.combo { stroke: none; fill: #1e222a;}
