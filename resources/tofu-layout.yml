@@ -38,5 +38,5 @@ layers:
   #   - ['53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63']
 
 combos:
-  - {p: [11, 13], k: Boot, a: top, o: 0.2, l: ['Base'], draw_separate: true}
-  - {p: [10, 13], k: Make, a: top, o: 0.6, l: ['Base'], draw_separate: true}
+  - {p: [00, 13], k: Boot, a: top, o: 0.2, l: ['Base'], draw_separate: true}
+  - {p: [11, 13], k: Make, a: top, o: 0.6, l: ['Base'], draw_separate: true}
