@@ -1,4 +1,6 @@
-#define COMBOS_DEF "combos_user.inc"
+#ifndef NO_USER_COMBOS
+#  define COMBOS_DEF "combos_user.inc"
+#endif
 
 // clang-format off
 #define C_ENUM(name, val, ...) name,
@@ -15,7 +17,9 @@
 #define FNCT C_ENUM
 #define ADVC C_ENUM
 enum combos {
-#include COMBOS_DEF
+#ifdef COMBOS_DEF
+#  include COMBOS_DEF
+#endif
 #ifdef COMBOS_KEYMAP
 #  include COMBOS_KEYMAP
 #endif
@@ -29,7 +33,9 @@ enum combos {
 #define SSTR C_DATA
 #define FNCT C_DATA
 #define ADVC C_DATA
-#include COMBOS_DEF
+#ifdef COMBOS_DEF
+#  include COMBOS_DEF
+#endif
 #ifdef COMBOS_KEYMAP
 #  include COMBOS_KEYMAP
 #endif
@@ -43,7 +49,9 @@ enum combos {
 #define FNCT A_TYPE
 #define ADVC A_TYPE
 combo_t key_combos[] = {
-#include COMBOS_DEF
+#ifdef COMBOS_DEF
+#  include COMBOS_DEF
+#endif
 #ifdef COMBOS_KEYMAP
 #  include COMBOS_KEYMAP
 #endif
@@ -74,7 +82,9 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
   }
 
   switch (combo_index) {
-#include COMBOS_DEF
+#ifdef COMBOS_DEF
+#  include COMBOS_DEF
+#endif
 #ifdef COMBOS_KEYMAP
 #  include COMBOS_KEYMAP
 #endif
