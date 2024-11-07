@@ -1,4 +1,5 @@
 = Eden's qmk keyboard firmware
+:experimental:
 
 == Reference
 
@@ -8,6 +9,36 @@ image::./resources/arc-layout.svg[arc-reference]
 [%collapsible]
 ====
 image::./resources/tofu-layout.svg[tofu-reference]
+
+|===
+| Leader | Adtion
+
+|kbd:[G] kbd:[E]
+|SOCD Enable
+
+|kbd:[G] kbd:[Q]
+|SOCD Disable
+
+|kbd:[G] kbd:[A]
+|SOCD Last
+
+|kbd:[G] kbd:[D]
+|SOCD Neutral
+
+|kbd:[O] kbd:[R]
+|Re-detect OS
+
+|kbd:[O] kbd:[W]
+|Set OS to Windows
+
+|kbd:[O] kbd:[M]
+|Set OS to Mac
+
+|kbd:[O] kbd:[L]
+|Set OS to Linux
+
+|===
+
 ====
 
 == Quick start
