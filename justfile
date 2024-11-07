@@ -5,117 +5,76 @@ green  := '\033[1;32m'
 yellow := '\033[1;33m'
 blue   := '\033[1;34m'
 
+alias b := build
 alias f := flash
 alias l := layout
 alias w := watch-layout
 
-# Symbolic link qmk directory into firmware
-stow:
-  stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
+list:
+    @just --list
 
 # Build all keyboards
-all:
-    @just dm4
-    @just dm5
-    @just arc
-    @just crkbd
-    @just tofu
+all command='build':
+    @just {{command}} dm4
+    @just {{command}} dm5
+    @just {{command}} arc
+    @just {{command}} crkbd
+    @just {{command}} tofu
 
-# Build dactyl manuform 4x6 keyboard firmware
-arc:
-    @just _build handwired/arc:edeneast handwired_arc_edeneast.hex arc
-
-# Build dactyl manuform 4x6 keyboard firmware
-dm4:
-    @just _build handwired/dactyl_manuform/4x6:edeneast handwired_dactyl_manuform_4x6_edeneast.hex dm4
-
-# Build dactyl manuform 5x6 keyboard firmware
-dm5:
-    @just _build handwired/dactyl_manuform/5x6:edeneast handwired_dactyl_manuform_5x6_edeneast.hex dm5
-
-# Build Corne keyboard (crkbd) firmware
-crkbd:
-    @just _build crkbd:edeneast crkbd_rev1_edeneast.hex crkbd
-
-tofu:
-    @just _build dztech/dz60v2/tofu:edeneast dztech_dz60v2_tofu_edeneast.hex tofu
-
-_build make_cmd source target: init
+# Build keyboard firmware
+build keyboard map='edeneast' opts='':
     #!/usr/bin/env bash
     printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
-    printf "Buildling: {{blue}}{{source}}{{reset}}\n\n"
-    mkdir -p result
-    (
-        cd firmware
-        make {{make_cmd}}
-    )
-    mv ./firmware/{{source}} ./result/{{target}}.hex
-    printf "Result: {{green}}{{target}}.hex{{reset}}\n"
-    if [ ! -z "$POST_BUILD" ]; then
-        echo "executing postbuild: $POST_BUILD"
-        $POST_BUILD
-    fi
+    printf "Buildling: {{blue}}{{keyboard}}{{reset}} | {{red}}{{map}}{{reset}}\n\n"
+    just _qmk_command compile $(just _keyboard {{keyboard}}) {{map}} {{opts}}
 
-# Flash `keyboard`
-flash keyboard:
+# Flash keyboard firmware
+flash keyboard map='edeneast' opts='':
     #!/usr/bin/env bash
-    if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:edeneast:dfu"
-    elif [ "{{keyboard}}" = "arc" ]; then
-        cmd="handwired/arc:edeneast:avrdude"
-    elif [ "{{keyboard}}" = "dm4" ]; then
-        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude"
-    elif [ "{{keyboard}}" = "dm5" ]; then
-        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude"
-    elif [ "{{keyboard}}" = "tofu" ]; then
-        cmd="handwired/dz60:edeneast:dfu"
-    else
-        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
-    fi
-    (
-        cd firmware
-        make $cmd
-    )
+    printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
+    printf "Flashing: {{blue}}{{keyboard}}{{reset}} | {{red}}{{map}}{{reset}}\n\n"
+    just _qmk_command flash {{keyboard}} {{map}} {{opts}}
 
 # Flash left hand of `keyboard`
-left keyboard:
+left keyboard map='edeneast':
     #!/usr/bin/env bash
-    if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:edeneast:dfu-split-left"
-    elif [ "{{keyboard}}" = "arc" ]; then
-        cmd="handwired/arc:edeneast:avrdude-split-left"
-    elif [ "{{keyboard}}" = "dm4" ]; then
-        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-left"
-    elif [ "{{keyboard}}" = "dm5" ]; then
-        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-left"
-    else
-        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
-        exit
-    fi
-    (
-        cd firmware
-        make $cmd
-    )
+    printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
+    printf "Setting left hand: {{blue}}{{keyboard}}{{reset}} | {{red}}{{map}}{{reset}}\n\n"
+    just _qmk_command flash $(just _keyboard {{keyboard}}) {{map}} "-bl $(just _loader {{keyboard}})-split-left"
 
 # Flash right hand of `keyboard`
-right keyboard:
+right keyboard map='edeneast':
     #!/usr/bin/env bash
-    if [ "{{keyboard}}" = "crkbd" ]; then
-        cmd="crkbd:edeneast:dfu-split-right"
-    elif [ "{{keyboard}}" = "arc" ]; then
-        cmd="handwired/arc:edeneast:avrdude-split-right"
-    elif [ "{{keyboard}}" = "dm4" ]; then
-        cmd="handwired/dactyl_manuform/4x6:edeneast:avrdude-split-right"
-    elif [ "{{keyboard}}" = "dm5" ]; then
-        cmd="handwired/dactyl_manuform/5x6:edeneast:avrdude-split-right"
-    else
-        printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
-        exit
-    fi
-    (
-        cd firmware
-        make $cmd
-    )
+    printf "{{yellow}}--------------------------------------------------------------------------------------{{reset}}\n"
+    printf "Setting right hand: {{blue}}{{keyboard}}{{reset}} | {{red}}{{map}}{{reset}}\n\n"
+    just _qmk_command flash $(just _keyboard {{keyboard}}) {{map}} "-bl $(just _loader {{keyboard}})-split-right"
+
+_keyboard keyboard:
+  #!/usr/bin/env bash
+  if [ "{{keyboard}}" = "crkbd" ]; then
+    echo "crkbd"
+  elif [ "{{keyboard}}" = "arc" ]; then
+    echo "handwired/arc"
+  elif [ "{{keyboard}}" = "dm4" ]; then
+    echo "handwired/dactyl_manuform/4x6"
+  elif [ "{{keyboard}}" = "dm5" ]; then
+    echo "handwired/dactyl_manuform/5x6"
+  elif [ "{{keyboard}}" = "tofu" ]; then
+    echo "dztech/dz60v2/tofu"
+  else
+    printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
+  fi
+
+_loader keyboard:
+  #!/usr/bin/env bash
+  if [ "{{keyboard}}" = "crkbd" ]; then
+    echo "dfu"
+  else
+    echo "avrdude"
+  fi
+
+_qmk_command command keyboard map='edeneast' opts='': init
+    @qmk {{command}} -j0 -kb {{keyboard}} -km {{map}} {{opts}}
 
 # Setup submodule and link directories to submodules
 init:
@@ -128,6 +87,10 @@ init:
     if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
       qmk config user.qmk_home="{{justfile_directory()}}/firmware"
     fi
+
+# Symbolic link qmk directory into firmware
+stow:
+  stow -R -d {{justfile_directory()}}/qmk -t {{justfile_directory()}}/firmware .
 
 # Format c files
 fmt:
