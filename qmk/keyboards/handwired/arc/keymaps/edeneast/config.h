@@ -1,1 +1,2 @@
 #define SMART_CASE_DEFAULT_ONESHOT_SHIFT
+#define COMBOS_KEYMAP "combos.inc"

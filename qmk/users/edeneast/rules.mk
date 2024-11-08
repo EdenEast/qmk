@@ -7,6 +7,9 @@ GRAVE_ESC_ENABLE     ?= no  # Dont use it, save space
 MIDI_ENABLE          ?= no  # Dont use it, save space
 RGBLIGHT_ENABLE      ?= no  # No rgb
 SPACE_CADET_ENABLE   ?= no  # Dont use it, save space
+UNICODE_ENABLE = no
+UNICODEMAP_ENABLE = no
+UCIS_ENABLE = no
 
 # Required features
 DEFERRED_EXEC_ENABLE = yes # Enable defer execution for os detection startup
