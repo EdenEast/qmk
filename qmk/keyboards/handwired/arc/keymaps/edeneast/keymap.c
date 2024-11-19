@@ -164,24 +164,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
-    case HMA_SLSH:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          tap_code16(KC_SLSH);
-          return false;
-        }
-      }
-      if (record->event.pressed) {
-        swap_hands_on();
-        layer_on(_RAISE);
-        dprintf("raise on");
-      } else {
-        layer_off(_RAISE);
-        swap_hands_off();
-        dprintf("raise off");
-      }
-      return false;
-
     default:
       return true;
   }
