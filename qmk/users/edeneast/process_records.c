@@ -311,21 +311,9 @@ __attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode, keyreco
  */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-      // Pinky keys
-    case HMA_A:
-    case HMA_O:
-    case HME_C:
-    case HME_N:
-    case HM_GRV:
-    case HM_PRSC:
-      return TAPPING_TERM + 40;
-
-      // Thumb keys
-    case LOW_TAB:
-    case SFT_BSP:
-    case SFT_SPC:
-    case RAS_MIN:
-      return TAPPING_TERM - 25;
+    case HMA_S:
+    case HMA_E:
+      return TAPPING_TERM - 45;
 
     default:
       return get_tapping_term_keymap(keycode, record);

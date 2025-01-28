@@ -1,4 +1,5 @@
 [submodule "firmware"]
 	path = firmware
 	url = https://github.com/qmk/qmk_firmware
-	shallow = true
+	; shallow = true
+	branch = develop
