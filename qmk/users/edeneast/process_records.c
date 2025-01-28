@@ -5,10 +5,6 @@
 #  include "features/achordion.h"
 #endif
 
-#ifdef LAYER_LOCK_ENABLE
-#  include "features/layer_lock.h"
-#endif
-
 #ifdef SENTENCE_CASE_ENABLE
 #  include "features/sentence_case.h"
 #endif
@@ -68,12 +64,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 #ifdef ACHORDION_ENABLE
   if (!process_achordion(keycode, record)) {
-    return false;
-  }
-#endif
-
-#ifdef LAYER_LOCK_ENABLE
-  if (!process_layer_lock(keycode, record, LLOCK)) {
     return false;
   }
 #endif
