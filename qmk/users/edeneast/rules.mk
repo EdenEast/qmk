@@ -13,6 +13,7 @@ DEFERRED_EXEC_ENABLE = yes # Enable defer execution for os detection startup
 EXTRAKEY_ENABLE      = yes # Audio controls and system controls
 LTO_ENABLE           = yes # Optimize at link time for resulting smaller files
 OS_DETECTION_ENABLE  = yes # Enable os detection
+LAYER_LOCK_ENABLE    = yes
 
 # Optional default features
 COMBO_ENABLE         ?= yes # Combo keys together
@@ -33,12 +34,6 @@ ACHORDION_ENABLE ?= yes
 ifeq ($(strip $(ACHORDION_ENABLE)), yes)
 	SRC += features/achordion.c
 	OPT_DEFS += -DACHORDION_ENABLE
-endif
-
-LAYER_LOCK_ENABLE ?= yes
-ifeq ($(strip $(LAYER_LOCK_ENABLE)), yes)
-	SRC += features/layer_lock.c
-	OPT_DEFS += -DLAYER_LOCK_ENABLE
 endif
 
 SENTENCE_CASE_ENABLE ?= yes

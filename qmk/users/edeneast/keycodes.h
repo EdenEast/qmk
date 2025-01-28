@@ -11,7 +11,6 @@ enum userspace_custom_keycodes {
   TL_STNO, // Toggle steno layer
   TL_ENGM, // Toggle engram layer
   STCK_LY,
-  LLOCK,
   TMUX_PX, // Gui when pressed, Tmux prefix when tapped
   TRP_GRV, // Triggers grave
 
