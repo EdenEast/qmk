@@ -310,6 +310,7 @@ __attribute__((weak)) uint16_t get_tapping_term_keymap(uint16_t keycode, keyreco
  * This handles activating a layer by holding down two other layers
  */
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+#ifdef ACHORDION_ENABLE
   switch (keycode) {
       // Pinky keys
     case HMA_A:
@@ -330,6 +331,16 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     default:
       return get_tapping_term_keymap(keycode, record);
   }
+#else
+  switch (keycode) {
+    case HMA_S:
+    case HMA_E:
+      return TAPPING_TERM - 45;
+
+    default:
+      return get_tapping_term_keymap(keycode, record);
+  }
+#endif
 }
 
 #ifdef ACHORDION_ENABLE

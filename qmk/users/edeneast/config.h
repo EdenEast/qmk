@@ -1,6 +1,10 @@
 // Home row mod settings
 #undef TAPPING_TERM
-#define TAPPING_TERM 180
+#ifdef ACHORDION_ENABLE
+#  define TAPPING_TERM 180
+#else
+#  define TAPPING_TERM 225
+#endif
 #define TAPPING_TERM_PER_KEY
 
 // Prevent normal rollover from triggering mods

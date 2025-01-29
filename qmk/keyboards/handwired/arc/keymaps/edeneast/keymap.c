@@ -189,3 +189,46 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
   }
   return state;
 }
+
+#ifdef CHORDAL_HOLD
+// clang-format off
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT(
+    '*', '*', '*', '*', '*', '*',                         '*', '*', '*', '*', '*', '*',
+    '*', 'L', 'L', 'L', 'L', 'L',                         'R', 'R', 'R', 'R', 'R', '*',
+    '*', 'L', 'L', 'L', 'L', 'L',                         'R', 'R', 'R', 'R', 'R', '*',
+    '*', 'L', 'L', 'L', 'L', 'L',                         'R', 'R', 'R', 'R', 'R', '*',
+    '*',      '*', '*', '*', '*', '*', '*',     '*', '*', '*', '*', '*', '*',      '*',
+                        '*', '*', '*',               '*', '*', '*',
+                             '*',                         '*'
+    );
+// clang-format on
+// Callback for Chordal Hold (https://github.com/qmk/qmk_firmware/pull/24560)
+/**
+ * @Brief Per-chord customization
+ *
+ * Decide the outcome of tap-hold key depending on the other key pressed.
+ * When return is true the tap-hold key is concidered held, else it is
+ * determined to be both tapped.
+ *
+ * @paran tap_hold_keycode Key to be decided if key is tapped of held
+ * @paran tap_hold_record The matrix information for the tap hold key
+ * @paran other_keycode The other key that will determine the state of the
+ * tap_hold key
+ * @paran other_record The matrix information for the other key
+ * @return true considered tap-hold, false considered both tap keys
+ */
+bool get_chordal_hold(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_record, uint16_t other_keycode, keyrecord_t *other_record) {
+  switch (tap_hold_keycode) {
+    case HMA_A:
+      switch (other_keycode) {
+        // Allow one handed cmd + key combos on mac
+        case KC_C:
+        case KC_V:
+          return true;
+      }
+      break;
+  }
+  return get_chordal_hold_default(tap_hold_record, other_record);
+}
+#endif
