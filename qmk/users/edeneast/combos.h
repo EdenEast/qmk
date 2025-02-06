@@ -1,4 +1,5 @@
 #pragma once
+#include "combo_definitions.h"
 
 /**
  * An adaptation of filterpaper's adaptation of Jane Bernhardt's Combos on Steroids
@@ -35,6 +36,7 @@
  *   COMB(vol_up, KC_VOLU, KC_Y, KC_U).
  */
 
+#ifdef COMBO_CUSTOM_USER
 /**
  * @brief User defined combo for custom combo handling
  *
@@ -45,7 +47,9 @@
  * @return true Continue processing combo | false Stop processing combo
  */
 bool process_combo_event_user(uint16_t combo_index, bool pressed);
+#endif
 
+#ifdef COMBO_CUSTOM_KEYMAP
 /**
  * @brief Keymap defined combo for custom combo handling
  *
@@ -54,3 +58,4 @@ bool process_combo_event_user(uint16_t combo_index, bool pressed);
  * @return true Continue processing combo | false Stop processing combo
  */
 bool process_combo_event_keymap(uint16_t combo_index, bool pressed);
+#endif
