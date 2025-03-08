@@ -40,37 +40,15 @@
 #define HM_RBRC LALT_T(KC_RBRC)
 #define HM_GRV RGUI_T(KC_GRV)
 
-// Raise
-// #define HM_ LGUI_T(KC_)
-// #define HM_ LALT_T(KC_)
-// #define HM_ LSFT_T(KC_)
-// #define HM_ LCTL_T(KC_)
-//
-// #define HM_ RCTL_T(KC_)
-// #define HM_ RSFT_T(KC_)
-// #define HM_ LALT_T(KC_)
-// #define HM_ RGUI_T(KC_)
-
 // Adj
 #define HM_PRSC LGUI_T(KC_PSCR)
 // #define HM_ LALT_T(KC_)
 // #define HM_ LSFT_T(KC_)
 // #define HM_ LCTL_T(KC_)
-//
+
 #define HM_MIC RCTL_T(MUTE_MIC)
 // #define HM_ RSFT_T(KC_)
 // #define HM_ LALT_T(KC_)
-
-// Template
-// #define HM_ LGUI_T(KC_)
-// #define HM_ LALT_T(KC_)
-// #define HM_ LSFT_T(KC_)
-// #define HM_ LCTL_T(KC_)
-//
-// #define HM_ RCTL_T(KC_)
-// #define HM_ RSFT_T(KC_)
-// #define HM_ LALT_T(KC_)
-// #define HM_ RGUI_T(KC_)
 
 #define CTR_ESC LCTL_T(KC_ESC)
 #define CTR_QOT LCTL_T(KC_QUOT)

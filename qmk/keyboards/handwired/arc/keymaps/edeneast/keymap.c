@@ -11,45 +11,36 @@
 #define OSL_CSE OSM(MOD_LSFT)
 #define OSR_CSE OSM(MOD_RSFT)
 
+#define HMA_D LT(_RAISE, KC_D)
+
 enum keymap_keycodes {
   TG_SETT = NEW_SAFE_RANGE, // Toggle settings
   BOOT,
   TG_PLAM,
   GM_PLAM,
+  ED_COLN,
 };
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_WRAPPER(
     _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    __COLEMAK_DH_L1_____________________________________,                                         __COLEMAK_DH_R1_____________________________________,
-    __COLEMAK_DH_L2_____________________________________,                                         __COLEMAK_DH_R2_____________________________________,
-    __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
+    KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                            KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL,
+    CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G,                                            KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT,
+    ED_COLN, KC_Z,    KC_X,    KC_C,    HMA_D,   KC_V,                                            KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, HM_ENT,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
     MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_UNDS, KC_BSLS,          MO_NAV,
                                         KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  LOW_PDN,                                         KC_DOWN
 
   ),
 
-  [_ENGRAM] = LAYOUT_WRAPPER(
-    _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    __ENGRAM_L1_________________________________________,                                         __ENGRAM_R1_________________________________________,
-    __ENGRAM_L2_________________________________________,                                         __ENGRAM_R2_________________________________________,
-    __ENGRAM_L3_________________________________________,                                         __ENGRAM_R3_________________________________________,
-
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
-                                        KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
-                                                 LOW_PDN,                                         KC_DOWN
-  ),
-
   [_SYMBOL] = LAYOUT_WRAPPER(
-    __SYMBOL_L0_________________________________________,                                         __SYMBOL_R0_________________________________________,
-    __SYMBOL_L1_________________________________________,                                         __SYMBOL_R1_________________________________________,
-    __SYMBOL_L2_________________________________________,                                         __SYMBOL_R2_________________________________________,
-    __SYMBOL_L3_________________________________________,                                         __SYMBOL_R3_________________________________________,
+
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+    _______, _______, KC_LABK, KC_RABK, KC_AT,   UP_DIR,                                          KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12,
+    _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH,                                         KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT,
+    _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, DB_QUOT,                                         KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______,
 
     _______,          _______, _______, _______, _______, _______, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         _______, _______, _______,                       _______, _______, _______,
@@ -130,6 +121,10 @@ static bool     game_use_alt_palm = false;
 static uint16_t last_game_plam    = 0;
 
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  const uint8_t mods       = get_mods();
+  const uint8_t all_mods   = (mods | get_weak_mods() | get_oneshot_mods());
+  const uint8_t shift_mods = all_mods & MOD_MASK_SHIFT;
+
   switch (keycode) {
     case OSL_CSE:
       if (record->tap.count > 0) {
@@ -142,8 +137,14 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       return false;
 
     case SYM_MIN:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) tap_code16(KC_MINS);
+      if (record->tap.count) {
+        if (record->event.pressed) {
+          clear_weak_mods();
+          clear_mods();
+          tap_code16(shift_mods ? KC_MINS : KC_UNDS);
+          set_mods(mods);
+        }
+        return false;
       }
       record->event.pressed ? layer_on(_SYMBOL) : layer_off(_SYMBOL);
       return false;
@@ -163,6 +164,25 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
+    case ED_COLN: {
+      static bool registered = false;
+      if (record->event.pressed) {
+        if (registered) {
+          unregister_code16(KC_COLN);
+        } else if (shift_mods) {
+          clear_mods();
+          SEND_STRING_DELAY("std:", TAP_CODE_DELAY);
+          set_mods(mods);
+        }
+        register_code16(KC_COLN);
+        registered = true;
+      } else {
+        unregister_code16(KC_COLN);
+        registered = false;
+      }
+    }
+      return false;
+
     default:
       return true;
   }
@@ -173,8 +193,8 @@ bool achordion_chord_keymap(uint16_t tap_hold_keycode, keyrecord_t *tap_hold_rec
     case SYM_TAB:
     case SYM_MIN:
     case LOW_PDN:
-    case HMA_SLSH:
     case HMA_Z:
+    case HMA_D:
     case OSL_CSE:
       return true;
   }
