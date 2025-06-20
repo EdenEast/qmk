@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,7 +31,7 @@
           });
         };
         pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; };
-        pcpp = with pkgs; python311Packages.buildPythonPackage rec {
+        pcpp = with pkgs; python3Packages.buildPythonPackage rec {
           pname = "pcpp";
           version = "1.30";
 
