@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,24 +16,18 @@
     ];
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        overlay = self': super': {
-          platformdirs3 = super'.python3Packages.platformdirs.overrideAttrs (old: {
-            version = "3.5.1";
-            src = super'.fetchFromGitHub {
-              owner = old.pname;
-              repo = old.pname;
-              rev = "refs/tags/3.5.1";
-              hash = "sha256-/qi22jiF+P7XcG/D+dxoOrHk89amdBoGewrTqZZOsoM=";
-            };
-          });
-        };
-        pkgs = import nixpkgs { inherit system; overlays = [ overlay ]; };
-        pcpp = with pkgs; python3Packages.buildPythonPackage rec {
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {inherit system;};
+      pcpp = with pkgs;
+        python3Packages.buildPythonPackage rec {
           pname = "pcpp";
           version = "1.30";
+          format = "setuptools";
 
           src = fetchFromGitHub {
             owner = "ned14";
@@ -43,19 +37,22 @@
             fetchSubmodules = true;
           };
         };
-        keymap-drawer = with pkgs; python3Packages.buildPythonApplication rec{
+      keymap-drawer = with pkgs;
+        python3Packages.buildPythonApplication rec {
           pname = "keymap-drawer";
-          version = "0.18.0";
+          version = "0.22.1";
           format = "pyproject";
 
           src = pkgs.fetchFromGitHub {
             owner = "caksoylar";
             repo = "keymap-drawer";
             rev = "v${version}";
-            sha256 = "sha256-3NLOoCSPt/2Mt+e4xL4RyAqN4gF0sAgkQoZMsmKdnYw=";
+            sha256 = "sha256-X3O5yspEdey03YQ6JsYN/DE9NUiq148u1W6LQpUQ3ns=";
           };
 
           doCheck = false;
+
+          patches = [./resources/0001-patch-update-tree-sitter-device-tree-version.patch];
 
           nativeBuildInputs = with python3Packages; [
             poetry-core
@@ -66,28 +63,29 @@
             pyparsing
             pydantic
             pydantic-settings
-            platformdirs3
+            platformdirs
             pcpp
+            tree-sitter
+            tree-sitter-grammars.tree-sitter-devicetree
           ];
         };
-      in
-      {
-        inherit pkgs;
-        devShells.default = pkgs.mkShell {
-          name = "qmk";
-          buildInputs = with pkgs; [
-            just
-            keymap-drawer
-            qmk
-            stow
-            watchexec
-          ];
+    in {
+      inherit pkgs;
+      devShells.default = pkgs.mkShell {
+        name = "qmk";
+        buildInputs = with pkgs; [
+          just
+          keymap-drawer
+          qmk
+          stow
+          watchexec
+        ];
 
-          shellHook = ''
-            # Prevent the avr-gcc wrapper from picking up host GCC flags
-            # like -iframework, which is problematic on Darwin
-            unset NIX_CFLAGS_COMPILE_FOR_TARGET
-          '';
-        };
-      });
+        shellHook = ''
+          # Prevent the avr-gcc wrapper from picking up host GCC flags
+          # like -iframework, which is problematic on Darwin
+          unset NIX_CFLAGS_COMPILE_FOR_TARGET
+        '';
+      };
+    });
 }

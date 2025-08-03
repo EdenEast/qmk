@@ -1,0 +1,25 @@
+From b491f07a7f8f7e3fa3826f355baa0787db3ebed4 Mon Sep 17 00:00:00 2001
+From: EdenEast <edenofest@gmail.com>
+Date: Sun, 3 Aug 2025 00:55:10 -0400
+Subject: [PATCH] patch: update tree-sitter-device-tree version
+
+---
+ pyproject.toml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 2e8be99..68ffd55 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -13,7 +13,7 @@ dependencies = [
+     "platformdirs ~= 4.0",
+     "pydantic-settings ~= 2.2",
+     "tree-sitter ~= 0.24.0",
+-    "tree-sitter-devicetree ~= 0.14.0",
++    "tree-sitter-devicetree ~= 0.25.0",
+     "pyparsing ~= 3.2"
+ ]
+ 
+-- 
+2.49.0
+
