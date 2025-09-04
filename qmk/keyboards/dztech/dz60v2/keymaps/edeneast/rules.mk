@@ -1,5 +1,4 @@
-NKRO_ENABLE         = yes # NKey Rollover
-NKRO_DEFAULT_ON     = yes # Force
+NKRO_DEFAULT_ON     = yes # NKey Rollover
 LEADER_ENABLE       = yes
 SMART_CASE_ENABLE   = no
 SOCD_CLEANER_ENABLE = yes
