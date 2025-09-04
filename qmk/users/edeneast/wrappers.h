@@ -35,39 +35,6 @@
 #define __ENGRAM_R3_________________________________________       KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    HM_ENT
 
 
-#define __SYMBOL_L0_________________________________________       _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define __SYMBOL_L1_________________________________________       _______, _______, KC_LABK, KC_RABK, KC_AT,   UP_DIR
-#define __SYMBOL_L2_________________________________________       _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH
-#define __SYMBOL_L3_________________________________________       _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, DB_QUOT
-
-#define __SYMBOL_R0_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11
-#define __SYMBOL_R1_________________________________________       KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12
-#define __SYMBOL_R2_________________________________________       KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT
-#define __SYMBOL_R3_________________________________________       KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______
-
-
-#define __NAVIGATION_L0_____________________________________       _______, _______, _______, _______, _______, _______
-#define __NAVIGATION_L1_____________________________________       _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, _______
-#define __NAVIGATION_L2_____________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
-#define __NAVIGATION_L3_____________________________________       _______, _______, _______, _______, _______, _______
-
-#define __NAVIGATION_R0_____________________________________       _______, _______, _______, _______, _______, _______
-#define __NAVIGATION_R1_____________________________________       KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______
-#define __NAVIGATION_R2_____________________________________       KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______
-#define __NAVIGATION_R3_____________________________________       _______, _______, _______, _______, _______, _______
-
-
-#define __ADJUSTMENT_L0_____________________________________       QK_BOOT, KC_MAKE, KC_CAPS, KC_ESC,  _______, _______
-#define __ADJUSTMENT_L1_____________________________________       OS_RST,  OS_MAC,  OS_WIN,  _______, _______, _______
-#define __ADJUSTMENT_L2_____________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
-#define __ADJUSTMENT_L3_____________________________________       _______, ED_UNDO, ED_CUT, ED_COPY, ED_PASTE, KC_PSCR
-
-#define __ADJUSTMENT_R0_____________________________________       _______, _______, _______, _______, KC_MAKE, QK_BOOT
-#define __ADJUSTMENT_R1_____________________________________       _______,   VB_UP, VB_DOWN, KC_MUTE, _______, _______
-#define __ADJUSTMENT_R2_____________________________________       _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______
-#define __ADJUSTMENT_R3_____________________________________       _______, MUTE_MIC, _______, _______, TG_SENT, _______
-
-
 #define __RAISE_L1__________________________________________       _______, KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define __RAISE_L2__________________________________________       _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______
 #define __RAISE_L3__________________________________________       _______, STCK_LY, _______, _______, _______, _______
@@ -89,7 +56,6 @@
 #define __ADJUST_L1_________________________________________       KC_F12,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
 #define __ADJUST_L2_________________________________________       QK_BOOT, HM_PRSC, KC_LALT, KC_LSFT, KC_LCTL, TG_SENT
 #define __ADJUST_L3_________________________________________       _______, STCK_LY, _______, TL_ENGM, TL_GAME, TL_STNO
-
 
 #define __ADJUST_R1_________________________________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11
 #define __ADJUST_R2_________________________________________       VB_UP,   HM_MIC,  KC_RSFT, KC_LALT, HM_PRSC, QK_BOOT

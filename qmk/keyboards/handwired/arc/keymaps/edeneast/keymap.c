@@ -22,34 +22,31 @@ enum keymap_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_WRAPPER(
     _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    __COLEMAK_DH_L1_____________________________________,                                         __COLEMAK_DH_R1_____________________________________,
-    __COLEMAK_DH_L2_____________________________________,                                         __COLEMAK_DH_R2_____________________________________,
-    __COLEMAK_DH_L3_____________________________________,                                         __COLEMAK_DH_R3_____________________________________,
+    KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                            KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL,
+    CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G,                                            KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT,
+    HM_MUX,  HMA_Z,   KC_X,    KC_C,    KC_D,    KC_V,                                            KC_K,    KC_H,    KC_COMM, KC_DOT,  HMA_SLSH,HM_ENT,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
     MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_UNDS, KC_BSLS,          MO_NAV,
                                         KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  LOW_PDN,                                         KC_DOWN
-
   ),
 
   [_ENGRAM] = LAYOUT_WRAPPER(
     _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    __ENGRAM_L1_________________________________________,                                         __ENGRAM_R1_________________________________________,
-    __ENGRAM_L2_________________________________________,                                         __ENGRAM_R2_________________________________________,
-    __ENGRAM_L3_________________________________________,                                         __ENGRAM_R3_________________________________________,
+    KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT,                                         KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z,
+    CTR_ESC, HME_C,   HME_I,   HME_E,   HME_A,   KC_COMM,                                         KC_DOT,  HME_H,   HME_T,   HME_S,   HME_N,   KC_Q,
+    HM_MUX,  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL,                                          KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    HM_ENT,
 
-    // MO_NAV,           KC_LBRC, KC_RBRC, OSL_CSE, KC_BSPC, SYM_TAB, QK_LEAD,     QK_LEAD, SYM_MIN, KC_SPC,  OSL_CSE, KC_LPRN, KC_RPRN,          MO_NAV,
     MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
                                         KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  LOW_PDN,                                         KC_DOWN
   ),
 
   [_SYMBOL] = LAYOUT_WRAPPER(
-    __SYMBOL_L0_________________________________________,                                         __SYMBOL_R0_________________________________________,
-    __SYMBOL_L1_________________________________________,                                         __SYMBOL_R1_________________________________________,
-    __SYMBOL_L2_________________________________________,                                         __SYMBOL_R2_________________________________________,
-    __SYMBOL_L3_________________________________________,                                         __SYMBOL_R3_________________________________________,
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
+    _______, _______, KC_LABK, KC_RABK, KC_AT,   UP_DIR,                                          KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12,
+    _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH,                                         KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT,
+    _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, DB_QUOT,                                         KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______,
 
     _______,          _______, _______, _______, _______, _______, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         _______, _______, _______,                       _______, _______, _______,
@@ -57,10 +54,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_NAV] =  LAYOUT_WRAPPER(
-    __NAVIGATION_L0_____________________________________,                                         __NAVIGATION_R0_____________________________________,
-    __NAVIGATION_L1_____________________________________,                                         __NAVIGATION_R1_____________________________________,
-    __NAVIGATION_L2_____________________________________,                                         __NAVIGATION_R2_____________________________________,
-    __NAVIGATION_L3_____________________________________,                                         __NAVIGATION_R3_____________________________________,
+    _______, _______, _______, _______, _______, _______,                                         _______, _______, _______, _______, _______, _______,
+    _______, _______, KC_MPRV, KC_MPLY, KC_MNXT, _______,                                         KC_HOME, KC_PGDN, KC_PGUP, KC_END,  _______, _______,
+    _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______,                                         KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______,
+    _______, _______, _______, _______, _______, _______,                                         _______, _______, _______, _______, _______, _______,
 
     _______,          _______, _______, _______, _______,  KC_SPC, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         KC_LEFT, KC_UP,   KC_RGHT,                       KC_MPRV, _______, KC_MNXT,
@@ -79,10 +76,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [_ADJ] = LAYOUT_WRAPPER(
-    __ADJUSTMENT_L0_____________________________________,                                         __ADJUSTMENT_R0_____________________________________,
-    __ADJUSTMENT_L1_____________________________________,                                         __ADJUSTMENT_R1_____________________________________,
-    __ADJUSTMENT_L2_____________________________________,                                         __ADJUSTMENT_R2_____________________________________,
-    __ADJUSTMENT_L3_____________________________________,                                         __ADJUSTMENT_R3_____________________________________,
+    QK_BOOT, KC_MAKE, KC_CAPS, KC_ESC,  _______, _______,                                         _______, _______, _______, _______, KC_MAKE, QK_BOOT,
+    OS_RST,  OS_MAC,  OS_WIN,  _______, _______, _______,                                         _______,   VB_UP, VB_DOWN, KC_MUTE, _______, _______,
+    _______, KC_LGUI, KC_LALT, KC_LSFT, KC_LCTL, _______,                                         _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
+    _______, ED_UNDO, ED_CUT, ED_COPY, ED_PASTE, KC_PSCR,                                         _______, MUTE_MIC, _______, _______, TG_SENT, _______,
 
     _______,          _______, _______, _______, KC_DEL,  OSL_CSE, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         KC_CLMK, KC_ENGM, TL_GAME,                       _______, _______, _______,
@@ -91,10 +88,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_GAME] = LAYOUT_WRAPPER(
     _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    __GAME_L1___________________________________________,                                         __GAME_R1___________________________________________,
-    __GAME_L2___________________________________________,                                         __GAME_R2___________________________________________,
-    __GAME_L3___________________________________________,                                         __GAME_R3___________________________________________,
-
+    KC_GRV,  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,                                            KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    KC_ESC,  KC_LSFT, KC_A,    KC_S,    KC_D,    KC_F,                                            KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    TL_GAME,
+    KC_LALT, KC_LCTL, KC_Z,    KC_X,    KC_C,    KC_V,                                            KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
 
     GM_PLAM,          KC_T,    KC_G,    KC_I,    KC_SPC,  KC_M,    KC_N,        _______, _______, KC_BSPC, _______, _______, _______,          _______,
                                        KC_MPLY, TG_PLAM, TL_GAME,                       _______, _______, _______,
@@ -106,7 +102,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, KC_BTN2, KC_MS_U, KC_BTN1, _______,                                         _______, _______, _______, _______, _______, _______,
     _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,                                         _______, _______, _______, _______, _______, _______,
     _______, _______, _______, KC_WH_D, KC_WH_U, _______,                                         _______, _______, _______, _______, _______, _______,
-
 
     _______,          _______, _______, KC_BTN2, KC_BTN1, KC_BTN3, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         _______, _______, _______,                       _______, _______, _______,
