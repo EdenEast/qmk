@@ -73,7 +73,7 @@
 // #define HM_ RGUI_T(KC_)
 
 #define CTR_ESC LCTL_T(KC_ESC)
-#define CTR_QOT LCTL_T(KC_QUOT)
+#define CTR_QOT RCTL_T(KC_QUOT)
 
 // Thumb keys
 

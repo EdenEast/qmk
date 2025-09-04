@@ -8,6 +8,7 @@
 #define OSSL OSM(MOD_LSFT)
 #define OSSR OSM(MOD_RSFT)
 #define MO_RAIS MO(_RAISE)
+#define CASE_RS LT(_RAISE, KC_EQL)
 
 enum keymap_keycodes {
   TG_SETT = NEW_SAFE_RANGE, // Toggle settings
@@ -36,9 +37,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_60_ansi_split_arrow(
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
-    CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT,
+    CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, CTR_QOT, KC_ENT,
     OSSL,             KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSSR,
-    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  MO_RAIS, KC_SPC,           QK_LEAD, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
+    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  CASE_RS, KC_SPC,           QK_LEAD, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
   ),
 
 /** Raise
@@ -60,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, TG_SETT,
     _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_MPRV, KC_MNXT, KC_MPLY,
     _______,          _______, _______, _______, MIC,     _______, _______, _______, VB_DOWN, VB_UP,   KC_MUTE, _______,
-    _______, _______, _______,          _______, MO_RAIS, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+    _______, _______, _______,          _______, CASE_RS, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
 /** Game
@@ -146,6 +147,14 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 
   uint8_t mods = get_mods();
   switch (keycode) {
+    case CASE_RS:
+      if (record->tap.count && record->event.pressed) {
+        set_smart_case_for_mods();
+        return false;
+      }
+      record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
+      return false;
+
     case TG_SETT:
       if (record->event.pressed) {
         if (mods & MOD_MASK_ALT) {
@@ -157,6 +166,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
+
     case BOOT:
       if (record->event.pressed) {
         if ((mods & MOD_MASK_SHIFT) || (mods & MOD_MASK_CTRL)) {
