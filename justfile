@@ -84,9 +84,6 @@ init:
     if [ "$(git config submodule.firmware.ignore)" != "all" ]; then
       git config submodule.firmware.ignore all
     fi
-    if [ "$(qmk config user.qmk_home | cut -d '=' -f 2)" != "{{justfile_directory()}}/firmware" ]; then
-      qmk config user.qmk_home="{{justfile_directory()}}/firmware"
-    fi
 
 # Symbolic link qmk directory into firmware
 stow:

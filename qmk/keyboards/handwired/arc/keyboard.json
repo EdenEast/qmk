@@ -26,9 +26,9 @@
     },
     "features": {
         "bootmagic": false,
-        "mousekey": false,
+        "mousekey": true,
         "extrakey": true,
-        "console": true,
+        "console": false,
         "unicode": true
     },
     "layouts": {
