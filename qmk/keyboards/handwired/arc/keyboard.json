@@ -24,6 +24,13 @@
         "pid": "0x6172",
         "vid": "0x6564"
     },
+    "features": {
+        "bootmagic": false,
+        "mousekey": false,
+        "extrakey": true,
+        "console": true,
+        "unicode": true
+    },
     "layouts": {
         "LAYOUT": {
             "layout": [

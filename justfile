@@ -60,7 +60,7 @@ _keyboard keyboard:
   elif [ "{{keyboard}}" = "dm5" ]; then
     echo "handwired/dactyl_manuform/5x6"
   elif [ "{{keyboard}}" = "tofu" ]; then
-    echo "dztech/dz60v2/tofu"
+    echo "dztech/tofu"
   else
     printf "{{red}}Failed: Unknown keyboard: {{keyboard}}{{reset}}\n"
   fi
@@ -124,9 +124,8 @@ qmk-update:
     pushd ./firmware
     git reset --hard
     git clean -fdx
-    git co master
-    git fetch origin --depth 1
-    git reset --hard origin/master
+    git fetch --tags
+    git checkout $(git tag --sort=-creatordate | head -n 1)
     git submodule update --init --recursive --recommend-shallow
     popd
     git add -f ./firmware
