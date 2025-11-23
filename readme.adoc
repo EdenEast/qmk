@@ -76,6 +76,11 @@ https://docs.qmk.fm/#/faq_build?id=can39t-program-on-linux[udev]. Also to view a
 
 For nixos, to be able to flash qmk it is required to have `hardware.keyboard.qmk.enable = true`.
 
+=== External Userspace
+
+Qmk's https://docs.qmk.fm/newbs_external_userspace[External Userspace] feature does not support defining a new keyboard.
+This only supports defining keymaps, layouts and users mapings https://github.com/qmk/qmk_firmware/issues/23895#issuecomment-2159582796[(comment)].
+
 == Resources and reference
 
 * Posts
