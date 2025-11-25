@@ -23,52 +23,6 @@
   }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
-      pcpp = with pkgs;
-        python3Packages.buildPythonPackage rec {
-          pname = "pcpp";
-          version = "1.30";
-          format = "setuptools";
-
-          src = fetchFromGitHub {
-            owner = "ned14";
-            repo = "pcpp";
-            rev = "v${version}";
-            sha256 = "sha256-Fs+CMV4eRKcB+KdV93ncgcqaMnO5etnMY/ivmSJh3Wc=";
-            fetchSubmodules = true;
-          };
-        };
-      keymap-drawer = with pkgs;
-        python3Packages.buildPythonApplication rec {
-          pname = "keymap-drawer";
-          version = "0.22.1";
-          format = "pyproject";
-
-          src = pkgs.fetchFromGitHub {
-            owner = "caksoylar";
-            repo = "keymap-drawer";
-            rev = "v${version}";
-            sha256 = "sha256-X3O5yspEdey03YQ6JsYN/DE9NUiq148u1W6LQpUQ3ns=";
-          };
-
-          doCheck = false;
-
-          patches = [./resources/0001-patch-update-tree-sitter-device-tree-version.patch];
-
-          nativeBuildInputs = with python3Packages; [
-            poetry-core
-          ];
-
-          propagatedBuildInputs = with python3Packages; [
-            pyyaml
-            pyparsing
-            pydantic
-            pydantic-settings
-            platformdirs
-            pcpp
-            tree-sitter
-            tree-sitter-grammars.tree-sitter-devicetree
-          ];
-        };
     in {
       inherit pkgs;
       devShells.default = pkgs.mkShell {
