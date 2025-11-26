@@ -31,22 +31,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                  LOW_PDN,                                         KC_DOWN
   ),
 
-  [_ENGRAM] = LAYOUT_WRAPPER(
-    _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
-    KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT,                                         KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z,
-    CTR_ESC, HME_C,   HME_I,   HME_E,   HME_A,   KC_COMM,                                         KC_DOT,  HME_H,   HME_T,   HME_S,   HME_N,   KC_Q,
-    HM_MUX,  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL,                                          KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    HM_ENT,
+  KC_BSLS
 
-    MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
-                                        KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
-                                                 LOW_PDN,                                         KC_DOWN
-  ),
+
+  // [_ENGRAM] = LAYOUT_WRAPPER(
+  //   _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
+  //   KC_GRV,  KC_B,    KC_Y,    KC_O,    KC_U,    KC_QUOT,                                         KC_SCLN, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z,
+  //   CTR_ESC, HME_C,   HME_I,   HME_E,   HME_A,   KC_COMM,                                         KC_DOT,  HME_H,   HME_T,   HME_S,   HME_N,   KC_Q,
+  //   HM_MUX,  KC_G,    KC_X,    KC_J,    KC_K,    KC_EQL,                                          KC_SLSH, KC_R,    KC_M,    KC_F,    KC_P,    HM_ENT,
+
+  //   MO_NAV,           KC_LBRC, KC_RBRC, SYM_TAB, KC_BSPC, OSL_CSE, QK_LEAD,     QK_LEAD, OSL_CSE, KC_SPC,  SYM_MIN, KC_LPRN, KC_RPRN,          MO_NAV,
+  //                                       KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
+  //                                                LOW_PDN,                                         KC_DOWN
+  // ),
 
   [_SYMBOL] = LAYOUT_WRAPPER(
     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                                           KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
-    _______, _______, KC_LABK, KC_RABK, KC_AT,   UP_DIR,                                          KC_AMPR, _______, KC_LBRC, KC_RBRC, _______, KC_F12,
-    _______, KC_EXLM, KC_MINS, KC_PLUS, KC_EQL,  KC_HASH,                                         KC_PIPE, KC_COLN, KC_LPRN, KC_RPRN, KC_PERC, KC_DQT,
-    _______, KC_BSLS, KC_SLSH, KC_ASTR, KC_CIRC, DB_QUOT,                                         KC_TILD, KC_DLR,  KC_LCBR, KC_RCBR, _______, _______,
+    _______, KC_GRV,  KC_LABK, KC_RABK, KC_MINS, KC_PIPE,                                         KC_CIRC, KC_LCBR, KC_RCBR, KC_DLR,  _______, KC_F12,
+    _______, KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL,  KC_AMPR,                                         KC_HASH, KC_LPRN, KC_RPRN, KC_SCLN, KC_DQT,  _______,
+    _______, KC_TILD, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,                                         KC_AT,   KC_COLN, _______, _______, _______, _______,
 
     _______,          _______, _______, _______, _______, _______, QK_LLCK,     QK_LLCK, _______, _______, _______, _______, _______,          _______,
                                         _______, _______, _______,                       _______, _______, _______,
