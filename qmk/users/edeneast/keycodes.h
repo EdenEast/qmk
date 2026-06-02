@@ -28,6 +28,8 @@ enum userspace_custom_keycodes {
   ED_COPY,
   ED_PASTE,
 
+  TAILNET, // fqdn for my tailnet
+
   VB_UP,
   VB_DOWN,
   MUTE_MIC,
