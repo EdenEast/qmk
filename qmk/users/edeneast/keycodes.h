@@ -29,6 +29,7 @@ enum userspace_custom_keycodes {
   ED_PASTE,
 
   TAILNET, // fqdn for my tailnet
+  EDN_XYZ,
 
   VB_UP,
   VB_DOWN,

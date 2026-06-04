@@ -189,6 +189,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
 
+    case EDN_XYZ:
+      if (record->event.pressed) {
+        SEND_STRING("edeneast.xyz");
+      }
+      return false;
+
     case KC_MAKE: // Sends 'qmk compile' or 'qmk flash'
       if (record->event.pressed) {
         bool flash = false;
