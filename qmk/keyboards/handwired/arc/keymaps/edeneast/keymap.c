@@ -21,7 +21,7 @@ enum keymap_keycodes {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT_WRAPPER(
-    _______, __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, _______,
+    KC_F19,  __NUMBER_LEFT______________________________,                                         __NUMBER_RIGHT_____________________________, KC_F19,
     KC_GRV,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                                            KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_EQL,
     CTR_ESC, HMA_A,   HMA_R,   HMA_S,   HMA_T,   KC_G,                                            KC_M,    HMA_N,   HMA_E,   HMA_I,   HMA_O,   CTR_QOT,
     HM_MUX,  HMA_Z,   KC_X,    KC_C,    KC_D,    KC_V,                                            KC_K,    KC_H,    KC_COMM, KC_DOT,  HMA_SLSH,HM_ENT,
@@ -30,8 +30,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         KC_LEFT, KC_PGUP, KC_RGHT,                       KC_LEFT, KC_UP,   KC_RGHT,
                                                  LOW_PDN,                                         KC_DOWN
   ),
-
-  KC_BSLS
 
 
   // [_ENGRAM] = LAYOUT_WRAPPER(
