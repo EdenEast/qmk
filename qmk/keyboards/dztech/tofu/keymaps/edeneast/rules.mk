@@ -1,4 +1,6 @@
 NKRO_DEFAULT_ON     = yes # NKey Rollover
+MOUSEKEY_ENABLE     = no
+RGBLIGHT_ENABLE     = no
 LEADER_ENABLE       = yes
 SMART_CASE_ENABLE   = yes
 SOCD_CLEANER_ENABLE = yes
