@@ -40,3 +40,4 @@ layers:
 combos:
   - {p: [00, 13], k: Boot, a: top, o: 0.2, l: ['Base'], draw_separate: true}
   - {p: [11, 13], k: Make, a: top, o: 0.6, l: ['Base'], draw_separate: true}
+  - {p: [29, 32], k: Scribe, a: top, o: 0.6, l: ['Base'], draw_separate: true}

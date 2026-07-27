@@ -119,6 +119,10 @@ layer_state_t layer_state_set_kb(layer_state_t state) {
   return state;
 }
 
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+  return !layer_state_is(_GAME);
+}
+
 void leader_end_keymap(void) {
   if (leader_sequence_two_keys(KC_G, KC_E)) {
     socd_cleaner_enabled = true;
