@@ -14,6 +14,7 @@ enum keymap_keycodes {
   TG_SETT = NEW_SAFE_RANGE, // Toggle settings
   ELDNRNG,
   BOOT,
+  DICTATE, // F19 (dictation): Hold push to talk, Tap latch
 };
 
 socd_cleaner_t socd_v = {{KC_W, KC_S}, SOCD_CLEANER_LAST};
@@ -31,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------------------------------^-----------------^----------------------------------------+
  * | Shift     |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |     RShift      |
  * |-----------------------------------------------------------------------------------------+
- * | Ctrl | Super |  Alt  |   Bkspc   |  Fn  |     Space      | Lead| Lft  | Dwn | Up  | Rgh |
+ * | Ctrl | Super |  Alt  |   Bkspc   |  Fn  |     Space      | Dict| Lft  | Dwn | Up  | Rgh |
  * `-----------------------------------------------------------------------------------------'
  */
 
@@ -40,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
     CTR_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, CTR_QOT, KC_ENT,
     OSSL,             KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, OSSR,
-    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  CASE_RS, KC_SPC,           QK_LEAD, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
+    KC_LCTL, KC_LGUI, KC_LALT,          KC_SPC,  CASE_RS, KC_SPC,           DICTATE, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
   ),
 
 /** Raise
@@ -53,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------------------------------^-----------------^----------------------------------------+
  * |           |     |     |     | F20 |     |     |     |Vol D|Vol U| Mute|                 |
  * |-----------------------------------------------------------------------------------------+
- * |      |       |       |           |      |                 |     | HOME| PGDN| PGUP| End |
+ * |      |       |       |           |      |                 | Lead| HOME| PGDN| PGUP| End |
  * `-----------------------------------------------------------------------------------------'
  */
 
@@ -62,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, EDN_XYZ, _______, TAILNET, _______, _______, _______, _______, _______, _______, _______, TG_SETT,
     _______, KC_F19,  _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_MPRV, KC_MNXT, KC_MPLY,
     _______,          _______, _______, _______, KC_F20,  _______, _______, _______, VB_DOWN, VB_UP,   KC_MUTE, _______,
-    _______, _______, _______,          _______, CASE_RS, _______,          _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+    _______, _______, _______,          _______, CASE_RS, _______,          QK_LEAD, KC_HOME, KC_PGDN, KC_PGUP, KC_END
   ),
 
 /** Game
@@ -159,6 +160,30 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
       }
       record->event.pressed ? layer_on(_RAISE) : layer_off(_RAISE);
       return false;
+
+    // Hold: push to talk, Tap: latch F19 until the next tap
+    case DICTATE: {
+      static bool     latched   = false;
+      static bool     unlatched = false;
+      static uint16_t timer     = 0;
+      if (record->event.pressed) {
+        if (latched) {
+          unregister_code(KC_F19);
+          latched   = false;
+          unlatched = true;
+        } else {
+          register_code(KC_F19);
+          timer = timer_read();
+        }
+      } else if (unlatched) {
+        unlatched = false;
+      } else if (timer_elapsed(timer) < TAPPING_TERM) {
+        latched = true;
+      } else {
+        unregister_code(KC_F19);
+      }
+      return false;
+    }
 
     case TG_SETT:
       if (record->event.pressed) {

@@ -401,7 +401,8 @@ text.key, text.combo { stroke: none; fill: #1e222a;}
 </g>
 <g transform="translate(588, 252)" class="key keypos-59">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Leader</text>
+<text x="0" y="0" class="key tap">Dictate</text>
+<text x="0" y="24" class="key hold">Talk</text>
 </g>
 <g transform="translate(644, 252)" class="key keypos-60">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -632,6 +633,7 @@ text.key, text.combo { stroke: none; fill: #1e222a;}
 </g>
 <g transform="translate(588, 252)" class="key keypos-59">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Leader</text>
 </g>
 <g transform="translate(644, 252)" class="key keypos-60">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
